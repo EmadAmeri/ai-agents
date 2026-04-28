@@ -1,32 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI Sales Agent</title>
-  <meta name="description" content="AI Sales Agent project page hosted on GitHub Pages.">
+  <title>AI Agents Live Board</title>
+  <meta name="description" content="Live GitHub Pages dashboard for the AI Sales Agent backend running on your computer.">
   <style>
     :root {
-      --bg: #f4efe7;
-      --panel: rgba(255, 252, 247, 0.88);
-      --text: #182126;
-      --muted: #5c6a71;
-      --line: rgba(24, 33, 38, 0.12);
-      --accent: #bc5a34;
-      --accent-2: #1e7a6e;
-      --accent-3: #d8b562;
-      --shadow: 0 24px 80px rgba(18, 26, 31, 0.12);
+      --bg: #050505;
+      --bg-2: #0b0f0a;
+      --panel: rgba(14, 18, 14, 0.92);
+      --panel-2: rgba(10, 10, 10, 0.88);
+      --line: rgba(212, 255, 42, 0.18);
+      --line-strong: rgba(212, 255, 42, 0.48);
+      --text: #f5ffe6;
+      --muted: #93a08f;
+      --acid: #d4ff2a;
+      --acid-soft: rgba(212, 255, 42, 0.12);
+      --danger: #ff5b5b;
+      --shadow: 0 24px 90px rgba(0, 0, 0, 0.45);
+      --radius: 24px;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      color: var(--text);
-      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-      background:
-        radial-gradient(circle at top left, rgba(188, 90, 52, 0.16), transparent 24%),
-        radial-gradient(circle at 88% 12%, rgba(30, 122, 110, 0.16), transparent 20%),
-        linear-gradient(180deg, #fbf6ef 0%, #efe6d8 55%, #f7f2ea 100%);
       min-height: 100vh;
+      background:
+        radial-gradient(circle at top right, rgba(212, 255, 42, 0.12), transparent 24%),
+        radial-gradient(circle at left 80%, rgba(212, 255, 42, 0.08), transparent 22%),
+        linear-gradient(180deg, #030403 0%, #070907 45%, #050505 100%);
+      color: var(--text);
+      font-family: Tahoma, "Segoe UI", sans-serif;
     }
     body::before {
       content: "";
@@ -34,109 +39,203 @@
       inset: 0;
       pointer-events: none;
       background-image:
-        linear-gradient(rgba(24, 33, 38, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(24, 33, 38, 0.03) 1px, transparent 1px);
-      background-size: 36px 36px;
-      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.08));
+        linear-gradient(rgba(212, 255, 42, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 255, 42, 0.03) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.12));
     }
     .shell {
+      width: min(1440px, calc(100vw - 28px));
+      margin: 14px auto 36px;
       position: relative;
       z-index: 1;
-      width: min(1180px, calc(100vw - 32px));
-      margin: 20px auto 40px;
     }
-    .hero, .panel, .stat, .step {
-      backdrop-filter: blur(14px);
-      background: var(--panel);
+    .hero, .panel, .metric, .brain, .card, .run {
+      background: linear-gradient(180deg, rgba(12, 16, 12, 0.96), rgba(8, 10, 9, 0.92));
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
     }
     .hero {
       border-radius: 30px;
-      padding: 28px;
-      display: grid;
-      gap: 20px;
+      padding: 24px;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: 30px;
+      pointer-events: none;
+      background: linear-gradient(130deg, rgba(212,255,42,0.18), transparent 34%, transparent 66%, rgba(212,255,42,0.14));
+      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      padding: 1px;
+      mask-composite: exclude;
+      -webkit-mask-composite: xor;
     }
     .hero-top {
       display: flex;
-      gap: 18px;
       justify-content: space-between;
-      align-items: flex-start;
+      gap: 18px;
       flex-wrap: wrap;
+      align-items: flex-start;
     }
-    .eyebrow, .label {
+    .eyebrow {
+      color: var(--acid);
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 12px;
-      color: var(--muted);
+      letter-spacing: 0.16em;
+      font-size: 11px;
+      margin-bottom: 10px;
     }
     h1 {
-      margin: 10px 0 0;
-      font-size: clamp(36px, 6vw, 72px);
-      line-height: 0.94;
+      margin: 0;
+      font-size: clamp(34px, 6vw, 72px);
+      line-height: 0.92;
+      font-weight: 800;
       max-width: 8ch;
     }
     .subtitle {
-      max-width: 64ch;
-      margin: 14px 0 0;
+      margin: 16px 0 0;
+      max-width: 74ch;
       color: var(--muted);
-      line-height: 1.65;
-      font-size: 17px;
+      line-height: 1.8;
+      font-size: 15px;
     }
-    .badge {
-      min-width: 280px;
-      padding: 18px 20px;
+    .logo-box {
+      display: grid;
+      gap: 12px;
+      min-width: 310px;
+      padding: 18px;
       border-radius: 24px;
-      background: linear-gradient(135deg, rgba(24, 33, 38, 0.96), rgba(42, 63, 70, 0.94));
-      color: #f7f2ea;
+      background: linear-gradient(180deg, rgba(212,255,42,0.07), rgba(212,255,42,0.02));
+      border: 1px solid rgba(212,255,42,0.22);
     }
-    .badge .live {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    .logo-box svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .logo-caption {
+      color: var(--muted);
+      line-height: 1.7;
       font-size: 13px;
+    }
+    .setup {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1.5fr 0.9fr 0.8fr auto;
+      gap: 12px;
+      align-items: end;
+    }
+    label {
+      display: grid;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    input, select, button {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid rgba(212,255,42,0.2);
+      background: rgba(0, 0, 0, 0.48);
+      color: var(--text);
+      padding: 14px 15px;
+      font: inherit;
+      outline: none;
+    }
+    input:focus, select:focus {
+      border-color: var(--acid);
+      box-shadow: 0 0 0 4px rgba(212,255,42,0.1);
+    }
+    button {
+      cursor: pointer;
+      background: linear-gradient(180deg, rgba(212,255,42,0.98), rgba(174,214,30,0.92));
+      color: #091000;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+    button.secondary {
+      background: rgba(212,255,42,0.06);
+      color: var(--acid);
+    }
+    .status-bar {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: var(--acid);
+      box-shadow: 0 0 0 0 rgba(212,255,42,0.6);
+      animation: pulse 1.7s infinite;
+      flex: 0 0 auto;
+    }
+    .dot.off {
+      background: #475143;
+      box-shadow: none;
+      animation: none;
+    }
+    .hint {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .metrics {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .metric {
+      border-radius: 22px;
+      padding: 16px;
+      min-height: 128px;
+      position: relative;
+      overflow: hidden;
+    }
+    .metric::before {
+      content: "";
+      position: absolute;
+      inset: auto -22px -22px auto;
+      width: 100px;
+      height: 100px;
+      border: 1px solid rgba(212,255,42,0.16);
+      border-radius: 999px;
+    }
+    .metric-label {
+      color: var(--muted);
+      font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
-    .badge .live::before {
-      content: "";
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: #70f0c4;
-      box-shadow: 0 0 0 0 rgba(112, 240, 196, 0.6);
-      animation: pulse 1.8s infinite;
-    }
-    .badge strong {
-      display: block;
+    .metric-value {
       margin-top: 18px;
-      font-size: 24px;
-      line-height: 1.1;
-    }
-    .badge p {
-      margin: 8px 0 0;
-      color: rgba(247, 242, 234, 0.8);
-      line-height: 1.55;
-    }
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-    }
-    .stat {
-      border-radius: 22px;
-      padding: 18px;
-    }
-    .stat .value {
-      margin-top: 10px;
-      font-size: clamp(28px, 4vw, 42px);
-      font-weight: 700;
+      font-size: clamp(28px, 4vw, 44px);
       line-height: 1;
+      font-weight: 800;
+      color: var(--acid);
     }
-    .layout {
+    .metric-meta {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .grid {
       margin-top: 18px;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 18px;
     }
     .stack {
@@ -144,84 +243,171 @@
       gap: 18px;
     }
     .panel {
-      border-radius: 26px;
-      padding: 22px;
+      border-radius: 28px;
+      padding: 20px;
     }
-    h2 {
-      margin: 0 0 14px;
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .panel h2 {
+      margin: 0;
       font-size: 28px;
       line-height: 1.05;
     }
-    .panel p, .panel li {
+    .panel-sub {
       color: var(--muted);
-      line-height: 1.65;
-      font-size: 15px;
+      font-size: 13px;
+      line-height: 1.6;
     }
-    ul {
-      margin: 0;
-      padding-left: 18px;
-    }
-    .grid {
+    .brains {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
     }
-    .feature {
-      border-radius: 20px;
+    .brain {
+      border-radius: 22px;
       padding: 16px;
-      background: rgba(255, 255, 255, 0.54);
-      border: 1px solid rgba(24, 33, 38, 0.08);
+      min-height: 168px;
+      position: relative;
     }
-    .feature strong {
-      display: block;
-      margin-bottom: 8px;
+    .brain.running {
+      border-color: var(--line-strong);
+      box-shadow: 0 0 0 1px rgba(212,255,42,0.16), 0 16px 50px rgba(212,255,42,0.08);
+    }
+    .brain.queued {
+      border-color: rgba(212,255,42,0.3);
+    }
+    .brain-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .brain-title {
       font-size: 18px;
+      font-weight: 800;
     }
-    .steps {
+    .brain-badge {
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: rgba(212,255,42,0.08);
+      color: var(--acid);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .brain p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 13px;
+    }
+    .brain-meta {
+      margin-top: 12px;
+      display: grid;
+      gap: 8px;
+      font-size: 12px;
+      color: #bdd788;
+    }
+    .run-list, .cards, .feed {
       display: grid;
       gap: 12px;
     }
-    .step {
+    .run, .card {
       border-radius: 20px;
-      padding: 16px 18px;
+      padding: 16px;
     }
-    .step strong {
-      display: block;
-      margin-bottom: 8px;
+    .run-top, .card-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .card-title, .run-title {
       font-size: 18px;
+      font-weight: 800;
+      margin: 0;
     }
-    .code {
-      display: block;
-      margin-top: 12px;
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: rgba(24, 33, 38, 0.94);
-      color: #f7f2ea;
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-      font-size: 13px;
-      overflow-x: auto;
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 8px 0 12px;
     }
-    .footer {
-      margin-top: 18px;
-      text-align: center;
+    .pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(212,255,42,0.08);
+      border: 1px solid rgba(212,255,42,0.12);
+      color: #d8f88e;
+      font-size: 11px;
+      line-height: 1;
+    }
+    .card p, .run p, .feed-item p {
+      margin: 0;
       color: var(--muted);
-      font-size: 14px;
+      line-height: 1.75;
+      font-size: 13px;
     }
-    a {
-      color: var(--accent-2);
+    .feed-item {
+      padding-top: 12px;
+      border-top: 1px solid rgba(212,255,42,0.1);
+    }
+    .feed-item:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+    .feed-time {
+      color: var(--acid);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 6px;
+    }
+    .empty {
+      padding: 24px;
+      border-radius: 20px;
+      border: 1px dashed rgba(212,255,42,0.18);
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.8;
+    }
+    .notice {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(212,255,42,0.06);
+      border: 1px solid rgba(212,255,42,0.12);
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 13px;
     }
     @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(112, 240, 196, 0.6); }
-      70% { box-shadow: 0 0 0 12px rgba(112, 240, 196, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(112, 240, 196, 0); }
+      0% { box-shadow: 0 0 0 0 rgba(212,255,42,0.55); }
+      70% { box-shadow: 0 0 0 14px rgba(212,255,42,0); }
+      100% { box-shadow: 0 0 0 0 rgba(212,255,42,0); }
     }
-    @media (max-width: 900px) {
-      .stats, .layout, .grid {
-        grid-template-columns: 1fr;
-      }
-      .badge {
-        width: 100%;
-      }
+    @media (max-width: 1180px) {
+      .metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .grid { grid-template-columns: 1fr; }
+      .brains { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 760px) {
+      .setup { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: 1fr 1fr; }
+      .brains { grid-template-columns: 1fr; }
+      h1 { max-width: 100%; }
+    }
+    @media (max-width: 520px) {
+      .metrics { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -230,120 +416,412 @@
     <section class="hero">
       <div class="hero-top">
         <div>
-          <div class="eyebrow">GitHub Pages Deployment</div>
-          <h1>AI Sales Agent</h1>
+          <div class="eyebrow">GitHub Pages + Local Backend</div>
+          <h1>AI Agent Live Board</h1>
           <p class="subtitle">
-            A local-first sales operations system with lead discovery, scoring, enrichment, approvals, and draft generation.
-            This GitHub Pages site is the static public face of the project, while the live Python dashboard runs locally.
+            این صفحه روی GitHub Pages می‌خوابد، ولی داده‌ی زنده را از بک‌اندی می‌گیرد که روی کامپیوتر خودت اجرا می‌شود.
+            اگر backend را با یک tunnel عمومی publish کنی، این برد رفتار واقعی Brainها، لیدهای scored، لیدهای enriched و خروجی نهایی را به‌صورت زنده نشان می‌دهد.
           </p>
         </div>
-        <aside class="badge">
-          <div class="live">Static Project Site</div>
-          <strong>Ready for GitHub hosting</strong>
-          <p>
-            Publish this repository with GitHub Pages and the site will be available at
-            <code>https://emadameri.github.io/ai-agents/</code>.
-          </p>
+        <aside class="logo-box">
+          <svg viewBox="0 0 420 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="AI Agents line logo">
+            <path d="M18 128H94L138 36L185 144L228 84L275 128H402" stroke="#D4FF2A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 152H130L173 78L217 126L256 102L292 152H402" stroke="rgba(212,255,42,0.36)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="138" cy="36" r="10" fill="#D4FF2A"/>
+            <circle cx="228" cy="84" r="10" fill="#D4FF2A"/>
+            <circle cx="275" cy="128" r="10" fill="#D4FF2A"/>
+          </svg>
+          <div class="logo-caption">
+            طراحی خطی با تم سبز اسیدی و مشکی. هر گره یک مرحله از حرکت ایجنت را نشان می‌دهد: جمع‌آوری، اسکور، enrich، strategy و finalize.
+          </div>
         </aside>
       </div>
 
-      <div class="stats">
-        <article class="stat">
-          <div class="label">Mode</div>
-          <div class="value">Static</div>
+      <div class="setup">
+        <label>
+          Backend URL
+          <input id="backend-url" type="url" placeholder="https://your-public-backend.example.com">
+        </label>
+        <label>
+          Project
+          <select id="project-select">
+            <option value="">Auto</option>
+          </select>
+        </label>
+        <label>
+          Refresh
+          <select id="refresh-select">
+            <option value="5000">5s</option>
+            <option value="10000" selected>10s</option>
+            <option value="15000">15s</option>
+            <option value="30000">30s</option>
+          </select>
+        </label>
+        <button id="connect-btn" type="button">Connect Live</button>
+      </div>
+
+      <div class="status-bar">
+        <span id="live-dot" class="dot off"></span>
+        <strong id="connection-state">منتظر آدرس backend</strong>
+        <span id="last-updated">No data</span>
+      </div>
+
+      <div class="hint">
+        آدرس backend باید به endpoint زیر برسد:
+        <code>/api/live-dashboard</code>
+        نمونه:
+        <code>https://your-tunnel-url/api/live-dashboard</code>
+      </div>
+    </section>
+
+    <section class="metrics" id="metrics"></section>
+
+    <section class="grid">
+      <div class="stack">
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="eyebrow">Brain Monitor</div>
+              <h2>وضعیت زنده‌ی Brainها</h2>
+            </div>
+            <div class="panel-sub" id="next-work">No queued work</div>
+          </div>
+          <div class="brains" id="brains"></div>
         </article>
-        <article class="stat">
-          <div class="label">Backend</div>
-          <div class="value">Python</div>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="eyebrow">Scored Leads</div>
+              <h2>ده لید اول اسکور شده</h2>
+            </div>
+            <div class="panel-sub">Brain 2 output</div>
+          </div>
+          <div class="cards" id="top-scored"></div>
         </article>
-        <article class="stat">
-          <div class="label">Storage</div>
-          <div class="value">SQLite</div>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="eyebrow">Enriched Leads</div>
+              <h2>لیدهای enrich شده</h2>
+            </div>
+            <div class="panel-sub">Brain 3 output</div>
+          </div>
+          <div class="cards" id="enriched-leads"></div>
         </article>
-        <article class="stat">
-          <div class="label">Hosting</div>
-          <div class="value">Pages</div>
+      </div>
+
+      <div class="stack">
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="eyebrow">Collection Runs</div>
+              <h2>جریان جمع‌آوری لید</h2>
+            </div>
+            <div class="panel-sub">Brain 1 / source discovery</div>
+          </div>
+          <div class="run-list" id="source-runs"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="eyebrow">Final Leads</div>
+              <h2>لیدهای نهایی و آماده</h2>
+            </div>
+            <div class="panel-sub">Brain 4, Brain 5, approval, drafts</div>
+          </div>
+          <div class="cards" id="final-leads"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="eyebrow">Activity Feed</div>
+              <h2>رفتار اخیر ایجنت</h2>
+            </div>
+            <div class="panel-sub">Latest actions from the backend</div>
+          </div>
+          <div class="feed" id="activity-feed"></div>
         </article>
       </div>
     </section>
 
-    <section class="layout">
-      <div class="stack">
-        <article class="panel">
-          <div class="eyebrow">What It Does</div>
-          <h2>Project-driven sales ops for lean machines</h2>
-          <div class="grid">
-            <div class="feature">
-              <strong>Lead Discovery</strong>
-              <p>Collect businesses from Google Maps and manual sources, normalize them, and route them into project queues.</p>
-            </div>
-            <div class="feature">
-              <strong>Structured Scoring</strong>
-              <p>Score leads against project intent so teams can focus on the strongest fit instead of browsing raw lists.</p>
-            </div>
-            <div class="feature">
-              <strong>Human Approval</strong>
-              <p>Keep a review gate before outreach with Telegram approval requests and state-aware queue handling.</p>
-            </div>
-            <div class="feature">
-              <strong>Draft Creation</strong>
-              <p>Move approved leads toward outreach with project-aware strategy generation and Gmail draft workflows.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="panel">
-          <div class="eyebrow">Why This Site Exists</div>
-          <h2>GitHub can host the website, not the Python server</h2>
-          <p>
-            GitHub Pages is a static hosting platform. That means HTML, CSS, and JavaScript are fine, but the live local dashboard
-            from <code>ai-sales-agent</code> cannot run on GitHub itself because it needs a Python process and a writable SQLite database.
-          </p>
-          <p>
-            This page gives the project a clean hosted presence on your GitHub account. The operational dashboard stays local, where
-            it can access your database and workflow tools safely.
-          </p>
-          <span class="code">Local dashboard: http://127.0.0.1:8788</span>
-        </article>
-      </div>
-
-      <div class="stack">
-        <article class="panel">
-          <div class="eyebrow">Publish Steps</div>
-          <h2>Enable GitHub Pages</h2>
-          <div class="steps">
-            <div class="step">
-              <strong>1. Push these files to `main`</strong>
-              <p>The repository needs <code>index.html</code> at the root so GitHub Pages has a site entrypoint.</p>
-            </div>
-            <div class="step">
-              <strong>2. Open Repository Settings</strong>
-              <p>Go to <code>Settings -> Pages</code> in <code>EmadAmeri/ai-agents</code>.</p>
-            </div>
-            <div class="step">
-              <strong>3. Choose branch deploy</strong>
-              <p>Select <code>Deploy from a branch</code>, choose <code>main</code>, and folder <code>/(root)</code>.</p>
-            </div>
-            <div class="step">
-              <strong>4. Visit the site</strong>
-              <p>After the first build completes, open <code>https://emadameri.github.io/ai-agents/</code>.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="panel">
-          <div class="eyebrow">Repository</div>
-          <h2>Current target</h2>
-          <p><a href="https://github.com/EmadAmeri/ai-agents">github.com/EmadAmeri/ai-agents</a></p>
-          <p>
-            If this repository remains private, GitHub Pages availability depends on your GitHub plan. Public repositories work with
-            GitHub Free. Private repositories need a plan that supports Pages for private repos.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <p class="footer">AI Sales Agent project page for GitHub Pages</p>
+    <div class="notice">
+      GitHub Pages فقط فرانت‌اند را میزبانی می‌کند. برای این‌که این صفحه واقعاً زنده باشد، باید backend محلی‌ات را با یک URL عمومی در دسترس مرورگر قرار بدهی.
+      ساده‌ترین راه معمولاً tunnel است. بعد همین URL را بالا وارد می‌کنی.
+    </div>
   </main>
+
+  <script>
+    const state = {
+      backendUrl: localStorage.getItem("ai_agents_backend_url") || new URLSearchParams(location.search).get("backend") || "",
+      projectId: localStorage.getItem("ai_agents_project_id") || "",
+      refreshMs: Number(localStorage.getItem("ai_agents_refresh_ms") || "10000"),
+      timer: null
+    };
+
+    const metricsEl = document.getElementById("metrics");
+    const brainsEl = document.getElementById("brains");
+    const scoredEl = document.getElementById("top-scored");
+    const enrichedEl = document.getElementById("enriched-leads");
+    const finalEl = document.getElementById("final-leads");
+    const sourceRunsEl = document.getElementById("source-runs");
+    const activityEl = document.getElementById("activity-feed");
+    const backendInput = document.getElementById("backend-url");
+    const projectSelect = document.getElementById("project-select");
+    const refreshSelect = document.getElementById("refresh-select");
+    const connectBtn = document.getElementById("connect-btn");
+    const connectionState = document.getElementById("connection-state");
+    const lastUpdated = document.getElementById("last-updated");
+    const liveDot = document.getElementById("live-dot");
+    const nextWorkEl = document.getElementById("next-work");
+
+    backendInput.value = state.backendUrl;
+    refreshSelect.value = String(state.refreshMs);
+
+    function safe(value, fallback = "") {
+      if (value === null || value === undefined) return fallback;
+      const text = String(value).trim();
+      return text || fallback;
+    }
+
+    function formatTime(value) {
+      if (!value) return "n/a";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return safe(value, "n/a");
+      return date.toLocaleString("fa-IR", { dateStyle: "short", timeStyle: "medium" });
+    }
+
+    function normalizeUrl(value) {
+      return safe(value).replace(/\/+$/, "");
+    }
+
+    function el(tag, className, text) {
+      const node = document.createElement(tag);
+      if (className) node.className = className;
+      if (text !== undefined) node.textContent = text;
+      return node;
+    }
+
+    function emptyState(message) {
+      return el("div", "empty", message);
+    }
+
+    function updateConnection(ok, message, generatedAt) {
+      connectionState.textContent = message;
+      lastUpdated.textContent = generatedAt ? "Updated: " + formatTime(generatedAt) : "No data";
+      liveDot.className = ok ? "dot" : "dot off";
+    }
+
+    function renderMetrics(summary = {}) {
+      const items = [
+        ["Collected", summary.collected_total ?? 0, "لیدهای اولیه جمع‌آوری شده"],
+        ["Brain 2", summary.brain2_scored_total ?? 0, "تعداد لیدهای اسکور شده"],
+        ["Brain 3", summary.brain3_enriched_total ?? 0, "لیدهای enrich شده"],
+        ["Brain 4", summary.brain4_strategized_total ?? 0, "استراتژی‌های ساخته شده"],
+        ["Brain 5", summary.brain5_reviewed_total ?? 0, "بازبینی‌های نهایی"],
+        ["Final", summary.drafted_total ?? summary.approved_total ?? 0, "خروجی نهایی یا draft"]
+      ];
+      metricsEl.replaceChildren(...items.map(([label, value, meta]) => {
+        const card = el("article", "metric");
+        card.appendChild(el("div", "metric-label", label));
+        card.appendChild(el("div", "metric-value", String(value)));
+        card.appendChild(el("div", "metric-meta", meta));
+        return card;
+      }));
+    }
+
+    function renderBrains(brains = []) {
+      if (!brains.length) {
+        brainsEl.replaceChildren(emptyState("هنوز هیچ telemetry برای Brainها ثبت نشده."));
+        return;
+      }
+      brainsEl.replaceChildren(...brains.map((brain) => {
+        const card = el("article", "brain " + safe(brain.status));
+        const top = el("div", "brain-top");
+        top.appendChild(el("div", "brain-title", safe(brain.label)));
+        top.appendChild(el("div", "brain-badge", safe(brain.status, "idle")));
+        card.appendChild(top);
+        card.appendChild(el("p", "", safe(brain.action, "No active action")));
+        const meta = el("div", "brain-meta");
+        meta.appendChild(el("div", "", "Project: " + safe(brain.project_name, "-")));
+        meta.appendChild(el("div", "", "Lead: " + safe(brain.lead_id, "-")));
+        meta.appendChild(el("div", "", "Reason: " + safe(brain.reason, "-")));
+        meta.appendChild(el("div", "", "Updated: " + formatTime(brain.updated_at)));
+        card.appendChild(meta);
+        return card;
+      }));
+    }
+
+    function renderLeadCards(target, items, kind) {
+      if (!items.length) {
+        target.replaceChildren(emptyState("فعلاً آیتمی برای نمایش نیست."));
+        return;
+      }
+      target.replaceChildren(...items.map((item) => {
+        const card = el("article", "card");
+        const top = el("div", "card-top");
+        const left = document.createElement("div");
+        left.appendChild(el("h3", "card-title", safe(item.company_name, "Unknown")));
+        left.appendChild(el("p", "", safe(item.city, "")));
+        top.appendChild(left);
+        top.appendChild(el("div", "panel-sub", safe(item.scored_at || item.enriched_at || item.draft_created_at, "")));
+        card.appendChild(top);
+        const pills = el("div", "pill-row");
+        const pillValues = [];
+        if (kind === "scored") {
+          pillValues.push(safe(item.fit_classification, "unrated"));
+          pillValues.push(safe(item.lead_tag, ""));
+        }
+        if (kind === "enriched") {
+          pillValues.push(safe(item.event_type, ""));
+          pillValues.push(item.data_confidence !== undefined ? "confidence " + item.data_confidence : "");
+        }
+        if (kind === "final") {
+          pillValues.push(safe(item.verdict, ""));
+          pillValues.push(safe(item.approval_status, ""));
+          pillValues.push(safe(item.draft_status, ""));
+        }
+        pillValues.filter(Boolean).forEach((value) => pills.appendChild(el("span", "pill", value)));
+        if (pills.childNodes.length) card.appendChild(pills);
+        const body = kind === "scored"
+          ? safe(item.reason_summary, "No score summary")
+          : kind === "enriched"
+            ? safe(item.partnership_relevance || item.contact_info_summary, "No enrichment summary")
+            : safe(item.outreach_path || item.website || item.email || item.phone, "No final summary");
+        card.appendChild(el("p", "", body));
+        return card;
+      }));
+    }
+
+    function renderSourceRuns(runs = []) {
+      if (!runs.length) {
+        sourceRunsEl.replaceChildren(emptyState("هنوز ران جمع‌آوری ثبت نشده."));
+        return;
+      }
+      sourceRunsEl.replaceChildren(...runs.map((run) => {
+        const card = el("article", "run");
+        const top = el("div", "run-top");
+        top.appendChild(el("div", "run-title", safe(run.source_type, "source")));
+        top.appendChild(el("div", "panel-sub", safe(run.status, "unknown")));
+        card.appendChild(top);
+        const pills = el("div", "pill-row");
+        ["raw " + safe(run.raw_count, 0), "inserted " + safe(run.inserted_count, 0), "dupe " + safe(run.duplicate_count, 0)].forEach((value) => {
+          pills.appendChild(el("span", "pill", value));
+        });
+        card.appendChild(pills);
+        card.appendChild(el("p", "", "Project: " + safe(run.project_name, "-")));
+        card.appendChild(el("p", "", "Created: " + formatTime(run.created_at)));
+        return card;
+      }));
+    }
+
+    function renderActivity(items = []) {
+      if (!items.length) {
+        activityEl.replaceChildren(emptyState("هنوز activity‌ای برای نمایش نیست."));
+        return;
+      }
+      activityEl.replaceChildren(...items.map((item) => {
+        const row = el("div", "feed-item");
+        row.appendChild(el("div", "feed-time", formatTime(item.created_at)));
+        row.appendChild(el("p", "", safe(item.action, "action")));
+        row.appendChild(el("p", "", safe(item.company_name || item.project_name || item.detail, "")));
+        if (safe(item.detail)) {
+          row.appendChild(el("p", "", safe(item.detail)));
+        }
+        return row;
+      }));
+    }
+
+    function renderProjects(projects = [], selectedId = "") {
+      const current = String(selectedId || "");
+      const old = projectSelect.value;
+      projectSelect.replaceChildren(el("option", "", "Auto"));
+      projectSelect.firstChild.value = "";
+      projects.forEach((project) => {
+        const option = el("option", "", safe(project.name));
+        option.value = String(project.id);
+        if (String(project.id) === current || String(project.id) === old) {
+          option.selected = true;
+        }
+        projectSelect.appendChild(option);
+      });
+    }
+
+    async function loadLiveBoard() {
+      const backendUrl = normalizeUrl(state.backendUrl);
+      if (!backendUrl) {
+        updateConnection(false, "آدرس backend وارد نشده", "");
+        return;
+      }
+      const params = new URLSearchParams();
+      if (state.projectId) params.set("project_id", String(state.projectId));
+      const url = backendUrl + "/api/live-dashboard" + (params.toString() ? "?" + params.toString() : "");
+      try {
+        const response = await fetch(url, { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error("HTTP " + response.status);
+        }
+        const payload = await response.json();
+        renderMetrics(payload.summary || {});
+        renderBrains(payload.brain_states || []);
+        renderLeadCards(scoredEl, payload.top_scored_leads || [], "scored");
+        renderLeadCards(enrichedEl, payload.enriched_leads || [], "enriched");
+        renderLeadCards(finalEl, payload.final_leads || [], "final");
+        renderSourceRuns(payload.source_runs || []);
+        renderActivity(payload.recent_activity || []);
+        renderProjects(payload.projects || [], payload.selected_project ? payload.selected_project.id : "");
+        nextWorkEl.textContent = payload.next_work
+          ? safe(payload.next_work.action) + " • " + safe(payload.next_work.project_name) + (payload.next_work.lead_id ? " • lead #" + payload.next_work.lead_id : "")
+          : "No queued work";
+        updateConnection(true, "Live backend connected", payload.generated_at);
+      } catch (error) {
+        updateConnection(false, "ارتباط با backend برقرار نشد: " + safe(error.message, "unknown error"), "");
+      }
+    }
+
+    function schedulePolling() {
+      if (state.timer) window.clearInterval(state.timer);
+      state.timer = window.setInterval(loadLiveBoard, state.refreshMs);
+    }
+
+    connectBtn.addEventListener("click", () => {
+      state.backendUrl = normalizeUrl(backendInput.value);
+      state.projectId = projectSelect.value;
+      state.refreshMs = Number(refreshSelect.value || "10000");
+      localStorage.setItem("ai_agents_backend_url", state.backendUrl);
+      localStorage.setItem("ai_agents_project_id", state.projectId);
+      localStorage.setItem("ai_agents_refresh_ms", String(state.refreshMs));
+      schedulePolling();
+      loadLiveBoard();
+    });
+
+    projectSelect.addEventListener("change", () => {
+      state.projectId = projectSelect.value;
+      localStorage.setItem("ai_agents_project_id", state.projectId);
+      loadLiveBoard();
+    });
+
+    refreshSelect.addEventListener("change", () => {
+      state.refreshMs = Number(refreshSelect.value || "10000");
+      localStorage.setItem("ai_agents_refresh_ms", String(state.refreshMs));
+      schedulePolling();
+    });
+
+    schedulePolling();
+    if (state.backendUrl) {
+      loadLiveBoard();
+    } else {
+      renderMetrics({});
+      renderBrains([]);
+      renderLeadCards(scoredEl, [], "scored");
+      renderLeadCards(enrichedEl, [], "enriched");
+      renderLeadCards(finalEl, [], "final");
+      renderSourceRuns([]);
+      renderActivity([]);
+    }
+  </script>
 </body>
 </html>
