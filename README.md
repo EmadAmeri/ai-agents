@@ -1,16 +1,44 @@
-# AI Agents
+# AI Agents Live Board
 
-Static project site for GitHub Pages.
+GitHub Pages frontend for a live AI Sales Agent dashboard.
 
-Expected Pages URL:
+## Architecture
+
+- Frontend: GitHub Pages
+- Backend: your local computer running `ai-sales-agent`
+- Live API endpoint: `/api/live-dashboard`
+
+## Important
+
+GitHub Pages cannot run Python. The backend must stay on your machine.
+To make the GitHub-hosted page show live data, expose your local dashboard API with a public URL and put that URL into the page.
+
+Example backend URL:
+
+- `https://your-public-url.example.com`
+
+Expected API:
+
+- `https://your-public-url.example.com/api/live-dashboard`
+
+## Frontend URL
 
 - `https://emadameri.github.io/ai-agents/`
 
-This repository intentionally hosts a static page only. The live Python dashboard for the operational system stays local because GitHub Pages cannot run a Python server or persist a writable SQLite database.
+## Local backend
 
-To publish:
+The local backend lives in `/home/agmentic/ai-sales-agent` and now provides:
 
-1. Push these files to the `main` branch.
-2. In GitHub, open `Settings -> Pages`.
-3. Set `Source` to `Deploy from a branch`.
-4. Select branch `main` and folder `/(root)`.
+- `/api/dashboard`
+- `/api/live-dashboard`
+
+The live endpoint includes:
+
+- collected lead counts
+- Brain 1 to Brain 5 status
+- next queued action
+- top scored leads
+- enriched leads
+- final leads
+- recent source runs
+- recent activity feed
