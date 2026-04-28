@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Sales Agent</title>
+  <meta name="description" content="AI Sales Agent project page hosted on GitHub Pages.">
+  <style>
+    :root {
+      --bg: #f4efe7;
+      --panel: rgba(255, 252, 247, 0.88);
+      --text: #182126;
+      --muted: #5c6a71;
+      --line: rgba(24, 33, 38, 0.12);
+      --accent: #bc5a34;
+      --accent-2: #1e7a6e;
+      --accent-3: #d8b562;
+      --shadow: 0 24px 80px rgba(18, 26, 31, 0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      background:
+        radial-gradient(circle at top left, rgba(188, 90, 52, 0.16), transparent 24%),
+        radial-gradient(circle at 88% 12%, rgba(30, 122, 110, 0.16), transparent 20%),
+        linear-gradient(180deg, #fbf6ef 0%, #efe6d8 55%, #f7f2ea 100%);
+      min-height: 100vh;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(24, 33, 38, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(24, 33, 38, 0.03) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.08));
+    }
+    .shell {
+      position: relative;
+      z-index: 1;
+      width: min(1180px, calc(100vw - 32px));
+      margin: 20px auto 40px;
+    }
+    .hero, .panel, .stat, .step {
+      backdrop-filter: blur(14px);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      border-radius: 30px;
+      padding: 28px;
+      display: grid;
+      gap: 20px;
+    }
+    .hero-top {
+      display: flex;
+      gap: 18px;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .eyebrow, .label {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    h1 {
+      margin: 10px 0 0;
+      font-size: clamp(36px, 6vw, 72px);
+      line-height: 0.94;
+      max-width: 8ch;
+    }
+    .subtitle {
+      max-width: 64ch;
+      margin: 14px 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 17px;
+    }
+    .badge {
+      min-width: 280px;
+      padding: 18px 20px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(24, 33, 38, 0.96), rgba(42, 63, 70, 0.94));
+      color: #f7f2ea;
+    }
+    .badge .live {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .badge .live::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #70f0c4;
+      box-shadow: 0 0 0 0 rgba(112, 240, 196, 0.6);
+      animation: pulse 1.8s infinite;
+    }
+    .badge strong {
+      display: block;
+      margin-top: 18px;
+      font-size: 24px;
+      line-height: 1.1;
+    }
+    .badge p {
+      margin: 8px 0 0;
+      color: rgba(247, 242, 234, 0.8);
+      line-height: 1.55;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .stat {
+      border-radius: 22px;
+      padding: 18px;
+    }
+    .stat .value {
+      margin-top: 10px;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      line-height: 1;
+    }
+    .layout {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+    }
+    .stack {
+      display: grid;
+      gap: 18px;
+    }
+    .panel {
+      border-radius: 26px;
+      padding: 22px;
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 28px;
+      line-height: 1.05;
+    }
+    .panel p, .panel li {
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .feature {
+      border-radius: 20px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.54);
+      border: 1px solid rgba(24, 33, 38, 0.08);
+    }
+    .feature strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+    .steps {
+      display: grid;
+      gap: 12px;
+    }
+    .step {
+      border-radius: 20px;
+      padding: 16px 18px;
+    }
+    .step strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+    .code {
+      display: block;
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(24, 33, 38, 0.94);
+      color: #f7f2ea;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 13px;
+      overflow-x: auto;
+    }
+    .footer {
+      margin-top: 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    a {
+      color: var(--accent-2);
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(112, 240, 196, 0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(112, 240, 196, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(112, 240, 196, 0); }
+    }
+    @media (max-width: 900px) {
+      .stats, .layout, .grid {
+        grid-template-columns: 1fr;
+      }
+      .badge {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-top">
+        <div>
+          <div class="eyebrow">GitHub Pages Deployment</div>
+          <h1>AI Sales Agent</h1>
+          <p class="subtitle">
+            A local-first sales operations system with lead discovery, scoring, enrichment, approvals, and draft generation.
+            This GitHub Pages site is the static public face of the project, while the live Python dashboard runs locally.
+          </p>
+        </div>
+        <aside class="badge">
+          <div class="live">Static Project Site</div>
+          <strong>Ready for GitHub hosting</strong>
+          <p>
+            Publish this repository with GitHub Pages and the site will be available at
+            <code>https://emadameri.github.io/ai-agents/</code>.
+          </p>
+        </aside>
+      </div>
+
+      <div class="stats">
+        <article class="stat">
+          <div class="label">Mode</div>
+          <div class="value">Static</div>
+        </article>
+        <article class="stat">
+          <div class="label">Backend</div>
+          <div class="value">Python</div>
+        </article>
+        <article class="stat">
+          <div class="label">Storage</div>
+          <div class="value">SQLite</div>
+        </article>
+        <article class="stat">
+          <div class="label">Hosting</div>
+          <div class="value">Pages</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="layout">
+      <div class="stack">
+        <article class="panel">
+          <div class="eyebrow">What It Does</div>
+          <h2>Project-driven sales ops for lean machines</h2>
+          <div class="grid">
+            <div class="feature">
+              <strong>Lead Discovery</strong>
+              <p>Collect businesses from Google Maps and manual sources, normalize them, and route them into project queues.</p>
+            </div>
+            <div class="feature">
+              <strong>Structured Scoring</strong>
+              <p>Score leads against project intent so teams can focus on the strongest fit instead of browsing raw lists.</p>
+            </div>
+            <div class="feature">
+              <strong>Human Approval</strong>
+              <p>Keep a review gate before outreach with Telegram approval requests and state-aware queue handling.</p>
+            </div>
+            <div class="feature">
+              <strong>Draft Creation</strong>
+              <p>Move approved leads toward outreach with project-aware strategy generation and Gmail draft workflows.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="eyebrow">Why This Site Exists</div>
+          <h2>GitHub can host the website, not the Python server</h2>
+          <p>
+            GitHub Pages is a static hosting platform. That means HTML, CSS, and JavaScript are fine, but the live local dashboard
+            from <code>ai-sales-agent</code> cannot run on GitHub itself because it needs a Python process and a writable SQLite database.
+          </p>
+          <p>
+            This page gives the project a clean hosted presence on your GitHub account. The operational dashboard stays local, where
+            it can access your database and workflow tools safely.
+          </p>
+          <span class="code">Local dashboard: http://127.0.0.1:8788</span>
+        </article>
+      </div>
+
+      <div class="stack">
+        <article class="panel">
+          <div class="eyebrow">Publish Steps</div>
+          <h2>Enable GitHub Pages</h2>
+          <div class="steps">
+            <div class="step">
+              <strong>1. Push these files to `main`</strong>
+              <p>The repository needs <code>index.html</code> at the root so GitHub Pages has a site entrypoint.</p>
+            </div>
+            <div class="step">
+              <strong>2. Open Repository Settings</strong>
+              <p>Go to <code>Settings -> Pages</code> in <code>EmadAmeri/ai-agents</code>.</p>
+            </div>
+            <div class="step">
+              <strong>3. Choose branch deploy</strong>
+              <p>Select <code>Deploy from a branch</code>, choose <code>main</code>, and folder <code>/(root)</code>.</p>
+            </div>
+            <div class="step">
+              <strong>4. Visit the site</strong>
+              <p>After the first build completes, open <code>https://emadameri.github.io/ai-agents/</code>.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="eyebrow">Repository</div>
+          <h2>Current target</h2>
+          <p><a href="https://github.com/EmadAmeri/ai-agents">github.com/EmadAmeri/ai-agents</a></p>
+          <p>
+            If this repository remains private, GitHub Pages availability depends on your GitHub plan. Public repositories work with
+            GitHub Free. Private repositories need a plan that supports Pages for private repos.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <p class="footer">AI Sales Agent project page for GitHub Pages</p>
+  </main>
+</body>
+</html>
