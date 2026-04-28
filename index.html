@@ -556,7 +556,7 @@
 
   <script>
     const state = {
-      backendUrl: localStorage.getItem("ai_agents_backend_url") || new URLSearchParams(location.search).get("backend") || "",
+      backendUrl: localStorage.getItem("ai_agents_backend_url") || new URLSearchParams(location.search).get("backend") || "https://decent-tsunami-wages-pos.trycloudflare.com",
       projectId: localStorage.getItem("ai_agents_project_id") || "",
       refreshMs: Number(localStorage.getItem("ai_agents_refresh_ms") || "10000"),
       timer: null
