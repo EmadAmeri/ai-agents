@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-04-29T16:05:55",
+  "generated_at": "2026-04-29T16:06:57",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
     "waiting_approvals": 2,
     "total_activity": 126,
-    "collected_total": 66,
+    "collected_total": 67,
     "brain2_scored_total": 61,
     "brain3_enriched_total": 2,
     "brain4_strategized_total": 2,
@@ -49,7 +49,7 @@
       "blocked_tasks": 0,
       "paused_tasks": 0,
       "completed_tasks": 0,
-      "raw_leads": 64,
+      "raw_leads": 65,
       "shortlisted_leads": 0,
       "awaiting_approval_leads": 2,
       "approved_leads": 0,
@@ -116,7 +116,7 @@
     "blocked_tasks": 0,
     "paused_tasks": 0,
     "completed_tasks": 0,
-    "raw_leads": 64,
+    "raw_leads": 65,
     "shortlisted_leads": 0,
     "awaiting_approval_leads": 2,
     "approved_leads": 0,
@@ -130,7 +130,7 @@
   "stage_counts": {
     "project_id": 2,
     "project_name": "Sentra Conferences",
-    "initial_leads_count": 66,
+    "initial_leads_count": 67,
     "scored_leads_count": 61,
     "enriched_leads_count": 2,
     "strategized_leads_count": 2,
@@ -139,8 +139,31 @@
   "stages": {
     "initial": {
       "label": "Initial Intake",
-      "count": 5,
+      "count": 6,
       "items": [
+        {
+          "lead_id": 72,
+          "company_name": "Christoph Anzer Eventdekorationen, Flowers & Wedding",
+          "website": "",
+          "location": "München, DE",
+          "contact_name": "",
+          "email": "",
+          "phone": "0176 84141069",
+          "status": "raw",
+          "approval_status": "not_requested",
+          "message_approval_status": "not_requested",
+          "score": 0,
+          "fit_label": "",
+          "brain2_summary": "",
+          "brain3_event_type": "",
+          "brain4_path": "",
+          "brain5_verdict": "",
+          "company_description": "google_maps_scraper source_row; address=Frei-Otto-Straße 22, 80797 München; phone=0176 84141069; category=Event management company; place_id=ChIJWwYGxqrYnUcRhBIyvDPfM0Y; query=event organizers in Munich",
+          "approval_brief": "google_maps_scraper source_row; address=Frei-Otto-Straße 22, 80797 München; phone=0176 84141069; category=Event management company; place_id=ChIJWwYGxqrYnUcRhBIyvDPfM0Y; query=event organizers in Munich",
+          "best_contact_strategy": "",
+          "channels": [],
+          "key_people": []
+        },
         {
           "lead_id": 71,
           "company_name": "MICE MUNICH",
@@ -889,22 +912,22 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold",
-      "updated_at": "2026-04-29T12:35:56+00:00",
+      "updated_at": "2026-04-29T14:06:57+00:00",
       "started_at": "",
-      "finished_at": "2026-04-29T12:35:56+00:00",
+      "finished_at": "2026-04-29T14:06:57+00:00",
       "details": {
         "action": "collect_initial_leads",
-        "duplicates": 1,
-        "inserted": 0,
+        "duplicates": 0,
+        "inserted": 1,
         "items": [
           {
-            "company_name": "teamazing GmbH",
-            "lead_id": 32,
-            "record_status": "duplicate"
+            "company_name": "Christoph Anzer Eventdekorationen, Flowers & Wedding",
+            "lead_id": 72,
+            "record_status": "inserted"
           }
         ],
         "result_status": "completed",
-        "run_id": 56
+        "run_id": 57
       }
     },
     {
@@ -928,11 +951,11 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "scored leads are queued for Brain 3 enrichment",
-      "updated_at": "2026-04-29T14:05:55+00:00",
+      "updated_at": "2026-04-29T14:06:57+00:00",
       "started_at": "",
-      "finished_at": "2026-04-29T14:05:55+00:00",
+      "finished_at": "2026-04-29T14:06:57+00:00",
       "details": {
-        "error": "Gemini Brain 3 request failed: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 54.329373627s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"20\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"54s\"\n      }\n    ]\n  }\n}\n",
+        "error": "Gemini Brain 3 request failed: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 52.050830193s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"20\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"52s\"\n      }\n    ]\n  }\n}\n",
         "result_status": "error"
       }
     },
@@ -988,6 +1011,15 @@
     }
   ],
   "collected_leads": [
+    {
+      "lead_id": 72,
+      "company_name": "Christoph Anzer Eventdekorationen, Flowers & Wedding",
+      "city": "München",
+      "website": "",
+      "phone": "0176 84141069",
+      "source": "google_maps_scraper",
+      "collected_at": "2026-04-29 14:06:57"
+    },
     {
       "lead_id": 71,
       "company_name": "MICE MUNICH",
@@ -1068,15 +1100,6 @@
       "phone": "089 90139868",
       "source": "google_maps_scraper",
       "collected_at": "2026-04-24 18:23:24"
-    },
-    {
-      "lead_id": 62,
-      "company_name": "Deko Design GmbH",
-      "city": "München",
-      "website": "",
-      "phone": "089 3002530",
-      "source": "google_maps_scraper",
-      "collected_at": "2026-04-24 17:51:34"
     }
   ],
   "top_scored_leads": [
