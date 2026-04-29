@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Agmentic Sales Agent</title>
-  <meta name="description" content="Live dashboard for the Agmentic sales agent backend.">
+  <meta name="description" content="Static dashboard snapshot for the Agmentic sales agent workflow.">
   <style>
     :root {
       --bg: #060807;
@@ -543,7 +543,7 @@
     <header class="masthead">
       <h1 class="brand-title">Agmentic Sales Agent</h1>
       <div class="live-rail">
-        <div class="live-row"><span id="live-dot" class="dot"></span><strong id="connection-state">Connecting to local backend</strong></div>
+        <div class="live-row"><span id="live-dot" class="dot"></span><strong id="connection-state">Loading latest snapshot</strong></div>
         <div class="live-row"><span>Updated</span><span id="last-updated">No data</span></div>
       </div>
     </header>
@@ -559,7 +559,7 @@
           <div class="mesh-overlay">
             <div class="mesh-kicker">Agent Orbit Mesh</div>
             <div class="mesh-meta">
-              <div class="status-chip" id="connection-chip">Backend disconnected</div>
+              <div class="status-chip" id="connection-chip">Snapshot unavailable</div>
               <div class="status-chip" id="next-work-chip">No queued work</div>
               <div class="status-chip" id="selected-project-summary">Auto project selection</div>
             </div>
