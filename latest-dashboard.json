@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-04-29T09:10:39",
+  "generated_at": "2026-04-29T09:10:59",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
     "waiting_approvals": 2,
-    "total_activity": 125,
+    "total_activity": 126,
     "collected_total": 66,
     "brain2_scored_total": 61,
     "brain3_enriched_total": 2,
     "brain4_strategized_total": 2,
-    "brain5_reviewed_total": 1,
+    "brain5_reviewed_total": 2,
     "approved_total": 0,
     "drafted_total": 0,
     "message_review_total": 0
@@ -468,9 +468,9 @@
           "brain2_summary": "Event management company likely to host events.",
           "brain3_event_type": "Event management agency (organizes corporate events, product launches, gala dinners, incentives, trade fair appearances",
           "brain4_path": "Direct, personalized multi-channel outreach to the Managing Directors.",
-          "brain5_verdict": "",
+          "brain5_verdict": "Needs revision – the current plan is overly generic, has incomplete data, and contains sequencing risks that could reduc",
           "company_description": "DAPP EVENTS operates as an event management agency, providing comprehensive services to clients for planning and executing their events. Their revenue comes from service fees charged to clients for event organization.",
-          "approval_brief": "DAPP EVENTS is a full-service event management agency based in Kirchheim bei München, specializing in comprehensive event conception, planning, and execution for corporate and private clients. They manage all aspects from logistics and catering to technology and guest management, aiming to deliver seamless and impactful events. Key contacts are Daniel and Patrick Appelt, both Managing Directors.",
+          "approval_brief": "The lead is a small full‑service event agency in Kirchheim bei München. Decision‑makers are Daniel and Patrick Appelt (Co‑Managing Directors). Contact data is solid for email/LinkedIn but missing a website, tech‑stack details, and additional influencers. Revised outreach adds a case‑study attachment, a voicemail step, and tighter sequencing.",
           "best_contact_strategy": "",
           "channels": [],
           "key_people": [
@@ -578,9 +578,9 @@
           "brain2_summary": "Event management company likely to host events.",
           "brain3_event_type": "Event management agency (organizes corporate events, product launches, gala dinners, incentives, trade fair appearances",
           "brain4_path": "Direct, personalized multi-channel outreach to the Managing Directors.",
-          "brain5_verdict": "",
+          "brain5_verdict": "Needs revision – the current plan is overly generic, has incomplete data, and contains sequencing risks that could reduc",
           "company_description": "DAPP EVENTS operates as an event management agency, providing comprehensive services to clients for planning and executing their events. Their revenue comes from service fees charged to clients for event organization.",
-          "approval_brief": "DAPP EVENTS is a full-service event management agency based in Kirchheim bei München, specializing in comprehensive event conception, planning, and execution for corporate and private clients. They manage all aspects from logistics and catering to technology and guest management, aiming to deliver seamless and impactful events. Key contacts are Daniel and Patrick Appelt, both Managing Directors.",
+          "approval_brief": "The lead is a small full‑service event agency in Kirchheim bei München. Decision‑makers are Daniel and Patrick Appelt (Co‑Managing Directors). Contact data is solid for email/LinkedIn but missing a website, tech‑stack details, and additional influencers. Revised outreach adds a case‑study attachment, a voicemail step, and tighter sequencing.",
           "best_contact_strategy": "",
           "channels": [],
           "key_people": [
@@ -757,7 +757,7 @@
       "brain4_path": "",
       "brain5_verdict": "",
       "company_description": "DAPP EVENTS operates as an event management agency, providing comprehensive services to clients for planning and executing their events. Their revenue comes from service fees charged to clients for event organization.",
-      "approval_brief": "DAPP EVENTS is a full-service event management agency based in Kirchheim bei München, specializing in comprehensive event conception, planning, and execution for corporate and private clients. They manage all aspects from logistics and catering to technology and guest management, aiming to deliver seamless and impactful events. Key contacts are Daniel and Patrick Appelt, both Managing Directors.",
+      "approval_brief": "The lead is a small full‑service event agency in Kirchheim bei München. Decision‑makers are Daniel and Patrick Appelt (Co‑Managing Directors). Contact data is solid for email/LinkedIn but missing a website, tech‑stack details, and additional influencers. Revised outreach adds a case‑study attachment, a voicemail step, and tighter sequencing.",
       "best_contact_strategy": "",
       "channels": [],
       "key_people": [
@@ -782,6 +782,14 @@
   ],
   "pending_message_approvals": [],
   "recent_activity": [
+    {
+      "created_at": "2026-04-29T07:10:59+00:00",
+      "action": "strategy_stored",
+      "project_name": "Sentra Conferences",
+      "company_name": "DAPP EVENTS",
+      "task_title": "",
+      "detail": "DAPP EVENTS status=generated"
+    },
     {
       "created_at": "2026-04-29T07:10:39+00:00",
       "action": "strategy_stored",
@@ -869,22 +877,9 @@
       "company_name": "Konferenzzentrum München",
       "task_title": "",
       "detail": "Konferenzzentrum München via telegram_waiting_approval"
-    },
-    {
-      "created_at": "2026-04-23T19:42:06+00:00",
-      "action": "lead_enriched",
-      "project_name": "Sentra Conferences",
-      "company_name": "Konferenzzentrum München",
-      "task_title": "",
-      "detail": "Konferenzzentrum München source=brain3_gemini"
     }
   ],
-  "next_work": {
-    "action": "brain5_review_strategy",
-    "project_name": "Sentra Conferences",
-    "lead_id": 7,
-    "reason": "Brain 4 result must be reviewed before final output"
-  },
+  "next_work": null,
   "brain_states": [
     {
       "brain": "brain1",
@@ -964,20 +959,20 @@
     {
       "brain": "brain5",
       "label": "Brain 5",
-      "status": "queued",
+      "status": "idle",
       "action": "brain5_review_strategy",
       "project_name": "Sentra Conferences",
-      "lead_id": 6,
+      "lead_id": 7,
       "reason": "Brain 4 result must be reviewed before final output",
-      "updated_at": "2026-04-29T04:09:06+00:00",
+      "updated_at": "2026-04-29T07:10:59+00:00",
       "started_at": "",
-      "finished_at": "2026-04-29T04:09:06+00:00",
+      "finished_at": "2026-04-29T07:10:59+00:00",
       "details": {
         "action": "brain5_review_strategy",
-        "lead_id": 6,
+        "lead_id": 7,
         "model": "openai/gpt-oss-120b",
         "result_status": "completed",
-        "verdict": "Needs revision before approval"
+        "verdict": "Needs revision – the current plan is overly generic, has incomplete data, and contains sequencing risks that could reduc"
       }
     },
     {
@@ -1332,10 +1327,10 @@
       "message_approval_status": "not_requested",
       "draft_status": "not_created",
       "draft_created_at": "",
-      "verdict": "",
+      "verdict": "Needs revision – the current plan is overly generic, has incomplete data, and contains sequencing risks that could reduc",
       "outreach_path": "Direct, personalized multi-channel outreach to the Managing Directors.",
       "partnership_relevance": "DAPP EVENTS is an event management agency that organizes events for various clients. They are highly relevant for partnerships related to event technology, venue services, catering, or other event-related solutions, as they would integrate",
-      "completed_at": "2026-04-29T07:10:39+00:00"
+      "completed_at": "2026-04-29T07:10:59+00:00"
     },
     {
       "lead_id": 6,
