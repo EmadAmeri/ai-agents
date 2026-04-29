@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T18:22:18",
+  "generated_at": "2026-04-29T18:22:49",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
@@ -9,7 +9,6 @@
     "collected_total": 67,
     "brain2_scored_total": 61,
     "brain3_enriched_total": 2,
-    "brain4_strategized_total": 2,
     "brain5_reviewed_total": 2,
     "approved_total": 0,
     "drafted_total": 0,
@@ -156,11 +155,9 @@
           "fit_label": "",
           "brain2_summary": "",
           "brain3_event_type": "",
-          "brain4_path": "",
           "brain5_verdict": "",
           "company_description": "google_maps_scraper source_row; address=Frei-Otto-Straße 22, 80797 München; phone=0176 84141069; category=Event management company; place_id=ChIJWwYGxqrYnUcRhBIyvDPfM0Y; query=event organizers in Munich",
           "approval_brief": "google_maps_scraper source_row; address=Frei-Otto-Straße 22, 80797 München; phone=0176 84141069; category=Event management company; place_id=ChIJWwYGxqrYnUcRhBIyvDPfM0Y; query=event organizers in Munich",
-          "best_contact_strategy": "",
           "channels": [],
           "key_people": []
         },
@@ -179,11 +176,9 @@
           "fit_label": "",
           "brain2_summary": "",
           "brain3_event_type": "",
-          "brain4_path": "",
           "brain5_verdict": "",
           "company_description": "google_maps_scraper source_row; address=Gabelsbergerstraße 7, 80333 München; phone=089 230696636; category=Event planner; place_id=ChIJtxuISWF1nkcRdTTE_KmWM8U; query=event organizers in Munich",
           "approval_brief": "google_maps_scraper source_row; address=Gabelsbergerstraße 7, 80333 München; phone=089 230696636; category=Event planner; place_id=ChIJtxuISWF1nkcRdTTE_KmWM8U; query=event organizers in Munich",
-          "best_contact_strategy": "",
           "channels": [],
           "key_people": []
         },
@@ -202,11 +197,9 @@
           "fit_label": "",
           "brain2_summary": "",
           "brain3_event_type": "",
-          "brain4_path": "",
           "brain5_verdict": "",
           "company_description": "google_maps_scraper source_row; address=Infanteriestraße 11a, 80797 München; phone=089 904222310; category=Event management company; place_id=ChIJfYlsVZV1nkcRHERzqk-lG78; query=event organizers in Munich",
           "approval_brief": "google_maps_scraper source_row; address=Infanteriestraße 11a, 80797 München; phone=089 904222310; category=Event management company; place_id=ChIJfYlsVZV1nkcRHERzqk-lG78; query=event organizers in Munich",
-          "best_contact_strategy": "",
           "channels": [],
           "key_people": []
         },
@@ -225,11 +218,9 @@
           "fit_label": "",
           "brain2_summary": "",
           "brain3_event_type": "",
-          "brain4_path": "",
           "brain5_verdict": "",
           "company_description": "google_maps_scraper source_row; address=Kistlerhofstraße 70/Gebäude 160, 81379 München; phone=089 59043943; category=Event management company; place_id=ChIJk0hEiCnfnUcRuYWQW-IZDMo; query=event management firms Munich",
           "approval_brief": "google_maps_scraper source_row; address=Kistlerhofstraße 70/Gebäude 160, 81379 München; phone=089 59043943; category=Event management company; place_id=ChIJk0hEiCnfnUcRuYWQW-IZDMo; query=event management firms Munich",
-          "best_contact_strategy": "",
           "channels": [],
           "key_people": []
         },
@@ -248,11 +239,9 @@
           "fit_label": "",
           "brain2_summary": "",
           "brain3_event_type": "",
-          "brain4_path": "",
           "brain5_verdict": "",
           "company_description": "google_maps_scraper source_row; address=Rotwandweg 20, 85748 Garching bei München; phone=089 32989062; category=Event management company; place_id=ChIJ6SdX4_tynkcRIhDNdbO0UV8; query=conference planning companies Munich",
           "approval_brief": "google_maps_scraper source_row; address=Rotwandweg 20, 85748 Garching bei München; phone=089 32989062; category=Event management company; place_id=ChIJ6SdX4_tynkcRIhDNdbO0UV8; query=conference planning companies Munich",
-          "best_contact_strategy": "",
           "channels": [],
           "key_people": []
         },
@@ -271,11 +260,9 @@
           "fit_label": "",
           "brain2_summary": "",
           "brain3_event_type": "",
-          "brain4_path": "",
           "brain5_verdict": "",
           "company_description": "google_maps_scraper source_row; address=Ludwig-Bölkow-Allee 1, 82024 Taufkirchen; phone=089 4524455995; category=Adventure sports center; place_id=ChIJmbi491_nnUcRiCEeh9Jftw0; query=event organizers in Munich",
           "approval_brief": "google_maps_scraper source_row; address=Ludwig-Bölkow-Allee 1, 82024 Taufkirchen; phone=089 4524455995; category=Adventure sports center; place_id=ChIJmbi491_nnUcRiCEeh9Jftw0; query=event organizers in Munich",
-          "best_contact_strategy": "",
           "channels": [],
           "key_people": []
         }
@@ -300,11 +287,9 @@
           "fit_label": "fit",
           "brain2_summary": "Event management company located in Munich, matching the need for conference and event organizers.",
           "brain3_event_type": "",
-          "brain4_path": "",
           "brain5_verdict": "",
           "company_description": "google_maps_scraper source_row; address=Theresienstraße 134, 80333 München; phone=089 3866760; category=Event management company; place_id=ChIJM9iKkOZ1nkcRXmCkqyS_stk; query=conference planning companies Munich",
           "approval_brief": "google_maps_scraper source_row; address=Theresienstraße 134, 80333 München; phone=089 3866760; category=Event management company; place_id=ChIJM9iKkOZ1nkcRXmCkqyS_stk; query=conference planning companies Munich",
-          "best_contact_strategy": "",
           "channels": [],
           "key_people": []
         },
@@ -323,11 +308,9 @@
           "fit_label": "fit",
           "brain2_summary": "Event management company, suitable partner.",
           "brain3_event_type": "",
-          "brain4_path": "",
           "brain5_verdict": "",
           "company_description": "google_maps_scraper source_row; address=Innere Wiener Straße 11, 81667 München; phone=089 716771250; category=Event management company; place_id=ChIJF3YVw7t1nkcRz9kxc-qQqzs; query=event management firms Munich",
           "approval_brief": "google_maps_scraper source_row; address=Innere Wiener Straße 11, 81667 München; phone=089 716771250; category=Event management company; place_id=ChIJF3YVw7t1nkcRz9kxc-qQqzs; query=event management firms Munich",
-          "best_contact_strategy": "",
           "channels": [],
           "key_people": []
         },
@@ -346,11 +329,9 @@
           "fit_label": "fit",
           "brain2_summary": "Event planner, suitable partner.",
           "brain3_event_type": "",
-          "brain4_path": "",
           "brain5_verdict": "",
           "company_description": "google_maps_scraper source_row; address=Fraunhoferstraße 3, 80469 München; category=Event planner; place_id=ChIJZ9ZHrhTfnUcRnm6BmF20k04; query=event organizers in Munich",
           "approval_brief": "google_maps_scraper source_row; address=Fraunhoferstraße 3, 80469 München; category=Event planner; place_id=ChIJZ9ZHrhTfnUcRnm6BmF20k04; query=event organizers in Munich",
-          "best_contact_strategy": "",
           "channels": [],
           "key_people": []
         },
@@ -369,11 +350,9 @@
           "fit_label": "fit",
           "brain2_summary": "Event management company, suitable partner.",
           "brain3_event_type": "",
-          "brain4_path": "",
           "brain5_verdict": "",
           "company_description": "google_maps_scraper source_row; address=Mühlhauser Feld 3, 85664 Hohenlinden; phone=089 90139868; category=Event management company; place_id=ChIJR2CzUEwBnkcRFLSJnwvmavI; query=event management firms Munich",
           "approval_brief": "google_maps_scraper source_row; address=Mühlhauser Feld 3, 85664 Hohenlinden; phone=089 90139868; category=Event management company; place_id=ChIJR2CzUEwBnkcRFLSJnwvmavI; query=event management firms Munich",
-          "best_contact_strategy": "",
           "channels": [],
           "key_people": []
         },
@@ -392,11 +371,9 @@
           "fit_label": "fit",
           "brain2_summary": "Event management company, suitable partner.",
           "brain3_event_type": "",
-          "brain4_path": "",
           "brain5_verdict": "",
           "company_description": "google_maps_scraper source_row; address=Belgradstraße 76, 80804 München; phone=089 3002530; category=Event management company; place_id=ChIJkckX39F1nkcRLbk_pNHynPw; query=conference planning companies Munich",
           "approval_brief": "google_maps_scraper source_row; address=Belgradstraße 76, 80804 München; phone=089 3002530; category=Event management company; place_id=ChIJkckX39F1nkcRLbk_pNHynPw; query=conference planning companies Munich",
-          "best_contact_strategy": "",
           "channels": [],
           "key_people": []
         },
@@ -415,11 +392,9 @@
           "fit_label": "fit",
           "brain2_summary": "Event management company, suitable partner.",
           "brain3_event_type": "",
-          "brain4_path": "",
           "brain5_verdict": "",
           "company_description": "google_maps_scraper source_row; address=Atelierstraße 1, 81671 München; category=Event management company; place_id=ChIJyxA7gIXfnUcRvyh4vn3oZ7c; query=event management firms Munich",
           "approval_brief": "google_maps_scraper source_row; address=Atelierstraße 1, 81671 München; category=Event management company; place_id=ChIJyxA7gIXfnUcRvyh4vn3oZ7c; query=event management firms Munich",
-          "best_contact_strategy": "",
           "channels": [],
           "key_people": []
         },
@@ -438,11 +413,9 @@
           "fit_label": "fit",
           "brain2_summary": "Event management company, suitable partner.",
           "brain3_event_type": "",
-          "brain4_path": "",
           "brain5_verdict": "",
           "company_description": "google_maps_scraper source_row; address=Agnesstraße 2, 80801 München; category=Event management company; place_id=ChIJbXTeTe11nkcRSDKuzcNEfqg; query=conference planning companies Munich",
           "approval_brief": "google_maps_scraper source_row; address=Agnesstraße 2, 80801 München; category=Event management company; place_id=ChIJbXTeTe11nkcRSDKuzcNEfqg; query=conference planning companies Munich",
-          "best_contact_strategy": "",
           "channels": [],
           "key_people": []
         },
@@ -461,11 +434,9 @@
           "fit_label": "medium_fit",
           "brain2_summary": "Event technology service could complement event partnerships.",
           "brain3_event_type": "",
-          "brain4_path": "",
           "brain5_verdict": "",
           "company_description": "google_maps_scraper source_row; address=Lilienthalallee 5-7, 80807 München; phone=089 46099050; category=Event technology service; place_id=ChIJ7XQ_W0F0nkcRx4quUV94YUE; query=event organizers in Munich",
           "approval_brief": "google_maps_scraper source_row; address=Lilienthalallee 5-7, 80807 München; phone=089 46099050; category=Event technology service; place_id=ChIJ7XQ_W0F0nkcRx4quUV94YUE; query=event organizers in Munich",
-          "best_contact_strategy": "",
           "channels": [],
           "key_people": []
         }
@@ -490,11 +461,9 @@
           "fit_label": "medium_fit",
           "brain2_summary": "Event management company likely to host events.",
           "brain3_event_type": "Event management agency (organizes corporate events, product launches, gala dinners, incentives, trade fair appearances",
-          "brain4_path": "",
           "brain5_verdict": "Needs revision – the current plan is overly generic, has incomplete data, and contains sequencing risks that could reduc",
           "company_description": "DAPP EVENTS operates as an event management agency, providing comprehensive services to clients for planning and executing their events. Their revenue comes from service fees charged to clients for event organization.",
           "approval_brief": "The lead is a small full‑service event agency in Kirchheim bei München. Decision‑makers are Daniel and Patrick Appelt (Co‑Managing Directors). Contact data is solid for email/LinkedIn but missing a website, tech‑stack details, and additional influencers. Revised outreach adds a case‑study attachment, a voicemail step, and tighter sequencing.",
-          "best_contact_strategy": "",
           "channels": [],
           "key_people": [
             {
@@ -530,11 +499,9 @@
           "fit_label": "fit",
           "brain2_summary": "Conference organizer in Munich that hosts events.",
           "brain3_event_type": "Conference",
-          "brain4_path": "",
           "brain5_verdict": "Needs revision before approval",
           "company_description": "Organizes and hosts conferences and events, likely generating revenue through tickets, sponsorships, and exhibitor fees.",
           "approval_brief": "The lead is a Munich‑based conference organizer with a strong reputation but no identified contacts. The revised strategy adds a research‑first step, diversifies channels (LinkedIn, email, phone), tightens sequencing, and injects concrete personalization based on publicly available ratings and event focus. Approve once the research yields at least one verified decision‑maker.",
-          "best_contact_strategy": "",
           "channels": [],
           "key_people": [
             {
@@ -582,7 +549,7 @@
       ]
     },
     "strategized": {
-      "label": "Strategized",
+      "label": "Brain 5 Enriched",
       "count": 2,
       "items": [
         {
@@ -600,11 +567,9 @@
           "fit_label": "medium_fit",
           "brain2_summary": "Event management company likely to host events.",
           "brain3_event_type": "Event management agency (organizes corporate events, product launches, gala dinners, incentives, trade fair appearances",
-          "brain4_path": "",
           "brain5_verdict": "Needs revision – the current plan is overly generic, has incomplete data, and contains sequencing risks that could reduc",
           "company_description": "DAPP EVENTS operates as an event management agency, providing comprehensive services to clients for planning and executing their events. Their revenue comes from service fees charged to clients for event organization.",
           "approval_brief": "The lead is a small full‑service event agency in Kirchheim bei München. Decision‑makers are Daniel and Patrick Appelt (Co‑Managing Directors). Contact data is solid for email/LinkedIn but missing a website, tech‑stack details, and additional influencers. Revised outreach adds a case‑study attachment, a voicemail step, and tighter sequencing.",
-          "best_contact_strategy": "",
           "channels": [],
           "key_people": [
             {
@@ -640,11 +605,9 @@
           "fit_label": "fit",
           "brain2_summary": "Conference organizer in Munich that hosts events.",
           "brain3_event_type": "Conference",
-          "brain4_path": "",
           "brain5_verdict": "Needs revision before approval",
           "company_description": "Organizes and hosts conferences and events, likely generating revenue through tickets, sponsorships, and exhibitor fees.",
           "approval_brief": "The lead is a Munich‑based conference organizer with a strong reputation but no identified contacts. The revised strategy adds a research‑first step, diversifies channels (LinkedIn, email, phone), tightens sequencing, and injects concrete personalization based on publicly available ratings and event focus. Approve once the research yields at least one verified decision‑maker.",
-          "best_contact_strategy": "",
           "channels": [],
           "key_people": [
             {
@@ -713,11 +676,9 @@
       "fit_label": "",
       "brain2_summary": "",
       "brain3_event_type": "",
-      "brain4_path": "",
       "brain5_verdict": "",
       "company_description": "Organizes and hosts conferences and events, likely generating revenue through tickets, sponsorships, and exhibitor fees.",
       "approval_brief": "The lead is a Munich‑based conference organizer with a strong reputation but no identified contacts. The revised strategy adds a research‑first step, diversifies channels (LinkedIn, email, phone), tightens sequencing, and injects concrete personalization based on publicly available ratings and event focus. Approve once the research yields at least one verified decision‑maker.",
-      "best_contact_strategy": "",
       "channels": [],
       "key_people": [
         {
@@ -777,11 +738,9 @@
       "fit_label": "",
       "brain2_summary": "",
       "brain3_event_type": "",
-      "brain4_path": "",
       "brain5_verdict": "",
       "company_description": "DAPP EVENTS operates as an event management agency, providing comprehensive services to clients for planning and executing their events. Their revenue comes from service fees charged to clients for event organization.",
       "approval_brief": "The lead is a small full‑service event agency in Kirchheim bei München. Decision‑makers are Daniel and Patrick Appelt (Co‑Managing Directors). Contact data is solid for email/LinkedIn but missing a website, tech‑stack details, and additional influencers. Revised outreach adds a case‑study attachment, a voicemail step, and tighter sequencing.",
-      "best_contact_strategy": "",
       "channels": [],
       "key_people": [
         {
@@ -957,24 +916,6 @@
       "details": {
         "error": "Gemini Brain 3 request failed: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 30.942971991s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"model\": \"gemini-2.5-flash\",\n              \"location\": \"global\"\n            },\n            \"quotaValue\": \"20\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"30s\"\n      }\n    ]\n  }\n}\n",
         "result_status": "error"
-      }
-    },
-    {
-      "brain": "brain4",
-      "label": "Brain 4",
-      "status": "idle",
-      "action": "brain4_generate_strategy",
-      "project_name": "Sentra Conferences",
-      "lead_id": 7,
-      "reason": "approved Brain 3 lead ready for Brain 4",
-      "updated_at": "2026-04-29T07:10:39+00:00",
-      "started_at": "",
-      "finished_at": "2026-04-29T07:10:39+00:00",
-      "details": {
-        "action": "brain4_generate_strategy",
-        "lead_id": 7,
-        "model": "gemini-2.5-flash",
-        "result_status": "completed"
       }
     },
     {
