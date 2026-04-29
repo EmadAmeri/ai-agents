@@ -76,20 +76,6 @@ function stageData(payload) {
       title: "Pending Approval",
       value: Array.isArray(payload.pending_approvals) ? payload.pending_approvals.length : countApproval(payload),
       text: "Leads waiting for lead approval."
-    },
-    {
-      key: "brain5",
-      label: "Reviewed",
-      title: "Brain 5 Review",
-      value: summary.brain5_reviewed_total ?? 0,
-      text: "Leads reviewed and expanded before approval."
-    },
-    {
-      key: "message",
-      label: "Message",
-      title: "Message Approval",
-      value: Array.isArray(payload.pending_message_approvals) ? payload.pending_message_approvals.length : 0,
-      text: "Approved leads waiting for message approval."
     }
   ];
 }
