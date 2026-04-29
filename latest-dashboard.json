@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-04-29T07:46:39",
+  "generated_at": "2026-04-29T08:31:35",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
     "waiting_approvals": 2,
     "total_activity": 124,
-    "collected_total": 65,
+    "collected_total": 66,
     "brain2_scored_total": 61,
     "brain3_enriched_total": 2,
     "brain4_strategized_total": 1,
@@ -49,7 +49,7 @@
       "blocked_tasks": 0,
       "paused_tasks": 0,
       "completed_tasks": 0,
-      "raw_leads": 63,
+      "raw_leads": 64,
       "shortlisted_leads": 0,
       "awaiting_approval_leads": 2,
       "approved_leads": 0,
@@ -116,7 +116,7 @@
     "blocked_tasks": 0,
     "paused_tasks": 0,
     "completed_tasks": 0,
-    "raw_leads": 63,
+    "raw_leads": 64,
     "shortlisted_leads": 0,
     "awaiting_approval_leads": 2,
     "approved_leads": 0,
@@ -130,7 +130,7 @@
   "stage_counts": {
     "project_id": 2,
     "project_name": "Sentra Conferences",
-    "initial_leads_count": 65,
+    "initial_leads_count": 66,
     "scored_leads_count": 61,
     "enriched_leads_count": 2,
     "strategized_leads_count": 1,
@@ -139,8 +139,31 @@
   "stages": {
     "initial": {
       "label": "Initial Intake",
-      "count": 4,
+      "count": 5,
       "items": [
+        {
+          "lead_id": 71,
+          "company_name": "MICE MUNICH",
+          "website": "",
+          "location": "München, DE",
+          "contact_name": "",
+          "email": "",
+          "phone": "089 230696636",
+          "status": "raw",
+          "approval_status": "not_requested",
+          "message_approval_status": "not_requested",
+          "score": 0,
+          "fit_label": "",
+          "brain2_summary": "",
+          "brain3_event_type": "",
+          "brain4_path": "",
+          "brain5_verdict": "",
+          "company_description": "google_maps_scraper source_row; address=Gabelsbergerstraße 7, 80333 München; phone=089 230696636; category=Event planner; place_id=ChIJtxuISWF1nkcRdTTE_KmWM8U; query=event organizers in Munich",
+          "approval_brief": "google_maps_scraper source_row; address=Gabelsbergerstraße 7, 80333 München; phone=089 230696636; category=Event planner; place_id=ChIJtxuISWF1nkcRdTTE_KmWM8U; query=event organizers in Munich",
+          "best_contact_strategy": "",
+          "channels": [],
+          "key_people": []
+        },
         {
           "lead_id": 70,
           "company_name": "Sweetvibes GmbH Y.OUR Event & Catering",
@@ -826,22 +849,22 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold",
-      "updated_at": "2026-04-29T05:01:02+00:00",
+      "updated_at": "2026-04-29T06:31:35+00:00",
       "started_at": "",
-      "finished_at": "2026-04-29T05:01:02+00:00",
+      "finished_at": "2026-04-29T06:31:35+00:00",
       "details": {
         "action": "collect_initial_leads",
         "duplicates": 0,
         "inserted": 1,
         "items": [
           {
-            "company_name": "Sweetvibes GmbH Y.OUR Event & Catering",
-            "lead_id": 70,
+            "company_name": "MICE MUNICH",
+            "lead_id": 71,
             "record_status": "inserted"
           }
         ],
         "result_status": "completed",
-        "run_id": 51
+        "run_id": 52
       }
     },
     {
@@ -928,6 +951,15 @@
   ],
   "collected_leads": [
     {
+      "lead_id": 71,
+      "company_name": "MICE MUNICH",
+      "city": "München",
+      "website": "",
+      "phone": "089 230696636",
+      "source": "google_maps_scraper",
+      "collected_at": "2026-04-29 06:31:35"
+    },
+    {
       "lead_id": 70,
       "company_name": "Sweetvibes GmbH Y.OUR Event & Catering",
       "city": "München",
@@ -1007,15 +1039,6 @@
       "phone": "089 3002530",
       "source": "google_maps_scraper",
       "collected_at": "2026-04-24 17:51:34"
-    },
-    {
-      "lead_id": 61,
-      "company_name": "Eventfabrik München GmbH",
-      "city": "München",
-      "website": "",
-      "phone": "",
-      "source": "google_maps_scraper",
-      "collected_at": "2026-04-24 17:19:40"
     }
   ],
   "top_scored_leads": [
