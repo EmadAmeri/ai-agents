@@ -3,32 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Agmentic Sales Agent</title>
-  <meta name="description" content="Static dashboard snapshot for the Agmentic sales agent workflow.">
+  <title>AI Agents Lead Journey</title>
+  <meta name="description" content="Lead journey dashboard for the AI Sales Agent pipeline.">
   <style>
     :root {
-      --bg: #060807;
-      --panel: rgba(10, 14, 12, 0.9);
-      --panel-2: rgba(8, 10, 9, 0.86);
-      --line: rgba(171, 245, 82, 0.16);
-      --line-strong: rgba(171, 245, 82, 0.42);
-      --text: #eef9df;
-      --muted: #879685;
-      --acid: #abf552;
-      --acid-soft: rgba(171, 245, 82, 0.12);
-      --shadow: 0 26px 90px rgba(0, 0, 0, 0.42);
-      --danger: #ff5d5d;
+      --bg: #06131d;
+      --bg-2: #0c2131;
+      --panel: rgba(8, 20, 31, 0.8);
+      --panel-strong: rgba(9, 24, 37, 0.94);
+      --line: rgba(91, 210, 255, 0.22);
+      --line-strong: rgba(91, 210, 255, 0.78);
+      --text: #f3fbff;
+      --muted: #9ab7c9;
+      --accent: #5bd2ff;
+      --accent-2: #6effc7;
+      --accent-soft: rgba(91, 210, 255, 0.13);
+      --shadow: 0 26px 80px rgba(1, 7, 12, 0.42);
+      --danger: #ff7a7a;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       min-height: 100vh;
-      background:
-        radial-gradient(circle at 85% 0%, rgba(171, 245, 82, 0.12), transparent 22%),
-        radial-gradient(circle at 0% 80%, rgba(171, 245, 82, 0.08), transparent 20%),
-        linear-gradient(180deg, #030504 0%, #060807 46%, #050605 100%);
       color: var(--text);
-      font-family: Tahoma, "Segoe UI", sans-serif;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(91, 210, 255, 0.14), transparent 28%),
+        radial-gradient(circle at 88% 78%, rgba(110, 255, 199, 0.12), transparent 24%),
+        linear-gradient(180deg, #07111a 0%, #0a1825 48%, #07111a 100%);
     }
     body::before {
       content: "";
@@ -36,657 +38,371 @@
       inset: 0;
       pointer-events: none;
       background-image:
-        linear-gradient(rgba(171, 245, 82, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(171, 245, 82, 0.03) 1px, transparent 1px);
-      background-size: 34px 34px;
-      mask-image: linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.08));
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.08));
     }
     .shell {
-      width: min(1480px, calc(100vw - 28px));
-      margin: 16px auto 34px;
+      width: min(1360px, calc(100vw - 28px));
+      margin: 16px auto 36px;
       position: relative;
       z-index: 1;
     }
-    .panel, .metric, .brain-node, .card, .compact-card, .accordion-shell, .lane {
-      background: linear-gradient(180deg, rgba(11, 15, 12, 0.96), rgba(8, 10, 9, 0.92));
+    .panel {
+      background: linear-gradient(180deg, var(--panel-strong), var(--panel));
       border: 1px solid var(--line);
+      border-radius: 28px;
       box-shadow: var(--shadow);
       backdrop-filter: blur(16px);
     }
-    .masthead {
+    .topbar {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      align-items: flex-start;
+      gap: 18px;
       margin-bottom: 18px;
     }
-    .brand-title {
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 11px;
+      margin-bottom: 8px;
+    }
+    h1, h2, h3, p {
       margin: 0;
-      font-size: clamp(26px, 4vw, 42px);
+    }
+    .title {
+      font-size: clamp(30px, 4.8vw, 54px);
+      line-height: 0.95;
       font-weight: 900;
-      letter-spacing: 0.02em;
+      max-width: 700px;
     }
-    .command-deck {
+    .subtitle {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+      max-width: 760px;
+    }
+    .status-stack {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      align-items: stretch;
+      gap: 10px;
+      min-width: 250px;
     }
-    .mesh-panel {
-      border-radius: 30px;
-      padding: 0;
+    .chip {
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(91, 210, 255, 0.14);
+      background: rgba(7, 19, 29, 0.72);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .chip strong {
+      color: var(--text);
+      font-size: 14px;
+    }
+    .journey {
+      padding: 22px;
       overflow: hidden;
-      min-height: 430px;
-      position: relative;
     }
-    .mesh-stage {
-      position: relative;
-      min-height: 430px;
-      height: 100%;
-      padding: 24px;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at center, rgba(171, 245, 82, 0.08), transparent 30%),
-        radial-gradient(circle at 50% 50%, rgba(171, 245, 82, 0.05), transparent 46%),
-        linear-gradient(180deg, rgba(9, 12, 10, 0.78), rgba(7, 9, 8, 0.94));
-    }
-    .mesh-stage::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 50% 50%, rgba(171, 245, 82, 0.12), transparent 12%),
-        radial-gradient(circle at 50% 50%, rgba(171, 245, 82, 0.06), transparent 34%);
-      pointer-events: none;
-    }
-    .mesh-grid {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(171, 245, 82, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(171, 245, 82, 0.03) 1px, transparent 1px);
-      background-size: 28px 28px;
-      mask-image: radial-gradient(circle at center, rgba(0,0,0,0.9), rgba(0,0,0,0.16) 70%);
-    }
-    .orbit-ring {
-      position: absolute;
-      border-radius: 999px;
-      border: 1px solid rgba(171, 245, 82, 0.12);
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-    }
-    .orbit-ring.r1 { width: 180px; height: 180px; }
-    .orbit-ring.r2 { width: 320px; height: 320px; }
-    .orbit-ring.r3 { width: 520px; height: 520px; }
-    .mesh-svg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-    }
-    .mesh-link {
-      fill: none;
-      stroke: rgba(171, 245, 82, 0.14);
-      stroke-width: 2.1;
-      stroke-linecap: round;
-      stroke-dasharray: 10 14;
-      animation: linkFlow 7.5s linear infinite;
-    }
-    .mesh-link.running {
-      stroke: rgba(171, 245, 82, 0.52);
-      stroke-width: 3;
-    }
-    .mesh-link.queued {
-      stroke: rgba(171, 245, 82, 0.28);
-    }
-    .mesh-node-field {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      min-height: 382px;
-    }
-    .mesh-overlay {
-      position: absolute;
-      left: 22px;
-      top: 18px;
-      right: 22px;
+    .journey-head {
       display: flex;
       justify-content: space-between;
       gap: 14px;
       align-items: flex-start;
-      z-index: 2;
-      pointer-events: none;
-    }
-    .mesh-kicker {
-      color: var(--acid);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 11px;
-    }
-    .mesh-meta {
-      display: flex;
+      margin-bottom: 18px;
       flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 8px;
-      max-width: 420px;
     }
-    .status-chip {
-      border-radius: 999px;
-      padding: 8px 12px;
-      background: rgba(6, 10, 8, 0.78);
-      border: 1px solid rgba(171, 245, 82, 0.14);
+    .journey-copy {
+      max-width: 760px;
+    }
+    .journey-copy p {
+      margin-top: 10px;
       color: var(--muted);
-      font-size: 12px;
-      line-height: 1.2;
+      line-height: 1.7;
     }
-    .stack {
-      display: grid;
-      gap: 18px;
-    }
-    .panel {
-      border-radius: 28px;
-      padding: 20px;
-    }
-    .section-kicker {
-      color: var(--acid);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 11px;
-      margin-bottom: 6px;
-    }
-    .live-rail {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .live-row {
-      display: flex;
-      gap: 10px;
-      align-items: center;
+    .journey-note {
+      max-width: 360px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(91, 210, 255, 0.08);
+      border: 1px solid rgba(91, 210, 255, 0.16);
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.5;
+      line-height: 1.65;
     }
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: #475143;
-      flex: 0 0 auto;
-    }
-    .dot.live {
-      background: var(--acid);
-      box-shadow: 0 0 0 0 rgba(171,245,82,0.55);
-      animation: pulse 1.7s infinite;
-    }
-    .mini-stat-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-    }
-    .mini-stat {
-      border-radius: 18px;
-      padding: 14px;
-      background: rgba(171, 245, 82, 0.05);
-      border: 1px solid rgba(171, 245, 82, 0.1);
-    }
-    .mini-stat-label {
-      color: var(--muted);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .mini-stat-value {
-      margin-top: 10px;
-      color: var(--acid);
-      font-size: 24px;
-      font-weight: 800;
-      line-height: 1;
-    }
-    .metrics {
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .metric {
-      border-radius: 22px;
-      padding: 16px;
-      min-height: 126px;
+    .journey-stage {
       position: relative;
+      min-height: 480px;
+      border-radius: 24px;
+      padding: 20px;
+      background:
+        radial-gradient(circle at 50% 32%, rgba(91, 210, 255, 0.12), transparent 28%),
+        linear-gradient(180deg, rgba(10, 23, 35, 0.92), rgba(6, 15, 24, 0.96));
       overflow: hidden;
     }
-    .metric::before {
+    .journey-stage::before {
       content: "";
       position: absolute;
-      inset: auto -22px -22px auto;
-      width: 96px;
-      height: 96px;
-      border: 1px solid rgba(171, 245, 82, 0.14);
-      border-radius: 999px;
+      inset: 0;
+      background:
+        linear-gradient(rgba(91, 210, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(91, 210, 255, 0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(circle at center, rgba(0,0,0,0.94), rgba(0,0,0,0.22) 76%);
+      pointer-events: none;
     }
-    .metric-label, .panel-sub, .muted, .compact-copy, .card p, .feed-item p {
-      color: var(--muted);
+    .journey-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
     }
-    .metric-label {
-      font-size: 12px;
+    .flow-line {
+      fill: none;
+      stroke: rgba(91, 210, 255, 0.24);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-dasharray: 10 14;
+      animation: flow 8s linear infinite;
+    }
+    .flow-line.active {
+      stroke: var(--line-strong);
+      stroke-width: 5;
+    }
+    .glow {
+      fill: rgba(91, 210, 255, 0.12);
+    }
+    .nodes {
+      position: relative;
+      min-height: 440px;
+    }
+    .node {
+      position: absolute;
+      width: 180px;
+      min-height: 122px;
+      transform: translate(-50%, -50%);
+      padding: 16px;
+      border-radius: 24px;
+      border: 1px solid rgba(91, 210, 255, 0.15);
+      background: linear-gradient(180deg, rgba(12, 28, 42, 0.96), rgba(8, 20, 31, 0.9));
+      display: grid;
+      gap: 10px;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+    .node.active {
+      border-color: rgba(110, 255, 199, 0.7);
+      box-shadow: 0 0 0 1px rgba(110, 255, 199, 0.18), 0 20px 54px rgba(110, 255, 199, 0.12);
+      transform: translate(-50%, calc(-50% - 6px));
+    }
+    .node.waiting {
+      border-color: rgba(255, 219, 107, 0.48);
+    }
+    .node-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+    }
+    .node-step {
+      color: var(--accent);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      font-size: 10px;
+      letter-spacing: 0.14em;
     }
-    .metric-value {
-      margin-top: 18px;
-      color: var(--acid);
-      font-size: clamp(28px, 4vw, 44px);
-      line-height: 1;
+    .node-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(91, 210, 255, 0.4);
+      box-shadow: 0 0 0 0 rgba(91, 210, 255, 0.35);
+    }
+    .node.active .node-dot {
+      background: var(--accent-2);
+      animation: pulse 1.8s infinite;
+    }
+    .node-title {
+      font-size: 20px;
       font-weight: 800;
+      line-height: 1;
     }
-    .metric-meta {
-      margin-top: 10px;
+    .node-body {
       color: var(--muted);
       font-size: 13px;
       line-height: 1.6;
     }
-    .layout {
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: 1.02fr 2fr;
-      gap: 18px;
-    }
-    .panel-head, .compact-head, .card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 12px;
-    }
-    h2, h3 {
-      margin: 0;
-      line-height: 1.05;
-    }
-    .project-list, .feed, .queue-list, .lane-list {
-      display: grid;
-      gap: 12px;
-    }
-    .project-chip {
-      width: 100%;
-      text-align: left;
-      border-radius: 20px;
-      border: 1px solid rgba(171, 245, 82, 0.12);
-      background: rgba(171, 245, 82, 0.04);
+    .node-count {
       color: var(--text);
-      padding: 14px 15px;
-      cursor: pointer;
-      font: inherit;
-      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
-    }
-    .project-chip:hover, .project-chip.active {
-      transform: translateY(-1px);
-      border-color: var(--line-strong);
-      background: rgba(171, 245, 82, 0.08);
-    }
-    .project-name {
-      font-size: 17px;
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
-    .telemetry-grid, .queues {
-      display: grid;
-      gap: 18px;
-    }
-    .telemetry-grid {
-      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr);
-    }
-    .queues {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .compact-card, .card, .lane {
-      border-radius: 22px;
-      padding: 16px;
-    }
-    .compact-title, .card-title {
-      margin: 0;
-      font-size: 17px;
-      font-weight: 800;
-    }
-    .compact-meta, .card-time, .feed-time {
-      color: var(--muted);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .brain-node {
-      position: absolute;
-      width: 174px;
-      min-height: 96px;
-      border-radius: 24px;
-      padding: 14px;
-      display: grid;
-      gap: 9px;
-      background: linear-gradient(180deg, rgba(12, 16, 12, 0.98), rgba(9, 12, 10, 0.92));
-      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
-    }
-    .brain-node.running {
-      border-color: var(--line-strong);
-      box-shadow: 0 0 0 1px rgba(171,245,82,0.18), 0 16px 54px rgba(171,245,82,0.08);
-      transform: translateY(-2px);
-    }
-    .brain-node.queued {
-      border-color: rgba(171, 245, 82, 0.28);
-    }
-    .brain-node.idle {
-      opacity: 0.88;
-    }
-    .brain-node-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      align-items: center;
-    }
-    .brain-node-title {
-      font-size: 16px;
-      font-weight: 800;
-      margin: 0;
-    }
-    .brain-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      color: var(--muted);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-    .brain-status::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: rgba(171, 245, 82, 0.22);
-    }
-    .brain-node.running .brain-status::before {
-      background: var(--acid);
-      box-shadow: 0 0 0 0 rgba(171,245,82,0.46);
-      animation: pulse 1.8s infinite;
-    }
-    .brain-node-copy {
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.55;
-    }
-    .brain-node-meta, .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .brain-metric, .pill {
-      border-radius: 999px;
-      padding: 6px 9px;
-      background: rgba(171, 245, 82, 0.08);
-      border: 1px solid rgba(171, 245, 82, 0.12);
-      color: #d8f7ab;
-      font-size: 11px;
+      font-size: 28px;
+      font-weight: 900;
       line-height: 1;
     }
-    .compact-card-list {
+    .summary-layout {
+      margin-top: 18px;
       display: grid;
-      gap: 10px;
+      grid-template-columns: 1.7fr 1fr;
+      gap: 18px;
     }
-    .accordion-shell {
-      border-radius: 20px;
-      padding: 14px;
-      background: rgba(171, 245, 82, 0.03);
+    .summary-panel, .insight-panel {
+      padding: 22px;
     }
-    .accordion-preview, .accordion-body {
+    .summary-grid {
+      margin-top: 18px;
       display: grid;
-      gap: 10px;
-    }
-    .accordion-body[hidden] { display: none; }
-    .accordion-toggle {
-      margin-top: 12px;
-      width: 100%;
-      border-radius: 16px;
-      border: 1px solid rgba(171,245,82,0.16);
-      background: rgba(171,245,82,0.07);
-      color: var(--acid);
-      padding: 11px 14px;
-      cursor: pointer;
-      font: inherit;
-    }
-    .queue-item, .feed-item {
-      padding-top: 12px;
-      border-top: 1px solid rgba(171,245,82,0.1);
-    }
-    .queue-item:first-child, .feed-item:first-child {
-      padding-top: 0;
-      border-top: 0;
-    }
-    .lane-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(250px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
-      overflow-x: auto;
-      padding-bottom: 6px;
     }
-    .lane {
-      min-height: 360px;
-    }
-    .lane-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      align-items: baseline;
-      margin-bottom: 12px;
-    }
-    .mini-title {
-      color: var(--muted);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 6px;
-    }
-    .empty {
+    .summary-card {
+      border-radius: 22px;
       padding: 18px;
-      border-radius: 18px;
-      border: 1px dashed rgba(171,245,82,0.18);
+      background: rgba(91, 210, 255, 0.06);
+      border: 1px solid rgba(91, 210, 255, 0.1);
+      min-height: 150px;
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+    .summary-card.active {
+      background: rgba(110, 255, 199, 0.08);
+      border-color: rgba(110, 255, 199, 0.28);
+    }
+    .summary-label {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 11px;
+    }
+    .summary-value {
+      font-size: 42px;
+      line-height: 0.9;
+      font-weight: 900;
+    }
+    .summary-text {
       color: var(--muted);
-      text-align: center;
-      line-height: 1.8;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .insight-list {
+      margin-top: 18px;
+      display: grid;
+      gap: 12px;
+    }
+    .insight-item {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--muted);
+      line-height: 1.65;
       font-size: 13px;
     }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(171,245,82,0.55); }
-      70% { box-shadow: 0 0 0 14px rgba(171,245,82,0); }
-      100% { box-shadow: 0 0 0 0 rgba(171,245,82,0); }
+    .insight-item strong {
+      color: var(--text);
     }
-    @keyframes linkFlow {
+    .empty {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px dashed rgba(91, 210, 255, 0.22);
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(110, 255, 199, 0.4); }
+      70% { box-shadow: 0 0 0 16px rgba(110, 255, 199, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(110, 255, 199, 0); }
+    }
+    @keyframes flow {
       from { stroke-dashoffset: 0; }
       to { stroke-dashoffset: -48; }
     }
-    @media (max-width: 1180px) {
-      .layout, .telemetry-grid, .queues {
+    @media (max-width: 1080px) {
+      .topbar, .summary-layout {
         grid-template-columns: 1fr;
+        display: grid;
       }
-      .metrics {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+      .status-stack {
+        min-width: 0;
+      }
+      .summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
     @media (max-width: 760px) {
       .shell {
-        width: min(100vw - 18px, 1480px);
+        width: min(100vw - 16px, 1360px);
       }
-      .metrics {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .journey-stage {
+        min-height: 860px;
       }
-      .lane-grid {
+      .nodes {
+        min-height: 820px;
+      }
+      .node {
+        width: min(100%, 250px);
+      }
+      .summary-grid {
         grid-template-columns: 1fr;
-        overflow-x: visible;
-      }
-    }
-    @media (max-width: 520px) {
-      .metrics, .mini-stat-grid {
-        grid-template-columns: 1fr;
-      }
-      .brain-node {
-        width: 152px;
       }
     }
   </style>
 </head>
 <body>
   <main class="shell">
-    <header class="masthead">
-      <h1 class="brand-title">Agmentic Sales Agent</h1>
-      <div class="live-rail">
-        <div class="live-row"><span id="live-dot" class="dot"></span><strong id="connection-state">Loading latest snapshot</strong></div>
-        <div class="live-row"><span>Updated</span><span id="last-updated">No data</span></div>
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">AI Sales Agent Dashboard</div>
+        <h1 class="title">Lead Journey Across The Brains</h1>
+        <p class="subtitle">
+          This board shows the movement of leads from Brain 1 collection to scoring, enrichment,
+          strategy, review, and finally the approval queue.
+        </p>
+      </div>
+      <div class="status-stack">
+        <div class="chip"><strong id="connection-state">Loading snapshot</strong></div>
+        <div class="chip">Updated: <strong id="last-updated">No data</strong></div>
+        <div class="chip">Current focus: <strong id="current-focus">Waiting for live data</strong></div>
       </div>
     </header>
 
-    <section class="command-deck">
-      <article class="mesh-panel panel">
-        <div class="mesh-stage">
-          <div class="mesh-grid"></div>
-          <div class="orbit-ring r1"></div>
-          <div class="orbit-ring r2"></div>
-          <div class="orbit-ring r3"></div>
-          <svg class="mesh-svg" viewBox="0 0 1200 520" preserveAspectRatio="none" id="mesh-svg"></svg>
-          <div class="mesh-overlay">
-            <div class="mesh-kicker">Agent Orbit Mesh</div>
-            <div class="mesh-meta">
-              <div class="status-chip" id="connection-chip">Snapshot unavailable</div>
-              <div class="status-chip" id="next-work-chip">No queued work</div>
-              <div class="status-chip" id="selected-project-summary">Auto project selection</div>
-            </div>
-          </div>
-          <div class="mesh-node-field" id="brain-grid"></div>
+    <section class="panel journey">
+      <div class="journey-head">
+        <div class="journey-copy">
+          <div class="eyebrow">Journey Map</div>
+          <h2>Line + Point Flow Of Each Lead</h2>
+          <p id="journey-description">
+            Brain 1 creates a lead, Brain 2 scores it, the lead moves through the enrichment brains,
+            and ends in the approval waiting list.
+          </p>
         </div>
-      </article>
-    </section>
-
-    <section class="panel" style="margin-top: 18px;">
-      <div class="section-kicker">Quick View</div>
-      <div class="mini-stat-grid">
-        <div class="mini-stat">
-          <div class="mini-stat-label">Collected Visible</div>
-          <div class="mini-stat-value" id="collected-count">0</div>
+        <div class="journey-note" id="journey-note">
+          Snapshot is loading.
         </div>
-        <div class="mini-stat">
-          <div class="mini-stat-label">Queued Visible</div>
-          <div class="mini-stat-value" id="queued-enrich-count">0</div>
-        </div>
-        <div class="mini-stat">
-          <div class="mini-stat-label">Scored Visible</div>
-          <div class="mini-stat-value" id="top-scored-count">0</div>
-        </div>
-        <div class="mini-stat">
-          <div class="mini-stat-label">Completed Visible</div>
-          <div class="mini-stat-value" id="completed-count">0</div>
-        </div>
+      </div>
+      <div class="journey-stage">
+        <svg class="journey-svg" id="journey-svg" viewBox="0 0 1200 480" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="nodes" id="journey-nodes"></div>
       </div>
     </section>
 
-    <section class="metrics" id="metrics"></section>
-
-    <section class="layout">
-      <aside class="stack">
-        <section class="panel">
-          <div class="panel-head">
-            <div>
-              <div class="section-kicker">Projects</div>
-              <h2>Project Rail</h2>
-            </div>
-          </div>
-          <div class="project-list" id="project-list"></div>
-        </section>
-
-        <section class="panel">
-          <div class="panel-head">
-            <div>
-              <div class="section-kicker">Activity</div>
-              <h2>Recent Moves</h2>
-            </div>
-          </div>
-          <div class="feed" id="activity-feed"></div>
-        </section>
-      </aside>
-
-      <section class="stack">
-        <section class="panel">
-          <div class="panel-head">
-            <div>
-              <div class="section-kicker">Lead Streams</div>
-              <h2 id="selected-project-title">Live Queues</h2>
-            </div>
-          </div>
-          <div class="telemetry-grid">
-            <article class="compact-card">
-              <div class="mini-title">Fresh Intake</div>
-              <div id="collected-list"></div>
-            </article>
-            <article class="compact-card">
-              <div class="mini-title">Queued To Enrich</div>
-              <div id="queued-enrich-list"></div>
-            </article>
-          </div>
-        </section>
-
-        <section class="panel">
-          <div class="panel-head">
-            <div>
-              <div class="section-kicker">Approval Flow</div>
-              <h2>Approval Queues</h2>
-            </div>
-          </div>
-          <div class="queues">
-            <div>
-              <div class="mini-title">Lead Approval Queue</div>
-              <div class="queue-list" id="approval-list"></div>
-            </div>
-            <div>
-              <div class="mini-title">Message Approval Queue</div>
-              <div class="queue-list" id="message-approval-list"></div>
-            </div>
-          </div>
-        </section>
-
-        <section class="panel">
-          <div class="panel-head">
-            <div>
-              <div class="section-kicker">Scoring And Finish</div>
-              <h2>Outputs By Stage</h2>
-            </div>
-          </div>
-          <div class="queues">
-            <div>
-              <div class="mini-title">Top Scored Leads</div>
-              <div id="top-scored-list"></div>
-            </div>
-            <div>
-              <div class="mini-title">Completed Leads</div>
-              <div id="completed-list"></div>
-            </div>
-          </div>
-        </section>
-
-        <section class="panel">
-          <div class="panel-head">
-            <div>
-              <div class="section-kicker">Pipeline</div>
-              <h2>Stage Lanes</h2>
-            </div>
-          </div>
-          <div class="lane-grid" id="lane-grid"></div>
-        </section>
+    <section class="summary-layout">
+      <section class="panel summary-panel">
+        <div class="eyebrow">Stage Summary</div>
+        <h2>Counts By Pipeline Step</h2>
+        <div class="summary-grid" id="summary-grid"></div>
       </section>
-    </section>
-  </main>
 
+      <aside class="panel insight-panel">
+        <div class="eyebrow">Snapshot Notes</div>
+        <h2>Short Status</h2>
+        <div class="insight-list" id="insight-list"></div>
+        <div class="empty" id="empty-state" hidden>No lead data is available yet.</div>
+      </aside>
+    </section>
   <script src="dashboard.js"></script>
+  </main>
 </body>
 </html>
