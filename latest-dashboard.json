@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-04-29T06:08:53",
+  "generated_at": "2026-04-29T06:09:21",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
-    "waiting_approvals": 0,
-    "total_activity": 120,
+    "waiting_approvals": 1,
+    "total_activity": 122,
     "collected_total": 64,
     "brain2_scored_total": 61,
     "brain3_enriched_total": 1,
     "brain4_strategized_total": 1,
-    "brain5_reviewed_total": 0,
+    "brain5_reviewed_total": 1,
     "approved_total": 0,
     "drafted_total": 0,
     "message_review_total": 0
@@ -49,12 +49,12 @@
       "blocked_tasks": 0,
       "paused_tasks": 0,
       "completed_tasks": 0,
-      "raw_leads": 64,
+      "raw_leads": 63,
       "shortlisted_leads": 0,
-      "awaiting_approval_leads": 0,
+      "awaiting_approval_leads": 1,
       "approved_leads": 0,
       "drafted_leads": 0,
-      "pending_approval_requests": 0,
+      "pending_approval_requests": 1,
       "ready_for_draft_leads": 0,
       "ready_for_approval_leads": 0,
       "awaiting_enrichment_leads": 0,
@@ -116,12 +116,12 @@
     "blocked_tasks": 0,
     "paused_tasks": 0,
     "completed_tasks": 0,
-    "raw_leads": 64,
+    "raw_leads": 63,
     "shortlisted_leads": 0,
-    "awaiting_approval_leads": 0,
+    "awaiting_approval_leads": 1,
     "approved_leads": 0,
     "drafted_leads": 0,
-    "pending_approval_requests": 0,
+    "pending_approval_requests": 1,
     "ready_for_draft_leads": 0,
     "ready_for_approval_leads": 0,
     "awaiting_enrichment_leads": 0,
@@ -414,17 +414,17 @@
           "contact_name": "",
           "email": "",
           "phone": "+49 89 1675 100",
-          "status": "raw",
-          "approval_status": "not_requested",
+          "status": "awaiting_approval",
+          "approval_status": "requested",
           "message_approval_status": "not_requested",
           "score": 0,
           "fit_label": "fit",
           "brain2_summary": "Conference organizer in Munich that hosts events.",
           "brain3_event_type": "Conference",
           "brain4_path": "Cold outreach with a value-driven approach, leveraging company profile and public information.",
-          "brain5_verdict": "",
+          "brain5_verdict": "Needs revision before approval",
           "company_description": "Organizes and hosts conferences and events, likely generating revenue through tickets, sponsorships, and exhibitor fees.",
-          "approval_brief": "Munich Summit Partners is a highly-rated (4.8 stars from 32 reviews) conference organizer based in Munich, Germany. Their strong reputation suggests a focus on quality and successful event execution, indicating a potential need for solutions that can further optimize their operations, enhance attendee experience, and drive revenue in a competitive market.",
+          "approval_brief": "The lead is a Munich‑based conference organizer with a strong reputation but no identified contacts. The revised strategy adds a research‑first step, diversifies channels (LinkedIn, email, phone), tightens sequencing, and injects concrete personalization based on publicly available ratings and event focus. Approve once the research yields at least one verified decision‑maker.",
           "best_contact_strategy": "",
           "channels": [],
           "key_people": [
@@ -437,11 +437,27 @@
               "contact_path": ""
             },
             {
+              "name": "To be identified",
+              "role": "",
+              "email": "To be identified",
+              "phone": "To be identified",
+              "linkedin": "To be identified",
+              "contact_path": ""
+            },
+            {
               "name": "Unknown",
               "role": "",
               "email": "unknown",
               "phone": "unknown",
               "linkedin": "unknown",
+              "contact_path": ""
+            },
+            {
+              "name": "To be identified",
+              "role": "",
+              "email": "To be identified",
+              "phone": "To be identified",
+              "linkedin": "To be identified",
               "contact_path": ""
             },
             {
@@ -468,17 +484,17 @@
           "contact_name": "",
           "email": "",
           "phone": "+49 89 1675 100",
-          "status": "raw",
-          "approval_status": "not_requested",
+          "status": "awaiting_approval",
+          "approval_status": "requested",
           "message_approval_status": "not_requested",
           "score": 0,
           "fit_label": "fit",
           "brain2_summary": "Conference organizer in Munich that hosts events.",
           "brain3_event_type": "Conference",
           "brain4_path": "Cold outreach with a value-driven approach, leveraging company profile and public information.",
-          "brain5_verdict": "",
+          "brain5_verdict": "Needs revision before approval",
           "company_description": "Organizes and hosts conferences and events, likely generating revenue through tickets, sponsorships, and exhibitor fees.",
-          "approval_brief": "Munich Summit Partners is a highly-rated (4.8 stars from 32 reviews) conference organizer based in Munich, Germany. Their strong reputation suggests a focus on quality and successful event execution, indicating a potential need for solutions that can further optimize their operations, enhance attendee experience, and drive revenue in a competitive market.",
+          "approval_brief": "The lead is a Munich‑based conference organizer with a strong reputation but no identified contacts. The revised strategy adds a research‑first step, diversifies channels (LinkedIn, email, phone), tightens sequencing, and injects concrete personalization based on publicly available ratings and event focus. Approve once the research yields at least one verified decision‑maker.",
           "best_contact_strategy": "",
           "channels": [],
           "key_people": [
@@ -491,11 +507,27 @@
               "contact_path": ""
             },
             {
+              "name": "To be identified",
+              "role": "",
+              "email": "To be identified",
+              "phone": "To be identified",
+              "linkedin": "To be identified",
+              "contact_path": ""
+            },
+            {
               "name": "Unknown",
               "role": "",
               "email": "unknown",
               "phone": "unknown",
               "linkedin": "unknown",
+              "contact_path": ""
+            },
+            {
+              "name": "To be identified",
+              "role": "",
+              "email": "To be identified",
+              "phone": "To be identified",
+              "linkedin": "To be identified",
               "contact_path": ""
             },
             {
@@ -516,9 +548,90 @@
       "items": []
     }
   },
-  "pending_approvals": [],
+  "pending_approvals": [
+    {
+      "lead_id": 6,
+      "company_name": "Munich Summit Partners conference-organizer-in-",
+      "website": "https://summit-conference-organizer-in-.example",
+      "location": "Munich, DE",
+      "contact_name": "",
+      "email": "",
+      "phone": "+49 89 1675 100",
+      "status": "awaiting_approval",
+      "approval_status": "requested",
+      "message_approval_status": "not_requested",
+      "score": 0,
+      "fit_label": "",
+      "brain2_summary": "",
+      "brain3_event_type": "",
+      "brain4_path": "",
+      "brain5_verdict": "",
+      "company_description": "Organizes and hosts conferences and events, likely generating revenue through tickets, sponsorships, and exhibitor fees.",
+      "approval_brief": "The lead is a Munich‑based conference organizer with a strong reputation but no identified contacts. The revised strategy adds a research‑first step, diversifies channels (LinkedIn, email, phone), tightens sequencing, and injects concrete personalization based on publicly available ratings and event focus. Approve once the research yields at least one verified decision‑maker.",
+      "best_contact_strategy": "",
+      "channels": [],
+      "key_people": [
+        {
+          "name": "Unknown",
+          "role": "",
+          "email": "unknown",
+          "phone": "unknown",
+          "linkedin": "unknown",
+          "contact_path": ""
+        },
+        {
+          "name": "To be identified",
+          "role": "",
+          "email": "To be identified",
+          "phone": "To be identified",
+          "linkedin": "To be identified",
+          "contact_path": ""
+        },
+        {
+          "name": "Unknown",
+          "role": "",
+          "email": "unknown",
+          "phone": "unknown",
+          "linkedin": "unknown",
+          "contact_path": ""
+        },
+        {
+          "name": "To be identified",
+          "role": "",
+          "email": "To be identified",
+          "phone": "To be identified",
+          "linkedin": "To be identified",
+          "contact_path": ""
+        },
+        {
+          "name": "Unknown",
+          "role": "",
+          "email": "unknown",
+          "phone": "unknown",
+          "linkedin": "unknown",
+          "contact_path": ""
+        }
+      ]
+    }
+  ],
   "pending_message_approvals": [],
   "recent_activity": [
+    {
+      "created_at": "2026-04-29T04:09:21+00:00",
+      "action": "approval_requested",
+      "project_name": "Sentra Conferences",
+      "company_name": "Munich Summit Partners conference-organizer-in-",
+      "task_title": "",
+      "detail": "Munich Summit Partners conference-organizer-in- via telegram_waiting_approval"
+    },
+    {
+      "created_at": "2026-04-29T04:09:06+00:00",
+      "action": "strategy_stored",
+      "project_name": "Sentra Conferences",
+      "company_name": "Munich Summit Partners conference-organizer-in-",
+      "task_title": "",
+      "detail": "Munich Summit Partners conference-organizer-in- status=generated"
+    },
     {
       "created_at": "2026-04-29T04:08:53+00:00",
       "action": "strategy_stored",
@@ -598,29 +711,13 @@
       "company_name": "TUM School of Management",
       "task_title": "",
       "detail": "TUM School of Management via telegram_waiting_approval"
-    },
-    {
-      "created_at": "2026-04-23T16:44:55+00:00",
-      "action": "lead_enriched",
-      "project_name": "Sentra Conferences",
-      "company_name": "TUM School of Management",
-      "task_title": "",
-      "detail": "TUM School of Management source=brain3_gemini"
-    },
-    {
-      "created_at": "2026-04-23T16:43:04+00:00",
-      "action": "approval_requested",
-      "project_name": "Sentra Conferences",
-      "company_name": "Kater Mikesch",
-      "task_title": "",
-      "detail": "Kater Mikesch via telegram_waiting_approval"
     }
   ],
   "next_work": {
-    "action": "brain5_review_strategy",
+    "action": "brain3_enrich_lead",
     "project_name": "Sentra Conferences",
-    "lead_id": 6,
-    "reason": "Brain 4 result must be reviewed before final output"
+    "lead_id": null,
+    "reason": "scored leads are queued for Brain 3 enrichment"
   },
   "brain_states": [
     {
@@ -652,15 +749,20 @@
     {
       "brain": "brain3",
       "label": "Brain 3",
-      "status": "idle",
-      "action": "",
-      "project_name": "",
-      "lead_id": null,
-      "reason": "",
-      "updated_at": "",
+      "status": "queued",
+      "action": "request_approval",
+      "project_name": "Sentra Conferences",
+      "lead_id": 6,
+      "reason": "Brain 5 completed; lead profile is ready for human approval",
+      "updated_at": "2026-04-29T04:09:21+00:00",
       "started_at": "",
-      "finished_at": "",
-      "details": {}
+      "finished_at": "2026-04-29T04:09:21+00:00",
+      "details": {
+        "action": "request_approval",
+        "approval_status": "requested",
+        "lead_id": 6,
+        "result_status": "completed"
+      }
     },
     {
       "brain": "brain4",
@@ -683,15 +785,21 @@
     {
       "brain": "brain5",
       "label": "Brain 5",
-      "status": "queued",
+      "status": "idle",
       "action": "brain5_review_strategy",
       "project_name": "Sentra Conferences",
       "lead_id": 6,
       "reason": "Brain 4 result must be reviewed before final output",
-      "updated_at": "",
+      "updated_at": "2026-04-29T04:09:06+00:00",
       "started_at": "",
-      "finished_at": "",
-      "details": {}
+      "finished_at": "2026-04-29T04:09:06+00:00",
+      "details": {
+        "action": "brain5_review_strategy",
+        "lead_id": 6,
+        "model": "openai/gpt-oss-120b",
+        "result_status": "completed",
+        "verdict": "Needs revision before approval"
+      }
     },
     {
       "brain": "finalize",
@@ -1041,14 +1149,14 @@
       "email": "",
       "phone": "+49 89 1675 100",
       "website": "https://summit-conference-organizer-in-.example",
-      "approval_status": "not_requested",
+      "approval_status": "requested",
       "message_approval_status": "not_requested",
       "draft_status": "not_created",
       "draft_created_at": "",
-      "verdict": "",
+      "verdict": "Needs revision before approval",
       "outreach_path": "Cold outreach with a value-driven approach, leveraging company profile and public information.",
       "partnership_relevance": "Potential partner for event organization, sponsorship, or exhibiting opportunities at their conferences.",
-      "completed_at": "2026-04-29T04:08:53+00:00"
+      "completed_at": "2026-04-29T04:09:06+00:00"
     }
   ]
 }
