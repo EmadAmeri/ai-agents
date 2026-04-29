@@ -7,29 +7,26 @@
   <meta name="description" content="Live GitHub Pages dashboard for the AI Sales Agent backend running on your machine.">
   <style>
     :root {
-      --bg: #050505;
-      --bg-2: #0b0f0a;
-      --panel: rgba(14, 18, 14, 0.92);
-      --panel-2: rgba(10, 10, 10, 0.88);
-      --line: rgba(212, 255, 42, 0.18);
-      --line-strong: rgba(212, 255, 42, 0.48);
-      --text: #f5ffe6;
-      --muted: #93a08f;
-      --acid: #d4ff2a;
-      --acid-soft: rgba(212, 255, 42, 0.12);
-      --danger: #ff5b5b;
-      --shadow: 0 24px 90px rgba(0, 0, 0, 0.45);
-      --radius: 24px;
+      --bg: #060807;
+      --panel: rgba(10, 14, 12, 0.9);
+      --panel-2: rgba(8, 10, 9, 0.86);
+      --line: rgba(171, 245, 82, 0.16);
+      --line-strong: rgba(171, 245, 82, 0.42);
+      --text: #eef9df;
+      --muted: #879685;
+      --acid: #abf552;
+      --acid-soft: rgba(171, 245, 82, 0.12);
+      --shadow: 0 26px 90px rgba(0, 0, 0, 0.42);
+      --danger: #ff5d5d;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       min-height: 100vh;
       background:
-        radial-gradient(circle at top right, rgba(212, 255, 42, 0.12), transparent 24%),
-        radial-gradient(circle at left 80%, rgba(212, 255, 42, 0.08), transparent 22%),
-        linear-gradient(180deg, #030403 0%, #070907 45%, #050505 100%);
+        radial-gradient(circle at 85% 0%, rgba(171, 245, 82, 0.12), transparent 22%),
+        radial-gradient(circle at 0% 80%, rgba(171, 245, 82, 0.08), transparent 20%),
+        linear-gradient(180deg, #030504 0%, #060807 46%, #050605 100%);
       color: var(--text);
       font-family: Tahoma, "Segoe UI", sans-serif;
     }
@@ -39,100 +36,169 @@
       inset: 0;
       pointer-events: none;
       background-image:
-        linear-gradient(rgba(212, 255, 42, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(212, 255, 42, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(171, 245, 82, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(171, 245, 82, 0.03) 1px, transparent 1px);
       background-size: 34px 34px;
-      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.12));
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.08));
     }
     .shell {
-      width: min(1460px, calc(100vw - 28px));
-      margin: 14px auto 36px;
+      width: min(1480px, calc(100vw - 28px));
+      margin: 16px auto 34px;
       position: relative;
       z-index: 1;
     }
-    .hero, .panel, .metric, .brain-node, .card, .compact-card, .accordion-shell {
-      background: linear-gradient(180deg, rgba(12, 16, 12, 0.96), rgba(8, 10, 9, 0.92));
+    .panel, .metric, .brain-node, .card, .compact-card, .accordion-shell, .lane {
+      background: linear-gradient(180deg, rgba(11, 15, 12, 0.96), rgba(8, 10, 9, 0.92));
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
+      backdrop-filter: blur(16px);
     }
-    .hero {
+    .command-deck {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(330px, 0.9fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+    .mesh-panel {
       border-radius: 30px;
-      padding: 24px;
+      padding: 0;
       overflow: hidden;
+      min-height: 430px;
       position: relative;
     }
-    .hero::after {
+    .mesh-stage {
+      position: relative;
+      min-height: 430px;
+      height: 100%;
+      padding: 24px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at center, rgba(171, 245, 82, 0.08), transparent 30%),
+        radial-gradient(circle at 50% 50%, rgba(171, 245, 82, 0.05), transparent 46%),
+        linear-gradient(180deg, rgba(9, 12, 10, 0.78), rgba(7, 9, 8, 0.94));
+    }
+    .mesh-stage::before {
       content: "";
       position: absolute;
-      inset: -1px;
-      border-radius: 30px;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(171, 245, 82, 0.12), transparent 12%),
+        radial-gradient(circle at 50% 50%, rgba(171, 245, 82, 0.06), transparent 34%);
       pointer-events: none;
-      background: linear-gradient(130deg, rgba(212,255,42,0.18), transparent 34%, transparent 66%, rgba(212,255,42,0.14));
-      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      padding: 1px;
-      mask-composite: exclude;
-      -webkit-mask-composite: xor;
     }
-    .hero-top {
+    .mesh-grid {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(171, 245, 82, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(171, 245, 82, 0.03) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(circle at center, rgba(0,0,0,0.9), rgba(0,0,0,0.16) 70%);
+    }
+    .orbit-ring {
+      position: absolute;
+      border-radius: 999px;
+      border: 1px solid rgba(171, 245, 82, 0.12);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .orbit-ring.r1 { width: 180px; height: 180px; }
+    .orbit-ring.r2 { width: 320px; height: 320px; }
+    .orbit-ring.r3 { width: 520px; height: 520px; }
+    .mesh-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    .mesh-link {
+      fill: none;
+      stroke: rgba(171, 245, 82, 0.14);
+      stroke-width: 2.1;
+      stroke-linecap: round;
+      stroke-dasharray: 10 14;
+      animation: linkFlow 7.5s linear infinite;
+    }
+    .mesh-link.running {
+      stroke: rgba(171, 245, 82, 0.52);
+      stroke-width: 3;
+    }
+    .mesh-link.queued {
+      stroke: rgba(171, 245, 82, 0.28);
+    }
+    .mesh-node-field {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      min-height: 382px;
+    }
+    .mesh-overlay {
+      position: absolute;
+      left: 22px;
+      top: 18px;
+      right: 22px;
       display: flex;
       justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
+      gap: 14px;
       align-items: flex-start;
+      z-index: 2;
+      pointer-events: none;
     }
-    .eyebrow {
+    .mesh-kicker {
       color: var(--acid);
       text-transform: uppercase;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
       font-size: 11px;
-      margin-bottom: 10px;
     }
-    h1 {
-      margin: 0;
-      font-size: clamp(34px, 6vw, 72px);
-      line-height: 0.92;
-      font-weight: 800;
-      max-width: 9ch;
+    .mesh-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+      max-width: 420px;
     }
-    .subtitle {
-      margin: 16px 0 0;
-      max-width: 74ch;
+    .status-chip {
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(6, 10, 8, 0.78);
+      border: 1px solid rgba(171, 245, 82, 0.14);
       color: var(--muted);
-      line-height: 1.8;
-      font-size: 15px;
+      font-size: 12px;
+      line-height: 1.2;
     }
-    .logo-box {
+    .control-stack, .stack {
+      display: grid;
+      gap: 18px;
+    }
+    .panel {
+      border-radius: 28px;
+      padding: 20px;
+    }
+    .control-panel {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+    .section-kicker {
+      color: var(--acid);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 11px;
+      margin-bottom: 6px;
+    }
+    .control-grid {
       display: grid;
       gap: 12px;
-      min-width: 310px;
-      padding: 18px;
-      border-radius: 24px;
-      background: linear-gradient(180deg, rgba(212,255,42,0.07), rgba(212,255,42,0.02));
-      border: 1px solid rgba(212,255,42,0.22);
-    }
-    .logo-box svg {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .logo-caption {
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 13px;
-    }
-    .setup {
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: 1.45fr 0.9fr 0.8fr auto;
-      gap: 12px;
-      align-items: end;
     }
     label {
       display: grid;
       gap: 8px;
-      font-size: 12px;
+      font-size: 11px;
       color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -140,51 +206,70 @@
     input, select, button {
       width: 100%;
       border-radius: 16px;
-      border: 1px solid rgba(212,255,42,0.2);
-      background: rgba(0, 0, 0, 0.48);
+      border: 1px solid rgba(171, 245, 82, 0.18);
+      background: rgba(0, 0, 0, 0.42);
       color: var(--text);
-      padding: 14px 15px;
+      padding: 13px 14px;
       font: inherit;
       outline: none;
     }
-    input:focus, select:focus {
-      border-color: var(--acid);
-      box-shadow: 0 0 0 4px rgba(212,255,42,0.1);
-    }
     button {
       cursor: pointer;
-      background: linear-gradient(180deg, rgba(212,255,42,0.98), rgba(174,214,30,0.92));
-      color: #091000;
+      background: linear-gradient(180deg, rgba(171, 245, 82, 0.98), rgba(145, 213, 53, 0.92));
+      color: #0a1205;
       font-weight: 800;
-      letter-spacing: 0.02em;
     }
-    .status-bar {
-      margin-top: 14px;
+    input:focus, select:focus {
+      border-color: var(--acid);
+      box-shadow: 0 0 0 4px rgba(171, 245, 82, 0.1);
+    }
+    .live-rail {
+      display: grid;
+      gap: 10px;
+    }
+    .live-row {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
       align-items: center;
       color: var(--muted);
       font-size: 13px;
+      line-height: 1.5;
     }
     .dot {
-      width: 11px;
-      height: 11px;
+      width: 10px;
+      height: 10px;
       border-radius: 999px;
       background: #475143;
-      box-shadow: none;
       flex: 0 0 auto;
     }
     .dot.live {
       background: var(--acid);
-      box-shadow: 0 0 0 0 rgba(212,255,42,0.6);
+      box-shadow: 0 0 0 0 rgba(171,245,82,0.55);
       animation: pulse 1.7s infinite;
     }
-    .hint {
-      margin-top: 12px;
+    .mini-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .mini-stat {
+      border-radius: 18px;
+      padding: 14px;
+      background: rgba(171, 245, 82, 0.05);
+      border: 1px solid rgba(171, 245, 82, 0.1);
+    }
+    .mini-stat-label {
       color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .mini-stat-value {
+      margin-top: 10px;
+      color: var(--acid);
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1;
     }
     .metrics {
       margin-top: 18px;
@@ -195,7 +280,7 @@
     .metric {
       border-radius: 22px;
       padding: 16px;
-      min-height: 128px;
+      min-height: 126px;
       position: relative;
       overflow: hidden;
     }
@@ -203,26 +288,28 @@
       content: "";
       position: absolute;
       inset: auto -22px -22px auto;
-      width: 100px;
-      height: 100px;
-      border: 1px solid rgba(212,255,42,0.16);
+      width: 96px;
+      height: 96px;
+      border: 1px solid rgba(171, 245, 82, 0.14);
       border-radius: 999px;
     }
-    .metric-label {
+    .metric-label, .panel-sub, .muted, .compact-copy, .card p, .feed-item p {
       color: var(--muted);
+    }
+    .metric-label {
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
     .metric-value {
       margin-top: 18px;
+      color: var(--acid);
       font-size: clamp(28px, 4vw, 44px);
       line-height: 1;
       font-weight: 800;
-      color: var(--acid);
     }
     .metric-meta {
-      margin-top: 12px;
+      margin-top: 10px;
       color: var(--muted);
       font-size: 13px;
       line-height: 1.6;
@@ -230,36 +317,22 @@
     .layout {
       margin-top: 18px;
       display: grid;
-      grid-template-columns: 1.05fr 2fr;
+      grid-template-columns: 1.02fr 2fr;
       gap: 18px;
     }
-    .stack {
-      display: grid;
-      gap: 18px;
-    }
-    .panel {
-      border-radius: 28px;
-      padding: 20px;
-    }
-    .panel-head {
+    .panel-head, .compact-head, .card-top {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      gap: 14px;
-      margin-bottom: 14px;
+      align-items: flex-start;
+      gap: 12px;
       flex-wrap: wrap;
+      margin-bottom: 12px;
     }
-    .panel h2 {
+    h2, h3 {
       margin: 0;
-      font-size: 28px;
       line-height: 1.05;
     }
-    .panel-sub, .muted {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-    .project-list, .feed, .lane-list, .compact-list, .queue-list {
+    .project-list, .feed, .queue-list, .lane-list {
       display: grid;
       gap: 12px;
     }
@@ -267,170 +340,37 @@
       width: 100%;
       text-align: left;
       border-radius: 20px;
-      border: 1px solid rgba(212,255,42,0.14);
-      background: rgba(212,255,42,0.03);
+      border: 1px solid rgba(171, 245, 82, 0.12);
+      background: rgba(171, 245, 82, 0.04);
       color: var(--text);
       padding: 14px 15px;
       cursor: pointer;
-      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
       font: inherit;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
     }
     .project-chip:hover, .project-chip.active {
       transform: translateY(-1px);
       border-color: var(--line-strong);
-      background: rgba(212,255,42,0.08);
+      background: rgba(171, 245, 82, 0.08);
     }
     .project-name {
       font-size: 17px;
       font-weight: 800;
       margin-bottom: 6px;
     }
+    .telemetry-grid, .queues {
+      display: grid;
+      gap: 18px;
+    }
     .telemetry-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.95fr);
-      gap: 18px;
-      align-items: start;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr);
     }
-    .brain-network {
-      position: relative;
-      overflow: hidden;
-      border-radius: 26px;
-      padding: 24px;
-      min-height: 390px;
-      background:
-        radial-gradient(circle at top left, rgba(212,255,42,0.10), transparent 24%),
-        radial-gradient(circle at 100% 0%, rgba(212,255,42,0.08), transparent 28%),
-        linear-gradient(180deg, rgba(12, 16, 12, 0.88), rgba(9, 12, 10, 0.96));
-      border: 1px solid rgba(212,255,42,0.12);
+    .queues {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    .brain-network::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(212, 255, 42, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(212, 255, 42, 0.04) 1px, transparent 1px);
-      background-size: 28px 28px;
-      mask-image: linear-gradient(180deg, rgba(0,0,0,0.42), rgba(0,0,0,0.12));
-      pointer-events: none;
-    }
-    .brain-svg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-    }
-    .brain-link {
-      fill: none;
-      stroke: rgba(212,255,42,0.18);
-      stroke-width: 2.2;
-      stroke-linecap: round;
-      stroke-dasharray: 10 12;
-      animation: linkFlow 8s linear infinite;
-    }
-    .brain-link.running, .brain-link.live {
-      stroke: rgba(212,255,42,0.56);
-      stroke-width: 3;
-    }
-    .brain-link.queued {
-      stroke: rgba(212,255,42,0.32);
-    }
-    .brain-node-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-    .brain-node {
-      min-height: 128px;
-      border-radius: 24px;
+    .compact-card, .card, .lane {
+      border-radius: 22px;
       padding: 16px;
-      display: grid;
-      gap: 10px;
-      position: relative;
-      background: linear-gradient(180deg, rgba(14, 18, 14, 0.96), rgba(10, 12, 10, 0.92));
-      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
-    }
-    .brain-node.running {
-      border-color: var(--line-strong);
-      box-shadow: 0 0 0 1px rgba(212,255,42,0.16), 0 16px 50px rgba(212,255,42,0.08);
-      transform: translateY(-2px);
-    }
-    .brain-node.queued {
-      border-color: rgba(212,255,42,0.28);
-    }
-    .brain-node.idle {
-      opacity: 0.88;
-    }
-    .brain-node-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-    }
-    .brain-node-title {
-      margin: 0;
-      font-size: 19px;
-      line-height: 1.1;
-      font-weight: 800;
-    }
-    .brain-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-    }
-    .brain-status::before {
-      content: "";
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: rgba(212,255,42,0.22);
-    }
-    .brain-node.running .brain-status::before {
-      background: var(--acid);
-      box-shadow: 0 0 0 0 rgba(212,255,42,0.45);
-      animation: pulse 1.8s infinite;
-    }
-    .brain-node-copy {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-    .brain-node-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .brain-metric, .pill {
-      border-radius: 999px;
-      padding: 6px 10px;
-      background: rgba(212,255,42,0.08);
-      border: 1px solid rgba(212,255,42,0.12);
-      color: #d8f88e;
-      font-size: 11px;
-      line-height: 1;
-    }
-    .telemetry-stack {
-      display: grid;
-      gap: 14px;
-    }
-    .compact-card {
-      border-radius: 18px;
-      padding: 14px;
-    }
-    .compact-head, .card-top, .activity-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      margin-bottom: 8px;
     }
     .compact-title, .card-title {
       margin: 0;
@@ -443,72 +383,121 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
-    .compact-copy, .card p, .feed-item p {
+    .brain-node {
+      position: absolute;
+      width: 174px;
+      min-height: 96px;
+      border-radius: 24px;
+      padding: 14px;
+      display: grid;
+      gap: 9px;
+      background: linear-gradient(180deg, rgba(12, 16, 12, 0.98), rgba(9, 12, 10, 0.92));
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+    .brain-node.running {
+      border-color: var(--line-strong);
+      box-shadow: 0 0 0 1px rgba(171,245,82,0.18), 0 16px 54px rgba(171,245,82,0.08);
+      transform: translateY(-2px);
+    }
+    .brain-node.queued {
+      border-color: rgba(171, 245, 82, 0.28);
+    }
+    .brain-node.idle {
+      opacity: 0.88;
+    }
+    .brain-node-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+    .brain-node-title {
+      font-size: 16px;
+      font-weight: 800;
       margin: 0;
+    }
+    .brain-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
       color: var(--muted);
-      line-height: 1.7;
-      font-size: 13px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .brain-status::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(171, 245, 82, 0.22);
+    }
+    .brain-node.running .brain-status::before {
+      background: var(--acid);
+      box-shadow: 0 0 0 0 rgba(171,245,82,0.46);
+      animation: pulse 1.8s infinite;
+    }
+    .brain-node-copy {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+    .brain-node-meta, .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .brain-metric, .pill {
+      border-radius: 999px;
+      padding: 6px 9px;
+      background: rgba(171, 245, 82, 0.08);
+      border: 1px solid rgba(171, 245, 82, 0.12);
+      color: #d8f7ab;
+      font-size: 11px;
+      line-height: 1;
+    }
+    .compact-card-list {
+      display: grid;
+      gap: 10px;
     }
     .accordion-shell {
       border-radius: 20px;
       padding: 14px;
-      background: rgba(212,255,42,0.03);
+      background: rgba(171, 245, 82, 0.03);
     }
     .accordion-preview, .accordion-body {
       display: grid;
       gap: 10px;
     }
-    .accordion-body[hidden] {
-      display: none;
-    }
+    .accordion-body[hidden] { display: none; }
     .accordion-toggle {
       margin-top: 12px;
       width: 100%;
       border-radius: 16px;
-      border: 1px solid rgba(212,255,42,0.18);
-      background: rgba(212,255,42,0.06);
+      border: 1px solid rgba(171,245,82,0.16);
+      background: rgba(171,245,82,0.07);
       color: var(--acid);
       padding: 11px 14px;
       cursor: pointer;
       font: inherit;
-      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
-    }
-    .accordion-toggle:hover {
-      transform: translateY(-1px);
-      background: rgba(212,255,42,0.1);
-      border-color: var(--line-strong);
     }
     .queue-item, .feed-item {
       padding-top: 12px;
-      border-top: 1px solid rgba(212,255,42,0.1);
+      border-top: 1px solid rgba(171,245,82,0.1);
     }
     .queue-item:first-child, .feed-item:first-child {
       padding-top: 0;
       border-top: 0;
     }
-    .card {
-      border-radius: 20px;
-      padding: 16px;
-    }
-    .cards, .queues, .lane-grid {
-      display: grid;
-      gap: 14px;
-    }
-    .queues {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
     .lane-grid {
+      display: grid;
       grid-template-columns: repeat(5, minmax(250px, 1fr));
+      gap: 14px;
       overflow-x: auto;
       padding-bottom: 6px;
     }
     .lane {
-      border-radius: 24px;
-      padding: 18px;
       min-height: 360px;
-      background: linear-gradient(180deg, rgba(12, 16, 12, 0.96), rgba(8, 10, 9, 0.92));
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
     }
     .lane-head {
       display: flex;
@@ -524,196 +513,185 @@
       letter-spacing: 0.08em;
       margin-bottom: 6px;
     }
-    .feed-item:first-child {
-      margin-top: 0;
-    }
     .empty {
       padding: 18px;
       border-radius: 18px;
-      border: 1px dashed rgba(212,255,42,0.18);
+      border: 1px dashed rgba(171,245,82,0.18);
       color: var(--muted);
       text-align: center;
       line-height: 1.8;
       font-size: 13px;
     }
-    .notice {
-      margin-top: 16px;
-      padding: 14px 16px;
-      border-radius: 18px;
-      background: rgba(212,255,42,0.06);
-      border: 1px solid rgba(212,255,42,0.12);
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 13px;
-    }
-    code {
-      color: var(--acid);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    }
     @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(212,255,42,0.55); }
-      70% { box-shadow: 0 0 0 14px rgba(212,255,42,0); }
-      100% { box-shadow: 0 0 0 0 rgba(212,255,42,0); }
+      0% { box-shadow: 0 0 0 0 rgba(171,245,82,0.55); }
+      70% { box-shadow: 0 0 0 14px rgba(171,245,82,0); }
+      100% { box-shadow: 0 0 0 0 rgba(171,245,82,0); }
     }
     @keyframes linkFlow {
       from { stroke-dashoffset: 0; }
-      to { stroke-dashoffset: -44; }
+      to { stroke-dashoffset: -48; }
     }
     @media (max-width: 1180px) {
-      .metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .layout { grid-template-columns: 1fr; }
-      .telemetry-grid { grid-template-columns: 1fr; }
-      .brain-node-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .queues { grid-template-columns: 1fr; }
+      .command-deck, .layout, .telemetry-grid, .queues {
+        grid-template-columns: 1fr;
+      }
+      .metrics {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
     }
     @media (max-width: 760px) {
-      .setup { grid-template-columns: 1fr; }
-      .metrics { grid-template-columns: 1fr 1fr; }
-      .brain-node-grid { grid-template-columns: 1fr; }
-      .lane-grid { grid-template-columns: 1fr; overflow-x: visible; }
-      h1 { max-width: 100%; }
+      .shell {
+        width: min(100vw - 18px, 1480px);
+      }
+      .metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .lane-grid {
+        grid-template-columns: 1fr;
+        overflow-x: visible;
+      }
     }
     @media (max-width: 520px) {
-      .metrics { grid-template-columns: 1fr; }
+      .metrics, .mini-stat-grid {
+        grid-template-columns: 1fr;
+      }
+      .brain-node {
+        width: 152px;
+      }
     }
   </style>
 </head>
 <body>
   <main class="shell">
-    <section class="hero">
-      <div class="hero-top">
-        <div>
-          <div class="eyebrow">GitHub Pages + Local Backend</div>
-          <h1>AI Agent Live Board</h1>
-          <p class="subtitle">
-            این نسخه برای نمایش زنده‌ی رفتار ایجنت فروش ساخته شده: از intake و scoring تا enrich و finalize.
-            گراف نودی بالا handoff بین Brainها را نشان می‌دهد و لیست‌های پرتعداد برای جلوگیری از شلوغی به صورت accordion جمع می‌شوند.
-          </p>
-        </div>
-        <aside class="logo-box">
-          <svg viewBox="0 0 420 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="AI Agents line logo">
-            <path d="M18 128H94L138 36L185 144L228 84L275 128H402" stroke="#D4FF2A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M18 152H130L173 78L217 126L256 102L292 152H402" stroke="rgba(212,255,42,0.36)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="138" cy="36" r="10" fill="#D4FF2A"/>
-            <circle cx="228" cy="84" r="10" fill="#D4FF2A"/>
-            <circle cx="275" cy="128" r="10" fill="#D4FF2A"/>
-          </svg>
-          <div class="logo-caption">
-            هر گره یک مرحله از حرکت ایجنت را نمایش می‌دهد و هر خط اتصال، تحویل خروجی یک Brain به Brain بعدی را نشان می‌دهد.
+    <section class="command-deck">
+      <article class="mesh-panel panel">
+        <div class="mesh-stage">
+          <div class="mesh-grid"></div>
+          <div class="orbit-ring r1"></div>
+          <div class="orbit-ring r2"></div>
+          <div class="orbit-ring r3"></div>
+          <svg class="mesh-svg" viewBox="0 0 1200 520" preserveAspectRatio="none" id="mesh-svg"></svg>
+          <div class="mesh-overlay">
+            <div class="mesh-kicker">Agent Orbit Mesh</div>
+            <div class="mesh-meta">
+              <div class="status-chip" id="connection-chip">Backend disconnected</div>
+              <div class="status-chip" id="next-work-chip">No queued work</div>
+            </div>
           </div>
-        </aside>
-      </div>
+          <div class="mesh-node-field" id="brain-grid"></div>
+        </div>
+      </article>
 
-      <div class="setup">
-        <label>
-          Backend URL
-          <input id="backend-url" type="url" placeholder="https://your-public-backend.example.com">
-        </label>
-        <label>
-          Project
-          <select id="project-select">
-            <option value="">Auto</option>
-          </select>
-        </label>
-        <label>
-          Refresh
-          <select id="refresh-select">
-            <option value="5000">5s</option>
-            <option value="10000" selected>10s</option>
-            <option value="15000">15s</option>
-            <option value="30000">30s</option>
-          </select>
-        </label>
-        <button id="connect-btn" type="button">Connect Live</button>
-      </div>
+      <aside class="control-stack">
+        <section class="panel control-panel">
+          <div>
+            <div class="section-kicker">Control Rail</div>
+            <h2>Live Source</h2>
+          </div>
+          <div class="control-grid">
+            <label>
+              Backend URL
+              <input id="backend-url" type="url" placeholder="https://your-public-backend.example.com">
+            </label>
+            <label>
+              Project
+              <select id="project-select">
+                <option value="">Auto</option>
+              </select>
+            </label>
+            <label>
+              Refresh
+              <select id="refresh-select">
+                <option value="5000">5s</option>
+                <option value="10000" selected>10s</option>
+                <option value="15000">15s</option>
+                <option value="30000">30s</option>
+              </select>
+            </label>
+            <button id="connect-btn" type="button">Connect Live</button>
+          </div>
+          <div class="live-rail">
+            <div class="live-row"><span id="live-dot" class="dot"></span><strong id="connection-state">آدرس backend وارد نشده</strong></div>
+            <div class="live-row"><span>Updated</span><span id="last-updated">No data</span></div>
+            <div class="live-row"><span>Project</span><span id="selected-project-summary">No project selected</span></div>
+          </div>
+        </section>
 
-      <div class="status-bar">
-        <span id="live-dot" class="dot"></span>
-        <strong id="connection-state">منتظر آدرس backend</strong>
-        <span id="last-updated">No data</span>
-      </div>
-
-      <div class="hint">
-        این صفحه باید به endpoint زیر برسد:
-        <code>/api/live-dashboard</code>
-        نمونه:
-        <code>https://your-tunnel-url/api/live-dashboard</code>
-      </div>
+        <section class="panel">
+          <div class="section-kicker">Quick View</div>
+          <div class="mini-stat-grid">
+            <div class="mini-stat">
+              <div class="mini-stat-label">Collected Visible</div>
+              <div class="mini-stat-value" id="collected-count">0</div>
+            </div>
+            <div class="mini-stat">
+              <div class="mini-stat-label">Queued Visible</div>
+              <div class="mini-stat-value" id="queued-enrich-count">0</div>
+            </div>
+            <div class="mini-stat">
+              <div class="mini-stat-label">Scored Visible</div>
+              <div class="mini-stat-value" id="top-scored-count">0</div>
+            </div>
+            <div class="mini-stat">
+              <div class="mini-stat-label">Completed Visible</div>
+              <div class="mini-stat-value" id="completed-count">0</div>
+            </div>
+          </div>
+        </section>
+      </aside>
     </section>
 
     <section class="metrics" id="metrics"></section>
 
     <section class="layout">
       <aside class="stack">
-        <article class="panel">
+        <section class="panel">
           <div class="panel-head">
             <div>
-              <div class="eyebrow">Projects</div>
+              <div class="section-kicker">Projects</div>
               <h2>Project Rail</h2>
             </div>
-            <div class="panel-sub" id="selected-project-summary">No project selected</div>
           </div>
           <div class="project-list" id="project-list"></div>
-        </article>
+        </section>
 
-        <article class="panel">
+        <section class="panel">
           <div class="panel-head">
             <div>
-              <div class="eyebrow">Activity Feed</div>
-              <h2>حرکت اخیر ایجنت</h2>
+              <div class="section-kicker">Activity</div>
+              <h2>Recent Moves</h2>
             </div>
-            <div class="panel-sub">Latest backend actions</div>
           </div>
           <div class="feed" id="activity-feed"></div>
-        </article>
+        </section>
       </aside>
 
       <section class="stack">
-        <article class="panel">
+        <section class="panel">
           <div class="panel-head">
             <div>
-              <div class="eyebrow">Live Agent</div>
-              <h2>Brain Graph</h2>
+              <div class="section-kicker">Lead Streams</div>
+              <h2 id="selected-project-title">Live Queues</h2>
             </div>
-            <div class="panel-sub" id="next-work">No queued work</div>
           </div>
           <div class="telemetry-grid">
-            <div class="brain-network">
-              <svg class="brain-svg" viewBox="0 0 1000 520" preserveAspectRatio="none" id="brain-svg"></svg>
-              <div class="brain-node-grid" id="brain-grid"></div>
-            </div>
-            <div class="telemetry-stack">
-              <article class="compact-card">
-                <div class="panel-head">
-                  <div>
-                    <div class="mini-title">Collected Stream</div>
-                    <h2>Fresh Intake</h2>
-                  </div>
-                  <div class="panel-sub" id="collected-count">0 visible</div>
-                </div>
-                <div id="collected-list"></div>
-              </article>
-              <article class="compact-card">
-                <div class="panel-head">
-                  <div>
-                    <div class="mini-title">Ready For Brain 3</div>
-                    <h2>Queued To Enrich</h2>
-                  </div>
-                  <div class="panel-sub" id="queued-enrich-count">0 visible</div>
-                </div>
-                <div id="queued-enrich-list"></div>
-              </article>
-            </div>
+            <article class="compact-card">
+              <div class="mini-title">Fresh Intake</div>
+              <div id="collected-list"></div>
+            </article>
+            <article class="compact-card">
+              <div class="mini-title">Queued To Enrich</div>
+              <div id="queued-enrich-list"></div>
+            </article>
           </div>
-        </article>
+        </section>
 
-        <article class="panel">
+        <section class="panel">
           <div class="panel-head">
             <div>
-              <div class="eyebrow">Approval Flow</div>
-              <h2 id="selected-project-title">Approval Queues</h2>
+              <div class="section-kicker">Approval Flow</div>
+              <h2>Approval Queues</h2>
             </div>
-            <div class="panel-sub">Lead and message approvals</div>
           </div>
           <div class="queues">
             <div>
@@ -725,525 +703,40 @@
               <div class="queue-list" id="message-approval-list"></div>
             </div>
           </div>
-        </article>
+        </section>
 
-        <article class="panel">
+        <section class="panel">
           <div class="panel-head">
             <div>
-              <div class="eyebrow">Scoring And Finish</div>
+              <div class="section-kicker">Scoring And Finish</div>
               <h2>Outputs By Stage</h2>
             </div>
-            <div class="panel-sub">Brain 2 and finalized leads</div>
           </div>
           <div class="queues">
             <div>
               <div class="mini-title">Top Scored Leads</div>
-              <div class="panel-sub" id="top-scored-count">0 visible</div>
               <div id="top-scored-list"></div>
             </div>
             <div>
               <div class="mini-title">Completed Leads</div>
-              <div class="panel-sub" id="completed-count">0 visible</div>
               <div id="completed-list"></div>
             </div>
           </div>
-        </article>
+        </section>
 
-        <article class="panel">
+        <section class="panel">
           <div class="panel-head">
             <div>
-              <div class="eyebrow">Pipeline</div>
+              <div class="section-kicker">Pipeline</div>
               <h2>Stage Lanes</h2>
             </div>
-            <div class="panel-sub">Snapshot by live stage</div>
           </div>
           <div class="lane-grid" id="lane-grid"></div>
-        </article>
+        </section>
       </section>
     </section>
-
-    <div class="notice">
-      GitHub Pages فقط frontend را میزبانی می‌کند. برای live data باید backend محلی‌ات را با یک URL عمومی publish کنی و همان URL را بالا وارد کنی.
-    </div>
   </main>
 
-  <script>
-    const state = {
-      backendUrl: localStorage.getItem("ai_agents_backend_url") || new URLSearchParams(location.search).get("backend") || "",
-      projectId: localStorage.getItem("ai_agents_project_id") || "",
-      refreshMs: Number(localStorage.getItem("ai_agents_refresh_ms") || "10000"),
-      timer: null
-    };
-
-    const BRAIN_FLOW = ["brain1", "brain2", "brain3", "brain4", "brain5", "finalize"];
-    const metricsEl = document.getElementById("metrics");
-    const projectListEl = document.getElementById("project-list");
-    const activityEl = document.getElementById("activity-feed");
-    const brainGridEl = document.getElementById("brain-grid");
-    const brainSvgEl = document.getElementById("brain-svg");
-    const laneGridEl = document.getElementById("lane-grid");
-    const backendInput = document.getElementById("backend-url");
-    const projectSelect = document.getElementById("project-select");
-    const refreshSelect = document.getElementById("refresh-select");
-    const connectBtn = document.getElementById("connect-btn");
-    const connectionState = document.getElementById("connection-state");
-    const lastUpdated = document.getElementById("last-updated");
-    const liveDot = document.getElementById("live-dot");
-    const nextWorkEl = document.getElementById("next-work");
-
-    backendInput.value = state.backendUrl;
-    refreshSelect.value = String(state.refreshMs);
-
-    function safe(value, fallback = "") {
-      if (value === null || value === undefined) return fallback;
-      const text = String(value).trim();
-      return text || fallback;
-    }
-
-    function el(tag, className, text) {
-      const node = document.createElement(tag);
-      if (className) node.className = className;
-      if (text !== undefined) node.textContent = text;
-      return node;
-    }
-
-    function clear(node) {
-      while (node.firstChild) node.removeChild(node.firstChild);
-    }
-
-    function emptyState(message) {
-      return el("div", "empty", message);
-    }
-
-    function compactLine(parts) {
-      return parts.filter((value) => String(value || "").trim()).join(" • ");
-    }
-
-    function normalizeUrl(value) {
-      return safe(value).replace(/\/+$/, "");
-    }
-
-    function formatTime(value) {
-      if (!value) return "n/a";
-      const date = new Date(value);
-      if (Number.isNaN(date.getTime())) return safe(value, "n/a");
-      return date.toLocaleString("fa-IR", { dateStyle: "short", timeStyle: "medium" });
-    }
-
-    function updateConnection(ok, message, generatedAt) {
-      connectionState.textContent = message;
-      lastUpdated.textContent = generatedAt ? "Updated: " + formatTime(generatedAt) : "No data";
-      liveDot.className = ok ? "dot live" : "dot";
-    }
-
-    function renderMetrics(summary = {}) {
-      const items = [
-        ["Collected", summary.collected_total ?? 0, "لیدهای اولیه جمع آوری شده"],
-        ["Brain 2", summary.brain2_scored_total ?? 0, "تعداد لیدهای اسکور شده"],
-        ["Brain 3", summary.brain3_enriched_total ?? 0, "لیدهای enrich شده"],
-        ["Brain 4", summary.brain4_strategized_total ?? 0, "استراتژی های ساخته شده"],
-        ["Brain 5", summary.brain5_reviewed_total ?? 0, "بازبینی نهایی"],
-        ["Final", summary.drafted_total ?? summary.approved_total ?? 0, "خروجی نهایی یا draft"]
-      ];
-      metricsEl.replaceChildren(...items.map(([label, value, meta]) => {
-        const card = el("article", "metric");
-        card.appendChild(el("div", "metric-label", label));
-        card.appendChild(el("div", "metric-value", String(value)));
-        card.appendChild(el("div", "metric-meta", meta));
-        return card;
-      }));
-    }
-
-    function renderProjects(payload) {
-      clear(projectListEl);
-      const projects = payload.projects || [];
-      const selected = payload.selected_project || null;
-      const summary = document.getElementById("selected-project-summary");
-      summary.textContent = selected
-        ? compactLine([selected.name, "raw " + (selected.raw_leads ?? 0), "drafted " + (selected.drafted_leads ?? 0)])
-        : "No project selected";
-
-      const auto = el("option", "", "Auto");
-      auto.value = "";
-      projectSelect.replaceChildren(auto);
-
-      projects.forEach((project) => {
-        const button = el("button", "project-chip" + (selected && project.id === selected.id ? " active" : ""));
-        button.type = "button";
-        button.addEventListener("click", () => {
-          state.projectId = String(project.id);
-          projectSelect.value = state.projectId;
-          localStorage.setItem("ai_agents_project_id", state.projectId);
-          loadLiveBoard();
-        });
-        button.appendChild(el("div", "project-name", safe(project.name)));
-        button.appendChild(el("div", "muted", compactLine([
-          "status " + safe(project.status),
-          "raw " + (project.raw_leads ?? 0),
-          "shortlist " + (project.shortlisted_leads ?? 0)
-        ])));
-        button.appendChild(el("div", "muted", compactLine([
-          "enrich " + (project.awaiting_enrichment_leads ?? 0),
-          "strategy " + (project.awaiting_strategy_leads ?? 0),
-          "approval " + (project.pending_approval_requests ?? 0)
-        ])));
-        projectListEl.appendChild(button);
-
-        const option = el("option", "", safe(project.name));
-        option.value = String(project.id);
-        if (String(project.id) === String(state.projectId || "")) {
-          option.selected = true;
-        }
-        projectSelect.appendChild(option);
-      });
-
-      if (!projects.length) {
-        projectListEl.appendChild(emptyState("No projects yet."));
-      }
-    }
-
-    function renderCompactLead(item, variant) {
-      const card = el("article", "compact-card");
-      const head = el("div", "compact-head");
-      head.appendChild(el("h3", "compact-title", safe(item.company_name, "Unknown")));
-      head.appendChild(el("div", "compact-meta", safe(
-        item.collected_at || item.scored_at || item.completed_at || item.draft_created_at || item.city,
-        ""
-      )));
-      card.appendChild(head);
-      card.appendChild(el("div", "compact-copy", compactLine([
-        item.city || item.location,
-        item.fit_classification || item.fit_label,
-        item.lead_tag || item.verdict || item.outreach_path || item.source
-      ]) || "No summary yet"));
-
-      const copyMap = {
-        collected: compactLine([item.website, item.phone, item.source]),
-        scored: item.reason_summary || compactLine([item.website, item.email, item.phone]),
-        queued: item.reason_summary || compactLine([item.website, item.phone, item.fit_classification]),
-        completed: compactLine([
-          item.verdict,
-          item.outreach_path,
-          item.partnership_relevance,
-          item.email,
-          item.phone
-        ]) || item.website
-      };
-      card.appendChild(el("div", "compact-copy", safe(copyMap[variant], "No detail yet")));
-      return card;
-    }
-
-    function personText(person) {
-      const pieces = [safe(person.name, ""), safe(person.role, "")].filter(Boolean);
-      const contacts = [person.email, person.phone, person.linkedin, person.contact_path].filter(Boolean).join(" | ");
-      return [pieces.join(" - "), contacts].filter(Boolean).join(" • ");
-    }
-
-    function renderLeadCard(item) {
-      const card = el("article", "card");
-      const top = el("div", "card-top");
-      const left = document.createElement("div");
-      left.appendChild(el("h3", "card-title", safe(item.company_name, "Unknown")));
-      left.appendChild(el("p", "", safe(item.location || item.city || "", "")));
-      top.appendChild(left);
-      top.appendChild(el("div", "card-time", safe(
-        item.scored_at || item.enriched_at || item.completed_at || item.draft_created_at || item.collected_at,
-        ""
-      )));
-      card.appendChild(top);
-
-      const pills = el("div", "pills");
-      [item.location, item.fit_label, item.brain3_event_type, item.brain4_path, item.brain5_verdict]
-        .filter((value) => String(value || "").trim())
-        .slice(0, 5)
-        .forEach((value) => pills.appendChild(el("span", "pill", value)));
-      if (pills.childNodes.length) card.appendChild(pills);
-
-      card.appendChild(el("p", "", safe(item.company_description, "No company description yet.")));
-      card.appendChild(el("p", "", compactLine([
-        item.website,
-        item.contact_name,
-        item.email,
-        item.phone
-      ]) || "No direct contact data yet"));
-
-      if (item.key_people && item.key_people.length) {
-        card.appendChild(el("p", "", item.key_people.slice(0, 3).map(personText).join(" • ")));
-      }
-      if (item.channels && item.channels.length) {
-        card.appendChild(el("p", "", item.channels.join(" | ")));
-      }
-      if (safe(item.approval_brief || item.best_contact_strategy, "")) {
-        card.appendChild(el("p", "", safe(item.approval_brief || item.best_contact_strategy)));
-      }
-      return card;
-    }
-
-    function renderAccordionList(targetId, items, emptyText, renderItem) {
-      const node = document.getElementById(targetId);
-      clear(node);
-      if (!items.length) {
-        node.appendChild(emptyState(emptyText));
-        return;
-      }
-      const shell = el("div", "accordion-shell");
-      const preview = el("div", "accordion-preview");
-      items.slice(0, 5).forEach((item) => preview.appendChild(renderItem(item)));
-      shell.appendChild(preview);
-      if (items.length > 5) {
-        const body = el("div", "accordion-body");
-        body.hidden = true;
-        items.slice(5).forEach((item) => body.appendChild(renderItem(item)));
-        shell.appendChild(body);
-        const toggle = el("button", "accordion-toggle");
-        toggle.type = "button";
-        toggle.textContent = "Show " + (items.length - 5) + " more";
-        toggle.addEventListener("click", () => {
-          body.hidden = !body.hidden;
-          toggle.textContent = body.hidden ? "Show " + (items.length - 5) + " more" : "Collapse extra leads";
-        });
-        shell.appendChild(toggle);
-      }
-      node.appendChild(shell);
-    }
-
-    function renderQueue(targetId, items, emptyText) {
-      renderAccordionList(targetId, items, emptyText, (item) => {
-        const wrapper = el("div", "queue-item");
-        wrapper.appendChild(renderLeadCard(item));
-        return wrapper;
-      });
-    }
-
-    function renderActivity(items = []) {
-      clear(activityEl);
-      if (!items.length) {
-        activityEl.appendChild(emptyState("هنوز activity ای برای نمایش نیست."));
-        return;
-      }
-      items.forEach((item) => {
-        const row = el("div", "feed-item");
-        row.appendChild(el("div", "feed-time", formatTime(item.created_at)));
-        row.appendChild(el("p", "", safe(item.action, "action")));
-        row.appendChild(el("p", "", compactLine([
-          item.project_name,
-          item.company_name || item.task_title || item.detail
-        ]) || "No detail"));
-        if (safe(item.detail, "")) {
-          row.appendChild(el("p", "", safe(item.detail)));
-        }
-        activityEl.appendChild(row);
-      });
-    }
-
-    function brainMetric(payload, brainKey) {
-      const map = {
-        brain1: payload.summary.collected_total,
-        brain2: payload.summary.brain2_scored_total,
-        brain3: payload.summary.brain3_enriched_total,
-        brain4: payload.summary.brain4_strategized_total,
-        brain5: payload.summary.brain5_reviewed_total,
-        finalize: payload.summary.drafted_total
-      };
-      return map[brainKey] ?? 0;
-    }
-
-    function renderBrainGraph(payload) {
-      clear(brainGridEl);
-      clear(brainSvgEl);
-      const states = Array.isArray(payload.brain_states) ? payload.brain_states : [];
-      const items = BRAIN_FLOW.map((key) => states.find((item) => item.brain === key)).filter(Boolean);
-
-      if (!items.length) {
-        brainGridEl.appendChild(emptyState("هنوز telemetry برای Brainها ثبت نشده."));
-        return;
-      }
-
-      items.forEach((item) => {
-        const card = el("article", "brain-node " + safe(item.status, "idle"));
-        const head = el("div", "brain-node-head");
-        head.appendChild(el("h3", "brain-node-title", safe(item.label)));
-        head.appendChild(el("div", "brain-status", safe(item.status, "idle")));
-        card.appendChild(head);
-        card.appendChild(el("div", "brain-node-copy", safe(
-          item.action || item.reason || item.project_name || "Standing by for the next handoff.",
-          "Standing by for the next handoff."
-        )));
-        const meta = el("div", "brain-node-meta");
-        meta.appendChild(el("span", "brain-metric", "total " + brainMetric(payload, item.brain)));
-        if (item.project_name) meta.appendChild(el("span", "brain-metric", item.project_name));
-        if (item.lead_id) meta.appendChild(el("span", "brain-metric", "lead #" + item.lead_id));
-        card.appendChild(meta);
-        brainGridEl.appendChild(card);
-      });
-
-      requestAnimationFrame(() => {
-        const nodes = Array.from(brainGridEl.children).filter((node) => node.classList.contains("brain-node"));
-        if (!nodes.length) return;
-        const gridRect = brainGridEl.getBoundingClientRect();
-        nodes.slice(0, nodes.length - 1).forEach((node, index) => {
-          const next = nodes[index + 1];
-          const from = node.getBoundingClientRect();
-          const to = next.getBoundingClientRect();
-          const x1 = from.left + from.width * 0.5 - gridRect.left;
-          const y1 = from.top + from.height * 0.55 - gridRect.top;
-          const x2 = to.left + to.width * 0.5 - gridRect.left;
-          const y2 = to.top + to.height * 0.45 - gridRect.top;
-          const dx = Math.abs(x2 - x1) * 0.32;
-          const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-          const nextState = items[index + 1];
-          const liveClass = safe(nextState && nextState.status, "idle");
-          path.setAttribute("d", "M " + x1 + " " + y1 + " C " + (x1 + dx) + " " + y1 + ", " + (x2 - dx) + " " + y2 + ", " + x2 + " " + y2);
-          path.setAttribute("class", "brain-link " + liveClass);
-          brainSvgEl.appendChild(path);
-        });
-      });
-    }
-
-    function renderTelemetry(payload) {
-      const collected = payload.collected_leads || [];
-      const topScored = payload.top_scored_leads || [];
-      const queued = payload.queued_for_enrich_leads || [];
-      const completed = payload.completed_leads || [];
-
-      document.getElementById("collected-count").textContent = String(collected.length) + " visible";
-      document.getElementById("queued-enrich-count").textContent = String(queued.length) + " visible";
-      document.getElementById("top-scored-count").textContent = String(topScored.length) + " visible";
-      document.getElementById("completed-count").textContent = String(completed.length) + " visible";
-
-      renderAccordionList("collected-list", collected, "No fresh leads collected yet.", (item) => renderCompactLead(item, "collected"));
-      renderAccordionList("queued-enrich-list", queued, "Nothing is waiting for enrichment.", (item) => renderCompactLead(item, "queued"));
-      renderAccordionList("top-scored-list", topScored, "No scored leads yet.", (item) => renderCompactLead(item, "scored"));
-      renderAccordionList("completed-list", completed, "No completed leads yet.", (item) => renderCompactLead(item, "completed"));
-      renderBrainGraph(payload);
-    }
-
-    function renderAccordionListInto(node, items, renderItem) {
-      if (items.length <= 5) {
-        items.forEach((item) => node.appendChild(renderItem(item)));
-        return;
-      }
-      const shell = el("div", "accordion-shell");
-      const preview = el("div", "accordion-preview");
-      items.slice(0, 5).forEach((item) => preview.appendChild(renderItem(item)));
-      shell.appendChild(preview);
-      const body = el("div", "accordion-body");
-      body.hidden = true;
-      items.slice(5).forEach((item) => body.appendChild(renderItem(item)));
-      shell.appendChild(body);
-      const toggle = el("button", "accordion-toggle");
-      toggle.type = "button";
-      toggle.textContent = "Show " + (items.length - 5) + " more";
-      toggle.addEventListener("click", () => {
-        body.hidden = !body.hidden;
-        toggle.textContent = body.hidden ? "Show " + (items.length - 5) + " more" : "Collapse extra leads";
-      });
-      shell.appendChild(toggle);
-      node.appendChild(shell);
-    }
-
-    function renderLanes(payload) {
-      clear(laneGridEl);
-      const stages = payload.stages || {};
-      ["initial", "scored", "enriched", "strategized", "drafted"].forEach((stageKey) => {
-        const stage = stages[stageKey] || { label: stageKey, items: [] };
-        const lane = el("section", "lane");
-        const head = el("div", "lane-head");
-        head.appendChild(el("h3", "card-title", safe(stage.label)));
-        head.appendChild(el("div", "card-time", String((stage.items || []).length)));
-        lane.appendChild(head);
-        const list = el("div", "lane-list");
-        if (!(stage.items || []).length) {
-          list.appendChild(emptyState("Nothing here yet."));
-        } else {
-          renderAccordionListInto(list, stage.items, (item) => renderLeadCard(item));
-        }
-        lane.appendChild(list);
-        laneGridEl.appendChild(lane);
-      });
-    }
-
-    function renderTop(payload) {
-      const selectedTitle = document.getElementById("selected-project-title");
-      if (payload.selected_project) {
-        selectedTitle.textContent = payload.selected_project.name + " • " + safe(payload.generated_at);
-      } else {
-        selectedTitle.textContent = "Approval Queues";
-      }
-      nextWorkEl.textContent = payload.next_work
-        ? safe(payload.next_work.action) + " • " + safe(payload.next_work.project_name, "unassigned") + (payload.next_work.lead_id ? " • lead #" + payload.next_work.lead_id : "") + (payload.next_work.reason ? " • " + payload.next_work.reason : "")
-        : "No queued work";
-    }
-
-    async function loadLiveBoard() {
-      const backendUrl = normalizeUrl(state.backendUrl);
-      if (!backendUrl) {
-        updateConnection(false, "آدرس backend وارد نشده", "");
-        return;
-      }
-      const params = new URLSearchParams();
-      if (state.projectId) params.set("project_id", String(state.projectId));
-      const url = backendUrl + "/api/live-dashboard" + (params.toString() ? "?" + params.toString() : "");
-      try {
-        const response = await fetch(url, { cache: "no-store" });
-        if (!response.ok) throw new Error("HTTP " + response.status);
-        const payload = await response.json();
-        renderTop(payload);
-        renderMetrics(payload.summary || {});
-        renderProjects(payload);
-        renderTelemetry(payload);
-        renderQueue("approval-list", payload.pending_approvals || [], "No lead approvals waiting.");
-        renderQueue("message-approval-list", payload.pending_message_approvals || [], "No message approvals waiting.");
-        renderActivity(payload.recent_activity || []);
-        renderLanes(payload);
-        if (!state.projectId && payload.selected_project) {
-          state.projectId = String(payload.selected_project.id);
-          projectSelect.value = state.projectId;
-          localStorage.setItem("ai_agents_project_id", state.projectId);
-        }
-        updateConnection(true, "Live backend connected", payload.generated_at);
-      } catch (error) {
-        updateConnection(false, "ارتباط با backend برقرار نشد: " + safe(error.message, "unknown error"), "");
-      }
-    }
-
-    function schedulePolling() {
-      if (state.timer) window.clearInterval(state.timer);
-      state.timer = window.setInterval(loadLiveBoard, state.refreshMs);
-    }
-
-    connectBtn.addEventListener("click", () => {
-      state.backendUrl = normalizeUrl(backendInput.value);
-      state.projectId = projectSelect.value;
-      state.refreshMs = Number(refreshSelect.value || "10000");
-      localStorage.setItem("ai_agents_backend_url", state.backendUrl);
-      localStorage.setItem("ai_agents_project_id", state.projectId);
-      localStorage.setItem("ai_agents_refresh_ms", String(state.refreshMs));
-      schedulePolling();
-      loadLiveBoard();
-    });
-
-    projectSelect.addEventListener("change", () => {
-      state.projectId = projectSelect.value;
-      localStorage.setItem("ai_agents_project_id", state.projectId);
-      loadLiveBoard();
-    });
-
-    refreshSelect.addEventListener("change", () => {
-      state.refreshMs = Number(refreshSelect.value || "10000");
-      localStorage.setItem("ai_agents_refresh_ms", String(state.refreshMs));
-      schedulePolling();
-    });
-
-    schedulePolling();
-    if (state.backendUrl) {
-      loadLiveBoard();
-    } else {
-      renderMetrics({});
-      renderProjects({ projects: [], selected_project: null });
-      renderActivity([]);
-      renderLanes({ stages: {} });
-    }
-  </script>
+  <script src="dashboard.js"></script>
 </body>
 </html>
