@@ -23,15 +23,10 @@ const MOBILE_NODE_LAYOUT = [
 ];
 
 const summaryGrid = document.getElementById("summary-grid");
-const insightList = document.getElementById("insight-list");
 const journeyNodes = document.getElementById("journey-nodes");
 const journeySvg = document.getElementById("journey-svg");
-const connectionState = document.getElementById("connection-state");
 const lastUpdated = document.getElementById("last-updated");
-const currentFocus = document.getElementById("current-focus");
-const journeyDescription = document.getElementById("journey-description");
-const journeyNote = document.getElementById("journey-note");
-const emptyState = document.getElementById("empty-state");
+const statusLight = document.getElementById("status-light");
 
 function safe(value, fallback = "") {
   if (value === null || value === undefined) return fallback;
@@ -196,54 +191,9 @@ function renderSummary(payload) {
   });
 }
 
-function renderInsights(payload) {
-  clear(insightList);
-  const selectedProject = payload.selected_project?.name || "All projects";
-  const approvals = countApproval(payload);
-  const stages = stageData(payload);
-  const highestStage = stages.reduce((max, item) => item.value > max.value ? item : max, stages[0]);
-  const activeBrain = (Array.isArray(payload.brain_states) ? payload.brain_states : []).find((item) => item.status === "running");
-
-  [
-    ["Project scope:", selectedProject],
-    ["Largest volume:", highestStage.title + " with " + highestStage.value + " leads"],
-    ["Approval queue:", approvals + " item(s) waiting"],
-    ["Live agent:", activeBrain ? activeBrain.label + " is running" : "No brain is actively running"]
-  ].forEach(([label, value]) => {
-    const item = el("div", "insight-item");
-    item.appendChild(el("strong", "", label + " "));
-    item.appendChild(document.createTextNode(value));
-    insightList.appendChild(item);
-  });
-
-  const hasAnyData = stages.some((item) => item.value > 0);
-  emptyState.hidden = hasAnyData;
-}
-
-function renderTop(payload) {
-  const activeKey = getActiveKey(payload);
-  const activeStage = stageData(payload).find((item) => item.key === activeKey);
-  const nextWork = payload.next_work || null;
-
-  currentFocus.textContent = activeStage ? activeStage.title : "Waiting for data";
-  journeyDescription.textContent = activeStage
-    ? activeStage.title + " is the current highlighted step in the lead path from collection to approval."
-    : "Lead movement from collection to approval is shown here.";
-
-  if (nextWork) {
-    journeyNote.textContent = [
-      safe(nextWork.action, "idle"),
-      safe(nextWork.project_name, "unassigned"),
-      nextWork.lead_id ? "lead #" + nextWork.lead_id : ""
-    ].filter(Boolean).join(" • ");
-  } else {
-    journeyNote.textContent = "No queued task reported by the backend.";
-  }
-}
-
 function updateConnection(ok, generatedAt, errorMessage) {
-  connectionState.textContent = ok ? "Snapshot connected" : "Snapshot unavailable";
   lastUpdated.textContent = ok ? formatTime(generatedAt) : safe(errorMessage, "No data");
+  statusLight.classList.toggle("connected", ok);
 }
 
 async function loadBoard() {
@@ -253,10 +203,8 @@ async function loadBoard() {
     if (!response.ok) throw new Error("HTTP " + response.status);
     const payload = await response.json();
     updateConnection(true, payload.generated_at, "");
-    renderTop(payload);
     renderJourney(payload);
     renderSummary(payload);
-    renderInsights(payload);
   } catch (error) {
     updateConnection(false, "", safe(error.message, "unknown error"));
   }

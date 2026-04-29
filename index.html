@@ -87,11 +87,10 @@
       max-width: 760px;
     }
     .status-stack {
-      display: grid;
-      gap: 10px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
       min-width: 250px;
-    }
-    .chip {
       padding: 12px 14px;
       border-radius: 16px;
       border: 1px solid rgba(91, 210, 255, 0.14);
@@ -99,39 +98,21 @@
       color: var(--muted);
       font-size: 13px;
     }
-    .chip strong {
-      color: var(--text);
-      font-size: 14px;
+    .status-light {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: #ff5d5d;
+      box-shadow: 0 0 14px rgba(255, 93, 93, 0.35);
+      flex: 0 0 auto;
+    }
+    .status-light.connected {
+      background: #63f59a;
+      box-shadow: 0 0 14px rgba(99, 245, 154, 0.35);
     }
     .journey {
       padding: 22px;
       overflow: hidden;
-    }
-    .journey-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      align-items: flex-start;
-      margin-bottom: 18px;
-      flex-wrap: wrap;
-    }
-    .journey-copy {
-      max-width: 760px;
-    }
-    .journey-copy p {
-      margin-top: 10px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-    .journey-note {
-      max-width: 360px;
-      padding: 14px 16px;
-      border-radius: 18px;
-      background: rgba(91, 210, 255, 0.08);
-      border: 1px solid rgba(91, 210, 255, 0.16);
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.65;
     }
     .journey-stage {
       position: relative;
@@ -242,11 +223,8 @@
     }
     .summary-layout {
       margin-top: 18px;
-      display: grid;
-      grid-template-columns: 1.7fr 1fr;
-      gap: 18px;
     }
-    .summary-panel, .insight-panel {
+    .summary-panel {
       padding: 22px;
     }
     .summary-grid {
@@ -285,31 +263,6 @@
       font-size: 13px;
       line-height: 1.7;
     }
-    .insight-list {
-      margin-top: 18px;
-      display: grid;
-      gap: 12px;
-    }
-    .insight-item {
-      padding: 14px 16px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 13px;
-    }
-    .insight-item strong {
-      color: var(--text);
-    }
-    .empty {
-      margin-top: 18px;
-      padding: 18px;
-      border-radius: 18px;
-      border: 1px dashed rgba(91, 210, 255, 0.22);
-      color: var(--muted);
-      line-height: 1.7;
-    }
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(110, 255, 199, 0.4); }
       70% { box-shadow: 0 0 0 16px rgba(110, 255, 199, 0); }
@@ -320,7 +273,7 @@
       to { stroke-dashoffset: -48; }
     }
     @media (max-width: 1080px) {
-      .topbar, .summary-layout {
+      .topbar {
         grid-template-columns: 1fr;
         display: grid;
       }
@@ -356,32 +309,14 @@
       <div>
         <div class="eyebrow">AI Sales Agent Dashboard</div>
         <h1 class="title">Lead Journey Across The Brains</h1>
-        <p class="subtitle">
-          This board shows the movement of leads from Brain 1 collection to scoring, enrichment,
-          strategy, review, and finally the approval queue.
-        </p>
       </div>
       <div class="status-stack">
-        <div class="chip"><strong id="connection-state">Loading snapshot</strong></div>
-        <div class="chip">Updated: <strong id="last-updated">No data</strong></div>
-        <div class="chip">Current focus: <strong id="current-focus">Waiting for live data</strong></div>
+        <span class="status-light" id="status-light"></span>
+        <span>Last updated: <strong id="last-updated">No data</strong></span>
       </div>
     </header>
 
     <section class="panel journey">
-      <div class="journey-head">
-        <div class="journey-copy">
-          <div class="eyebrow">Journey Map</div>
-          <h2>Line + Point Flow Of Each Lead</h2>
-          <p id="journey-description">
-            Brain 1 creates a lead, Brain 2 scores it, the lead moves through the enrichment brains,
-            and ends in the approval waiting list.
-          </p>
-        </div>
-        <div class="journey-note" id="journey-note">
-          Snapshot is loading.
-        </div>
-      </div>
       <div class="journey-stage">
         <svg class="journey-svg" id="journey-svg" viewBox="0 0 1200 480" preserveAspectRatio="none" aria-hidden="true"></svg>
         <div class="nodes" id="journey-nodes"></div>
@@ -394,13 +329,6 @@
         <h2>Counts By Pipeline Step</h2>
         <div class="summary-grid" id="summary-grid"></div>
       </section>
-
-      <aside class="panel insight-panel">
-        <div class="eyebrow">Snapshot Notes</div>
-        <h2>Short Status</h2>
-        <div class="insight-list" id="insight-list"></div>
-        <div class="empty" id="empty-state" hidden>No lead data is available yet.</div>
-      </aside>
     </section>
   <script src="dashboard.js"></script>
   </main>
