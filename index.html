@@ -116,7 +116,6 @@
     }
     .journey-stage {
       position: relative;
-      min-height: 480px;
       border-radius: 24px;
       padding: 20px;
       background:
@@ -142,84 +141,122 @@
       height: 100%;
       pointer-events: none;
     }
-    .flow-line {
-      fill: none;
-      stroke: rgba(91, 210, 255, 0.24);
-      stroke-width: 4;
-      stroke-linecap: round;
-      stroke-dasharray: 10 14;
-      animation: flow 8s linear infinite;
-    }
-    .flow-line.active {
-      stroke: var(--line-strong);
-      stroke-width: 5;
-    }
-    .glow {
-      fill: rgba(91, 210, 255, 0.12);
-    }
-    .nodes {
+    .journey-grid {
       position: relative;
-      min-height: 440px;
+      z-index: 1;
     }
-    .node {
-      position: absolute;
-      width: 180px;
-      min-height: 122px;
-      transform: translate(-50%, -50%);
-      padding: 16px;
-      border-radius: 24px;
-      border: 1px solid rgba(91, 210, 255, 0.15);
-      background: linear-gradient(180deg, rgba(12, 28, 42, 0.96), rgba(8, 20, 31, 0.9));
-      display: grid;
-      gap: 10px;
-      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
-    }
-    .node.active {
-      border-color: rgba(110, 255, 199, 0.7);
-      box-shadow: 0 0 0 1px rgba(110, 255, 199, 0.18), 0 20px 54px rgba(110, 255, 199, 0.12);
-      transform: translate(-50%, calc(-50% - 6px));
-    }
-    .node.waiting {
-      border-color: rgba(255, 219, 107, 0.48);
-    }
-    .node-head {
+    .journey-headline {
       display: flex;
       justify-content: space-between;
-      gap: 8px;
-      align-items: center;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 18px;
     }
-    .node-step {
-      color: var(--accent);
-      text-transform: uppercase;
-      font-size: 10px;
-      letter-spacing: 0.14em;
-    }
-    .node-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 999px;
-      background: rgba(91, 210, 255, 0.4);
-      box-shadow: 0 0 0 0 rgba(91, 210, 255, 0.35);
-    }
-    .node.active .node-dot {
-      background: var(--accent-2);
-      animation: pulse 1.8s infinite;
-    }
-    .node-title {
-      font-size: 20px;
-      font-weight: 800;
-      line-height: 1;
-    }
-    .node-body {
+    .journey-headline p {
       color: var(--muted);
       font-size: 13px;
       line-height: 1.6;
     }
-    .node-count {
-      color: var(--text);
-      font-size: 28px;
-      font-weight: 900;
-      line-height: 1;
+    .journey-stage-labels {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 18px;
+      margin-bottom: 12px;
+      align-items: center;
+    }
+    .journey-stage-labels-track {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .journey-stage-label {
+      color: var(--accent);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      text-align: center;
+    }
+    .journey-list {
+      display: grid;
+      gap: 12px;
+    }
+    .journey-row {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 18px;
+      align-items: center;
+      padding: 14px 0;
+      border-top: 1px solid rgba(91, 210, 255, 0.09);
+    }
+    .journey-row:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+    .journey-lead {
+      min-width: 0;
+    }
+    .journey-lead-name {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.3;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .journey-lead-meta {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .journey-track {
+      position: relative;
+      height: 42px;
+    }
+    .journey-track::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 2px;
+      transform: translateY(-50%);
+      background: rgba(91, 210, 255, 0.12);
+    }
+    .journey-track-line {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      height: 4px;
+      transform: translateY(-50%);
+      border-radius: 999px;
+      background: var(--lead-color, var(--accent));
+      box-shadow: 0 0 18px color-mix(in srgb, var(--lead-color, var(--accent)) 28%, transparent);
+    }
+    .journey-stop {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      background: #0f2433;
+      border: 2px solid rgba(91, 210, 255, 0.22);
+    }
+    .journey-stop.done {
+      background: var(--lead-color, var(--accent));
+      border-color: var(--lead-color, var(--accent));
+    }
+    .journey-stop.current {
+      width: 18px;
+      height: 18px;
+      box-shadow: 0 0 0 6px color-mix(in srgb, var(--lead-color, var(--accent)) 18%, transparent);
+    }
+    .journey-empty {
+      padding: 24px 0 8px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
     }
     .summary-layout {
       margin-top: 18px;
@@ -230,17 +267,17 @@
     .summary-grid {
       margin-top: 18px;
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
     }
     .summary-card {
-      border-radius: 22px;
-      padding: 18px;
+      border-radius: 18px;
+      padding: 14px;
       background: rgba(91, 210, 255, 0.06);
       border: 1px solid rgba(91, 210, 255, 0.1);
-      min-height: 150px;
+      min-height: 112px;
       display: grid;
-      gap: 10px;
+      gap: 8px;
       align-content: start;
     }
     .summary-card.active {
@@ -254,14 +291,14 @@
       font-size: 11px;
     }
     .summary-value {
-      font-size: 42px;
+      font-size: 30px;
       line-height: 0.9;
       font-weight: 900;
     }
     .summary-text {
       color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
+      font-size: 11px;
+      line-height: 1.5;
     }
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(110, 255, 199, 0.4); }
@@ -281,7 +318,7 @@
         min-width: 0;
       }
       .summary-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
     @media (max-width: 760px) {
@@ -294,14 +331,19 @@
       .journey-stage {
         min-height: 860px;
       }
-      .nodes {
-        min-height: 820px;
+      .journey-stage-labels,
+      .journey-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
       }
-      .node {
-        width: min(100%, 250px);
+      .journey-stage-labels-track {
+        gap: 8px;
+      }
+      .journey-lead-name {
+        white-space: normal;
       }
       .summary-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
   </style>
@@ -321,8 +363,25 @@
 
     <section class="panel journey">
       <div class="journey-stage">
-        <svg class="journey-svg" id="journey-svg" viewBox="0 0 1200 480" preserveAspectRatio="none" aria-hidden="true"></svg>
-        <div class="nodes" id="journey-nodes"></div>
+        <div class="journey-grid">
+          <div class="journey-headline">
+            <div>
+              <div class="eyebrow">Active Lead Flow</div>
+              <h2>Lead Journey Across The Brains</h2>
+            </div>
+            <p>Only leads currently moving from Brain 3 toward approval are shown here.</p>
+          </div>
+          <div class="journey-stage-labels">
+            <div></div>
+            <div class="journey-stage-labels-track">
+              <div class="journey-stage-label">Brain 3</div>
+              <div class="journey-stage-label">Brain 5</div>
+              <div class="journey-stage-label">Lead Approval</div>
+              <div class="journey-stage-label">Message Approval</div>
+            </div>
+          </div>
+          <div class="journey-list" id="journey-list"></div>
+        </div>
       </div>
     </section>
 

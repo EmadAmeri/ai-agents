@@ -4,27 +4,15 @@ const state = {
   timer: null
 };
 
-const DESKTOP_NODE_LAYOUT = [
-  { key: "brain1", label: "Brain 1", step: "Collect", x: 10, y: 68, copy: "Leads collected from sources." },
-  { key: "brain2", label: "Brain 2", step: "Score", x: 28, y: 42, copy: "Lead fit scoring and shortlist filtering." },
-  { key: "brain3", label: "Brain 3", step: "Enrich", x: 46, y: 30, copy: "Context and company details added." },
-  { key: "brain4", label: "Brain 4", step: "Strategy", x: 64, y: 54, copy: "Outreach and approach planning." },
-  { key: "brain5", label: "Brain 5", step: "Review", x: 82, y: 34, copy: "Final review before approval." },
-  { key: "approval", label: "Approval", step: "Queue", x: 84, y: 66, copy: "Waiting for human approval." }
-];
-
-const MOBILE_NODE_LAYOUT = [
-  { key: "brain1", label: "Brain 1", step: "Collect", x: 50, y: 10, copy: "Leads collected from sources." },
-  { key: "brain2", label: "Brain 2", step: "Score", x: 50, y: 26, copy: "Lead fit scoring and shortlist filtering." },
-  { key: "brain3", label: "Brain 3", step: "Enrich", x: 50, y: 42, copy: "Context and company details added." },
-  { key: "brain4", label: "Brain 4", step: "Strategy", x: 50, y: 58, copy: "Outreach and approach planning." },
-  { key: "brain5", label: "Brain 5", step: "Review", x: 50, y: 74, copy: "Final review before approval." },
-  { key: "approval", label: "Approval", step: "Queue", x: 50, y: 90, copy: "Waiting for human approval." }
+const ACTIVE_FLOW_STAGES = [
+  { key: "brain3", label: "Brain 3" },
+  { key: "brain5", label: "Brain 5" },
+  { key: "approval", label: "Lead Approval" },
+  { key: "message", label: "Message Approval" }
 ];
 
 const summaryGrid = document.getElementById("summary-grid");
-const journeyNodes = document.getElementById("journey-nodes");
-const journeySvg = document.getElementById("journey-svg");
+const journeyList = document.getElementById("journey-list");
 const lastUpdated = document.getElementById("last-updated");
 const statusLight = document.getElementById("status-light");
 
@@ -41,6 +29,10 @@ function el(tag, className, text) {
   return node;
 }
 
+function clear(node) {
+  while (node.firstChild) node.removeChild(node.firstChild);
+}
+
 function formatTime(value) {
   if (!value) return "No data";
   const date = new Date(value);
@@ -48,46 +40,10 @@ function formatTime(value) {
   return date.toLocaleString("en-GB", { dateStyle: "short", timeStyle: "medium" });
 }
 
-function clear(node) {
-  while (node.firstChild) node.removeChild(node.firstChild);
-}
-
 function countApproval(payload) {
   const leadApprovals = Array.isArray(payload.pending_approvals) ? payload.pending_approvals.length : 0;
   const messageApprovals = Array.isArray(payload.pending_message_approvals) ? payload.pending_message_approvals.length : 0;
   return payload.summary?.waiting_approvals ?? leadApprovals + messageApprovals;
-}
-
-function getNodeLayout() {
-  return window.matchMedia("(max-width: 760px)").matches ? MOBILE_NODE_LAYOUT : DESKTOP_NODE_LAYOUT;
-}
-
-function renderFlowLines(layout, activeKey) {
-  while (journeySvg.firstChild) journeySvg.removeChild(journeySvg.firstChild);
-  const isMobile = window.matchMedia("(max-width: 760px)").matches;
-  journeySvg.setAttribute("viewBox", isMobile ? "0 0 100 100" : "0 0 100 100");
-
-  const glow = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-  glow.setAttribute("class", "glow");
-  glow.setAttribute("cx", isMobile ? "50" : "54");
-  glow.setAttribute("cy", isMobile ? "48" : "46");
-  glow.setAttribute("r", isMobile ? "16" : "18");
-  journeySvg.appendChild(glow);
-
-  layout.forEach((nodeInfo, index) => {
-    if (index === layout.length - 1) return;
-    const next = layout[index + 1];
-    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    const cx1 = (nodeInfo.x + next.x) / 2;
-    const cy1 = isMobile ? nodeInfo.y + 5 : nodeInfo.y - 10;
-    const cy2 = isMobile ? next.y - 5 : next.y + 10;
-    path.setAttribute(
-      "d",
-      "M " + nodeInfo.x + " " + nodeInfo.y + " C " + cx1 + " " + cy1 + ", " + cx1 + " " + cy2 + ", " + next.x + " " + next.y
-    );
-    path.setAttribute("class", "flow-line" + (nodeInfo.key === activeKey ? " active" : ""));
-    journeySvg.appendChild(path);
-  });
 }
 
 function stageData(payload) {
@@ -112,77 +68,131 @@ function stageData(payload) {
       label: "Enriched",
       title: "Brain 3 Enrichment",
       value: summary.brain3_enriched_total ?? 0,
-      text: "Leads with extra company and context data."
+      text: "Leads enriched with deeper event and company context."
     },
     {
-      key: "brain4",
-      label: "Strategized",
-      title: "Brain 4 Strategy",
-      value: summary.brain4_strategized_total ?? 0,
-      text: "Leads with outreach direction prepared."
+      key: "approval",
+      label: "Waiting",
+      title: "Pending Approval",
+      value: Array.isArray(payload.pending_approvals) ? payload.pending_approvals.length : countApproval(payload),
+      text: "Leads waiting for lead approval."
     },
     {
       key: "brain5",
       label: "Reviewed",
       title: "Brain 5 Review",
       value: summary.brain5_reviewed_total ?? 0,
-      text: "Leads that passed through final review."
+      text: "Leads reviewed and expanded before approval."
     },
     {
-      key: "approval",
-      label: "Waiting",
-      title: "Pending Approval",
-      value: countApproval(payload),
-      text: "Leads or messages waiting for approval."
+      key: "message",
+      label: "Message",
+      title: "Message Approval",
+      value: Array.isArray(payload.pending_message_approvals) ? payload.pending_message_approvals.length : 0,
+      text: "Approved leads waiting for message approval."
     }
   ];
 }
 
-function getActiveKey(payload) {
+function deriveActiveLeadFlows(payload) {
+  const leads = new Map();
+
+  function upsert(items, stageKey) {
+    (Array.isArray(items) ? items : []).forEach((item) => {
+      const leadId = Number(item.lead_id || item.id || 0);
+      if (!leadId) return;
+      const stageIndex = ACTIVE_FLOW_STAGES.findIndex((stage) => stage.key === stageKey);
+      if (stageIndex === -1) return;
+      const existing = leads.get(leadId);
+      if (!existing || stageIndex > existing.stageIndex) {
+        leads.set(leadId, {
+          leadId,
+          companyName: safe(item.company_name, "Lead #" + leadId),
+          location: safe(item.location || item.city, ""),
+          stageIndex,
+          stageKey
+        });
+      }
+    });
+  }
+
+  upsert(payload?.stages?.enriched?.items, "brain3");
+  upsert(payload?.stages?.strategized?.items, "brain5");
+  upsert(payload?.pending_approvals, "approval");
+  upsert(payload?.pending_message_approvals, "message");
+
   const states = Array.isArray(payload.brain_states) ? payload.brain_states : [];
-  const running = states.find((item) => item.status === "running");
-  if (running) return safe(running.brain, "brain1");
+  states.forEach((brain) => {
+    const leadId = Number(brain.lead_id || 0);
+    if (!leadId) return;
+    const stageMap = {
+      brain3: "brain3",
+      brain5: "brain5"
+    };
+    const stageKey = stageMap[brain.brain];
+    if (!stageKey) return;
+    upsert([{ lead_id: leadId, company_name: "Lead #" + leadId }], stageKey);
+  });
 
-  const queued = states.find((item) => item.status === "queued");
-  if (queued) return safe(queued.brain, "brain1");
+  return Array.from(leads.values())
+    .sort((a, b) => b.stageIndex - a.stageIndex || a.leadId - b.leadId)
+    .slice(0, 12);
+}
 
-  if (countApproval(payload) > 0) return "approval";
-  return "brain1";
+function leadColor(leadId) {
+  const hue = (leadId * 53) % 360;
+  return "hsl(" + hue + " 82% 64%)";
+}
+
+function stagePosition(index) {
+  if (ACTIVE_FLOW_STAGES.length === 1) return 0;
+  return (index / (ACTIVE_FLOW_STAGES.length - 1)) * 100;
 }
 
 function renderJourney(payload) {
-  clear(journeyNodes);
-  const activeKey = getActiveKey(payload);
-  const counts = Object.fromEntries(stageData(payload).map((item) => [item.key, item.value]));
-  const layout = getNodeLayout();
+  clear(journeyList);
+  const activeLeads = deriveActiveLeadFlows(payload);
 
-  renderFlowLines(layout, activeKey);
+  if (!activeLeads.length) {
+    journeyList.appendChild(el("div", "journey-empty", "No active leads are currently moving through Brain 3, Brain 5, or approval."));
+    return;
+  }
 
-  layout.forEach((nodeInfo) => {
-    const node = el("article", "node");
-    if (nodeInfo.key === activeKey) node.classList.add("active");
-    if (nodeInfo.key === "approval" && counts.approval > 0) node.classList.add("waiting");
-    node.style.left = nodeInfo.x + "%";
-    node.style.top = nodeInfo.y + "%";
+  activeLeads.forEach((lead) => {
+    const color = leadColor(lead.leadId);
+    const row = el("article", "journey-row");
 
-    const head = el("div", "node-head");
-    const meta = document.createElement("div");
-    meta.appendChild(el("div", "node-step", nodeInfo.step));
-    meta.appendChild(el("h3", "node-title", nodeInfo.label));
-    head.appendChild(meta);
-    head.appendChild(el("span", "node-dot"));
-    node.appendChild(head);
-    node.appendChild(el("div", "node-body", nodeInfo.copy));
-    node.appendChild(el("div", "node-count", String(counts[nodeInfo.key] ?? 0)));
-    journeyNodes.appendChild(node);
+    const leadInfo = el("div", "journey-lead");
+    leadInfo.appendChild(el("div", "journey-lead-name", lead.companyName));
+    leadInfo.appendChild(el("div", "journey-lead-meta", [lead.location, "Lead #" + lead.leadId].filter(Boolean).join(" • ")));
+    row.appendChild(leadInfo);
+
+    const track = el("div", "journey-track");
+    track.style.setProperty("--lead-color", color);
+
+    const line = el("div", "journey-track-line");
+    line.style.width = stagePosition(lead.stageIndex) + "%";
+    track.appendChild(line);
+
+    ACTIVE_FLOW_STAGES.forEach((stage, index) => {
+      const stop = el("span", "journey-stop");
+      stop.style.left = stagePosition(index) + "%";
+      stop.style.setProperty("--lead-color", color);
+      if (index <= lead.stageIndex) stop.classList.add("done");
+      if (index === lead.stageIndex) stop.classList.add("current");
+      stop.title = stage.label;
+      track.appendChild(stop);
+    });
+
+    row.appendChild(track);
+    journeyList.appendChild(row);
   });
 }
 
 function renderSummary(payload) {
   clear(summaryGrid);
-  const activeKey = getActiveKey(payload);
   stageData(payload).forEach((item) => {
-    const card = el("article", "summary-card" + (item.key === activeKey ? " active" : ""));
+    const card = el("article", "summary-card");
     card.appendChild(el("div", "summary-label", item.label));
     card.appendChild(el("div", "summary-value", String(item.value)));
     card.appendChild(el("h3", "", item.title));
@@ -217,4 +227,3 @@ function schedulePolling() {
 
 schedulePolling();
 loadBoard();
-window.addEventListener("resize", loadBoard);
