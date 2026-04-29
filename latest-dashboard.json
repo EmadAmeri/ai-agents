@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T10:47:37",
+  "generated_at": "2026-04-29T10:48:25",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
@@ -933,9 +933,9 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "scored leads are queued for Brain 3 enrichment",
-      "updated_at": "2026-04-29T08:47:37+00:00",
+      "updated_at": "2026-04-29T08:48:25+00:00",
       "started_at": "",
-      "finished_at": "2026-04-29T08:47:37+00:00",
+      "finished_at": "2026-04-29T08:48:25+00:00",
       "details": {
         "error": "Gemini Brain 3 request failed: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
         "result_status": "error"
