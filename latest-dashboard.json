@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-04-29T07:46:25",
+  "generated_at": "2026-04-29T07:46:39",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
-    "waiting_approvals": 1,
-    "total_activity": 123,
+    "waiting_approvals": 2,
+    "total_activity": 124,
     "collected_total": 65,
     "brain2_scored_total": 61,
     "brain3_enriched_total": 2,
@@ -49,12 +49,12 @@
       "blocked_tasks": 0,
       "paused_tasks": 0,
       "completed_tasks": 0,
-      "raw_leads": 64,
+      "raw_leads": 63,
       "shortlisted_leads": 0,
-      "awaiting_approval_leads": 1,
+      "awaiting_approval_leads": 2,
       "approved_leads": 0,
       "drafted_leads": 0,
-      "pending_approval_requests": 1,
+      "pending_approval_requests": 2,
       "ready_for_draft_leads": 0,
       "ready_for_approval_leads": 0,
       "awaiting_enrichment_leads": 0,
@@ -116,12 +116,12 @@
     "blocked_tasks": 0,
     "paused_tasks": 0,
     "completed_tasks": 0,
-    "raw_leads": 64,
+    "raw_leads": 63,
     "shortlisted_leads": 0,
-    "awaiting_approval_leads": 1,
+    "awaiting_approval_leads": 2,
     "approved_leads": 0,
     "drafted_leads": 0,
-    "pending_approval_requests": 1,
+    "pending_approval_requests": 2,
     "ready_for_draft_leads": 0,
     "ready_for_approval_leads": 0,
     "awaiting_enrichment_leads": 0,
@@ -437,8 +437,8 @@
           "contact_name": "Daniel Appelt",
           "email": "daniel.appelt@dappevents.de",
           "phone": "089 890636030",
-          "status": "raw",
-          "approval_status": "not_requested",
+          "status": "awaiting_approval",
+          "approval_status": "requested",
           "message_approval_status": "not_requested",
           "score": 0,
           "fit_label": "medium_fit",
@@ -675,10 +675,58 @@
           "contact_path": ""
         }
       ]
+    },
+    {
+      "lead_id": 7,
+      "company_name": "DAPP EVENTS",
+      "website": "dappevents.example",
+      "location": "Kirchheim bei München, DE",
+      "contact_name": "Daniel Appelt",
+      "email": "daniel.appelt@dappevents.de",
+      "phone": "089 890636030",
+      "status": "awaiting_approval",
+      "approval_status": "requested",
+      "message_approval_status": "not_requested",
+      "score": 0,
+      "fit_label": "",
+      "brain2_summary": "",
+      "brain3_event_type": "",
+      "brain4_path": "",
+      "brain5_verdict": "",
+      "company_description": "DAPP EVENTS operates as an event management agency, providing comprehensive services to clients for planning and executing their events. Their revenue comes from service fees charged to clients for event organization.",
+      "approval_brief": "DAPP EVENTS is a full-service event management agency based in Kirchheim bei München, specializing in the conception, planning, and execution of various types of events for corporate and private clients. They handle all aspects from idea generation to implementation, including logistics, catering, technology, and guest management.",
+      "best_contact_strategy": "",
+      "channels": [],
+      "key_people": [
+        {
+          "name": "Daniel Appelt",
+          "role": "",
+          "email": "daniel.appelt@dappevents.de",
+          "phone": "+4989890636030",
+          "linkedin": "https://www.linkedin.com/in/daniel-appelt-a820a412b/",
+          "contact_path": "Direct email, LinkedIn message, company phone"
+        },
+        {
+          "name": "Patrick Appelt",
+          "role": "",
+          "email": "patrick.appelt@dappevents.de",
+          "phone": "+4989890636030",
+          "linkedin": "https://www.linkedin.com/in/patrick-appelt-500b7012b/",
+          "contact_path": "Direct email, LinkedIn message, company phone"
+        }
+      ]
     }
   ],
   "pending_message_approvals": [],
   "recent_activity": [
+    {
+      "created_at": "2026-04-29T05:46:39+00:00",
+      "action": "approval_requested",
+      "project_name": "Sentra Conferences",
+      "company_name": "DAPP EVENTS",
+      "task_title": "",
+      "detail": "DAPP EVENTS via telegram_waiting_approval"
+    },
     {
       "created_at": "2026-04-29T05:46:25+00:00",
       "action": "lead_enriched",
@@ -766,22 +814,9 @@
       "company_name": "meyUNITY",
       "task_title": "",
       "detail": "meyUNITY via telegram_waiting_approval"
-    },
-    {
-      "created_at": "2026-04-23T19:37:23+00:00",
-      "action": "lead_enriched",
-      "project_name": "Sentra Conferences",
-      "company_name": "meyUNITY",
-      "task_title": "",
-      "detail": "meyUNITY source=brain3_gemini"
     }
   ],
-  "next_work": {
-    "action": "request_approval",
-    "project_name": "Sentra Conferences",
-    "lead_id": 7,
-    "reason": "legacy approval path is waiting for human approval"
-  },
+  "next_work": null,
   "brain_states": [
     {
       "brain": "brain1",
@@ -825,18 +860,18 @@
     {
       "brain": "brain3",
       "label": "Brain 3",
-      "status": "queued",
-      "action": "brain3_enrich_lead",
+      "status": "idle",
+      "action": "request_approval",
       "project_name": "Sentra Conferences",
       "lead_id": 7,
-      "reason": "scored leads are queued for Brain 3 enrichment",
-      "updated_at": "2026-04-29T05:46:25+00:00",
+      "reason": "legacy approval path is waiting for human approval",
+      "updated_at": "2026-04-29T05:46:39+00:00",
       "started_at": "",
-      "finished_at": "2026-04-29T05:46:25+00:00",
+      "finished_at": "2026-04-29T05:46:39+00:00",
       "details": {
-        "action": "brain3_enrich_lead",
+        "action": "request_approval",
+        "approval_status": "requested",
         "lead_id": 7,
-        "model": "gemini-2.5-flash",
         "result_status": "completed"
       }
     },
@@ -1225,7 +1260,7 @@
       "email": "daniel.appelt@dappevents.de",
       "phone": "089 890636030",
       "website": "",
-      "approval_status": "not_requested",
+      "approval_status": "requested",
       "message_approval_status": "not_requested",
       "draft_status": "not_created",
       "draft_created_at": "",
