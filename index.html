@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI Agents Live Board</title>
-  <meta name="description" content="Live GitHub Pages dashboard for the AI Sales Agent backend running on your machine.">
+  <title>Agmentic Sales Agent</title>
+  <meta name="description" content="Live dashboard for the Agmentic sales agent backend.">
   <style>
     :root {
       --bg: #060807;
@@ -53,9 +53,22 @@
       box-shadow: var(--shadow);
       backdrop-filter: blur(16px);
     }
+    .masthead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .brand-title {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 900;
+      letter-spacing: 0.02em;
+    }
     .command-deck {
       display: grid;
-      grid-template-columns: minmax(0, 1.55fr) minmax(330px, 0.9fr);
+      grid-template-columns: 1fr;
       gap: 18px;
       align-items: stretch;
     }
@@ -171,18 +184,13 @@
       font-size: 12px;
       line-height: 1.2;
     }
-    .control-stack, .stack {
+    .stack {
       display: grid;
       gap: 18px;
     }
     .panel {
       border-radius: 28px;
       padding: 20px;
-    }
-    .control-panel {
-      display: grid;
-      gap: 14px;
-      align-content: start;
     }
     .section-kicker {
       color: var(--acid);
@@ -191,40 +199,9 @@
       font-size: 11px;
       margin-bottom: 6px;
     }
-    .control-grid {
-      display: grid;
-      gap: 12px;
-    }
-    label {
-      display: grid;
-      gap: 8px;
-      font-size: 11px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    input, select, button {
-      width: 100%;
-      border-radius: 16px;
-      border: 1px solid rgba(171, 245, 82, 0.18);
-      background: rgba(0, 0, 0, 0.42);
-      color: var(--text);
-      padding: 13px 14px;
-      font: inherit;
-      outline: none;
-    }
-    button {
-      cursor: pointer;
-      background: linear-gradient(180deg, rgba(171, 245, 82, 0.98), rgba(145, 213, 53, 0.92));
-      color: #0a1205;
-      font-weight: 800;
-    }
-    input:focus, select:focus {
-      border-color: var(--acid);
-      box-shadow: 0 0 0 4px rgba(171, 245, 82, 0.1);
-    }
     .live-rail {
-      display: grid;
+      display: flex;
+      flex-wrap: wrap;
       gap: 10px;
     }
     .live-row {
@@ -532,7 +509,7 @@
       to { stroke-dashoffset: -48; }
     }
     @media (max-width: 1180px) {
-      .command-deck, .layout, .telemetry-grid, .queues {
+      .layout, .telemetry-grid, .queues {
         grid-template-columns: 1fr;
       }
       .metrics {
@@ -563,6 +540,14 @@
 </head>
 <body>
   <main class="shell">
+    <header class="masthead">
+      <h1 class="brand-title">Agmentic Sales Agent</h1>
+      <div class="live-rail">
+        <div class="live-row"><span id="live-dot" class="dot"></span><strong id="connection-state">Connecting to local backend</strong></div>
+        <div class="live-row"><span>Updated</span><span id="last-updated">No data</span></div>
+      </div>
+    </header>
+
     <section class="command-deck">
       <article class="mesh-panel panel">
         <div class="mesh-stage">
@@ -576,69 +561,34 @@
             <div class="mesh-meta">
               <div class="status-chip" id="connection-chip">Backend disconnected</div>
               <div class="status-chip" id="next-work-chip">No queued work</div>
+              <div class="status-chip" id="selected-project-summary">Auto project selection</div>
             </div>
           </div>
           <div class="mesh-node-field" id="brain-grid"></div>
         </div>
       </article>
+    </section>
 
-      <aside class="control-stack">
-        <section class="panel control-panel">
-          <div>
-            <div class="section-kicker">Control Rail</div>
-            <h2>Live Source</h2>
-          </div>
-          <div class="control-grid">
-            <label>
-              Backend URL
-              <input id="backend-url" type="url" placeholder="https://your-public-backend.example.com">
-            </label>
-            <label>
-              Project
-              <select id="project-select">
-                <option value="">Auto</option>
-              </select>
-            </label>
-            <label>
-              Refresh
-              <select id="refresh-select">
-                <option value="5000">5s</option>
-                <option value="10000" selected>10s</option>
-                <option value="15000">15s</option>
-                <option value="30000">30s</option>
-              </select>
-            </label>
-            <button id="connect-btn" type="button">Connect Live</button>
-          </div>
-          <div class="live-rail">
-            <div class="live-row"><span id="live-dot" class="dot"></span><strong id="connection-state">آدرس backend وارد نشده</strong></div>
-            <div class="live-row"><span>Updated</span><span id="last-updated">No data</span></div>
-            <div class="live-row"><span>Project</span><span id="selected-project-summary">No project selected</span></div>
-          </div>
-        </section>
-
-        <section class="panel">
-          <div class="section-kicker">Quick View</div>
-          <div class="mini-stat-grid">
-            <div class="mini-stat">
-              <div class="mini-stat-label">Collected Visible</div>
-              <div class="mini-stat-value" id="collected-count">0</div>
-            </div>
-            <div class="mini-stat">
-              <div class="mini-stat-label">Queued Visible</div>
-              <div class="mini-stat-value" id="queued-enrich-count">0</div>
-            </div>
-            <div class="mini-stat">
-              <div class="mini-stat-label">Scored Visible</div>
-              <div class="mini-stat-value" id="top-scored-count">0</div>
-            </div>
-            <div class="mini-stat">
-              <div class="mini-stat-label">Completed Visible</div>
-              <div class="mini-stat-value" id="completed-count">0</div>
-            </div>
-          </div>
-        </section>
-      </aside>
+    <section class="panel" style="margin-top: 18px;">
+      <div class="section-kicker">Quick View</div>
+      <div class="mini-stat-grid">
+        <div class="mini-stat">
+          <div class="mini-stat-label">Collected Visible</div>
+          <div class="mini-stat-value" id="collected-count">0</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-label">Queued Visible</div>
+          <div class="mini-stat-value" id="queued-enrich-count">0</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-label">Scored Visible</div>
+          <div class="mini-stat-value" id="top-scored-count">0</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-label">Completed Visible</div>
+          <div class="mini-stat-value" id="completed-count">0</div>
+        </div>
+      </div>
     </section>
 
     <section class="metrics" id="metrics"></section>
