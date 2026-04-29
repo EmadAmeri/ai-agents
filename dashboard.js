@@ -1,7 +1,6 @@
 const state = {
-  backendUrl: localStorage.getItem("ai_agents_backend_url") || new URLSearchParams(location.search).get("backend") || "http://127.0.0.1:8787",
-  projectId: localStorage.getItem("ai_agents_project_id") || new URLSearchParams(location.search).get("project_id") || "",
-  refreshMs: Number(localStorage.getItem("ai_agents_refresh_ms") || "10000"),
+  snapshotUrl: "./latest-dashboard.json",
+  refreshMs: 60000,
   timer: null
 };
 
@@ -67,7 +66,7 @@ function updateConnection(ok, message, generatedAt) {
   connectionState.textContent = message;
   lastUpdated.textContent = generatedAt ? formatTime(generatedAt) : "No data";
   liveDot.className = ok ? "dot live" : "dot";
-  connectionChip.textContent = ok ? "Backend connected" : "Backend disconnected";
+  connectionChip.textContent = ok ? "Snapshot loaded" : "Snapshot unavailable";
 }
 
 function renderMetrics(summary = {}) {
@@ -97,25 +96,19 @@ function renderProjects(payload) {
     : "Auto project selection";
 
   projects.forEach((project) => {
-    const button = el("button", "project-chip" + (selected && project.id === selected.id ? " active" : ""));
-    button.type = "button";
-    button.addEventListener("click", () => {
-      state.projectId = String(project.id);
-      localStorage.setItem("ai_agents_project_id", state.projectId);
-      loadLiveBoard();
-    });
-    button.appendChild(el("div", "project-name", safe(project.name)));
-    button.appendChild(el("div", "muted", compactLine([
+    const card = el("article", "project-chip" + (selected && project.id === selected.id ? " active" : ""));
+    card.appendChild(el("div", "project-name", safe(project.name)));
+    card.appendChild(el("div", "muted", compactLine([
       "status " + safe(project.status),
       "raw " + (project.raw_leads ?? 0),
       "shortlist " + (project.shortlisted_leads ?? 0)
     ])));
-    button.appendChild(el("div", "muted", compactLine([
+    card.appendChild(el("div", "muted", compactLine([
       "enrich " + (project.awaiting_enrichment_leads ?? 0),
       "strategy " + (project.awaiting_strategy_leads ?? 0),
       "approval " + (project.pending_approval_requests ?? 0)
     ])));
-    projectListEl.appendChild(button);
+    projectListEl.appendChild(card);
   });
 
   if (!projects.length) {
@@ -412,14 +405,7 @@ function renderTop(payload) {
 }
 
 async function loadLiveBoard() {
-  const backendUrl = normalizeUrl(state.backendUrl);
-  if (!backendUrl) {
-    updateConnection(false, "Backend URL is not configured", "");
-    return;
-  }
-  const params = new URLSearchParams();
-  if (state.projectId) params.set("project_id", String(state.projectId));
-  const url = backendUrl + "/api/live-dashboard" + (params.toString() ? "?" + params.toString() : "");
+  const url = state.snapshotUrl + "?t=" + Date.now();
   try {
     const response = await fetch(url, { cache: "no-store" });
     if (!response.ok) throw new Error("HTTP " + response.status);
@@ -432,13 +418,9 @@ async function loadLiveBoard() {
     renderQueue("message-approval-list", payload.pending_message_approvals || [], "No message approvals waiting.");
     renderActivity(payload.recent_activity || []);
     renderLanes(payload);
-    if (!state.projectId && payload.selected_project) {
-      state.projectId = String(payload.selected_project.id);
-      localStorage.setItem("ai_agents_project_id", state.projectId);
-    }
-    updateConnection(true, "Live backend connected", payload.generated_at);
+    updateConnection(true, "Static snapshot loaded", payload.generated_at);
   } catch (error) {
-    updateConnection(false, "Backend connection failed: " + safe(error.message, "unknown error"), "");
+    updateConnection(false, "Snapshot load failed: " + safe(error.message, "unknown error"), "");
   }
 }
 
@@ -448,13 +430,4 @@ function schedulePolling() {
 }
 
 schedulePolling();
-if (state.backendUrl) {
-  localStorage.setItem("ai_agents_backend_url", state.backendUrl);
-  loadLiveBoard();
-} else {
-  renderMetrics({});
-  renderProjects({ projects: [], selected_project: null });
-  renderActivity([]);
-  renderLanes({ stages: {} });
-  renderBrainGraph({ brain_states: [], summary: {} });
-}
+loadLiveBoard();
