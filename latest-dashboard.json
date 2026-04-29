@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T17:37:55",
+  "generated_at": "2026-04-29T17:38:54",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
@@ -903,36 +903,36 @@
     }
   ],
   "next_work": {
-    "action": "collect_initial_leads",
+    "action": "brain3_enrich_lead",
     "project_name": "Sentra Conferences",
     "lead_id": null,
-    "reason": "initial queue below target/refill threshold"
+    "reason": "scored leads are queued for Brain 3 enrichment"
   },
   "brain_states": [
     {
       "brain": "brain1",
       "label": "Brain 1",
-      "status": "queued",
+      "status": "idle",
       "action": "collect_initial_leads",
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold",
-      "updated_at": "2026-04-29T14:06:57+00:00",
+      "updated_at": "2026-04-29T15:38:54+00:00",
       "started_at": "",
-      "finished_at": "2026-04-29T14:06:57+00:00",
+      "finished_at": "2026-04-29T15:38:54+00:00",
       "details": {
         "action": "collect_initial_leads",
-        "duplicates": 0,
-        "inserted": 1,
+        "duplicates": 1,
+        "inserted": 0,
         "items": [
           {
-            "company_name": "Christoph Anzer Eventdekorationen, Flowers & Wedding",
-            "lead_id": 72,
-            "record_status": "inserted"
+            "company_name": "EvenDS Management",
+            "lead_id": 8,
+            "record_status": "duplicate"
           }
         ],
         "result_status": "completed",
-        "run_id": 57
+        "run_id": 58
       }
     },
     {
@@ -951,7 +951,7 @@
     {
       "brain": "brain3",
       "label": "Brain 3",
-      "status": "idle",
+      "status": "queued",
       "action": "brain3_enrich_lead",
       "project_name": "Sentra Conferences",
       "lead_id": null,
