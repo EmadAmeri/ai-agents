@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T09:10:59",
+  "generated_at": "2026-04-29T10:02:33",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
@@ -889,22 +889,22 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold",
-      "updated_at": "2026-04-29T06:31:35+00:00",
+      "updated_at": "2026-04-29T08:02:33+00:00",
       "started_at": "",
-      "finished_at": "2026-04-29T06:31:35+00:00",
+      "finished_at": "2026-04-29T08:02:33+00:00",
       "details": {
         "action": "collect_initial_leads",
-        "duplicates": 0,
-        "inserted": 1,
+        "duplicates": 1,
+        "inserted": 0,
         "items": [
           {
-            "company_name": "MICE MUNICH",
-            "lead_id": 71,
-            "record_status": "inserted"
+            "company_name": "ZWO EVENTS",
+            "lead_id": 9,
+            "record_status": "duplicate"
           }
         ],
         "result_status": "completed",
-        "run_id": 52
+        "run_id": 53
       }
     },
     {
