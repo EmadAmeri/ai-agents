@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T08:31:35",
+  "generated_at": "2026-04-29T09:09:24",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
@@ -839,7 +839,12 @@
       "detail": "meyUNITY via telegram_waiting_approval"
     }
   ],
-  "next_work": null,
+  "next_work": {
+    "action": "brain4_generate_strategy",
+    "project_name": "Sentra Conferences",
+    "lead_id": 7,
+    "reason": "approved Brain 3 lead ready for Brain 4"
+  },
   "brain_states": [
     {
       "brain": "brain1",
@@ -901,19 +906,17 @@
     {
       "brain": "brain4",
       "label": "Brain 4",
-      "status": "idle",
+      "status": "queued",
       "action": "brain4_generate_strategy",
       "project_name": "Sentra Conferences",
-      "lead_id": 6,
+      "lead_id": 7,
       "reason": "approved Brain 3 lead ready for Brain 4",
-      "updated_at": "2026-04-29T04:08:53+00:00",
+      "updated_at": "2026-04-29T07:09:24+00:00",
       "started_at": "",
-      "finished_at": "2026-04-29T04:08:53+00:00",
+      "finished_at": "2026-04-29T07:09:24+00:00",
       "details": {
-        "action": "brain4_generate_strategy",
-        "lead_id": 6,
-        "model": "gemini-2.5-flash",
-        "result_status": "completed"
+        "error": "Gemini Brain 4 request failed: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+        "result_status": "error"
       }
     },
     {
