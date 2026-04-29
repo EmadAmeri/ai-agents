@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T14:34:57",
+  "generated_at": "2026-04-29T14:35:57",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
@@ -879,7 +879,12 @@
       "detail": "Konferenzzentrum München via telegram_waiting_approval"
     }
   ],
-  "next_work": null,
+  "next_work": {
+    "action": "brain3_enrich_lead",
+    "project_name": "Sentra Conferences",
+    "lead_id": null,
+    "reason": "scored leads are queued for Brain 3 enrichment"
+  },
   "brain_states": [
     {
       "brain": "brain1",
@@ -889,22 +894,22 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold",
-      "updated_at": "2026-04-29T11:05:01+00:00",
+      "updated_at": "2026-04-29T12:35:56+00:00",
       "started_at": "",
-      "finished_at": "2026-04-29T11:05:01+00:00",
+      "finished_at": "2026-04-29T12:35:56+00:00",
       "details": {
         "action": "collect_initial_leads",
         "duplicates": 1,
         "inserted": 0,
         "items": [
           {
-            "company_name": "Munich Expats",
-            "lead_id": 60,
+            "company_name": "teamazing GmbH",
+            "lead_id": 32,
             "record_status": "duplicate"
           }
         ],
         "result_status": "completed",
-        "run_id": 55
+        "run_id": 56
       }
     },
     {
@@ -923,7 +928,7 @@
     {
       "brain": "brain3",
       "label": "Brain 3",
-      "status": "idle",
+      "status": "queued",
       "action": "brain3_enrich_lead",
       "project_name": "Sentra Conferences",
       "lead_id": null,
