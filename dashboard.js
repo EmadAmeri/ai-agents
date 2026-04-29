@@ -1,6 +1,6 @@
 const state = {
-  backendUrl: localStorage.getItem("ai_agents_backend_url") || new URLSearchParams(location.search).get("backend") || "",
-  projectId: localStorage.getItem("ai_agents_project_id") || "",
+  backendUrl: localStorage.getItem("ai_agents_backend_url") || new URLSearchParams(location.search).get("backend") || "http://127.0.0.1:8787",
+  projectId: localStorage.getItem("ai_agents_project_id") || new URLSearchParams(location.search).get("project_id") || "",
   refreshMs: Number(localStorage.getItem("ai_agents_refresh_ms") || "10000"),
   timer: null
 };
@@ -21,18 +21,11 @@ const activityEl = document.getElementById("activity-feed");
 const brainGridEl = document.getElementById("brain-grid");
 const meshSvgEl = document.getElementById("mesh-svg");
 const laneGridEl = document.getElementById("lane-grid");
-const backendInput = document.getElementById("backend-url");
-const projectSelect = document.getElementById("project-select");
-const refreshSelect = document.getElementById("refresh-select");
-const connectBtn = document.getElementById("connect-btn");
 const connectionState = document.getElementById("connection-state");
 const lastUpdated = document.getElementById("last-updated");
 const liveDot = document.getElementById("live-dot");
 const connectionChip = document.getElementById("connection-chip");
 const nextWorkChip = document.getElementById("next-work-chip");
-
-backendInput.value = state.backendUrl;
-refreshSelect.value = String(state.refreshMs);
 
 function safe(value, fallback = "") {
   if (value === null || value === undefined) return fallback;
@@ -67,7 +60,7 @@ function formatTime(value) {
   if (!value) return "n/a";
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return safe(value, "n/a");
-  return date.toLocaleString("fa-IR", { dateStyle: "short", timeStyle: "medium" });
+  return date.toLocaleString("en-GB", { dateStyle: "short", timeStyle: "medium" });
 }
 
 function updateConnection(ok, message, generatedAt) {
@@ -79,12 +72,12 @@ function updateConnection(ok, message, generatedAt) {
 
 function renderMetrics(summary = {}) {
   const items = [
-    ["Collected", summary.collected_total ?? 0, "لیدهای اولیه جمع آوری شده"],
-    ["Brain 2", summary.brain2_scored_total ?? 0, "تعداد لیدهای اسکور شده"],
-    ["Brain 3", summary.brain3_enriched_total ?? 0, "لیدهای enrich شده"],
-    ["Brain 4", summary.brain4_strategized_total ?? 0, "استراتژی های ساخته شده"],
-    ["Brain 5", summary.brain5_reviewed_total ?? 0, "بازبینی نهایی"],
-    ["Final", summary.drafted_total ?? summary.approved_total ?? 0, "خروجی نهایی یا draft"]
+    ["Collected", summary.collected_total ?? 0, "Raw leads gathered"],
+    ["Brain 2", summary.brain2_scored_total ?? 0, "Leads scored for fit"],
+    ["Brain 3", summary.brain3_enriched_total ?? 0, "Leads enriched with context"],
+    ["Brain 4", summary.brain4_strategized_total ?? 0, "Outreach strategies prepared"],
+    ["Brain 5", summary.brain5_reviewed_total ?? 0, "Final review completed"],
+    ["Final", summary.drafted_total ?? summary.approved_total ?? 0, "Drafted or approved outputs"]
   ];
   metricsEl.replaceChildren(...items.map(([label, value, meta]) => {
     const card = el("article", "metric");
@@ -101,18 +94,13 @@ function renderProjects(payload) {
   const selected = payload.selected_project || null;
   document.getElementById("selected-project-summary").textContent = selected
     ? compactLine([selected.name, "raw " + (selected.raw_leads ?? 0), "drafted " + (selected.drafted_leads ?? 0)])
-    : "No project selected";
-
-  const auto = el("option", "", "Auto");
-  auto.value = "";
-  projectSelect.replaceChildren(auto);
+    : "Auto project selection";
 
   projects.forEach((project) => {
     const button = el("button", "project-chip" + (selected && project.id === selected.id ? " active" : ""));
     button.type = "button";
     button.addEventListener("click", () => {
       state.projectId = String(project.id);
-      projectSelect.value = state.projectId;
       localStorage.setItem("ai_agents_project_id", state.projectId);
       loadLiveBoard();
     });
@@ -128,13 +116,6 @@ function renderProjects(payload) {
       "approval " + (project.pending_approval_requests ?? 0)
     ])));
     projectListEl.appendChild(button);
-
-    const option = el("option", "", safe(project.name));
-    option.value = String(project.id);
-    if (String(project.id) === String(state.projectId || "")) {
-      option.selected = true;
-    }
-    projectSelect.appendChild(option);
   });
 
   if (!projects.length) {
@@ -258,7 +239,7 @@ function renderQueue(targetId, items, emptyText) {
 function renderActivity(items = []) {
   clear(activityEl);
   if (!items.length) {
-    activityEl.appendChild(emptyState("هنوز activity ای برای نمایش نیست."));
+    activityEl.appendChild(emptyState("No recent activity yet."));
     return;
   }
   items.forEach((item) => {
@@ -295,7 +276,7 @@ function renderBrainGraph(payload) {
   const items = BRAIN_FLOW.map((key) => states.find((item) => item.brain === key)).filter(Boolean);
 
   if (!items.length) {
-    brainGridEl.appendChild(emptyState("هنوز telemetry برای Brainها ثبت نشده."));
+    brainGridEl.appendChild(emptyState("No brain telemetry yet."));
     return;
   }
 
@@ -433,7 +414,7 @@ function renderTop(payload) {
 async function loadLiveBoard() {
   const backendUrl = normalizeUrl(state.backendUrl);
   if (!backendUrl) {
-    updateConnection(false, "آدرس backend وارد نشده", "");
+    updateConnection(false, "Backend URL is not configured", "");
     return;
   }
   const params = new URLSearchParams();
@@ -453,12 +434,11 @@ async function loadLiveBoard() {
     renderLanes(payload);
     if (!state.projectId && payload.selected_project) {
       state.projectId = String(payload.selected_project.id);
-      projectSelect.value = state.projectId;
       localStorage.setItem("ai_agents_project_id", state.projectId);
     }
     updateConnection(true, "Live backend connected", payload.generated_at);
   } catch (error) {
-    updateConnection(false, "ارتباط با backend برقرار نشد: " + safe(error.message, "unknown error"), "");
+    updateConnection(false, "Backend connection failed: " + safe(error.message, "unknown error"), "");
   }
 }
 
@@ -467,31 +447,9 @@ function schedulePolling() {
   state.timer = window.setInterval(loadLiveBoard, state.refreshMs);
 }
 
-connectBtn.addEventListener("click", () => {
-  state.backendUrl = normalizeUrl(backendInput.value);
-  state.projectId = projectSelect.value;
-  state.refreshMs = Number(refreshSelect.value || "10000");
-  localStorage.setItem("ai_agents_backend_url", state.backendUrl);
-  localStorage.setItem("ai_agents_project_id", state.projectId);
-  localStorage.setItem("ai_agents_refresh_ms", String(state.refreshMs));
-  schedulePolling();
-  loadLiveBoard();
-});
-
-projectSelect.addEventListener("change", () => {
-  state.projectId = projectSelect.value;
-  localStorage.setItem("ai_agents_project_id", state.projectId);
-  loadLiveBoard();
-});
-
-refreshSelect.addEventListener("change", () => {
-  state.refreshMs = Number(refreshSelect.value || "10000");
-  localStorage.setItem("ai_agents_refresh_ms", String(state.refreshMs));
-  schedulePolling();
-});
-
 schedulePolling();
 if (state.backendUrl) {
+  localStorage.setItem("ai_agents_backend_url", state.backendUrl);
   loadLiveBoard();
 } else {
   renderMetrics({});
