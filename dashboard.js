@@ -52,21 +52,21 @@ function stageData(payload) {
     {
       key: "brain1",
       label: "Collected",
-      title: "Brain 1 Intake",
+      title: "Intake",
       value: summary.collected_total ?? 0,
       text: "Total leads collected by the first brain."
     },
     {
       key: "brain2",
       label: "Scored",
-      title: "Brain 2 Scoring",
+      title: "Scoring",
       value: summary.brain2_scored_total ?? 0,
       text: "Leads that have already been scored."
     },
     {
       key: "brain3",
       label: "Enriched",
-      title: "Brain 3 Enrichment",
+      title: "Enrichment",
       value: summary.brain3_enriched_total ?? 0,
       text: "Leads enriched with deeper event and company context."
     },
