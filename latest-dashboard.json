@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T21:14:59",
+  "generated_at": "2026-04-30T21:25:02",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
@@ -1314,9 +1314,9 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "scored leads are queued for Brain 3 enrichment",
-      "updated_at": "2026-04-30T19:14:59+00:00",
+      "updated_at": "2026-04-30T19:25:02+00:00",
       "started_at": "",
-      "finished_at": "2026-04-30T19:14:59+00:00",
+      "finished_at": "2026-04-30T19:25:02+00:00",
       "details": {
         "error": "'NoneType' object has no attribute 'strip'",
         "result_status": "error"
