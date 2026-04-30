@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-04-30T17:39:54",
+  "generated_at": "2026-04-30T17:40:14",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
     "waiting_approvals": 4,
-    "total_activity": 134,
+    "total_activity": 135,
     "collected_total": 69,
     "brain2_scored_total": 61,
-    "brain3_enriched_total": 8,
+    "brain3_enriched_total": 9,
     "brain5_reviewed_total": 4,
     "approved_total": 0,
     "drafted_total": 0,
@@ -131,7 +131,7 @@
     "project_name": "Sentra Conferences",
     "initial_leads_count": 69,
     "scored_leads_count": 61,
-    "enriched_leads_count": 8,
+    "enriched_leads_count": 9,
     "strategized_leads_count": 4,
     "drafted_contacted_leads_count": 0
   },
@@ -505,6 +505,28 @@
       "count": 8,
       "items": [
         {
+          "lead_id": 16,
+          "company_name": "Scholastika Eventlocation",
+          "website": "scholastikaeventlocation.example",
+          "linkedin_company_url": "",
+          "location": "München, DE",
+          "contact_name": "",
+          "email": "",
+          "phone": "089 223707",
+          "status": "raw",
+          "approval_status": "not_requested",
+          "message_approval_status": "not_requested",
+          "score": 0,
+          "fit_label": "medium_fit",
+          "brain2_summary": "Event venue, not organizer",
+          "brain3_event_type": "Venue",
+          "brain5_verdict": "",
+          "company_description": "Provides event space rental and related services for conferences, meetings, and corporate events.",
+          "approval_brief": "Scholastika Eventlocation is an event venue located in Munich, offering spaces for conferences, meetings, and corporate events.",
+          "channels": [],
+          "key_people": []
+        },
+        {
           "lead_id": 15,
           "company_name": "Servicebroker GmbH - Ihre Eventagentur in München",
           "website": "servicebrokergmbh-ihreeventagenturinmünchen.example",
@@ -707,69 +729,6 @@
               "phone": "+4989890636030",
               "linkedin": "https://www.linkedin.com/in/patrick-appelt-500b7012b/",
               "contact_path": "Direct email, LinkedIn message, company phone"
-            }
-          ]
-        },
-        {
-          "lead_id": 6,
-          "company_name": "Munich Summit Partners conference-organizer-in-",
-          "website": "https://summit-conference-organizer-in-.example",
-          "linkedin_company_url": "",
-          "location": "Munich, DE",
-          "contact_name": "",
-          "email": "",
-          "phone": "+49 89 1675 100",
-          "status": "awaiting_approval",
-          "approval_status": "requested",
-          "message_approval_status": "not_requested",
-          "score": 0,
-          "fit_label": "fit",
-          "brain2_summary": "Conference organizer in Munich that hosts events.",
-          "brain3_event_type": "Conference",
-          "brain5_verdict": "Needs revision before approval",
-          "company_description": "Organizes and hosts conferences and events, likely generating revenue through tickets, sponsorships, and exhibitor fees.",
-          "approval_brief": "The lead is a Munich‑based conference organizer with a strong reputation but no identified contacts. The revised strategy adds a research‑first step, diversifies channels (LinkedIn, email, phone), tightens sequencing, and injects concrete personalization based on publicly available ratings and event focus. Approve once the research yields at least one verified decision‑maker.",
-          "channels": [],
-          "key_people": [
-            {
-              "name": "Unknown",
-              "role": "",
-              "email": "unknown",
-              "phone": "unknown",
-              "linkedin": "unknown",
-              "contact_path": ""
-            },
-            {
-              "name": "To be identified",
-              "role": "",
-              "email": "To be identified",
-              "phone": "To be identified",
-              "linkedin": "To be identified",
-              "contact_path": ""
-            },
-            {
-              "name": "Unknown",
-              "role": "",
-              "email": "unknown",
-              "phone": "unknown",
-              "linkedin": "unknown",
-              "contact_path": ""
-            },
-            {
-              "name": "To be identified",
-              "role": "",
-              "email": "To be identified",
-              "phone": "To be identified",
-              "linkedin": "To be identified",
-              "contact_path": ""
-            },
-            {
-              "name": "Unknown",
-              "role": "",
-              "email": "unknown",
-              "phone": "unknown",
-              "linkedin": "unknown",
-              "contact_path": ""
             }
           ]
         }
@@ -1120,6 +1079,14 @@
   "pending_message_approvals": [],
   "recent_activity": [
     {
+      "created_at": "2026-04-30T15:40:14+00:00",
+      "action": "lead_enriched",
+      "project_name": "Sentra Conferences",
+      "company_name": "Scholastika Eventlocation",
+      "task_title": "",
+      "detail": "Scholastika Eventlocation source=brain3_gemini"
+    },
+    {
       "created_at": "2026-04-30T15:39:54+00:00",
       "action": "lead_enriched",
       "project_name": "Sentra Conferences",
@@ -1206,14 +1173,6 @@
       "company_name": "DAPP EVENTS",
       "task_title": "",
       "detail": "DAPP EVENTS via telegram_waiting_approval"
-    },
-    {
-      "created_at": "2026-04-29T05:46:25+00:00",
-      "action": "lead_enriched",
-      "project_name": "Sentra Conferences",
-      "company_name": "DAPP EVENTS",
-      "task_title": "",
-      "detail": "DAPP EVENTS source=brain3_gemini"
     }
   ],
   "next_work": {
@@ -1270,12 +1229,12 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "scored leads are queued for Brain 3 enrichment",
-      "updated_at": "2026-04-30T15:39:54+00:00",
+      "updated_at": "2026-04-30T15:40:14+00:00",
       "started_at": "",
-      "finished_at": "2026-04-30T15:39:54+00:00",
+      "finished_at": "2026-04-30T15:40:14+00:00",
       "details": {
         "action": "brain3_enrich_lead",
-        "lead_id": 15,
+        "lead_id": 16,
         "model": "openai/gpt-oss-120b",
         "result_status": "completed",
         "used_brain": "brain5"
@@ -1355,7 +1314,7 @@
         "label": "Marketing Agent",
         "subtitle": "Output / Action",
         "color": "#3ddc97",
-        "count": 8
+        "count": 9
       }
     ],
     "dots": [
@@ -1432,18 +1391,6 @@
         "color": "#6ea8ff"
       },
       {
-        "lead_id": 16,
-        "company_name": "Scholastika Eventlocation",
-        "contact_name": "",
-        "linkedin_url": "",
-        "score": 0.0,
-        "fit_label": "medium_fit",
-        "stage": "scoring",
-        "next_stage": "enrichment",
-        "status": "processing",
-        "color": "#9b5cff"
-      },
-      {
         "lead_id": 17,
         "company_name": "Zenith",
         "contact_name": "",
@@ -1468,6 +1415,30 @@
         "color": "#9b5cff"
       },
       {
+        "lead_id": 24,
+        "company_name": "Hartmanns",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "medium_fit",
+        "stage": "scoring",
+        "next_stage": "enrichment",
+        "status": "processing",
+        "color": "#9b5cff"
+      },
+      {
+        "lead_id": 16,
+        "company_name": "Scholastika Eventlocation",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "medium_fit",
+        "stage": "enrichment",
+        "next_stage": "pending",
+        "status": "moving",
+        "color": "#9b5cff"
+      },
+      {
         "lead_id": 15,
         "company_name": "Servicebroker GmbH - Ihre Eventagentur in München",
         "contact_name": "Not identified",
@@ -1484,18 +1455,6 @@
         "company_name": "MOC – Event Center Messe Munich",
         "contact_name": "",
         "linkedin_url": "",
-        "score": 0.0,
-        "fit_label": "fit",
-        "stage": "enrichment",
-        "next_stage": "pending",
-        "status": "moving",
-        "color": "#9b5cff"
-      },
-      {
-        "lead_id": 12,
-        "company_name": "Messe München",
-        "contact_name": "Dr. Thomas K. (CEO)",
-        "linkedin_url": "https://www.linkedin.com/company/messe-muenchen",
         "score": 0.0,
         "fit_label": "fit",
         "stage": "enrichment",
@@ -1540,6 +1499,18 @@
         "color": "#ff9b54"
       },
       {
+        "lead_id": 16,
+        "company_name": "Scholastika Eventlocation",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "",
+        "stage": "marketing",
+        "next_stage": "",
+        "status": "complete",
+        "color": "#3ddc97"
+      },
+      {
         "lead_id": 15,
         "company_name": "Servicebroker GmbH - Ihre Eventagentur in München",
         "contact_name": "",
@@ -1562,22 +1533,17 @@
         "next_stage": "",
         "status": "complete",
         "color": "#3ddc97"
-      },
-      {
-        "lead_id": 12,
-        "company_name": "Messe München",
-        "contact_name": "",
-        "linkedin_url": "",
-        "score": 0.0,
-        "fit_label": "",
-        "stage": "marketing",
-        "next_stage": "",
-        "status": "complete",
-        "color": "#3ddc97"
       }
     ],
     "active_transition": "enrichment_to_pending",
     "live_feed": [
+      {
+        "created_at": "2026-04-30T15:40:14+00:00",
+        "action": "lead_enriched",
+        "project_name": "Sentra Conferences",
+        "company_name": "Scholastika Eventlocation",
+        "detail": "A lead was enriched with external research."
+      },
       {
         "created_at": "2026-04-30T15:39:54+00:00",
         "action": "lead_enriched",
@@ -1605,13 +1571,6 @@
         "project_name": "Sentra Conferences",
         "company_name": "SPACE - Ihre Eventagentur München",
         "detail": "A lead was enriched with external research."
-      },
-      {
-        "created_at": "2026-04-30T15:27:01+00:00",
-        "action": "approval_requested",
-        "project_name": "Sentra Conferences",
-        "company_name": "ZWO EVENTS",
-        "detail": "A lead entered the human approval queue."
       }
     ]
   },
@@ -1831,17 +1790,6 @@
   ],
   "queued_for_enrich_leads": [
     {
-      "lead_id": 16,
-      "company_name": "Scholastika Eventlocation",
-      "city": "München",
-      "website": "",
-      "phone": "089 223707",
-      "fit_classification": "medium_fit",
-      "lead_tag": "potential_partner",
-      "reason_summary": "Event venue, not organizer",
-      "collected_at": "2026-04-19 21:08:30"
-    },
-    {
       "lead_id": 17,
       "company_name": "Zenith",
       "city": "München",
@@ -1939,9 +1887,36 @@
       "lead_tag": "potential_partner",
       "reason_summary": "Conference center venue, not a primary organizer.",
       "collected_at": "2026-04-19 21:14:31"
+    },
+    {
+      "lead_id": 35,
+      "company_name": "WEITBLICK Eventlocation",
+      "city": "München",
+      "website": "",
+      "phone": "089 159298410",
+      "fit_classification": "medium_fit",
+      "lead_tag": "potential_partner",
+      "reason_summary": "Event venue provider for corporate and private events.",
+      "collected_at": "2026-04-19 21:15:21"
     }
   ],
   "completed_leads": [
+    {
+      "lead_id": 16,
+      "company_name": "Scholastika Eventlocation",
+      "city": "München",
+      "email": "",
+      "phone": "089 223707",
+      "website": "",
+      "approval_status": "not_requested",
+      "message_approval_status": "not_requested",
+      "draft_status": "not_created",
+      "draft_created_at": "",
+      "verdict": "",
+      "outreach_path": "",
+      "partnership_relevance": "Potential partner for conference organizers seeking a venue in Munich",
+      "completed_at": "2026-04-30T15:40:14+00:00"
+    },
     {
       "lead_id": 15,
       "company_name": "Servicebroker GmbH - Ihre Eventagentur in München",
