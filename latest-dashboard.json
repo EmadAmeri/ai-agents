@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-04-30T18:08:55",
+  "generated_at": "2026-04-30T18:09:12",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
-    "waiting_approvals": 6,
-    "total_activity": 140,
+    "waiting_approvals": 7,
+    "total_activity": 141,
     "collected_total": 69,
     "brain2_scored_total": 61,
     "brain3_enriched_total": 12,
@@ -48,12 +48,12 @@
       "blocked_tasks": 0,
       "paused_tasks": 0,
       "completed_tasks": 0,
-      "raw_leads": 63,
+      "raw_leads": 62,
       "shortlisted_leads": 0,
-      "awaiting_approval_leads": 6,
+      "awaiting_approval_leads": 7,
       "approved_leads": 0,
       "drafted_leads": 0,
-      "pending_approval_requests": 6,
+      "pending_approval_requests": 7,
       "ready_for_draft_leads": 0,
       "ready_for_approval_leads": 0,
       "awaiting_enrichment_leads": 0,
@@ -115,12 +115,12 @@
     "blocked_tasks": 0,
     "paused_tasks": 0,
     "completed_tasks": 0,
-    "raw_leads": 63,
+    "raw_leads": 62,
     "shortlisted_leads": 0,
-    "awaiting_approval_leads": 6,
+    "awaiting_approval_leads": 7,
     "approved_leads": 0,
     "drafted_leads": 0,
-    "pending_approval_requests": 6,
+    "pending_approval_requests": 7,
     "ready_for_draft_leads": 0,
     "ready_for_approval_leads": 0,
     "awaiting_enrichment_leads": 0,
@@ -623,8 +623,8 @@
           "contact_name": "",
           "email": "",
           "phone": "089 323530",
-          "status": "raw",
-          "approval_status": "not_requested",
+          "status": "awaiting_approval",
+          "approval_status": "requested",
           "message_approval_status": "not_requested",
           "score": 0,
           "fit_label": "fit",
@@ -721,8 +721,8 @@
           "contact_name": "",
           "email": "",
           "phone": "089 323530",
-          "status": "raw",
-          "approval_status": "not_requested",
+          "status": "awaiting_approval",
+          "approval_status": "requested",
           "message_approval_status": "not_requested",
           "score": 0,
           "fit_label": "fit",
@@ -1193,10 +1193,57 @@
           "contact_path": ""
         }
       ]
+    },
+    {
+      "lead_id": 13,
+      "company_name": "MOC – Event Center Messe Munich",
+      "website": "moc–eventcentermessemunich.example",
+      "linkedin_company_url": "https://www.linkedin.com/company/moc-event-center-messe-munich",
+      "location": "München, DE",
+      "contact_name": "",
+      "email": "",
+      "phone": "089 323530",
+      "status": "awaiting_approval",
+      "approval_status": "requested",
+      "message_approval_status": "not_requested",
+      "score": 0,
+      "fit_label": "",
+      "brain2_summary": "",
+      "brain3_event_type": "",
+      "brain5_verdict": "",
+      "company_description": "Venue rental and event services revenue model, supplemented by sponsorship and exhibitor fees for hosted trade fairs and conferences.",
+      "approval_brief": "Enrichment completed for MOC – Event Center Messe Munich. Core decision‑maker contacts (Event Director, Head of Partnerships) are identified but lack confirmed names, emails, and LinkedIn URLs. Recommend targeted LinkedIn searches and use Apollo/Lusha to retrieve verified contact details before outreach.",
+      "channels": [],
+      "key_people": [
+        {
+          "name": "",
+          "role": "",
+          "email": "",
+          "phone": "",
+          "linkedin": "",
+          "contact_path": "LinkedIn profile or company contact form"
+        },
+        {
+          "name": "",
+          "role": "",
+          "email": "",
+          "phone": "",
+          "linkedin": "",
+          "contact_path": "LinkedIn profile or company contact form"
+        }
+      ]
     }
   ],
   "pending_message_approvals": [],
   "recent_activity": [
+    {
+      "created_at": "2026-04-30T16:09:12+00:00",
+      "action": "approval_requested",
+      "project_name": "Sentra Conferences",
+      "company_name": "MOC – Event Center Messe Munich",
+      "task_title": "",
+      "detail": "MOC – Event Center Messe Munich via telegram_waiting_approval"
+    },
     {
       "created_at": "2026-04-30T16:00:04+00:00",
       "action": "approval_requested",
@@ -1284,21 +1331,13 @@
       "company_name": "ZWO EVENTS",
       "task_title": "",
       "detail": "ZWO EVENTS via telegram_waiting_approval"
-    },
-    {
-      "created_at": "2026-04-30T13:13:30+00:00",
-      "action": "lead_enriched",
-      "project_name": "Sentra Conferences",
-      "company_name": "ZWO EVENTS",
-      "task_title": "",
-      "detail": "ZWO EVENTS source=brain3_gemini"
     }
   ],
   "next_work": {
-    "action": "request_approval",
+    "action": "brain3_enrich_lead",
     "project_name": "Sentra Conferences",
-    "lead_id": 13,
-    "reason": "Brain 5 completed; lead profile is ready for human approval"
+    "lead_id": null,
+    "reason": "scored leads are queued for Brain 3 enrichment"
   },
   "brain_states": [
     {
@@ -1343,7 +1382,7 @@
     {
       "brain": "brain3",
       "label": "Brain 3",
-      "status": "idle",
+      "status": "queued",
       "action": "brain3_enrich_lead",
       "project_name": "Sentra Conferences",
       "lead_id": null,
@@ -1359,21 +1398,19 @@
     {
       "brain": "brain5",
       "label": "Brain 5",
-      "status": "queued",
-      "action": "brain5_enrich_lead",
+      "status": "idle",
+      "action": "request_approval",
       "project_name": "Sentra Conferences",
       "lead_id": 13,
-      "reason": "Brain 3 lead is ready for Brain 5 enrichment",
-      "updated_at": "2026-04-30T16:08:55+00:00",
+      "reason": "Brain 5 completed; lead profile is ready for human approval",
+      "updated_at": "2026-04-30T16:09:12+00:00",
       "started_at": "",
-      "finished_at": "2026-04-30T16:08:55+00:00",
+      "finished_at": "2026-04-30T16:09:12+00:00",
       "details": {
-        "action": "brain5_enrich_lead",
-        "data_confidence": 2,
+        "action": "request_approval",
+        "approval_status": "requested",
         "lead_id": 13,
-        "model": "openai/gpt-oss-120b",
-        "result_status": "completed",
-        "used_brain": "brain5"
+        "result_status": "completed"
       }
     },
     {
@@ -1427,7 +1464,7 @@
         "label": "Pending Approval",
         "subtitle": "Human in the loop",
         "color": "#ff9b54",
-        "count": 6
+        "count": 7
       },
       {
         "key": "marketing",
@@ -1658,6 +1695,13 @@
     "active_transition": "enrichment_to_pending",
     "live_feed": [
       {
+        "created_at": "2026-04-30T16:09:12+00:00",
+        "action": "approval_requested",
+        "project_name": "Sentra Conferences",
+        "company_name": "MOC – Event Center Messe Munich",
+        "detail": "A lead entered the human approval queue."
+      },
+      {
         "created_at": "2026-04-30T16:00:04+00:00",
         "action": "approval_requested",
         "project_name": "Sentra Conferences",
@@ -1683,13 +1727,6 @@
         "action": "lead_enriched",
         "project_name": "Sentra Conferences",
         "company_name": "drinktec—Summit meeting of the beverage and liquid food industry",
-        "detail": "A lead was enriched with external research."
-      },
-      {
-        "created_at": "2026-04-30T15:40:34+00:00",
-        "action": "lead_enriched",
-        "project_name": "Sentra Conferences",
-        "company_name": "Zenith",
         "detail": "A lead was enriched with external research."
       }
     ]
@@ -2028,7 +2065,7 @@
       "email": "",
       "phone": "089 323530",
       "website": "",
-      "approval_status": "not_requested",
+      "approval_status": "requested",
       "message_approval_status": "not_requested",
       "draft_status": "not_created",
       "draft_created_at": "",
