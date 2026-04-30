@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-04-30T17:31:15",
+  "generated_at": "2026-04-30T17:31:26",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
     "waiting_approvals": 4,
     "total_activity": 130,
-    "collected_total": 68,
+    "collected_total": 69,
     "brain2_scored_total": 61,
     "brain3_enriched_total": 4,
     "brain5_reviewed_total": 4,
@@ -48,7 +48,7 @@
       "blocked_tasks": 0,
       "paused_tasks": 0,
       "completed_tasks": 0,
-      "raw_leads": 64,
+      "raw_leads": 65,
       "shortlisted_leads": 0,
       "awaiting_approval_leads": 4,
       "approved_leads": 0,
@@ -115,7 +115,7 @@
     "blocked_tasks": 0,
     "paused_tasks": 0,
     "completed_tasks": 0,
-    "raw_leads": 64,
+    "raw_leads": 65,
     "shortlisted_leads": 0,
     "awaiting_approval_leads": 4,
     "approved_leads": 0,
@@ -129,7 +129,7 @@
   "stage_counts": {
     "project_id": 2,
     "project_name": "Sentra Conferences",
-    "initial_leads_count": 68,
+    "initial_leads_count": 69,
     "scored_leads_count": 61,
     "enriched_leads_count": 4,
     "strategized_leads_count": 4,
@@ -138,8 +138,30 @@
   "stages": {
     "initial": {
       "label": "Initial Intake",
-      "count": 7,
+      "count": 8,
       "items": [
+        {
+          "lead_id": 74,
+          "company_name": "AI Implementation in Business | Munich",
+          "website": "https://www.eventbrite.com.au/e/ai-implementation-in-business-munich-tickets-1026630448307",
+          "linkedin_company_url": "",
+          "location": "Munich, DE",
+          "contact_name": "",
+          "email": "",
+          "phone": "",
+          "status": "raw",
+          "approval_status": "not_requested",
+          "message_approval_status": "not_requested",
+          "score": 0,
+          "fit_label": "",
+          "brain2_summary": "",
+          "brain3_event_type": "",
+          "brain5_verdict": "",
+          "company_description": "eventbrite_public listing; event_title=AI Implementation in Business | Munich; event_date=2026-05-28; event_location=Munich, Munich, DE; summary=Learn how to use AI to boost your business at our \"AI Implementation in Business\" workshop - don't miss out on this opportunity to level up!; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
+          "approval_brief": "eventbrite_public listing; event_title=AI Implementation in Business | Munich; event_date=2026-05-28; event_location=Munich, Munich, DE; summary=Learn how to use AI to boost your business at our \"AI Implementation in Business\" workshop - don't miss out on this opportunity to level up!; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
+          "channels": [],
+          "key_people": []
+        },
         {
           "lead_id": 73,
           "company_name": "Obvs GmbH",
@@ -1089,27 +1111,32 @@
       "detail": "ISARPOST Eventlocation via telegram_waiting_approval"
     }
   ],
-  "next_work": {
-    "action": "collect_initial_leads",
-    "project_name": "Sentra Conferences",
-    "lead_id": null,
-    "reason": "initial queue below target/refill threshold"
-  },
+  "next_work": null,
   "brain_states": [
     {
       "brain": "brain1",
       "label": "Brain 1",
-      "status": "queued",
+      "status": "idle",
       "action": "collect_initial_leads",
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold",
-      "updated_at": "2026-04-30T15:30:58+00:00",
+      "updated_at": "2026-04-30T15:31:26+00:00",
       "started_at": "",
-      "finished_at": "2026-04-30T15:30:58+00:00",
+      "finished_at": "2026-04-30T15:31:26+00:00",
       "details": {
-        "error": "build_event_directory_queries() takes 0 positional arguments but 1 was given",
-        "result_status": "error"
+        "action": "collect_initial_leads",
+        "duplicates": 0,
+        "inserted": 1,
+        "items": [
+          {
+            "company_name": "AI Implementation in Business | Munich",
+            "lead_id": 74,
+            "record_status": "inserted"
+          }
+        ],
+        "result_status": "completed",
+        "run_id": 68
       }
     },
     {
@@ -1189,7 +1216,7 @@
         "label": "Inbound / Scraping",
         "subtitle": "Eventbrite / 10times / sources",
         "color": "#4cc9ff",
-        "count": 7
+        "count": 8
       },
       {
         "key": "scoring",
@@ -1222,6 +1249,18 @@
     ],
     "dots": [
       {
+        "lead_id": 74,
+        "company_name": "AI Implementation in Business | Munich",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "",
+        "stage": "inbound",
+        "next_stage": "scoring",
+        "status": "moving",
+        "color": "#4cc9ff"
+      },
+      {
         "lead_id": 73,
         "company_name": "Obvs GmbH",
         "contact_name": "",
@@ -1236,18 +1275,6 @@
       {
         "lead_id": 72,
         "company_name": "Christoph Anzer Eventdekorationen, Flowers & Wedding",
-        "contact_name": "",
-        "linkedin_url": "",
-        "score": 0.0,
-        "fit_label": "",
-        "stage": "inbound",
-        "next_stage": "scoring",
-        "status": "moving",
-        "color": "#4cc9ff"
-      },
-      {
-        "lead_id": 71,
-        "company_name": "MICE MUNICH",
         "contact_name": "",
         "linkedin_url": "",
         "score": 0.0,
@@ -1479,6 +1506,15 @@
   },
   "collected_leads": [
     {
+      "lead_id": 74,
+      "company_name": "AI Implementation in Business | Munich",
+      "city": "Munich",
+      "website": "https://www.eventbrite.com.au/e/ai-implementation-in-business-munich-tickets-1026630448307",
+      "phone": "",
+      "source": "eventbrite_public",
+      "collected_at": "2026-04-30 15:31:26"
+    },
+    {
       "lead_id": 73,
       "company_name": "Obvs GmbH",
       "city": "München",
@@ -1556,15 +1592,6 @@
       "city": "München",
       "website": "",
       "phone": "089 716771250",
-      "source": "google_maps_scraper",
-      "collected_at": "2026-04-24 18:55:18"
-    },
-    {
-      "lead_id": 64,
-      "company_name": "isarhelden GmbH",
-      "city": "München",
-      "website": "",
-      "phone": "",
       "source": "google_maps_scraper",
       "collected_at": "2026-04-24 18:55:18"
     }
