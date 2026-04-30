@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-04-30T21:04:57",
+  "generated_at": "2026-04-30T21:14:59",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
-    "waiting_approvals": 12,
-    "total_activity": 146,
+    "waiting_approvals": 11,
+    "total_activity": 147,
     "collected_total": 69,
     "brain2_scored_total": 61,
     "brain3_enriched_total": 12,
@@ -50,10 +50,10 @@
       "completed_tasks": 0,
       "raw_leads": 57,
       "shortlisted_leads": 0,
-      "awaiting_approval_leads": 12,
+      "awaiting_approval_leads": 11,
       "approved_leads": 0,
       "drafted_leads": 0,
-      "pending_approval_requests": 12,
+      "pending_approval_requests": 11,
       "ready_for_draft_leads": 0,
       "ready_for_approval_leads": 0,
       "awaiting_enrichment_leads": 0,
@@ -117,10 +117,10 @@
     "completed_tasks": 0,
     "raw_leads": 57,
     "shortlisted_leads": 0,
-    "awaiting_approval_leads": 12,
+    "awaiting_approval_leads": 11,
     "approved_leads": 0,
     "drafted_leads": 0,
-    "pending_approval_requests": 12,
+    "pending_approval_requests": 11,
     "ready_for_draft_leads": 0,
     "ready_for_approval_leads": 0,
     "awaiting_enrichment_leads": 0,
@@ -924,69 +924,6 @@
   },
   "pending_approvals": [
     {
-      "lead_id": 6,
-      "company_name": "Munich Summit Partners conference-organizer-in-",
-      "website": "https://summit-conference-organizer-in-.example",
-      "linkedin_company_url": "",
-      "location": "Munich, DE",
-      "contact_name": "",
-      "email": "",
-      "phone": "+49 89 1675 100",
-      "status": "awaiting_approval",
-      "approval_status": "requested",
-      "message_approval_status": "not_requested",
-      "score": 0,
-      "fit_label": "",
-      "brain2_summary": "",
-      "brain3_event_type": "",
-      "brain5_verdict": "",
-      "company_description": "Organizes and hosts conferences and events, likely generating revenue through tickets, sponsorships, and exhibitor fees.",
-      "approval_brief": "The lead is a Munich‑based conference organizer with a strong reputation but no identified contacts. The revised strategy adds a research‑first step, diversifies channels (LinkedIn, email, phone), tightens sequencing, and injects concrete personalization based on publicly available ratings and event focus. Approve once the research yields at least one verified decision‑maker.",
-      "channels": [],
-      "key_people": [
-        {
-          "name": "Unknown",
-          "role": "",
-          "email": "unknown",
-          "phone": "unknown",
-          "linkedin": "unknown",
-          "contact_path": ""
-        },
-        {
-          "name": "To be identified",
-          "role": "",
-          "email": "To be identified",
-          "phone": "To be identified",
-          "linkedin": "To be identified",
-          "contact_path": ""
-        },
-        {
-          "name": "Unknown",
-          "role": "",
-          "email": "unknown",
-          "phone": "unknown",
-          "linkedin": "unknown",
-          "contact_path": ""
-        },
-        {
-          "name": "To be identified",
-          "role": "",
-          "email": "To be identified",
-          "phone": "To be identified",
-          "linkedin": "To be identified",
-          "contact_path": ""
-        },
-        {
-          "name": "Unknown",
-          "role": "",
-          "email": "unknown",
-          "phone": "unknown",
-          "linkedin": "unknown",
-          "contact_path": ""
-        }
-      ]
-    },
-    {
       "lead_id": 7,
       "company_name": "DAPP EVENTS",
       "website": "dappevents.example",
@@ -1200,10 +1137,40 @@
       "approval_brief": "The enrichment currently lacks any identified decision‑maker contacts. Public sources provide only basic company info (address, phone, service description) and no personal emails or LinkedIn profiles. Recommend targeted LinkedIn Boolean searches, Apollo/Lusha/RocketReach lookups, and checking the company website staff page to uncover relevant roles (Event Director, Head of Partnerships, Conference Manager, Founder).",
       "channels": [],
       "key_people": []
+    },
+    {
+      "lead_id": 16,
+      "company_name": "Scholastika Eventlocation",
+      "website": "scholastikaeventlocation.example",
+      "linkedin_company_url": "",
+      "location": "München, DE",
+      "contact_name": "",
+      "email": "",
+      "phone": "089 223707",
+      "status": "awaiting_approval",
+      "approval_status": "requested",
+      "message_approval_status": "not_requested",
+      "score": 0,
+      "fit_label": "",
+      "brain2_summary": "",
+      "brain3_event_type": "",
+      "brain5_verdict": "",
+      "company_description": "Provides event space rental and related services for conferences, meetings, and corporate events.",
+      "approval_brief": "Enrichment completed with low confidence (2). No verifiable decision‑maker contacts or company website were found. Phone number from Google Maps is the only reliable data point. Further research needed to identify LinkedIn company page and key contacts.",
+      "channels": [],
+      "key_people": []
     }
   ],
   "pending_message_approvals": [],
   "recent_activity": [
+    {
+      "created_at": "2026-04-30T19:11:01+00:00",
+      "action": "approval_decided",
+      "project_name": "Sentra Conferences",
+      "company_name": "Munich Summit Partners conference-organizer-in-",
+      "task_title": "",
+      "detail": "Munich Summit Partners conference-organizer-in- -> rejected via telegram_lead_approval"
+    },
     {
       "created_at": "2026-04-30T16:55:11+00:00",
       "action": "approval_requested",
@@ -1291,14 +1258,6 @@
       "company_name": "Zenith",
       "task_title": "",
       "detail": "Zenith source=brain3_gemini"
-    },
-    {
-      "created_at": "2026-04-30T15:40:14+00:00",
-      "action": "lead_enriched",
-      "project_name": "Sentra Conferences",
-      "company_name": "Scholastika Eventlocation",
-      "task_title": "",
-      "detail": "Scholastika Eventlocation source=brain3_gemini"
     }
   ],
   "next_work": {
@@ -1355,9 +1314,9 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "scored leads are queued for Brain 3 enrichment",
-      "updated_at": "2026-04-30T19:04:57+00:00",
+      "updated_at": "2026-04-30T19:14:59+00:00",
       "started_at": "",
-      "finished_at": "2026-04-30T19:04:57+00:00",
+      "finished_at": "2026-04-30T19:14:59+00:00",
       "details": {
         "error": "'NoneType' object has no attribute 'strip'",
         "result_status": "error"
@@ -1588,18 +1547,6 @@
         "color": "#9b5cff"
       },
       {
-        "lead_id": 6,
-        "company_name": "Munich Summit Partners conference-organizer-in-",
-        "contact_name": "Unknown",
-        "linkedin_url": "unknown",
-        "score": 0.0,
-        "fit_label": "",
-        "stage": "pending",
-        "next_stage": "marketing",
-        "status": "waiting",
-        "color": "#ff9b54"
-      },
-      {
         "lead_id": 7,
         "company_name": "DAPP EVENTS",
         "contact_name": "Daniel Appelt",
@@ -1616,6 +1563,18 @@
         "company_name": "EvenDS Management",
         "contact_name": "Daniel Schwaiger",
         "linkedin_url": "https://www.linkedin.com/in/daniel-schwaiger-b4b10b170/",
+        "score": 0.0,
+        "fit_label": "",
+        "stage": "pending",
+        "next_stage": "marketing",
+        "status": "waiting",
+        "color": "#ff9b54"
+      },
+      {
+        "lead_id": 9,
+        "company_name": "ZWO EVENTS",
+        "contact_name": "Max Mustermann",
+        "linkedin_url": "https://www.linkedin.com/in/maxmustermann",
         "score": 0.0,
         "fit_label": "",
         "stage": "pending",
@@ -1663,6 +1622,13 @@
     "active_transition": "enrichment_to_pending",
     "live_feed": [
       {
+        "created_at": "2026-04-30T19:11:01+00:00",
+        "action": "approval_decided",
+        "project_name": "Sentra Conferences",
+        "company_name": "Munich Summit Partners conference-organizer-in-",
+        "detail": "Munich Summit Partners conference-organizer-in- -> rejected via telegram_lead_approval"
+      },
+      {
         "created_at": "2026-04-30T16:55:11+00:00",
         "action": "approval_requested",
         "project_name": "Sentra Conferences",
@@ -1688,13 +1654,6 @@
         "action": "approval_requested",
         "project_name": "Sentra Conferences",
         "company_name": "Scholastika Eventlocation",
-        "detail": "A lead entered the human approval queue."
-      },
-      {
-        "created_at": "2026-04-30T16:18:26+00:00",
-        "action": "approval_requested",
-        "project_name": "Sentra Conferences",
-        "company_name": "Servicebroker GmbH - Ihre Eventagentur in München",
         "detail": "A lead entered the human approval queue."
       }
     ]
