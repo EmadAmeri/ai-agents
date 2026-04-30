@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-04-30T18:45:44",
+  "generated_at": "2026-04-30T18:46:01",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
-    "waiting_approvals": 10,
-    "total_activity": 144,
+    "waiting_approvals": 11,
+    "total_activity": 145,
     "collected_total": 69,
     "brain2_scored_total": 61,
     "brain3_enriched_total": 12,
@@ -48,12 +48,12 @@
       "blocked_tasks": 0,
       "paused_tasks": 0,
       "completed_tasks": 0,
-      "raw_leads": 59,
+      "raw_leads": 58,
       "shortlisted_leads": 0,
-      "awaiting_approval_leads": 10,
+      "awaiting_approval_leads": 11,
       "approved_leads": 0,
       "drafted_leads": 0,
-      "pending_approval_requests": 10,
+      "pending_approval_requests": 11,
       "ready_for_draft_leads": 0,
       "ready_for_approval_leads": 0,
       "awaiting_enrichment_leads": 0,
@@ -115,12 +115,12 @@
     "blocked_tasks": 0,
     "paused_tasks": 0,
     "completed_tasks": 0,
-    "raw_leads": 59,
+    "raw_leads": 58,
     "shortlisted_leads": 0,
-    "awaiting_approval_leads": 10,
+    "awaiting_approval_leads": 11,
     "approved_leads": 0,
     "drafted_leads": 0,
-    "pending_approval_requests": 10,
+    "pending_approval_requests": 11,
     "ready_for_draft_leads": 0,
     "ready_for_approval_leads": 0,
     "awaiting_enrichment_leads": 0,
@@ -535,8 +535,8 @@
           "contact_name": "Messe München GmbH – Event Management",
           "email": "",
           "phone": "089 94911318",
-          "status": "raw",
-          "approval_status": "not_requested",
+          "status": "awaiting_approval",
+          "approval_status": "requested",
           "message_approval_status": "not_requested",
           "score": 0,
           "fit_label": "medium_fit",
@@ -721,8 +721,8 @@
           "contact_name": "Messe München GmbH – Event Management",
           "email": "",
           "phone": "089 94911318",
-          "status": "raw",
-          "approval_status": "not_requested",
+          "status": "awaiting_approval",
+          "approval_status": "requested",
           "message_approval_status": "not_requested",
           "score": 0,
           "fit_label": "medium_fit",
@@ -1214,6 +1214,14 @@
   "pending_message_approvals": [],
   "recent_activity": [
     {
+      "created_at": "2026-04-30T16:46:01+00:00",
+      "action": "approval_requested",
+      "project_name": "Sentra Conferences",
+      "company_name": "drinktec—Summit meeting of the beverage and liquid food industry",
+      "task_title": "",
+      "detail": "drinktec—Summit meeting of the beverage and liquid food industry via telegram_waiting_approval"
+    },
+    {
       "created_at": "2026-04-30T16:36:49+00:00",
       "action": "approval_requested",
       "project_name": "Sentra Conferences",
@@ -1300,21 +1308,13 @@
       "company_name": "Servicebroker GmbH - Ihre Eventagentur in München",
       "task_title": "",
       "detail": "Servicebroker GmbH - Ihre Eventagentur in München source=brain3_gemini"
-    },
-    {
-      "created_at": "2026-04-30T15:39:34+00:00",
-      "action": "lead_enriched",
-      "project_name": "Sentra Conferences",
-      "company_name": "MOC – Event Center Messe Munich",
-      "task_title": "",
-      "detail": "MOC – Event Center Messe Munich source=brain3_gemini"
     }
   ],
   "next_work": {
-    "action": "request_approval",
+    "action": "brain3_enrich_lead",
     "project_name": "Sentra Conferences",
-    "lead_id": 18,
-    "reason": "Brain 5 completed; lead profile is ready for human approval"
+    "lead_id": null,
+    "reason": "scored leads are queued for Brain 3 enrichment"
   },
   "brain_states": [
     {
@@ -1359,7 +1359,7 @@
     {
       "brain": "brain3",
       "label": "Brain 3",
-      "status": "idle",
+      "status": "queued",
       "action": "brain3_enrich_lead",
       "project_name": "Sentra Conferences",
       "lead_id": null,
@@ -1375,21 +1375,19 @@
     {
       "brain": "brain5",
       "label": "Brain 5",
-      "status": "queued",
-      "action": "brain5_enrich_lead",
+      "status": "idle",
+      "action": "request_approval",
       "project_name": "Sentra Conferences",
       "lead_id": 18,
-      "reason": "Brain 3 lead is ready for Brain 5 enrichment",
-      "updated_at": "2026-04-30T16:45:44+00:00",
+      "reason": "Brain 5 completed; lead profile is ready for human approval",
+      "updated_at": "2026-04-30T16:46:01+00:00",
       "started_at": "",
-      "finished_at": "2026-04-30T16:45:44+00:00",
+      "finished_at": "2026-04-30T16:46:01+00:00",
       "details": {
-        "action": "brain5_enrich_lead",
-        "data_confidence": 75,
+        "action": "request_approval",
+        "approval_status": "requested",
         "lead_id": 18,
-        "model": "openai/gpt-oss-120b",
-        "result_status": "completed",
-        "used_brain": "brain5"
+        "result_status": "completed"
       }
     },
     {
@@ -1674,6 +1672,13 @@
     "active_transition": "enrichment_to_pending",
     "live_feed": [
       {
+        "created_at": "2026-04-30T16:46:01+00:00",
+        "action": "approval_requested",
+        "project_name": "Sentra Conferences",
+        "company_name": "drinktec—Summit meeting of the beverage and liquid food industry",
+        "detail": "A lead entered the human approval queue."
+      },
+      {
         "created_at": "2026-04-30T16:36:49+00:00",
         "action": "approval_requested",
         "project_name": "Sentra Conferences",
@@ -1699,13 +1704,6 @@
         "action": "approval_requested",
         "project_name": "Sentra Conferences",
         "company_name": "MOC – Event Center Messe Munich",
-        "detail": "A lead entered the human approval queue."
-      },
-      {
-        "created_at": "2026-04-30T16:00:04+00:00",
-        "action": "approval_requested",
-        "project_name": "Sentra Conferences",
-        "company_name": "Messe München",
         "detail": "A lead entered the human approval queue."
       }
     ]
@@ -2044,7 +2042,7 @@
       "email": "",
       "phone": "089 94911318",
       "website": "",
-      "approval_status": "not_requested",
+      "approval_status": "requested",
       "message_approval_status": "not_requested",
       "draft_status": "not_created",
       "draft_created_at": "",
