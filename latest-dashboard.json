@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-04-30T17:59:48",
+  "generated_at": "2026-04-30T18:00:04",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
-    "waiting_approvals": 5,
-    "total_activity": 139,
+    "waiting_approvals": 6,
+    "total_activity": 140,
     "collected_total": 69,
     "brain2_scored_total": 61,
     "brain3_enriched_total": 12,
@@ -48,12 +48,12 @@
       "blocked_tasks": 0,
       "paused_tasks": 0,
       "completed_tasks": 0,
-      "raw_leads": 64,
+      "raw_leads": 63,
       "shortlisted_leads": 0,
-      "awaiting_approval_leads": 5,
+      "awaiting_approval_leads": 6,
       "approved_leads": 0,
       "drafted_leads": 0,
-      "pending_approval_requests": 5,
+      "pending_approval_requests": 6,
       "ready_for_draft_leads": 0,
       "ready_for_approval_leads": 0,
       "awaiting_enrichment_leads": 0,
@@ -115,12 +115,12 @@
     "blocked_tasks": 0,
     "paused_tasks": 0,
     "completed_tasks": 0,
-    "raw_leads": 64,
+    "raw_leads": 63,
     "shortlisted_leads": 0,
-    "awaiting_approval_leads": 5,
+    "awaiting_approval_leads": 6,
     "approved_leads": 0,
     "drafted_leads": 0,
-    "pending_approval_requests": 5,
+    "pending_approval_requests": 6,
     "ready_for_draft_leads": 0,
     "ready_for_approval_leads": 0,
     "awaiting_enrichment_leads": 0,
@@ -662,8 +662,8 @@
           "contact_name": "Dr. Thomas K. (CEO)",
           "email": "",
           "phone": "089 94920720",
-          "status": "raw",
-          "approval_status": "not_requested",
+          "status": "awaiting_approval",
+          "approval_status": "requested",
           "message_approval_status": "not_requested",
           "score": 0,
           "fit_label": "fit",
@@ -721,8 +721,8 @@
           "contact_name": "Dr. Thomas K. (CEO)",
           "email": "",
           "phone": "089 94920720",
-          "status": "raw",
-          "approval_status": "not_requested",
+          "status": "awaiting_approval",
+          "approval_status": "requested",
           "message_approval_status": "not_requested",
           "score": 0,
           "fit_label": "fit",
@@ -1123,10 +1123,49 @@
       "approval_brief": "The target, SPACE – Ihre Eventagentur München, is a Munich‑based boutique event agency (10‑50 staff) offering full‑service B2B event planning, venue sourcing and hybrid production. The business model and market focus align well with partnership goals (co‑hosting conferences, venue sourcing, joint sponsorship). Current data confidence is moderate (2) – we have solid company‑level info but lack any verified decision‑maker contacts (email, phone, LinkedIn). Recommend prioritising LinkedIn and Apoll",
       "channels": [],
       "key_people": []
+    },
+    {
+      "lead_id": 12,
+      "company_name": "Messe München",
+      "website": "messemünchen.example",
+      "linkedin_company_url": "https://www.linkedin.com/company/messe-muenchen",
+      "location": "München, DE",
+      "contact_name": "Dr. Thomas K. (CEO)",
+      "email": "",
+      "phone": "089 94920720",
+      "status": "awaiting_approval",
+      "approval_status": "requested",
+      "message_approval_status": "not_requested",
+      "score": 0,
+      "fit_label": "",
+      "brain2_summary": "",
+      "brain3_event_type": "",
+      "brain5_verdict": "",
+      "company_description": "Operates exhibition halls and event spaces, generating revenue through ticket sales, exhibitor fees, sponsorships, and venue rentals.",
+      "approval_brief": "Enrichment added company context, identified key decision‑maker roles and highlighted missing personal contact data. The current confidence is moderate (65) due to lack of verified emails/phone numbers. Recommend a human reviewer verify LinkedIn profiles for the listed titles, confirm email patterns via Apollo/RocketReach, and populate the empty fields before outreach.",
+      "channels": [],
+      "key_people": [
+        {
+          "name": "Dr. Thomas K.",
+          "role": "",
+          "email": "",
+          "phone": "",
+          "linkedin": "",
+          "contact_path": ""
+        }
+      ]
     }
   ],
   "pending_message_approvals": [],
   "recent_activity": [
+    {
+      "created_at": "2026-04-30T16:00:04+00:00",
+      "action": "approval_requested",
+      "project_name": "Sentra Conferences",
+      "company_name": "Messe München",
+      "task_title": "",
+      "detail": "Messe München via telegram_waiting_approval"
+    },
     {
       "created_at": "2026-04-30T15:50:49+00:00",
       "action": "approval_requested",
@@ -1214,21 +1253,13 @@
       "company_name": "ZWO EVENTS",
       "task_title": "",
       "detail": "ZWO EVENTS source=brain3_gemini"
-    },
-    {
-      "created_at": "2026-04-30T05:02:36+00:00",
-      "action": "approval_requested",
-      "project_name": "Sentra Conferences",
-      "company_name": "EvenDS Management",
-      "task_title": "",
-      "detail": "EvenDS Management via telegram_waiting_approval"
     }
   ],
   "next_work": {
-    "action": "request_approval",
+    "action": "brain3_enrich_lead",
     "project_name": "Sentra Conferences",
-    "lead_id": 12,
-    "reason": "Brain 5 completed; lead profile is ready for human approval"
+    "lead_id": null,
+    "reason": "scored leads are queued for Brain 3 enrichment"
   },
   "brain_states": [
     {
@@ -1273,7 +1304,7 @@
     {
       "brain": "brain3",
       "label": "Brain 3",
-      "status": "idle",
+      "status": "queued",
       "action": "brain3_enrich_lead",
       "project_name": "Sentra Conferences",
       "lead_id": null,
@@ -1289,21 +1320,19 @@
     {
       "brain": "brain5",
       "label": "Brain 5",
-      "status": "queued",
-      "action": "brain5_enrich_lead",
+      "status": "idle",
+      "action": "request_approval",
       "project_name": "Sentra Conferences",
       "lead_id": 12,
-      "reason": "Brain 3 lead is ready for Brain 5 enrichment",
-      "updated_at": "2026-04-30T15:59:48+00:00",
+      "reason": "Brain 5 completed; lead profile is ready for human approval",
+      "updated_at": "2026-04-30T16:00:04+00:00",
       "started_at": "",
-      "finished_at": "2026-04-30T15:59:48+00:00",
+      "finished_at": "2026-04-30T16:00:04+00:00",
       "details": {
-        "action": "brain5_enrich_lead",
-        "data_confidence": 65,
+        "action": "request_approval",
+        "approval_status": "requested",
         "lead_id": 12,
-        "model": "openai/gpt-oss-120b",
-        "result_status": "completed",
-        "used_brain": "brain5"
+        "result_status": "completed"
       }
     },
     {
@@ -1357,7 +1386,7 @@
         "label": "Pending Approval",
         "subtitle": "Human in the loop",
         "color": "#ff9b54",
-        "count": 5
+        "count": 6
       },
       {
         "key": "marketing",
@@ -1588,6 +1617,13 @@
     "active_transition": "enrichment_to_pending",
     "live_feed": [
       {
+        "created_at": "2026-04-30T16:00:04+00:00",
+        "action": "approval_requested",
+        "project_name": "Sentra Conferences",
+        "company_name": "Messe München",
+        "detail": "A lead entered the human approval queue."
+      },
+      {
         "created_at": "2026-04-30T15:50:49+00:00",
         "action": "approval_requested",
         "project_name": "Sentra Conferences",
@@ -1613,13 +1649,6 @@
         "action": "lead_enriched",
         "project_name": "Sentra Conferences",
         "company_name": "Zenith",
-        "detail": "A lead was enriched with external research."
-      },
-      {
-        "created_at": "2026-04-30T15:40:14+00:00",
-        "action": "lead_enriched",
-        "project_name": "Sentra Conferences",
-        "company_name": "Scholastika Eventlocation",
         "detail": "A lead was enriched with external research."
       }
     ]
@@ -1958,7 +1987,7 @@
       "email": "",
       "phone": "089 94920720",
       "website": "",
-      "approval_status": "not_requested",
+      "approval_status": "requested",
       "message_approval_status": "not_requested",
       "draft_status": "not_created",
       "draft_created_at": "",
