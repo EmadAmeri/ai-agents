@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-04-30T18:54:55",
+  "generated_at": "2026-04-30T18:55:11",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
-    "waiting_approvals": 11,
-    "total_activity": 145,
+    "waiting_approvals": 12,
+    "total_activity": 146,
     "collected_total": 69,
     "brain2_scored_total": 61,
     "brain3_enriched_total": 12,
@@ -48,12 +48,12 @@
       "blocked_tasks": 0,
       "paused_tasks": 0,
       "completed_tasks": 0,
-      "raw_leads": 58,
+      "raw_leads": 57,
       "shortlisted_leads": 0,
-      "awaiting_approval_leads": 11,
+      "awaiting_approval_leads": 12,
       "approved_leads": 0,
       "drafted_leads": 0,
-      "pending_approval_requests": 11,
+      "pending_approval_requests": 12,
       "ready_for_draft_leads": 0,
       "ready_for_approval_leads": 0,
       "awaiting_enrichment_leads": 0,
@@ -115,12 +115,12 @@
     "blocked_tasks": 0,
     "paused_tasks": 0,
     "completed_tasks": 0,
-    "raw_leads": 58,
+    "raw_leads": 57,
     "shortlisted_leads": 0,
-    "awaiting_approval_leads": 11,
+    "awaiting_approval_leads": 12,
     "approved_leads": 0,
     "drafted_leads": 0,
-    "pending_approval_requests": 11,
+    "pending_approval_requests": 12,
     "ready_for_draft_leads": 0,
     "ready_for_approval_leads": 0,
     "awaiting_enrichment_leads": 0,
@@ -513,8 +513,8 @@
           "contact_name": "Not identified",
           "email": "",
           "phone": "0176 45540257",
-          "status": "raw",
-          "approval_status": "not_requested",
+          "status": "awaiting_approval",
+          "approval_status": "requested",
           "message_approval_status": "not_requested",
           "score": 0,
           "fit_label": "medium_fit",
@@ -721,8 +721,8 @@
           "contact_name": "Not identified",
           "email": "",
           "phone": "0176 45540257",
-          "status": "raw",
-          "approval_status": "not_requested",
+          "status": "awaiting_approval",
+          "approval_status": "requested",
           "message_approval_status": "not_requested",
           "score": 0,
           "fit_label": "medium_fit",
@@ -1205,6 +1205,14 @@
   "pending_message_approvals": [],
   "recent_activity": [
     {
+      "created_at": "2026-04-30T16:55:11+00:00",
+      "action": "approval_requested",
+      "project_name": "Sentra Conferences",
+      "company_name": "Hartmanns",
+      "task_title": "",
+      "detail": "Hartmanns via telegram_waiting_approval"
+    },
+    {
       "created_at": "2026-04-30T16:46:01+00:00",
       "action": "approval_requested",
       "project_name": "Sentra Conferences",
@@ -1291,21 +1299,13 @@
       "company_name": "Scholastika Eventlocation",
       "task_title": "",
       "detail": "Scholastika Eventlocation source=brain3_gemini"
-    },
-    {
-      "created_at": "2026-04-30T15:39:54+00:00",
-      "action": "lead_enriched",
-      "project_name": "Sentra Conferences",
-      "company_name": "Servicebroker GmbH - Ihre Eventagentur in München",
-      "task_title": "",
-      "detail": "Servicebroker GmbH - Ihre Eventagentur in München source=brain3_gemini"
     }
   ],
   "next_work": {
-    "action": "request_approval",
+    "action": "brain3_enrich_lead",
     "project_name": "Sentra Conferences",
-    "lead_id": 24,
-    "reason": "Brain 5 completed; lead profile is ready for human approval"
+    "lead_id": null,
+    "reason": "scored leads are queued for Brain 3 enrichment"
   },
   "brain_states": [
     {
@@ -1350,7 +1350,7 @@
     {
       "brain": "brain3",
       "label": "Brain 3",
-      "status": "idle",
+      "status": "queued",
       "action": "brain3_enrich_lead",
       "project_name": "Sentra Conferences",
       "lead_id": null,
@@ -1366,21 +1366,19 @@
     {
       "brain": "brain5",
       "label": "Brain 5",
-      "status": "queued",
-      "action": "brain5_enrich_lead",
+      "status": "idle",
+      "action": "request_approval",
       "project_name": "Sentra Conferences",
       "lead_id": 24,
-      "reason": "Brain 3 lead is ready for Brain 5 enrichment",
-      "updated_at": "2026-04-30T16:54:55+00:00",
+      "reason": "Brain 5 completed; lead profile is ready for human approval",
+      "updated_at": "2026-04-30T16:55:11+00:00",
       "started_at": "",
-      "finished_at": "2026-04-30T16:54:55+00:00",
+      "finished_at": "2026-04-30T16:55:11+00:00",
       "details": {
-        "action": "brain5_enrich_lead",
-        "data_confidence": 2,
+        "action": "request_approval",
+        "approval_status": "requested",
         "lead_id": 24,
-        "model": "openai/gpt-oss-120b",
-        "result_status": "completed",
-        "used_brain": "brain5"
+        "result_status": "completed"
       }
     },
     {
@@ -1665,6 +1663,13 @@
     "active_transition": "enrichment_to_pending",
     "live_feed": [
       {
+        "created_at": "2026-04-30T16:55:11+00:00",
+        "action": "approval_requested",
+        "project_name": "Sentra Conferences",
+        "company_name": "Hartmanns",
+        "detail": "A lead entered the human approval queue."
+      },
+      {
         "created_at": "2026-04-30T16:46:01+00:00",
         "action": "approval_requested",
         "project_name": "Sentra Conferences",
@@ -1690,13 +1695,6 @@
         "action": "approval_requested",
         "project_name": "Sentra Conferences",
         "company_name": "Servicebroker GmbH - Ihre Eventagentur in München",
-        "detail": "A lead entered the human approval queue."
-      },
-      {
-        "created_at": "2026-04-30T16:09:12+00:00",
-        "action": "approval_requested",
-        "project_name": "Sentra Conferences",
-        "company_name": "MOC – Event Center Messe Munich",
         "detail": "A lead entered the human approval queue."
       }
     ]
@@ -2035,7 +2033,7 @@
       "email": "",
       "phone": "0176 45540257",
       "website": "",
-      "approval_status": "not_requested",
+      "approval_status": "requested",
       "message_approval_status": "not_requested",
       "draft_status": "not_created",
       "draft_created_at": "",
