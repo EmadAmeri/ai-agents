@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-04-30T17:50:33",
+  "generated_at": "2026-04-30T17:50:49",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
-    "waiting_approvals": 4,
-    "total_activity": 138,
+    "waiting_approvals": 5,
+    "total_activity": 139,
     "collected_total": 69,
     "brain2_scored_total": 61,
     "brain3_enriched_total": 12,
@@ -48,12 +48,12 @@
       "blocked_tasks": 0,
       "paused_tasks": 0,
       "completed_tasks": 0,
-      "raw_leads": 65,
+      "raw_leads": 64,
       "shortlisted_leads": 0,
-      "awaiting_approval_leads": 4,
+      "awaiting_approval_leads": 5,
       "approved_leads": 0,
       "drafted_leads": 0,
-      "pending_approval_requests": 4,
+      "pending_approval_requests": 5,
       "ready_for_draft_leads": 0,
       "ready_for_approval_leads": 0,
       "awaiting_enrichment_leads": 0,
@@ -115,12 +115,12 @@
     "blocked_tasks": 0,
     "paused_tasks": 0,
     "completed_tasks": 0,
-    "raw_leads": 65,
+    "raw_leads": 64,
     "shortlisted_leads": 0,
-    "awaiting_approval_leads": 4,
+    "awaiting_approval_leads": 5,
     "approved_leads": 0,
     "drafted_leads": 0,
-    "pending_approval_requests": 4,
+    "pending_approval_requests": 5,
     "ready_for_draft_leads": 0,
     "ready_for_approval_leads": 0,
     "awaiting_enrichment_leads": 0,
@@ -684,8 +684,8 @@
           "contact_name": "",
           "email": "",
           "phone": "089 211128810",
-          "status": "raw",
-          "approval_status": "not_requested",
+          "status": "awaiting_approval",
+          "approval_status": "requested",
           "message_approval_status": "not_requested",
           "score": 0,
           "fit_label": "medium_fit",
@@ -712,8 +712,8 @@
           "contact_name": "",
           "email": "",
           "phone": "089 211128810",
-          "status": "raw",
-          "approval_status": "not_requested",
+          "status": "awaiting_approval",
+          "approval_status": "requested",
           "message_approval_status": "not_requested",
           "score": 0,
           "fit_label": "medium_fit",
@@ -1061,10 +1061,40 @@
           "contact_path": "Company website > About page"
         }
       ]
+    },
+    {
+      "lead_id": 10,
+      "company_name": "SPACE - Ihre Eventagentur München",
+      "website": "space-ihreeventagenturmünchen.example",
+      "linkedin_company_url": "",
+      "location": "München, DE",
+      "contact_name": "",
+      "email": "",
+      "phone": "089 211128810",
+      "status": "awaiting_approval",
+      "approval_status": "requested",
+      "message_approval_status": "not_requested",
+      "score": 0,
+      "fit_label": "",
+      "brain2_summary": "",
+      "brain3_event_type": "",
+      "brain5_verdict": "",
+      "company_description": "Service‑based business model providing event planning, production, and venue management services. Revenue generated through project fees, consulting retainers and optional add‑ons such as technical production, catering and post‑event analytics.",
+      "approval_brief": "The target, SPACE – Ihre Eventagentur München, is a Munich‑based boutique event agency (10‑50 staff) offering full‑service B2B event planning, venue sourcing and hybrid production. The business model and market focus align well with partnership goals (co‑hosting conferences, venue sourcing, joint sponsorship). Current data confidence is moderate (2) – we have solid company‑level info but lack any verified decision‑maker contacts (email, phone, LinkedIn). Recommend prioritising LinkedIn and Apoll",
+      "channels": [],
+      "key_people": []
     }
   ],
   "pending_message_approvals": [],
   "recent_activity": [
+    {
+      "created_at": "2026-04-30T15:50:49+00:00",
+      "action": "approval_requested",
+      "project_name": "Sentra Conferences",
+      "company_name": "SPACE - Ihre Eventagentur München",
+      "task_title": "",
+      "detail": "SPACE - Ihre Eventagentur München via telegram_waiting_approval"
+    },
     {
       "created_at": "2026-04-30T15:41:21+00:00",
       "action": "lead_enriched",
@@ -1152,21 +1182,13 @@
       "company_name": "EvenDS Management",
       "task_title": "",
       "detail": "EvenDS Management via telegram_waiting_approval"
-    },
-    {
-      "created_at": "2026-04-30T05:01:32+00:00",
-      "action": "lead_enriched",
-      "project_name": "Sentra Conferences",
-      "company_name": "EvenDS Management",
-      "task_title": "",
-      "detail": "EvenDS Management source=brain3_gemini"
     }
   ],
   "next_work": {
-    "action": "request_approval",
+    "action": "brain3_enrich_lead",
     "project_name": "Sentra Conferences",
-    "lead_id": 10,
-    "reason": "Brain 5 completed; lead profile is ready for human approval"
+    "lead_id": null,
+    "reason": "scored leads are queued for Brain 3 enrichment"
   },
   "brain_states": [
     {
@@ -1211,7 +1233,7 @@
     {
       "brain": "brain3",
       "label": "Brain 3",
-      "status": "idle",
+      "status": "queued",
       "action": "brain3_enrich_lead",
       "project_name": "Sentra Conferences",
       "lead_id": null,
@@ -1227,21 +1249,19 @@
     {
       "brain": "brain5",
       "label": "Brain 5",
-      "status": "queued",
-      "action": "brain5_enrich_lead",
+      "status": "idle",
+      "action": "request_approval",
       "project_name": "Sentra Conferences",
       "lead_id": 10,
-      "reason": "Brain 3 lead is ready for Brain 5 enrichment",
-      "updated_at": "2026-04-30T15:50:33+00:00",
+      "reason": "Brain 5 completed; lead profile is ready for human approval",
+      "updated_at": "2026-04-30T15:50:49+00:00",
       "started_at": "",
-      "finished_at": "2026-04-30T15:50:33+00:00",
+      "finished_at": "2026-04-30T15:50:49+00:00",
       "details": {
-        "action": "brain5_enrich_lead",
-        "data_confidence": 2,
+        "action": "request_approval",
+        "approval_status": "requested",
         "lead_id": 10,
-        "model": "openai/gpt-oss-120b",
-        "result_status": "completed",
-        "used_brain": "brain5"
+        "result_status": "completed"
       }
     },
     {
@@ -1295,7 +1315,7 @@
         "label": "Pending Approval",
         "subtitle": "Human in the loop",
         "color": "#ff9b54",
-        "count": 4
+        "count": 5
       },
       {
         "key": "marketing",
@@ -1526,6 +1546,13 @@
     "active_transition": "enrichment_to_pending",
     "live_feed": [
       {
+        "created_at": "2026-04-30T15:50:49+00:00",
+        "action": "approval_requested",
+        "project_name": "Sentra Conferences",
+        "company_name": "SPACE - Ihre Eventagentur München",
+        "detail": "A lead entered the human approval queue."
+      },
+      {
         "created_at": "2026-04-30T15:41:21+00:00",
         "action": "lead_enriched",
         "project_name": "Sentra Conferences",
@@ -1551,13 +1578,6 @@
         "action": "lead_enriched",
         "project_name": "Sentra Conferences",
         "company_name": "Scholastika Eventlocation",
-        "detail": "A lead was enriched with external research."
-      },
-      {
-        "created_at": "2026-04-30T15:39:54+00:00",
-        "action": "lead_enriched",
-        "project_name": "Sentra Conferences",
-        "company_name": "Servicebroker GmbH - Ihre Eventagentur in München",
         "detail": "A lead was enriched with external research."
       }
     ]
@@ -1896,7 +1916,7 @@
       "email": "",
       "phone": "089 211128810",
       "website": "",
-      "approval_status": "not_requested",
+      "approval_status": "requested",
       "message_approval_status": "not_requested",
       "draft_status": "not_created",
       "draft_created_at": "",
