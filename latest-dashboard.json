@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T17:28:25",
+  "generated_at": "2026-04-30T17:28:42",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
@@ -1104,9 +1104,9 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold",
-      "updated_at": "2026-04-30T15:28:25+00:00",
+      "updated_at": "2026-04-30T15:28:42+00:00",
       "started_at": "",
-      "finished_at": "2026-04-30T15:28:25+00:00",
+      "finished_at": "2026-04-30T15:28:42+00:00",
       "details": {
         "error": "build_event_directory_queries() takes 0 positional arguments but 1 was given",
         "result_status": "error"
