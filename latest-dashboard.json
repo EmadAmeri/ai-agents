@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T18:27:01",
+  "generated_at": "2026-04-30T18:27:21",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
@@ -9,7 +9,7 @@
     "collected_total": 69,
     "brain2_scored_total": 61,
     "brain3_enriched_total": 12,
-    "brain5_reviewed_total": 8,
+    "brain5_reviewed_total": 9,
     "approved_total": 0,
     "drafted_total": 0,
     "message_review_total": 0
@@ -132,7 +132,7 @@
     "initial_leads_count": 69,
     "scored_leads_count": 61,
     "enriched_leads_count": 12,
-    "strategized_leads_count": 8,
+    "strategized_leads_count": 9,
     "drafted_contacted_leads_count": 0
   },
   "stages": {
@@ -588,7 +588,7 @@
           "brain3_event_type": "Venue",
           "brain5_verdict": "",
           "company_description": "Provides event space rental and related services for conferences, meetings, and corporate events.",
-          "approval_brief": "Scholastika Eventlocation is an event venue located in Munich, offering spaces for conferences, meetings, and corporate events.",
+          "approval_brief": "Enrichment completed with low confidence (2). No verifiable decision‑maker contacts or company website were found. Phone number from Google Maps is the only reliable data point. Further research needed to identify LinkedIn company page and key contacts.",
           "channels": [],
           "key_people": []
         },
@@ -712,6 +712,28 @@
       "label": "Brain 5 Enriched",
       "count": 8,
       "items": [
+        {
+          "lead_id": 16,
+          "company_name": "Scholastika Eventlocation",
+          "website": "scholastikaeventlocation.example",
+          "linkedin_company_url": "",
+          "location": "München, DE",
+          "contact_name": "",
+          "email": "",
+          "phone": "089 223707",
+          "status": "raw",
+          "approval_status": "not_requested",
+          "message_approval_status": "not_requested",
+          "score": 0,
+          "fit_label": "medium_fit",
+          "brain2_summary": "Event venue, not organizer",
+          "brain3_event_type": "Venue",
+          "brain5_verdict": "",
+          "company_description": "Provides event space rental and related services for conferences, meetings, and corporate events.",
+          "approval_brief": "Enrichment completed with low confidence (2). No verifiable decision‑maker contacts or company website were found. Phone number from Google Maps is the only reliable data point. Further research needed to identify LinkedIn company page and key contacts.",
+          "channels": [],
+          "key_people": []
+        },
         {
           "lead_id": 15,
           "company_name": "Servicebroker GmbH - Ihre Eventagentur in München",
@@ -924,69 +946,6 @@
               "phone": "+4989890636030",
               "linkedin": "https://www.linkedin.com/in/patrick-appelt-500b7012b/",
               "contact_path": "Direct email, LinkedIn message, company phone"
-            }
-          ]
-        },
-        {
-          "lead_id": 6,
-          "company_name": "Munich Summit Partners conference-organizer-in-",
-          "website": "https://summit-conference-organizer-in-.example",
-          "linkedin_company_url": "",
-          "location": "Munich, DE",
-          "contact_name": "",
-          "email": "",
-          "phone": "+49 89 1675 100",
-          "status": "awaiting_approval",
-          "approval_status": "requested",
-          "message_approval_status": "not_requested",
-          "score": 0,
-          "fit_label": "fit",
-          "brain2_summary": "Conference organizer in Munich that hosts events.",
-          "brain3_event_type": "Conference",
-          "brain5_verdict": "Needs revision before approval",
-          "company_description": "Organizes and hosts conferences and events, likely generating revenue through tickets, sponsorships, and exhibitor fees.",
-          "approval_brief": "The lead is a Munich‑based conference organizer with a strong reputation but no identified contacts. The revised strategy adds a research‑first step, diversifies channels (LinkedIn, email, phone), tightens sequencing, and injects concrete personalization based on publicly available ratings and event focus. Approve once the research yields at least one verified decision‑maker.",
-          "channels": [],
-          "key_people": [
-            {
-              "name": "Unknown",
-              "role": "",
-              "email": "unknown",
-              "phone": "unknown",
-              "linkedin": "unknown",
-              "contact_path": ""
-            },
-            {
-              "name": "To be identified",
-              "role": "",
-              "email": "To be identified",
-              "phone": "To be identified",
-              "linkedin": "To be identified",
-              "contact_path": ""
-            },
-            {
-              "name": "Unknown",
-              "role": "",
-              "email": "unknown",
-              "phone": "unknown",
-              "linkedin": "unknown",
-              "contact_path": ""
-            },
-            {
-              "name": "To be identified",
-              "role": "",
-              "email": "To be identified",
-              "phone": "To be identified",
-              "linkedin": "To be identified",
-              "contact_path": ""
-            },
-            {
-              "name": "Unknown",
-              "role": "",
-              "email": "unknown",
-              "phone": "unknown",
-              "linkedin": "unknown",
-              "contact_path": ""
             }
           ]
         }
@@ -1378,10 +1337,10 @@
     }
   ],
   "next_work": {
-    "action": "brain3_enrich_lead",
+    "action": "request_approval",
     "project_name": "Sentra Conferences",
-    "lead_id": null,
-    "reason": "scored leads are queued for Brain 3 enrichment"
+    "lead_id": 16,
+    "reason": "Brain 5 completed; lead profile is ready for human approval"
   },
   "brain_states": [
     {
@@ -1426,7 +1385,7 @@
     {
       "brain": "brain3",
       "label": "Brain 3",
-      "status": "queued",
+      "status": "idle",
       "action": "brain3_enrich_lead",
       "project_name": "Sentra Conferences",
       "lead_id": null,
@@ -1442,19 +1401,21 @@
     {
       "brain": "brain5",
       "label": "Brain 5",
-      "status": "idle",
-      "action": "request_approval",
+      "status": "queued",
+      "action": "brain5_enrich_lead",
       "project_name": "Sentra Conferences",
-      "lead_id": 15,
-      "reason": "Brain 5 completed; lead profile is ready for human approval",
-      "updated_at": "2026-04-30T16:18:26+00:00",
+      "lead_id": 16,
+      "reason": "Brain 3 lead is ready for Brain 5 enrichment",
+      "updated_at": "2026-04-30T16:27:21+00:00",
       "started_at": "",
-      "finished_at": "2026-04-30T16:18:26+00:00",
+      "finished_at": "2026-04-30T16:27:21+00:00",
       "details": {
-        "action": "request_approval",
-        "approval_status": "requested",
-        "lead_id": 15,
-        "result_status": "completed"
+        "action": "brain5_enrich_lead",
+        "data_confidence": 2,
+        "lead_id": 16,
+        "model": "openai/gpt-oss-120b",
+        "result_status": "completed",
+        "used_brain": "brain5"
       }
     },
     {
@@ -1700,6 +1661,18 @@
         "color": "#ff9b54"
       },
       {
+        "lead_id": 16,
+        "company_name": "Scholastika Eventlocation",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "",
+        "stage": "marketing",
+        "next_stage": "",
+        "status": "complete",
+        "color": "#3ddc97"
+      },
+      {
         "lead_id": 15,
         "company_name": "Servicebroker GmbH - Ihre Eventagentur in München",
         "contact_name": "",
@@ -1714,18 +1687,6 @@
       {
         "lead_id": 13,
         "company_name": "MOC – Event Center Messe Munich",
-        "contact_name": "",
-        "linkedin_url": "",
-        "score": 0.0,
-        "fit_label": "",
-        "stage": "marketing",
-        "next_stage": "",
-        "status": "complete",
-        "color": "#3ddc97"
-      },
-      {
-        "lead_id": 12,
-        "company_name": "Messe München",
         "contact_name": "",
         "linkedin_url": "",
         "score": 0.0,
@@ -2103,6 +2064,22 @@
   ],
   "completed_leads": [
     {
+      "lead_id": 16,
+      "company_name": "Scholastika Eventlocation",
+      "city": "München",
+      "email": "",
+      "phone": "089 223707",
+      "website": "",
+      "approval_status": "not_requested",
+      "message_approval_status": "not_requested",
+      "draft_status": "not_created",
+      "draft_created_at": "",
+      "verdict": "",
+      "outreach_path": "",
+      "partnership_relevance": "Potential partner for conference organizers seeking a venue in Munich",
+      "completed_at": "2026-04-30T16:27:21+00:00"
+    },
+    {
       "lead_id": 15,
       "company_name": "Servicebroker GmbH - Ihre Eventagentur in München",
       "city": "München",
@@ -2213,22 +2190,6 @@
       "outreach_path": "",
       "partnership_relevance": "Potential partner for conference organizers and trade‑show planners seeking a Munich venue.",
       "completed_at": "2026-04-30T15:40:34+00:00"
-    },
-    {
-      "lead_id": 16,
-      "company_name": "Scholastika Eventlocation",
-      "city": "München",
-      "email": "",
-      "phone": "089 223707",
-      "website": "",
-      "approval_status": "not_requested",
-      "message_approval_status": "not_requested",
-      "draft_status": "not_created",
-      "draft_created_at": "",
-      "verdict": "",
-      "outreach_path": "",
-      "partnership_relevance": "Potential partner for conference organizers seeking a venue in Munich",
-      "completed_at": "2026-04-30T15:40:14+00:00"
     },
     {
       "lead_id": 9,
