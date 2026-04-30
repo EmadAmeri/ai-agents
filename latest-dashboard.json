@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-04-30T17:34:04",
+  "generated_at": "2026-04-30T17:36:23",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
     "waiting_approvals": 4,
-    "total_activity": 130,
+    "total_activity": 131,
     "collected_total": 69,
     "brain2_scored_total": 61,
-    "brain3_enriched_total": 4,
+    "brain3_enriched_total": 5,
     "brain5_reviewed_total": 4,
     "approved_total": 0,
     "drafted_total": 0,
@@ -131,7 +131,7 @@
     "project_name": "Sentra Conferences",
     "initial_leads_count": 69,
     "scored_leads_count": 61,
-    "enriched_leads_count": 4,
+    "enriched_leads_count": 5,
     "strategized_leads_count": 4,
     "drafted_contacted_leads_count": 0
   },
@@ -502,8 +502,30 @@
     },
     "enriched": {
       "label": "Enriched",
-      "count": 4,
+      "count": 5,
       "items": [
+        {
+          "lead_id": 10,
+          "company_name": "SPACE - Ihre Eventagentur München",
+          "website": "space-ihreeventagenturmünchen.example",
+          "linkedin_company_url": "",
+          "location": "München, DE",
+          "contact_name": "",
+          "email": "",
+          "phone": "089 211128810",
+          "status": "raw",
+          "approval_status": "not_requested",
+          "message_approval_status": "not_requested",
+          "score": 0,
+          "fit_label": "medium_fit",
+          "brain2_summary": "Event management company likely to host events.",
+          "brain3_event_type": "Event management / conference services",
+          "brain5_verdict": "",
+          "company_description": "Service‑based business model providing event planning, production, and venue management services. Revenue generated through project fees, consulting retainers and optional add‑ons such as technical production, catering and post‑event analytics.",
+          "approval_brief": "SPACE is a Munich‑based event agency that offers full‑service event planning, conference organization, venue sourcing, and production for corporate, association and brand clients. The company focuses on creating tailored B2B events, hybrid formats and experiential experiences in the German market.",
+          "channels": [],
+          "key_people": []
+        },
         {
           "lead_id": 9,
           "company_name": "ZWO EVENTS",
@@ -1015,6 +1037,14 @@
   "pending_message_approvals": [],
   "recent_activity": [
     {
+      "created_at": "2026-04-30T15:35:55+00:00",
+      "action": "lead_enriched",
+      "project_name": "Sentra Conferences",
+      "company_name": "SPACE - Ihre Eventagentur München",
+      "task_title": "",
+      "detail": "SPACE - Ihre Eventagentur München source=brain3_gemini"
+    },
+    {
       "created_at": "2026-04-30T15:27:01+00:00",
       "action": "approval_requested",
       "project_name": "Sentra Conferences",
@@ -1101,17 +1131,14 @@
       "company_name": "Munich Summit Partners conference-organizer-in-",
       "task_title": "",
       "detail": "Munich Summit Partners conference-organizer-in- status=generated"
-    },
-    {
-      "created_at": "2026-04-24T16:43:11+00:00",
-      "action": "approval_requested",
-      "project_name": "Sentra Conferences",
-      "company_name": "ISARPOST Eventlocation",
-      "task_title": "",
-      "detail": "ISARPOST Eventlocation via telegram_waiting_approval"
     }
   ],
-  "next_work": null,
+  "next_work": {
+    "action": "brain5_enrich_lead",
+    "project_name": "Sentra Conferences",
+    "lead_id": 10,
+    "reason": "Brain 3 lead is ready for Brain 5 enrichment"
+  },
   "brain_states": [
     {
       "brain": "brain1",
@@ -1160,30 +1187,31 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "scored leads are queued for Brain 3 enrichment",
-      "updated_at": "2026-04-30T15:34:03+00:00",
+      "updated_at": "2026-04-30T15:35:55+00:00",
       "started_at": "",
-      "finished_at": "2026-04-30T15:34:03+00:00",
+      "finished_at": "2026-04-30T15:35:55+00:00",
       "details": {
-        "error": "Gemini Brain 3 request failed: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 49.581831516s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"20\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"49s\"\n      }\n    ]\n  }\n}\n",
-        "result_status": "error"
+        "action": "brain3_enrich_lead",
+        "lead_id": 10,
+        "model": "openai/gpt-oss-120b",
+        "result_status": "completed",
+        "used_brain": "brain5"
       }
     },
     {
       "brain": "brain5",
       "label": "Brain 5",
-      "status": "idle",
-      "action": "request_approval",
+      "status": "queued",
+      "action": "brain5_enrich_lead",
       "project_name": "Sentra Conferences",
-      "lead_id": 9,
-      "reason": "Brain 5 completed; lead profile is ready for human approval",
-      "updated_at": "2026-04-30T15:27:01+00:00",
+      "lead_id": 10,
+      "reason": "Brain 3 lead is ready for Brain 5 enrichment",
+      "updated_at": "2026-04-30T15:36:23+00:00",
       "started_at": "",
-      "finished_at": "2026-04-30T15:27:01+00:00",
+      "finished_at": "2026-04-30T15:36:23+00:00",
       "details": {
-        "action": "request_approval",
-        "approval_status": "requested",
-        "lead_id": 9,
-        "result_status": "completed"
+        "error": "Gemini Brain 3 review request failed: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 29.614442842s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"20\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"29s\"\n      }\n    ]\n  }\n}\n",
+        "result_status": "error"
       }
     },
     {
@@ -1230,7 +1258,7 @@
         "label": "Enrichment",
         "subtitle": "Apollo / Hunter API",
         "color": "#9b5cff",
-        "count": 14
+        "count": 15
       },
       {
         "key": "pending",
@@ -1244,7 +1272,7 @@
         "label": "Marketing Agent",
         "subtitle": "Output / Action",
         "color": "#3ddc97",
-        "count": 4
+        "count": 5
       }
     ],
     "dots": [
@@ -1321,18 +1349,6 @@
         "color": "#6ea8ff"
       },
       {
-        "lead_id": 10,
-        "company_name": "SPACE - Ihre Eventagentur München",
-        "contact_name": "",
-        "linkedin_url": "",
-        "score": 0.0,
-        "fit_label": "medium_fit",
-        "stage": "scoring",
-        "next_stage": "enrichment",
-        "status": "processing",
-        "color": "#9b5cff"
-      },
-      {
         "lead_id": 12,
         "company_name": "Messe München",
         "contact_name": "",
@@ -1357,6 +1373,30 @@
         "color": "#9b5cff"
       },
       {
+        "lead_id": 15,
+        "company_name": "Servicebroker GmbH - Ihre Eventagentur in München",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "medium_fit",
+        "stage": "scoring",
+        "next_stage": "enrichment",
+        "status": "processing",
+        "color": "#9b5cff"
+      },
+      {
+        "lead_id": 10,
+        "company_name": "SPACE - Ihre Eventagentur München",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "medium_fit",
+        "stage": "enrichment",
+        "next_stage": "pending",
+        "status": "moving",
+        "color": "#9b5cff"
+      },
+      {
         "lead_id": 9,
         "company_name": "ZWO EVENTS",
         "contact_name": "Max Mustermann",
@@ -1373,18 +1413,6 @@
         "company_name": "EvenDS Management",
         "contact_name": "Daniel Schwaiger",
         "linkedin_url": "https://www.linkedin.com/in/daniel-schwaiger-b4b10b170/",
-        "score": 0.0,
-        "fit_label": "medium_fit",
-        "stage": "enrichment",
-        "next_stage": "pending",
-        "status": "moving",
-        "color": "#9b5cff"
-      },
-      {
-        "lead_id": 7,
-        "company_name": "DAPP EVENTS",
-        "contact_name": "Daniel Appelt",
-        "linkedin_url": "https://www.linkedin.com/in/daniel-appelt-a820a412b/",
         "score": 0.0,
         "fit_label": "medium_fit",
         "stage": "enrichment",
@@ -1429,6 +1457,18 @@
         "color": "#ff9b54"
       },
       {
+        "lead_id": 10,
+        "company_name": "SPACE - Ihre Eventagentur München",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "",
+        "stage": "marketing",
+        "next_stage": "",
+        "status": "complete",
+        "color": "#3ddc97"
+      },
+      {
         "lead_id": 9,
         "company_name": "ZWO EVENTS",
         "contact_name": "",
@@ -1451,22 +1491,17 @@
         "next_stage": "",
         "status": "complete",
         "color": "#3ddc97"
-      },
-      {
-        "lead_id": 7,
-        "company_name": "DAPP EVENTS",
-        "contact_name": "",
-        "linkedin_url": "",
-        "score": 0.0,
-        "fit_label": "",
-        "stage": "marketing",
-        "next_stage": "",
-        "status": "complete",
-        "color": "#3ddc97"
       }
     ],
     "active_transition": "enrichment_to_pending",
     "live_feed": [
+      {
+        "created_at": "2026-04-30T15:35:55+00:00",
+        "action": "lead_enriched",
+        "project_name": "Sentra Conferences",
+        "company_name": "SPACE - Ihre Eventagentur München",
+        "detail": "A lead was enriched with external research."
+      },
       {
         "created_at": "2026-04-30T15:27:01+00:00",
         "action": "approval_requested",
@@ -1494,13 +1529,6 @@
         "project_name": "Sentra Conferences",
         "company_name": "EvenDS Management",
         "detail": "A lead was enriched with external research."
-      },
-      {
-        "created_at": "2026-04-29T07:10:59+00:00",
-        "action": "strategy_stored",
-        "project_name": "Sentra Conferences",
-        "company_name": "DAPP EVENTS",
-        "detail": "DAPP EVENTS status=generated"
       }
     ]
   },
@@ -1720,17 +1748,6 @@
   ],
   "queued_for_enrich_leads": [
     {
-      "lead_id": 10,
-      "company_name": "SPACE - Ihre Eventagentur München",
-      "city": "München",
-      "website": "",
-      "phone": "089 211128810",
-      "fit_classification": "medium_fit",
-      "lead_tag": "potential_partner",
-      "reason_summary": "Event management company likely to host events.",
-      "collected_at": "2026-04-19 21:06:28"
-    },
-    {
       "lead_id": 12,
       "company_name": "Messe München",
       "city": "München",
@@ -1828,9 +1845,36 @@
       "lead_tag": "exact_audience_match",
       "reason_summary": "Event management company offering conference and event services.",
       "collected_at": "2026-04-19 21:12:57"
+    },
+    {
+      "lead_id": 29,
+      "company_name": "The Charles Hotel, a Rocco Forte hotel",
+      "city": "München",
+      "website": "",
+      "phone": "089 5445550",
+      "fit_classification": "medium_fit",
+      "lead_tag": "potential_partner",
+      "reason_summary": "Hotel venue provider for corporate events, not a primary organizer.",
+      "collected_at": "2026-04-19 21:12:57"
     }
   ],
   "completed_leads": [
+    {
+      "lead_id": 10,
+      "company_name": "SPACE - Ihre Eventagentur München",
+      "city": "München",
+      "email": "",
+      "phone": "089 211128810",
+      "website": "",
+      "approval_status": "not_requested",
+      "message_approval_status": "not_requested",
+      "draft_status": "not_created",
+      "draft_created_at": "",
+      "verdict": "",
+      "outreach_path": "",
+      "partnership_relevance": "Potential partner for co‑hosting conferences, providing venue sourcing, production services or joint sponsorship opportunities in the Munich market.",
+      "completed_at": "2026-04-30T15:35:55+00:00"
+    },
     {
       "lead_id": 9,
       "company_name": "ZWO EVENTS",
