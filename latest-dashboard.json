@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-04-30T17:40:14",
+  "generated_at": "2026-04-30T17:40:34",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
     "waiting_approvals": 4,
-    "total_activity": 135,
+    "total_activity": 136,
     "collected_total": 69,
     "brain2_scored_total": 61,
-    "brain3_enriched_total": 9,
+    "brain3_enriched_total": 10,
     "brain5_reviewed_total": 4,
     "approved_total": 0,
     "drafted_total": 0,
@@ -131,7 +131,7 @@
     "project_name": "Sentra Conferences",
     "initial_leads_count": 69,
     "scored_leads_count": 61,
-    "enriched_leads_count": 9,
+    "enriched_leads_count": 10,
     "strategized_leads_count": 4,
     "drafted_contacted_leads_count": 0
   },
@@ -505,6 +505,28 @@
       "count": 8,
       "items": [
         {
+          "lead_id": 17,
+          "company_name": "Zenith",
+          "website": "zenith.example",
+          "linkedin_company_url": "",
+          "location": "München, DE",
+          "contact_name": "",
+          "email": "",
+          "phone": "089 360351720",
+          "status": "raw",
+          "approval_status": "not_requested",
+          "message_approval_status": "not_requested",
+          "score": 0,
+          "fit_label": "medium_fit",
+          "brain2_summary": "Event venue, not organizer",
+          "brain3_event_type": "Venue / Conference hosting",
+          "brain5_verdict": "",
+          "company_description": "Revenue is generated primarily through venue rental, catering, and audio‑visual services for events.",
+          "approval_brief": "Zenith is an event venue located in Munich offering spaces for conferences, trade shows, and corporate events.",
+          "channels": [],
+          "key_people": []
+        },
+        {
           "lead_id": 16,
           "company_name": "Scholastika Eventlocation",
           "website": "scholastikaeventlocation.example",
@@ -690,45 +712,6 @@
               "phone": "+49 (0) 89 370 60 700",
               "linkedin": "https://www.linkedin.com/in/daniel-schwaiger-b4b10b170/",
               "contact_path": "Reach out via LinkedIn or company email (info@evends.de) and ask to be connected with Daniel Schwaiger."
-            }
-          ]
-        },
-        {
-          "lead_id": 7,
-          "company_name": "DAPP EVENTS",
-          "website": "dappevents.example",
-          "linkedin_company_url": "https://www.linkedin.com/company/dapp-events-gmbh/",
-          "location": "Kirchheim bei München, DE",
-          "contact_name": "Daniel Appelt",
-          "email": "daniel.appelt@dappevents.de",
-          "phone": "089 890636030",
-          "status": "awaiting_approval",
-          "approval_status": "requested",
-          "message_approval_status": "not_requested",
-          "score": 0,
-          "fit_label": "medium_fit",
-          "brain2_summary": "Event management company likely to host events.",
-          "brain3_event_type": "Event management agency (organizes corporate events, product launches, gala dinners, incentives, trade fair appearances",
-          "brain5_verdict": "Needs revision – the current plan is overly generic, has incomplete data, and contains sequencing risks that could reduc",
-          "company_description": "DAPP EVENTS operates as an event management agency, providing comprehensive services to clients for planning and executing their events. Their revenue comes from service fees charged to clients for event organization.",
-          "approval_brief": "The lead is a small full‑service event agency in Kirchheim bei München. Decision‑makers are Daniel and Patrick Appelt (Co‑Managing Directors). Contact data is solid for email/LinkedIn but missing a website, tech‑stack details, and additional influencers. Revised outreach adds a case‑study attachment, a voicemail step, and tighter sequencing.",
-          "channels": [],
-          "key_people": [
-            {
-              "name": "Daniel Appelt",
-              "role": "",
-              "email": "daniel.appelt@dappevents.de",
-              "phone": "+4989890636030",
-              "linkedin": "https://www.linkedin.com/in/daniel-appelt-a820a412b/",
-              "contact_path": "Direct email, LinkedIn message, company phone"
-            },
-            {
-              "name": "Patrick Appelt",
-              "role": "",
-              "email": "patrick.appelt@dappevents.de",
-              "phone": "+4989890636030",
-              "linkedin": "https://www.linkedin.com/in/patrick-appelt-500b7012b/",
-              "contact_path": "Direct email, LinkedIn message, company phone"
             }
           ]
         }
@@ -1079,6 +1062,14 @@
   "pending_message_approvals": [],
   "recent_activity": [
     {
+      "created_at": "2026-04-30T15:40:34+00:00",
+      "action": "lead_enriched",
+      "project_name": "Sentra Conferences",
+      "company_name": "Zenith",
+      "task_title": "",
+      "detail": "Zenith source=brain3_gemini"
+    },
+    {
       "created_at": "2026-04-30T15:40:14+00:00",
       "action": "lead_enriched",
       "project_name": "Sentra Conferences",
@@ -1165,14 +1156,6 @@
       "company_name": "DAPP EVENTS",
       "task_title": "",
       "detail": "DAPP EVENTS status=generated"
-    },
-    {
-      "created_at": "2026-04-29T05:46:39+00:00",
-      "action": "approval_requested",
-      "project_name": "Sentra Conferences",
-      "company_name": "DAPP EVENTS",
-      "task_title": "",
-      "detail": "DAPP EVENTS via telegram_waiting_approval"
     }
   ],
   "next_work": {
@@ -1229,12 +1212,12 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "scored leads are queued for Brain 3 enrichment",
-      "updated_at": "2026-04-30T15:40:14+00:00",
+      "updated_at": "2026-04-30T15:40:34+00:00",
       "started_at": "",
-      "finished_at": "2026-04-30T15:40:14+00:00",
+      "finished_at": "2026-04-30T15:40:34+00:00",
       "details": {
         "action": "brain3_enrich_lead",
-        "lead_id": 16,
+        "lead_id": 17,
         "model": "openai/gpt-oss-120b",
         "result_status": "completed",
         "used_brain": "brain5"
@@ -1314,7 +1297,7 @@
         "label": "Marketing Agent",
         "subtitle": "Output / Action",
         "color": "#3ddc97",
-        "count": 9
+        "count": 10
       }
     ],
     "dots": [
@@ -1391,18 +1374,6 @@
         "color": "#6ea8ff"
       },
       {
-        "lead_id": 17,
-        "company_name": "Zenith",
-        "contact_name": "",
-        "linkedin_url": "",
-        "score": 0.0,
-        "fit_label": "medium_fit",
-        "stage": "scoring",
-        "next_stage": "enrichment",
-        "status": "processing",
-        "color": "#9b5cff"
-      },
-      {
         "lead_id": 18,
         "company_name": "drinktec—Summit meeting of the beverage and liquid food industry",
         "contact_name": "",
@@ -1427,6 +1398,30 @@
         "color": "#9b5cff"
       },
       {
+        "lead_id": 25,
+        "company_name": "SVYT · Boutique Event Space | Premium Eventlocation München",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "medium_fit",
+        "stage": "scoring",
+        "next_stage": "enrichment",
+        "status": "processing",
+        "color": "#9b5cff"
+      },
+      {
+        "lead_id": 17,
+        "company_name": "Zenith",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "medium_fit",
+        "stage": "enrichment",
+        "next_stage": "pending",
+        "status": "moving",
+        "color": "#9b5cff"
+      },
+      {
         "lead_id": 16,
         "company_name": "Scholastika Eventlocation",
         "contact_name": "",
@@ -1445,18 +1440,6 @@
         "linkedin_url": "https://www.linkedin.com/company/servicebroker-gmbh",
         "score": 0.0,
         "fit_label": "medium_fit",
-        "stage": "enrichment",
-        "next_stage": "pending",
-        "status": "moving",
-        "color": "#9b5cff"
-      },
-      {
-        "lead_id": 13,
-        "company_name": "MOC – Event Center Messe Munich",
-        "contact_name": "",
-        "linkedin_url": "",
-        "score": 0.0,
-        "fit_label": "fit",
         "stage": "enrichment",
         "next_stage": "pending",
         "status": "moving",
@@ -1499,6 +1482,18 @@
         "color": "#ff9b54"
       },
       {
+        "lead_id": 17,
+        "company_name": "Zenith",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "",
+        "stage": "marketing",
+        "next_stage": "",
+        "status": "complete",
+        "color": "#3ddc97"
+      },
+      {
         "lead_id": 16,
         "company_name": "Scholastika Eventlocation",
         "contact_name": "",
@@ -1521,22 +1516,17 @@
         "next_stage": "",
         "status": "complete",
         "color": "#3ddc97"
-      },
-      {
-        "lead_id": 13,
-        "company_name": "MOC – Event Center Messe Munich",
-        "contact_name": "",
-        "linkedin_url": "",
-        "score": 0.0,
-        "fit_label": "",
-        "stage": "marketing",
-        "next_stage": "",
-        "status": "complete",
-        "color": "#3ddc97"
       }
     ],
     "active_transition": "enrichment_to_pending",
     "live_feed": [
+      {
+        "created_at": "2026-04-30T15:40:34+00:00",
+        "action": "lead_enriched",
+        "project_name": "Sentra Conferences",
+        "company_name": "Zenith",
+        "detail": "A lead was enriched with external research."
+      },
       {
         "created_at": "2026-04-30T15:40:14+00:00",
         "action": "lead_enriched",
@@ -1563,13 +1553,6 @@
         "action": "lead_enriched",
         "project_name": "Sentra Conferences",
         "company_name": "Messe München",
-        "detail": "A lead was enriched with external research."
-      },
-      {
-        "created_at": "2026-04-30T15:35:55+00:00",
-        "action": "lead_enriched",
-        "project_name": "Sentra Conferences",
-        "company_name": "SPACE - Ihre Eventagentur München",
         "detail": "A lead was enriched with external research."
       }
     ]
@@ -1790,17 +1773,6 @@
   ],
   "queued_for_enrich_leads": [
     {
-      "lead_id": 17,
-      "company_name": "Zenith",
-      "city": "München",
-      "website": "",
-      "phone": "089 360351720",
-      "fit_classification": "medium_fit",
-      "lead_tag": "potential_partner",
-      "reason_summary": "Event venue, not organizer",
-      "collected_at": "2026-04-19 21:09:06"
-    },
-    {
       "lead_id": 18,
       "company_name": "drinktec—Summit meeting of the beverage and liquid food industry",
       "city": "München",
@@ -1898,9 +1870,36 @@
       "lead_tag": "potential_partner",
       "reason_summary": "Event venue provider for corporate and private events.",
       "collected_at": "2026-04-19 21:15:21"
+    },
+    {
+      "lead_id": 36,
+      "company_name": "TonHalle München",
+      "city": "München",
+      "website": "",
+      "phone": "",
+      "fit_classification": "medium_fit",
+      "lead_tag": "potential_partner",
+      "reason_summary": "Event venue can host events but is not an organizer.",
+      "collected_at": "2026-04-19 21:15:21"
     }
   ],
   "completed_leads": [
+    {
+      "lead_id": 17,
+      "company_name": "Zenith",
+      "city": "München",
+      "email": "",
+      "phone": "089 360351720",
+      "website": "",
+      "approval_status": "not_requested",
+      "message_approval_status": "not_requested",
+      "draft_status": "not_created",
+      "draft_created_at": "",
+      "verdict": "",
+      "outreach_path": "",
+      "partnership_relevance": "Potential partner for conference organizers and trade‑show planners seeking a Munich venue.",
+      "completed_at": "2026-04-30T15:40:34+00:00"
+    },
     {
       "lead_id": 16,
       "company_name": "Scholastika Eventlocation",
