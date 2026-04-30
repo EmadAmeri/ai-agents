@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T18:45:25",
+  "generated_at": "2026-04-30T18:45:44",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
@@ -9,7 +9,7 @@
     "collected_total": 69,
     "brain2_scored_total": 61,
     "brain3_enriched_total": 12,
-    "brain5_reviewed_total": 10,
+    "brain5_reviewed_total": 11,
     "approved_total": 0,
     "drafted_total": 0,
     "message_review_total": 0
@@ -132,7 +132,7 @@
     "initial_leads_count": 69,
     "scored_leads_count": 61,
     "enriched_leads_count": 12,
-    "strategized_leads_count": 10,
+    "strategized_leads_count": 11,
     "drafted_contacted_leads_count": 0
   },
   "stages": {
@@ -544,7 +544,7 @@
           "brain3_event_type": "Trade show / Exhibition",
           "brain5_verdict": "",
           "company_description": "Revenue generated through exhibitor space fees, sponsorship packages, and visitor ticket sales.",
-          "approval_brief": "drinktec is the leading international trade fair for the beverage and liquid food industry, held biennially at Messe München. It brings together manufacturers, equipment suppliers, packaging experts, and service providers to showcase the latest technologies and trends.",
+          "approval_brief": "Data gathered from public event and company pages provides a solid overview of drinktec, but no concrete decision‑maker contacts have been uncovered. Human reviewer should verify the suggested research steps and confirm any contacts before outreach.",
           "channels": [],
           "key_people": []
         },
@@ -712,6 +712,28 @@
       "label": "Brain 5 Enriched",
       "count": 8,
       "items": [
+        {
+          "lead_id": 18,
+          "company_name": "drinktec—Summit meeting of the beverage and liquid food industry",
+          "website": "drinktec—summitmeetingofthebeverageandliquidfoodindustry.example",
+          "linkedin_company_url": "https://www.linkedin.com/company/drinktec",
+          "location": "München, DE",
+          "contact_name": "Messe München GmbH – Event Management",
+          "email": "",
+          "phone": "089 94911318",
+          "status": "raw",
+          "approval_status": "not_requested",
+          "message_approval_status": "not_requested",
+          "score": 0,
+          "fit_label": "medium_fit",
+          "brain2_summary": "Trade center, hosts events",
+          "brain3_event_type": "Trade show / Exhibition",
+          "brain5_verdict": "",
+          "company_description": "Revenue generated through exhibitor space fees, sponsorship packages, and visitor ticket sales.",
+          "approval_brief": "Data gathered from public event and company pages provides a solid overview of drinktec, but no concrete decision‑maker contacts have been uncovered. Human reviewer should verify the suggested research steps and confirm any contacts before outreach.",
+          "channels": [],
+          "key_people": []
+        },
         {
           "lead_id": 17,
           "company_name": "Zenith",
@@ -898,37 +920,6 @@
               "phone": "",
               "linkedin": "https://www.linkedin.com/in/maxmustermann",
               "contact_path": "Company website > About page"
-            }
-          ]
-        },
-        {
-          "lead_id": 8,
-          "company_name": "EvenDS Management",
-          "website": "evendsmanagement.example",
-          "linkedin_company_url": "https://www.linkedin.com/company/evends-management-gmbh/",
-          "location": "Unterschleißheim, DE",
-          "contact_name": "Daniel Schwaiger",
-          "email": "",
-          "phone": "0163 7298110",
-          "status": "awaiting_approval",
-          "approval_status": "requested",
-          "message_approval_status": "not_requested",
-          "score": 0,
-          "fit_label": "medium_fit",
-          "brain2_summary": "Event management company likely to host events.",
-          "brain3_event_type": "Event Management Agency",
-          "brain5_verdict": "",
-          "company_description": "EvenDS Management operates as a full-service event agency, providing end-to-end event management services to corporate, private, and public clients. Revenue is generated through service fees charged for the planning, organization, and execution of various event types.",
-          "approval_brief": "Data is consistent with source material; primary decision‑maker identified but direct email missing, recommend LinkedIn outreach and email pattern verification before proceeding.",
-          "channels": [],
-          "key_people": [
-            {
-              "name": "Daniel Schwaiger",
-              "role": "",
-              "email": "",
-              "phone": "+49 (0) 89 370 60 700",
-              "linkedin": "https://www.linkedin.com/in/daniel-schwaiger-b4b10b170/",
-              "contact_path": "Reach out via LinkedIn or company email (info@evends.de) and ask to be connected with Daniel Schwaiger."
             }
           ]
         }
@@ -1320,10 +1311,10 @@
     }
   ],
   "next_work": {
-    "action": "brain3_enrich_lead",
+    "action": "request_approval",
     "project_name": "Sentra Conferences",
-    "lead_id": null,
-    "reason": "scored leads are queued for Brain 3 enrichment"
+    "lead_id": 18,
+    "reason": "Brain 5 completed; lead profile is ready for human approval"
   },
   "brain_states": [
     {
@@ -1368,7 +1359,7 @@
     {
       "brain": "brain3",
       "label": "Brain 3",
-      "status": "queued",
+      "status": "idle",
       "action": "brain3_enrich_lead",
       "project_name": "Sentra Conferences",
       "lead_id": null,
@@ -1384,19 +1375,21 @@
     {
       "brain": "brain5",
       "label": "Brain 5",
-      "status": "idle",
-      "action": "request_approval",
+      "status": "queued",
+      "action": "brain5_enrich_lead",
       "project_name": "Sentra Conferences",
-      "lead_id": 17,
-      "reason": "Brain 5 completed; lead profile is ready for human approval",
-      "updated_at": "2026-04-30T16:36:49+00:00",
+      "lead_id": 18,
+      "reason": "Brain 3 lead is ready for Brain 5 enrichment",
+      "updated_at": "2026-04-30T16:45:44+00:00",
       "started_at": "",
-      "finished_at": "2026-04-30T16:36:49+00:00",
+      "finished_at": "2026-04-30T16:45:44+00:00",
       "details": {
-        "action": "request_approval",
-        "approval_status": "requested",
-        "lead_id": 17,
-        "result_status": "completed"
+        "action": "brain5_enrich_lead",
+        "data_confidence": 75,
+        "lead_id": 18,
+        "model": "openai/gpt-oss-120b",
+        "result_status": "completed",
+        "used_brain": "brain5"
       }
     },
     {
@@ -1642,6 +1635,18 @@
         "color": "#ff9b54"
       },
       {
+        "lead_id": 18,
+        "company_name": "drinktec—Summit meeting of the beverage and liquid food industry",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "",
+        "stage": "marketing",
+        "next_stage": "",
+        "status": "complete",
+        "color": "#3ddc97"
+      },
+      {
         "lead_id": 17,
         "company_name": "Zenith",
         "contact_name": "",
@@ -1656,18 +1661,6 @@
       {
         "lead_id": 16,
         "company_name": "Scholastika Eventlocation",
-        "contact_name": "",
-        "linkedin_url": "",
-        "score": 0.0,
-        "fit_label": "",
-        "stage": "marketing",
-        "next_stage": "",
-        "status": "complete",
-        "color": "#3ddc97"
-      },
-      {
-        "lead_id": 15,
-        "company_name": "Servicebroker GmbH - Ihre Eventagentur in München",
         "contact_name": "",
         "linkedin_url": "",
         "score": 0.0,
@@ -2045,6 +2038,22 @@
   ],
   "completed_leads": [
     {
+      "lead_id": 18,
+      "company_name": "drinktec—Summit meeting of the beverage and liquid food industry",
+      "city": "München",
+      "email": "",
+      "phone": "089 94911318",
+      "website": "",
+      "approval_status": "not_requested",
+      "message_approval_status": "not_requested",
+      "draft_status": "not_created",
+      "draft_created_at": "",
+      "verdict": "",
+      "outreach_path": "",
+      "partnership_relevance": "High relevance for partners offering beverage processing equipment, packaging solutions, sustainability technologies, and digital services for the beverage sector.",
+      "completed_at": "2026-04-30T16:45:44+00:00"
+    },
+    {
       "lead_id": 17,
       "company_name": "Zenith",
       "city": "München",
@@ -2155,22 +2164,6 @@
       "outreach_path": "",
       "partnership_relevance": "High - suitable for event service providers, AV, catering, decor partners.",
       "completed_at": "2026-04-30T15:41:21+00:00"
-    },
-    {
-      "lead_id": 18,
-      "company_name": "drinktec—Summit meeting of the beverage and liquid food industry",
-      "city": "München",
-      "email": "",
-      "phone": "089 94911318",
-      "website": "",
-      "approval_status": "not_requested",
-      "message_approval_status": "not_requested",
-      "draft_status": "not_created",
-      "draft_created_at": "",
-      "verdict": "",
-      "outreach_path": "",
-      "partnership_relevance": "High relevance for partners offering beverage processing equipment, packaging solutions, sustainability technologies, and digital services for the beverage sector.",
-      "completed_at": "2026-04-30T15:41:01+00:00"
     },
     {
       "lead_id": 9,
