@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-04-30T17:41:01",
+  "generated_at": "2026-04-30T17:41:21",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
     "waiting_approvals": 4,
-    "total_activity": 137,
+    "total_activity": 138,
     "collected_total": 69,
     "brain2_scored_total": 61,
-    "brain3_enriched_total": 11,
+    "brain3_enriched_total": 12,
     "brain5_reviewed_total": 4,
     "approved_total": 0,
     "drafted_total": 0,
@@ -131,7 +131,7 @@
     "project_name": "Sentra Conferences",
     "initial_leads_count": 69,
     "scored_leads_count": 61,
-    "enriched_leads_count": 11,
+    "enriched_leads_count": 12,
     "strategized_leads_count": 4,
     "drafted_contacted_leads_count": 0
   },
@@ -505,6 +505,28 @@
       "count": 8,
       "items": [
         {
+          "lead_id": 24,
+          "company_name": "Hartmanns",
+          "website": "hartmanns-eventlocation.de",
+          "linkedin_company_url": "",
+          "location": "München, DE",
+          "contact_name": "Not identified",
+          "email": "",
+          "phone": "0176 45540257",
+          "status": "raw",
+          "approval_status": "not_requested",
+          "message_approval_status": "not_requested",
+          "score": 0,
+          "fit_label": "medium_fit",
+          "brain2_summary": "Event venue, potential partner",
+          "brain3_event_type": "Venue",
+          "brain5_verdict": "",
+          "company_description": "Provides venue rental and event services to corporate and private clients.",
+          "approval_brief": "Event venue offering hospitality and event management services in Munich.",
+          "channels": [],
+          "key_people": []
+        },
+        {
           "lead_id": 18,
           "company_name": "drinktec—Summit meeting of the beverage and liquid food industry",
           "website": "drinktec—summitmeetingofthebeverageandliquidfoodindustry.example",
@@ -674,37 +696,6 @@
           "approval_brief": "SPACE is a Munich‑based event agency that offers full‑service event planning, conference organization, venue sourcing, and production for corporate, association and brand clients. The company focuses on creating tailored B2B events, hybrid formats and experiential experiences in the German market.",
           "channels": [],
           "key_people": []
-        },
-        {
-          "lead_id": 9,
-          "company_name": "ZWO EVENTS",
-          "website": "zwoevents.example",
-          "linkedin_company_url": "https://www.linkedin.com/company/zwo-events",
-          "location": "München, DE",
-          "contact_name": "Max Mustermann",
-          "email": "",
-          "phone": "089 21540225",
-          "status": "awaiting_approval",
-          "approval_status": "requested",
-          "message_approval_status": "not_requested",
-          "score": 0,
-          "fit_label": "medium_fit",
-          "brain2_summary": "Event management company likely to host events.",
-          "brain3_event_type": "Conference",
-          "brain5_verdict": "",
-          "company_description": "Offers full‑service event planning, venue sourcing and sponsorship acquisition, monetized through ticket sales, sponsorship packages and exhibitor fees.",
-          "approval_brief": "Data confidence moderate (3). Founder & CEO identified with LinkedIn URL; email and phone missing. Need to acquire direct contact info and additional stakeholders before outreach. Prioritize LinkedIn connection and use email discovery tools (Apollo, RocketReach, Hunter).",
-          "channels": [],
-          "key_people": [
-            {
-              "name": "Max Mustermann",
-              "role": "",
-              "email": "",
-              "phone": "",
-              "linkedin": "https://www.linkedin.com/in/maxmustermann",
-              "contact_path": "Company website > About page"
-            }
-          ]
         }
       ]
     },
@@ -1053,6 +1044,14 @@
   "pending_message_approvals": [],
   "recent_activity": [
     {
+      "created_at": "2026-04-30T15:41:21+00:00",
+      "action": "lead_enriched",
+      "project_name": "Sentra Conferences",
+      "company_name": "Hartmanns",
+      "task_title": "",
+      "detail": "Hartmanns source=brain3_gemini"
+    },
+    {
       "created_at": "2026-04-30T15:41:01+00:00",
       "action": "lead_enriched",
       "project_name": "Sentra Conferences",
@@ -1139,14 +1138,6 @@
       "company_name": "EvenDS Management",
       "task_title": "",
       "detail": "EvenDS Management source=brain3_gemini"
-    },
-    {
-      "created_at": "2026-04-29T07:10:59+00:00",
-      "action": "strategy_stored",
-      "project_name": "Sentra Conferences",
-      "company_name": "DAPP EVENTS",
-      "task_title": "",
-      "detail": "DAPP EVENTS status=generated"
     }
   ],
   "next_work": {
@@ -1203,12 +1194,12 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "scored leads are queued for Brain 3 enrichment",
-      "updated_at": "2026-04-30T15:41:01+00:00",
+      "updated_at": "2026-04-30T15:41:21+00:00",
       "started_at": "",
-      "finished_at": "2026-04-30T15:41:01+00:00",
+      "finished_at": "2026-04-30T15:41:21+00:00",
       "details": {
         "action": "brain3_enrich_lead",
-        "lead_id": 18,
+        "lead_id": 24,
         "model": "openai/gpt-oss-120b",
         "result_status": "completed",
         "used_brain": "brain5"
@@ -1365,18 +1356,6 @@
         "color": "#6ea8ff"
       },
       {
-        "lead_id": 24,
-        "company_name": "Hartmanns",
-        "contact_name": "",
-        "linkedin_url": "",
-        "score": 0.0,
-        "fit_label": "medium_fit",
-        "stage": "scoring",
-        "next_stage": "enrichment",
-        "status": "processing",
-        "color": "#9b5cff"
-      },
-      {
         "lead_id": 25,
         "company_name": "SVYT · Boutique Event Space | Premium Eventlocation München",
         "contact_name": "",
@@ -1401,6 +1380,30 @@
         "color": "#9b5cff"
       },
       {
+        "lead_id": 29,
+        "company_name": "The Charles Hotel, a Rocco Forte hotel",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "medium_fit",
+        "stage": "scoring",
+        "next_stage": "enrichment",
+        "status": "processing",
+        "color": "#9b5cff"
+      },
+      {
+        "lead_id": 24,
+        "company_name": "Hartmanns",
+        "contact_name": "Not identified",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "medium_fit",
+        "stage": "enrichment",
+        "next_stage": "pending",
+        "status": "moving",
+        "color": "#9b5cff"
+      },
+      {
         "lead_id": 18,
         "company_name": "drinktec—Summit meeting of the beverage and liquid food industry",
         "contact_name": "Messe München GmbH – Event Management",
@@ -1415,18 +1418,6 @@
       {
         "lead_id": 17,
         "company_name": "Zenith",
-        "contact_name": "",
-        "linkedin_url": "",
-        "score": 0.0,
-        "fit_label": "medium_fit",
-        "stage": "enrichment",
-        "next_stage": "pending",
-        "status": "moving",
-        "color": "#9b5cff"
-      },
-      {
-        "lead_id": 16,
-        "company_name": "Scholastika Eventlocation",
         "contact_name": "",
         "linkedin_url": "",
         "score": 0.0,
@@ -1473,6 +1464,18 @@
         "color": "#ff9b54"
       },
       {
+        "lead_id": 24,
+        "company_name": "Hartmanns",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "",
+        "stage": "marketing",
+        "next_stage": "",
+        "status": "complete",
+        "color": "#3ddc97"
+      },
+      {
         "lead_id": 18,
         "company_name": "drinktec—Summit meeting of the beverage and liquid food industry",
         "contact_name": "",
@@ -1495,22 +1498,17 @@
         "next_stage": "",
         "status": "complete",
         "color": "#3ddc97"
-      },
-      {
-        "lead_id": 16,
-        "company_name": "Scholastika Eventlocation",
-        "contact_name": "",
-        "linkedin_url": "",
-        "score": 0.0,
-        "fit_label": "",
-        "stage": "marketing",
-        "next_stage": "",
-        "status": "complete",
-        "color": "#3ddc97"
       }
     ],
     "active_transition": "enrichment_to_pending",
     "live_feed": [
+      {
+        "created_at": "2026-04-30T15:41:21+00:00",
+        "action": "lead_enriched",
+        "project_name": "Sentra Conferences",
+        "company_name": "Hartmanns",
+        "detail": "A lead was enriched with external research."
+      },
       {
         "created_at": "2026-04-30T15:41:01+00:00",
         "action": "lead_enriched",
@@ -1537,13 +1535,6 @@
         "action": "lead_enriched",
         "project_name": "Sentra Conferences",
         "company_name": "Servicebroker GmbH - Ihre Eventagentur in München",
-        "detail": "A lead was enriched with external research."
-      },
-      {
-        "created_at": "2026-04-30T15:39:34+00:00",
-        "action": "lead_enriched",
-        "project_name": "Sentra Conferences",
-        "company_name": "MOC – Event Center Messe Munich",
         "detail": "A lead was enriched with external research."
       }
     ]
@@ -1764,17 +1755,6 @@
   ],
   "queued_for_enrich_leads": [
     {
-      "lead_id": 24,
-      "company_name": "Hartmanns",
-      "city": "München",
-      "website": "",
-      "phone": "0176 45540257",
-      "fit_classification": "medium_fit",
-      "lead_tag": "potential_partner",
-      "reason_summary": "Event venue, potential partner",
-      "collected_at": "2026-04-19 21:11:32"
-    },
-    {
       "lead_id": 25,
       "company_name": "SVYT · Boutique Event Space | Premium Eventlocation München",
       "city": "München",
@@ -1872,9 +1852,36 @@
       "lead_tag": "potential_partner",
       "reason_summary": "Event venue, not an organizer.",
       "collected_at": "2026-04-19 21:15:31"
+    },
+    {
+      "lead_id": 38,
+      "company_name": "pure events",
+      "city": "München",
+      "website": "",
+      "phone": "089 217036815",
+      "fit_classification": "fit",
+      "lead_tag": "exact_audience_match",
+      "reason_summary": "Event management company in Munich.",
+      "collected_at": "2026-04-19 21:16:13"
     }
   ],
   "completed_leads": [
+    {
+      "lead_id": 24,
+      "company_name": "Hartmanns",
+      "city": "München",
+      "email": "",
+      "phone": "0176 45540257",
+      "website": "",
+      "approval_status": "not_requested",
+      "message_approval_status": "not_requested",
+      "draft_status": "not_created",
+      "draft_created_at": "",
+      "verdict": "",
+      "outreach_path": "",
+      "partnership_relevance": "High - suitable for event service providers, AV, catering, decor partners.",
+      "completed_at": "2026-04-30T15:41:21+00:00"
+    },
     {
       "lead_id": 18,
       "company_name": "drinktec—Summit meeting of the beverage and liquid food industry",
@@ -2018,22 +2025,6 @@
       "outreach_path": "",
       "partnership_relevance": "EvenDS Management GmbH is a full-service event agency that plans and executes a wide range of events for corporate, private, and public clients. A partnership could involve offering our services (e.g., event technology, speaker management,",
       "completed_at": "2026-04-30T05:02:06+00:00"
-    },
-    {
-      "lead_id": 7,
-      "company_name": "DAPP EVENTS",
-      "city": "Kirchheim bei München",
-      "email": "daniel.appelt@dappevents.de",
-      "phone": "089 890636030",
-      "website": "",
-      "approval_status": "requested",
-      "message_approval_status": "not_requested",
-      "draft_status": "not_created",
-      "draft_created_at": "",
-      "verdict": "Needs revision – the current plan is overly generic, has incomplete data, and contains sequencing risks that could reduc",
-      "outreach_path": "LinkedIn‑first, then email, followed by a brief phone outreach, with a single follow‑up on the secondary MD if no respon",
-      "partnership_relevance": "DAPP EVENTS is an event management agency that organizes events for various clients. They are highly relevant for partnerships related to event technology, venue services, catering, or other event-related solutions, as they would integrate",
-      "completed_at": "2026-04-29T07:10:59+00:00"
     }
   ]
 }
