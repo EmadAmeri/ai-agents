@@ -1,20 +1,42 @@
 const state = {
   snapshotUrl: "./latest-dashboard.json",
   refreshMs: 60000,
-  timer: null
+  timer: null,
+  animationFrame: 0,
+  payload: null,
+  dots: []
 };
 
-const ACTIVE_FLOW_STAGES = [
-  { key: "brain3", label: "Brain 3" },
-  { key: "brain5", label: "Brain 5" },
-  { key: "approval", label: "Lead Approval" },
-  { key: "message", label: "Message Approval" }
+const DESKTOP_LAYOUT = [
+  { key: "inbound", x: 10, y: 52 },
+  { key: "scoring", x: 30, y: 30 },
+  { key: "enrichment", x: 52, y: 50 },
+  { key: "pending", x: 74, y: 34 },
+  { key: "marketing", x: 90, y: 54 }
 ];
 
-const summaryGrid = document.getElementById("summary-grid");
-const journeyList = document.getElementById("journey-list");
+const MOBILE_LAYOUT = [
+  { key: "inbound", x: 50, y: 12 },
+  { key: "scoring", x: 50, y: 30 },
+  { key: "enrichment", x: 50, y: 48 },
+  { key: "pending", x: 50, y: 66 },
+  { key: "marketing", x: 50, y: 84 }
+];
+
+const connectionState = document.getElementById("connection-state");
 const lastUpdated = document.getElementById("last-updated");
-const statusLight = document.getElementById("status-light");
+const currentFocus = document.getElementById("current-focus");
+const journeyDescription = document.getElementById("journey-description");
+const journeyNote = document.getElementById("journey-note");
+const summaryGrid = document.getElementById("summary-grid");
+const feedList = document.getElementById("feed-list");
+const journeyNodes = document.getElementById("journey-nodes");
+const journeyDots = document.getElementById("journey-dots");
+const journeySvg = document.getElementById("journey-svg");
+const popup = document.getElementById("lead-popup");
+const popupTitle = document.getElementById("popup-title");
+const popupBody = document.getElementById("popup-body");
+const popupClose = document.getElementById("popup-close");
 
 function safe(value, fallback = "") {
   if (value === null || value === undefined) return fallback;
@@ -40,156 +62,269 @@ function formatTime(value) {
   return date.toLocaleString("en-GB", { dateStyle: "short", timeStyle: "medium" });
 }
 
-function countApproval(payload) {
-  const leadApprovals = Array.isArray(payload.pending_approvals) ? payload.pending_approvals.length : 0;
-  const messageApprovals = Array.isArray(payload.pending_message_approvals) ? payload.pending_message_approvals.length : 0;
-  return payload.summary?.waiting_approvals ?? leadApprovals + messageApprovals;
+function getLayout() {
+  return window.matchMedia("(max-width: 760px)").matches ? MOBILE_LAYOUT : DESKTOP_LAYOUT;
 }
 
-function stageData(payload) {
-  const summary = payload.summary || {};
-  return [
-    {
-      key: "brain1",
-      label: "Collected",
-      title: "Intake",
-      value: summary.collected_total ?? 0,
-      text: "Total leads collected by the first brain."
-    },
-    {
-      key: "brain2",
-      label: "Scored",
-      title: "Scoring",
-      value: summary.brain2_scored_total ?? 0,
-      text: "Leads that have already been scored."
-    },
-    {
-      key: "brain3",
-      label: "Enriched",
-      title: "Enrichment",
-      value: summary.brain3_enriched_total ?? 0,
-      text: "Leads enriched with deeper event and company context."
-    },
-    {
-      key: "approval",
-      label: "Waiting",
-      title: "Pending Approval",
-      value: Array.isArray(payload.pending_approvals) ? payload.pending_approvals.length : countApproval(payload),
-      text: "Leads waiting for lead approval."
-    }
-  ];
+function compactLine(parts) {
+  return parts.filter(Boolean).join(" • ");
 }
 
-function deriveActiveLeadFlows(payload) {
-  const leads = new Map();
-
-  function upsert(items, stageKey) {
-    (Array.isArray(items) ? items : []).forEach((item) => {
-      const leadId = Number(item.lead_id || item.id || 0);
-      if (!leadId) return;
-      const stageIndex = ACTIVE_FLOW_STAGES.findIndex((stage) => stage.key === stageKey);
-      if (stageIndex === -1) return;
-      const existing = leads.get(leadId);
-      if (!existing || stageIndex > existing.stageIndex) {
-        leads.set(leadId, {
-          leadId,
-          companyName: safe(item.company_name, "Lead #" + leadId),
-          location: safe(item.location || item.city, ""),
-          stageIndex,
-          stageKey
-        });
-      }
-    });
-  }
-
-  upsert(payload?.stages?.enriched?.items, "brain3");
-  upsert(payload?.stages?.strategized?.items, "brain5");
-  upsert(payload?.pending_approvals, "approval");
-  upsert(payload?.pending_message_approvals, "message");
-
-  const states = Array.isArray(payload.brain_states) ? payload.brain_states : [];
-  states.forEach((brain) => {
-    const leadId = Number(brain.lead_id || 0);
-    if (!leadId) return;
-    const stageMap = {
-      brain3: "brain3",
-      brain5: "brain5"
-    };
-    const stageKey = stageMap[brain.brain];
-    if (!stageKey) return;
-    upsert([{ lead_id: leadId, company_name: "Lead #" + leadId }], stageKey);
+function stageMap(payload) {
+  const journey = payload && payload.journey_map ? payload.journey_map : {};
+  const stages = Array.isArray(journey.stages) ? journey.stages : [];
+  const result = {};
+  stages.forEach((item) => {
+    result[item.key] = item;
   });
-
-  return Array.from(leads.values())
-    .sort((a, b) => b.stageIndex - a.stageIndex || a.leadId - b.leadId)
-    .slice(0, 12);
+  return result;
 }
 
-function leadColor(leadId) {
-  const hue = (leadId * 53) % 360;
-  return "hsl(" + hue + " 82% 64%)";
-}
-
-function stagePosition(index) {
-  if (ACTIVE_FLOW_STAGES.length === 1) return 0;
-  return (index / (ACTIVE_FLOW_STAGES.length - 1)) * 100;
-}
-
-function renderJourney(payload) {
-  clear(journeyList);
-  const activeLeads = deriveActiveLeadFlows(payload);
-
-  if (!activeLeads.length) {
-    journeyList.appendChild(el("div", "journey-empty", "No active leads are currently moving through Brain 3, Brain 5, or approval."));
-    return;
-  }
-
-  activeLeads.forEach((lead) => {
-    const color = leadColor(lead.leadId);
-    const row = el("article", "journey-row");
-
-    const leadInfo = el("div", "journey-lead");
-    leadInfo.appendChild(el("div", "journey-lead-name", lead.companyName));
-    leadInfo.appendChild(el("div", "journey-lead-meta", [lead.location, "Lead #" + lead.leadId].filter(Boolean).join(" • ")));
-    row.appendChild(leadInfo);
-
-    const track = el("div", "journey-track");
-    track.style.setProperty("--lead-color", color);
-
-    const line = el("div", "journey-track-line");
-    line.style.width = stagePosition(lead.stageIndex) + "%";
-    track.appendChild(line);
-
-    ACTIVE_FLOW_STAGES.forEach((stage, index) => {
-      const stop = el("span", "journey-stop");
-      stop.style.left = stagePosition(index) + "%";
-      stop.style.setProperty("--lead-color", color);
-      if (index <= lead.stageIndex) stop.classList.add("done");
-      if (index === lead.stageIndex) stop.classList.add("current");
-      stop.title = stage.label;
-      track.appendChild(stop);
-    });
-
-    row.appendChild(track);
-    journeyList.appendChild(row);
-  });
+function nodeColor(key, stageInfo) {
+  return stageInfo && stageInfo.color ? stageInfo.color : "#42c6ff";
 }
 
 function renderSummary(payload) {
   clear(summaryGrid);
-  stageData(payload).forEach((item) => {
-    const card = el("article", "summary-card");
-    card.appendChild(el("div", "summary-label", item.label));
-    card.appendChild(el("div", "summary-value", String(item.value)));
-    card.appendChild(el("h3", "", item.title));
-    card.appendChild(el("div", "summary-text", item.text));
+  const journey = payload && payload.journey_map ? payload.journey_map : {};
+  const stages = Array.isArray(journey.stages) ? journey.stages : [];
+  if (!stages.length) {
+    summaryGrid.appendChild(el("div", "empty", "No stage data yet."));
+    return;
+  }
+  stages.forEach((stage) => {
+    const card = el("article", "metric-card");
+    card.style.borderColor = stage.color ? stage.color + "33" : "";
+    card.style.background = stage.color ? stage.color + "12" : "";
+    card.appendChild(el("div", "metric-label", safe(stage.label)));
+    card.appendChild(el("div", "metric-value", String(stage.count || 0)));
+    card.appendChild(el("div", "muted", safe(stage.subtitle, "")));
     summaryGrid.appendChild(card);
   });
 }
 
+function renderFeed(payload) {
+  clear(feedList);
+  const journey = payload && payload.journey_map ? payload.journey_map : {};
+  const items = Array.isArray(journey.live_feed) ? journey.live_feed : [];
+  if (!items.length) {
+    feedList.appendChild(el("div", "empty", "No recent actions reported."));
+    return;
+  }
+  items.forEach((item) => {
+    const row = el("article", "feed-item");
+    row.appendChild(el("div", "feed-time", formatTime(item.created_at)));
+    row.appendChild(el("div", "feed-copy", safe(item.detail, "No detail")));
+    row.appendChild(el("div", "feed-meta", compactLine([safe(item.project_name, ""), safe(item.company_name, ""), safe(item.action, "")])));
+    feedList.appendChild(row);
+  });
+}
+
+function cubicPoint(p0, p1, p2, p3, t) {
+  const omt = 1 - t;
+  const omt2 = omt * omt;
+  const omt3 = omt2 * omt;
+  const t2 = t * t;
+  const t3 = t2 * t;
+  return {
+    x: omt3 * p0.x + 3 * omt2 * t * p1.x + 3 * omt * t2 * p2.x + t3 * p3.x,
+    y: omt3 * p0.y + 3 * omt2 * t * p1.y + 3 * omt * t2 * p2.y + t3 * p3.y
+  };
+}
+
+function findLayoutItem(layout, key) {
+  return layout.find((item) => item.key === key);
+}
+
+function curveFor(layout, fromKey, toKey) {
+  const from = findLayoutItem(layout, fromKey);
+  const to = findLayoutItem(layout, toKey);
+  if (!from || !to) return null;
+  const mobile = layout === MOBILE_LAYOUT;
+  const dx = mobile ? 0 : Math.abs(to.x - from.x) * 0.34;
+  const dy = mobile ? Math.abs(to.y - from.y) * 0.24 : 0;
+  return {
+    from,
+    to,
+    c1: { x: mobile ? from.x : from.x + dx, y: mobile ? from.y + dy : from.y },
+    c2: { x: mobile ? to.x : to.x - dx, y: mobile ? to.y - dy : to.y }
+  };
+}
+
+function renderPaths(payload, layout) {
+  clear(journeySvg);
+  const journey = payload && payload.journey_map ? payload.journey_map : {};
+  const active = safe(journey.active_transition, "");
+  const transitions = [
+    ["inbound", "scoring", "inbound_to_scoring"],
+    ["scoring", "enrichment", "scoring_to_enrichment"],
+    ["enrichment", "pending", "enrichment_to_pending"],
+    ["pending", "marketing", "pending_to_marketing"]
+  ];
+  transitions.forEach(([fromKey, toKey, transitionKey]) => {
+    const curve = curveFor(layout, fromKey, toKey);
+    if (!curve) return;
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute(
+      "d",
+      "M " + curve.from.x + " " + curve.from.y +
+      " C " + curve.c1.x + " " + curve.c1.y + ", " + curve.c2.x + " " + curve.c2.y + ", " + curve.to.x + " " + curve.to.y
+    );
+    path.setAttribute("class", "flow-path" + (active === transitionKey ? " active" : ""));
+    journeySvg.appendChild(path);
+  });
+}
+
+function renderNodes(payload, layout) {
+  clear(journeyNodes);
+  const journey = payload && payload.journey_map ? payload.journey_map : {};
+  const stages = stageMap(payload);
+  const activeTransition = safe(journey.active_transition, "");
+  layout.forEach((item) => {
+    const stage = stages[item.key] || { label: item.key, subtitle: "", count: 0, color: "#42c6ff" };
+    const active = activeTransition.startsWith(item.key + "_to_") || activeTransition.endsWith("_to_" + item.key);
+    const node = el("article", "stage-node" + (active ? " active" : ""));
+    node.style.left = item.x + "%";
+    node.style.top = item.y + "%";
+    const head = el("div", "stage-meta");
+    const meta = document.createElement("div");
+    meta.appendChild(el("div", "stage-label", safe(stage.subtitle, "")));
+    meta.appendChild(el("h3", "stage-title", safe(stage.label, item.key)));
+    head.appendChild(meta);
+    const pill = el("span", "stage-pill");
+    pill.style.background = nodeColor(item.key, stage);
+    head.appendChild(pill);
+    node.appendChild(head);
+    node.appendChild(el("div", "stage-subtitle", safe(stage.subtitle, "")));
+    const count = el("div", "stage-count", String(stage.count || 0));
+    count.style.color = nodeColor(item.key, stage);
+    node.appendChild(count);
+    journeyNodes.appendChild(node);
+  });
+}
+
+function popupLines(dot) {
+  return [
+    ["Lead", safe(dot.contact_name, "Unknown")],
+    ["Company", safe(dot.company_name, "Unknown")],
+    ["LinkedIn", safe(dot.linkedin_url, "Not mapped")],
+    ["Score", dot.score ? String(dot.score) : "0"],
+    ["Stage", safe(dot.stage, "") + (dot.next_stage ? " → " + safe(dot.next_stage, "") : "")],
+    ["Fit", safe(dot.fit_label, "Unknown")]
+  ];
+}
+
+function showPopup(dot) {
+  popupTitle.textContent = safe(dot.company_name, "Lead");
+  clear(popupBody);
+  popupLines(dot).forEach(([label, value]) => {
+    const row = el("div", "", "");
+    row.innerHTML = "<strong>" + label + ":</strong> " + value;
+    popupBody.appendChild(row);
+  });
+  popup.hidden = false;
+}
+
+function hidePopup() {
+  popup.hidden = true;
+}
+
+function hashSeed(value) {
+  const text = String(value || "");
+  let hash = 0;
+  for (let i = 0; i < text.length; i += 1) hash = ((hash << 5) - hash) + text.charCodeAt(i);
+  return Math.abs(hash);
+}
+
+function buildDots(payload) {
+  const journey = payload && payload.journey_map ? payload.journey_map : {};
+  const dots = Array.isArray(journey.dots) ? journey.dots : [];
+  state.dots = dots.map((dot) => ({
+    ...dot,
+    seed: hashSeed(dot.lead_id || dot.company_name || Math.random())
+  }));
+}
+
+function dotPosition(dot, layout, timeMs) {
+  const current = findLayoutItem(layout, dot.stage);
+  const next = dot.next_stage ? findLayoutItem(layout, dot.next_stage) : null;
+  const cycle = 5200 + (dot.seed % 1700);
+  const phase = ((timeMs + dot.seed) % cycle) / cycle;
+  if (dot.status === "moving" || dot.status === "processing") {
+    if (current && next) {
+      const curve = curveFor(layout, dot.stage, dot.next_stage);
+      const eased = 0.08 + phase * 0.84;
+      return cubicPoint(curve.from, curve.c1, curve.c2, curve.to, eased);
+    }
+  }
+  if (current) {
+    const radius = dot.status === "waiting" ? 2.8 : dot.status === "complete" ? 2.2 : 3.4;
+    const angle = (phase * Math.PI * 2) + (dot.seed % 360);
+    return {
+      x: current.x + Math.cos(angle) * radius,
+      y: current.y + Math.sin(angle) * radius
+    };
+  }
+  return { x: 50, y: 50 };
+}
+
+function renderDotElements() {
+  clear(journeyDots);
+  state.dots.forEach((dot) => {
+    const button = el("button", "dot " + safe(dot.status, "moving"));
+    button.type = "button";
+    button.title = safe(dot.company_name, "Lead");
+    button.style.color = safe(dot.color, "#42c6ff");
+    button.addEventListener("click", () => showPopup(dot));
+    journeyDots.appendChild(button);
+    dot.node = button;
+  });
+}
+
+function animateDots() {
+  cancelAnimationFrame(state.animationFrame);
+  const layout = getLayout();
+  function frame(now) {
+    state.dots.forEach((dot) => {
+      if (!dot.node) return;
+      const point = dotPosition(dot, layout, now);
+      dot.node.style.left = point.x + "%";
+      dot.node.style.top = point.y + "%";
+    });
+    state.animationFrame = requestAnimationFrame(frame);
+  }
+  state.animationFrame = requestAnimationFrame(frame);
+}
+
+function renderTop(payload) {
+  const journey = payload && payload.journey_map ? payload.journey_map : {};
+  const active = safe(journey.active_transition, "waiting");
+  currentFocus.textContent = active.replaceAll("_", " ");
+  journeyDescription.textContent =
+    "Project: " + safe(journey.project_name, "All projects") +
+    ". Colored pulses reflect real lead state from the published snapshot and backend logs.";
+  const nextWork = payload.next_work || null;
+  journeyNote.textContent = nextWork
+    ? compactLine([safe(nextWork.action, ""), safe(nextWork.project_name, ""), nextWork.lead_id ? "lead #" + nextWork.lead_id : "", safe(nextWork.reason, "")])
+    : "No queued task reported by the backend.";
+}
+
 function updateConnection(ok, generatedAt, errorMessage) {
+  connectionState.textContent = ok ? "Snapshot connected" : "Snapshot unavailable";
   lastUpdated.textContent = ok ? formatTime(generatedAt) : safe(errorMessage, "No data");
-  statusLight.classList.toggle("connected", ok);
+}
+
+function renderBoard(payload) {
+  state.payload = payload;
+  const layout = getLayout();
+  renderTop(payload);
+  renderSummary(payload);
+  renderFeed(payload);
+  renderPaths(payload, layout);
+  renderNodes(payload, layout);
+  buildDots(payload);
+  renderDotElements();
+  animateDots();
 }
 
 async function loadBoard() {
@@ -199,17 +334,19 @@ async function loadBoard() {
     if (!response.ok) throw new Error("HTTP " + response.status);
     const payload = await response.json();
     updateConnection(true, payload.generated_at, "");
-    renderJourney(payload);
-    renderSummary(payload);
+    renderBoard(payload);
   } catch (error) {
-    updateConnection(false, "", safe(error.message, "unknown error"));
+    updateConnection(false, "", error.message || "Unable to load snapshot");
   }
 }
 
-function schedulePolling() {
-  if (state.timer) window.clearInterval(state.timer);
-  state.timer = window.setInterval(loadBoard, state.refreshMs);
-}
+popupClose.addEventListener("click", hidePopup);
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") hidePopup();
+});
+window.addEventListener("resize", () => {
+  if (state.payload) renderBoard(state.payload);
+});
 
-schedulePolling();
 loadBoard();
+state.timer = setInterval(loadBoard, state.refreshMs);
