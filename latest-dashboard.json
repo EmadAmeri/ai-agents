@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T17:30:40",
+  "generated_at": "2026-04-30T17:30:58",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
@@ -1090,23 +1090,23 @@
     }
   ],
   "next_work": {
-    "action": "collect_initial_leads",
+    "action": "brain3_enrich_lead",
     "project_name": "Sentra Conferences",
     "lead_id": null,
-    "reason": "initial queue below target/refill threshold"
+    "reason": "scored leads are queued for Brain 3 enrichment"
   },
   "brain_states": [
     {
       "brain": "brain1",
       "label": "Brain 1",
-      "status": "queued",
+      "status": "idle",
       "action": "collect_initial_leads",
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold",
-      "updated_at": "2026-04-30T15:30:40+00:00",
+      "updated_at": "2026-04-30T15:30:58+00:00",
       "started_at": "",
-      "finished_at": "2026-04-30T15:30:40+00:00",
+      "finished_at": "2026-04-30T15:30:58+00:00",
       "details": {
         "error": "build_event_directory_queries() takes 0 positional arguments but 1 was given",
         "result_status": "error"
@@ -1128,7 +1128,7 @@
     {
       "brain": "brain3",
       "label": "Brain 3",
-      "status": "idle",
+      "status": "queued",
       "action": "brain3_enrich_lead",
       "project_name": "Sentra Conferences",
       "lead_id": null,
