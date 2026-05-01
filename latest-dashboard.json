@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T06:15:59",
+  "generated_at": "2026-05-01T07:00:07",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
@@ -361,42 +361,22 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold",
-      "updated_at": "2026-05-01T04:15:59+00:00",
+      "updated_at": "2026-05-01T05:00:07+00:00",
       "started_at": "",
-      "finished_at": "2026-05-01T04:15:59+00:00",
+      "finished_at": "2026-05-01T05:00:07+00:00",
       "details": {
         "action": "collect_initial_leads",
-        "duplicates": 5,
+        "duplicates": 1,
         "inserted": 0,
         "items": [
           {
             "company_name": "AI Implementation in Business | Munich",
             "lead_id": 1,
             "record_status": "duplicate"
-          },
-          {
-            "company_name": "Event Management Munich Sentra Conferences events near München, DE",
-            "lead_id": 2,
-            "record_status": "duplicate"
-          },
-          {
-            "company_name": "Messe München",
-            "lead_id": 8,
-            "record_status": "duplicate"
-          },
-          {
-            "company_name": "Konferenzzentrum München",
-            "lead_id": 6,
-            "record_status": "duplicate"
-          },
-          {
-            "company_name": "Science Congress Center Munich",
-            "lead_id": 4,
-            "record_status": "duplicate"
           }
         ],
         "result_status": "completed",
-        "run_id": 26
+        "run_id": 27
       }
     },
     {
