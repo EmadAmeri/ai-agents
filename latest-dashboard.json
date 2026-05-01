@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T04:07:52",
+  "generated_at": "2026-05-01T04:08:12",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
@@ -189,9 +189,9 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold",
-      "updated_at": "2026-05-01T02:07:51+00:00",
+      "updated_at": "2026-05-01T02:08:12+00:00",
       "started_at": "",
-      "finished_at": "2026-05-01T02:07:51+00:00",
+      "finished_at": "2026-05-01T02:08:12+00:00",
       "details": {
         "error": "ten_times_public request failed for https://10times.com/munich: <!DOCTYPE html><html lang=\"en\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" /><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" /><meta name=\"description\" content=\"10Times Online Private Limited\" /><",
         "result_status": "error"
