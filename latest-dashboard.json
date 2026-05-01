@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T04:56:33",
+  "generated_at": "2026-05-01T05:02:53",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
@@ -361,13 +361,13 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold",
-      "updated_at": "2026-05-01T02:56:32+00:00",
+      "updated_at": "2026-05-01T03:02:53+00:00",
       "started_at": "",
-      "finished_at": "2026-05-01T02:56:32+00:00",
+      "finished_at": "2026-05-01T03:02:53+00:00",
       "details": {
         "action": "collect_initial_leads",
-        "duplicates": 4,
-        "inserted": 1,
+        "duplicates": 5,
+        "inserted": 0,
         "items": [
           {
             "company_name": "AI Implementation in Business | Munich",
@@ -390,13 +390,13 @@
             "record_status": "duplicate"
           },
           {
-            "company_name": "Stellaris Apartment Hotel",
-            "lead_id": 10,
-            "record_status": "inserted"
+            "company_name": "Science Congress Center Munich",
+            "lead_id": 4,
+            "record_status": "duplicate"
           }
         ],
         "result_status": "completed",
-        "run_id": 14
+        "run_id": 15
       }
     },
     {
