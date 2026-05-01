@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-04-30T21:35:04",
+  "generated_at": "2026-05-01T04:06:16",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
     "waiting_approvals": 0,
-    "total_activity": 0,
+    "total_activity": 1,
     "collected_total": 0,
     "brain2_scored_total": 0,
     "brain3_enriched_total": 0,
@@ -164,21 +164,38 @@
   },
   "pending_approvals": [],
   "pending_message_approvals": [],
-  "recent_activity": [],
-  "next_work": null,
+  "recent_activity": [
+    {
+      "created_at": "2026-05-01T02:06:00+00:00",
+      "action": "maps_query_generated",
+      "project_name": "Sentra Conferences",
+      "company_name": "",
+      "task_title": "",
+      "detail": "کنفرانس‌های B2B در آلمان"
+    }
+  ],
+  "next_work": {
+    "action": "collect_initial_leads",
+    "project_name": "Sentra Conferences",
+    "lead_id": null,
+    "reason": "initial queue below target/refill threshold"
+  },
   "brain_states": [
     {
       "brain": "brain1",
       "label": "Brain 1",
-      "status": "idle",
-      "action": "",
-      "project_name": "",
+      "status": "queued",
+      "action": "collect_initial_leads",
+      "project_name": "Sentra Conferences",
       "lead_id": null,
-      "reason": "",
-      "updated_at": "",
+      "reason": "initial queue below target/refill threshold",
+      "updated_at": "2026-05-01T02:06:16+00:00",
       "started_at": "",
-      "finished_at": "",
-      "details": {}
+      "finished_at": "2026-05-01T02:06:16+00:00",
+      "details": {
+        "error": "ten_times_public request failed for https://10times.com/munich: <!DOCTYPE html><html lang=\"en\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" /><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" /><meta name=\"description\" content=\"10Times Online Private Limited\" /><",
+        "result_status": "error"
+      }
     },
     {
       "brain": "brain2",
@@ -282,7 +299,15 @@
     ],
     "dots": [],
     "active_transition": "inbound_to_scoring",
-    "live_feed": []
+    "live_feed": [
+      {
+        "created_at": "2026-05-01T02:06:00+00:00",
+        "action": "maps_query_generated",
+        "project_name": "Sentra Conferences",
+        "company_name": "",
+        "detail": "کنفرانس‌های B2B در آلمان"
+      }
+    ]
   },
   "collected_leads": [],
   "top_scored_leads": [],
