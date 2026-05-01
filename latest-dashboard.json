@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-01T04:28:33",
+  "generated_at": "2026-05-01T04:30:46",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
     "waiting_approvals": 0,
     "total_activity": 1,
-    "collected_total": 8,
+    "collected_total": 9,
     "brain2_scored_total": 0,
     "brain3_enriched_total": 0,
     "brain5_reviewed_total": 0,
@@ -48,7 +48,7 @@
       "blocked_tasks": 0,
       "paused_tasks": 0,
       "completed_tasks": 0,
-      "raw_leads": 8,
+      "raw_leads": 9,
       "shortlisted_leads": 0,
       "awaiting_approval_leads": 0,
       "approved_leads": 0,
@@ -115,7 +115,7 @@
     "blocked_tasks": 0,
     "paused_tasks": 0,
     "completed_tasks": 0,
-    "raw_leads": 8,
+    "raw_leads": 9,
     "shortlisted_leads": 0,
     "awaiting_approval_leads": 0,
     "approved_leads": 0,
@@ -129,7 +129,7 @@
   "stage_counts": {
     "project_id": 2,
     "project_name": "Sentra Conferences",
-    "initial_leads_count": 8,
+    "initial_leads_count": 9,
     "scored_leads_count": 0,
     "enriched_leads_count": 0,
     "strategized_leads_count": 0,
@@ -140,6 +140,28 @@
       "label": "Initial Intake",
       "count": 8,
       "items": [
+        {
+          "lead_id": 9,
+          "company_name": "Meetingraum & Eventlocation - OutOfOffice München (Eisbach) GmbH",
+          "website": "",
+          "linkedin_company_url": "",
+          "location": "München, DE",
+          "contact_name": "",
+          "email": "",
+          "phone": "0173 9403533",
+          "status": "raw",
+          "approval_status": "not_requested",
+          "message_approval_status": "not_requested",
+          "score": 0,
+          "fit_label": "",
+          "brain2_summary": "",
+          "brain3_event_type": "",
+          "brain5_verdict": "",
+          "company_description": "event_directory_blend source_row; address=Prinzregentenstraße 22, 80538 München; phone=0173 9403533; category=Event venue; place_id=ChIJL4lMZJB1nkcR7VBCEt1BKGI; query=conference organizer Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
+          "approval_brief": "event_directory_blend source_row; address=Prinzregentenstraße 22, 80538 München; phone=0173 9403533; category=Event venue; place_id=ChIJL4lMZJB1nkcR7VBCEt1BKGI; query=conference organizer Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
+          "channels": [],
+          "key_people": []
+        },
         {
           "lead_id": 8,
           "company_name": "Messe München",
@@ -293,28 +315,6 @@
           "approval_brief": "meetup_public listing; event_title=Event Management Munich Sentra Conferences events near München, DE; organizer=Event Management Munich Sentra Conferences events near München, DE; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
           "channels": [],
           "key_people": []
-        },
-        {
-          "lead_id": 1,
-          "company_name": "AI Implementation in Business | Munich",
-          "website": "https://www.eventbrite.com.au/e/ai-implementation-in-business-munich-tickets-1026630448307",
-          "linkedin_company_url": "",
-          "location": "Munich, DE",
-          "contact_name": "",
-          "email": "",
-          "phone": "",
-          "status": "raw",
-          "approval_status": "not_requested",
-          "message_approval_status": "not_requested",
-          "score": 0,
-          "fit_label": "",
-          "brain2_summary": "",
-          "brain3_event_type": "",
-          "brain5_verdict": "",
-          "company_description": "eventbrite_public listing; event_title=AI Implementation in Business | Munich; event_date=2026-05-28; event_location=Munich, Munich, DE; summary=Learn how to use AI to boost your business at our \"AI Implementation in Business\" workshop - don't miss out on this opportunity to level up!; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
-          "approval_brief": "eventbrite_public listing; event_title=AI Implementation in Business | Munich; event_date=2026-05-28; event_location=Munich, Munich, DE; summary=Learn how to use AI to boost your business at our \"AI Implementation in Business\" workshop - don't miss out on this opportunity to level up!; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
-          "channels": [],
-          "key_people": []
         }
       ]
     },
@@ -361,13 +361,13 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold",
-      "updated_at": "2026-05-01T02:23:45+00:00",
+      "updated_at": "2026-05-01T02:30:46+00:00",
       "started_at": "",
-      "finished_at": "2026-05-01T02:23:45+00:00",
+      "finished_at": "2026-05-01T02:30:46+00:00",
       "details": {
         "action": "collect_initial_leads",
-        "duplicates": 5,
-        "inserted": 0,
+        "duplicates": 4,
+        "inserted": 1,
         "items": [
           {
             "company_name": "AI Implementation in Business | Munich",
@@ -390,13 +390,13 @@
             "record_status": "duplicate"
           },
           {
-            "company_name": "ECCO Events - Event Agency Munich",
-            "lead_id": 5,
-            "record_status": "duplicate"
+            "company_name": "Meetingraum & Eventlocation - OutOfOffice München (Eisbach) GmbH",
+            "lead_id": 9,
+            "record_status": "inserted"
           }
         ],
         "result_status": "completed",
-        "run_id": 5
+        "run_id": 10
       }
     },
     {
@@ -501,6 +501,18 @@
     ],
     "dots": [
       {
+        "lead_id": 9,
+        "company_name": "Meetingraum & Eventlocation - OutOfOffice München (Eisbach) GmbH",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "",
+        "stage": "inbound",
+        "next_stage": "scoring",
+        "status": "moving",
+        "color": "#4cc9ff"
+      },
+      {
         "lead_id": 8,
         "company_name": "Messe München",
         "contact_name": "",
@@ -523,18 +535,6 @@
         "next_stage": "scoring",
         "status": "moving",
         "color": "#4cc9ff"
-      },
-      {
-        "lead_id": 6,
-        "company_name": "Konferenzzentrum München",
-        "contact_name": "",
-        "linkedin_url": "",
-        "score": 0.0,
-        "fit_label": "",
-        "stage": "inbound",
-        "next_stage": "scoring",
-        "status": "moving",
-        "color": "#4cc9ff"
       }
     ],
     "active_transition": "inbound_to_scoring",
@@ -549,6 +549,15 @@
     ]
   },
   "collected_leads": [
+    {
+      "lead_id": 9,
+      "company_name": "Meetingraum & Eventlocation - OutOfOffice München (Eisbach) GmbH",
+      "city": "München",
+      "website": "",
+      "phone": "0173 9403533",
+      "source": "event_directory_blend",
+      "collected_at": "2026-05-01 02:30:46"
+    },
     {
       "lead_id": 8,
       "company_name": "Messe München",
