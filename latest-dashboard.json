@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-01T04:23:45",
+  "generated_at": "2026-05-01T04:28:33",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
     "waiting_approvals": 0,
     "total_activity": 1,
-    "collected_total": 7,
+    "collected_total": 8,
     "brain2_scored_total": 0,
     "brain3_enriched_total": 0,
     "brain5_reviewed_total": 0,
@@ -48,7 +48,7 @@
       "blocked_tasks": 0,
       "paused_tasks": 0,
       "completed_tasks": 0,
-      "raw_leads": 7,
+      "raw_leads": 8,
       "shortlisted_leads": 0,
       "awaiting_approval_leads": 0,
       "approved_leads": 0,
@@ -115,7 +115,7 @@
     "blocked_tasks": 0,
     "paused_tasks": 0,
     "completed_tasks": 0,
-    "raw_leads": 7,
+    "raw_leads": 8,
     "shortlisted_leads": 0,
     "awaiting_approval_leads": 0,
     "approved_leads": 0,
@@ -129,7 +129,7 @@
   "stage_counts": {
     "project_id": 2,
     "project_name": "Sentra Conferences",
-    "initial_leads_count": 7,
+    "initial_leads_count": 8,
     "scored_leads_count": 0,
     "enriched_leads_count": 0,
     "strategized_leads_count": 0,
@@ -138,8 +138,30 @@
   "stages": {
     "initial": {
       "label": "Initial Intake",
-      "count": 7,
+      "count": 8,
       "items": [
+        {
+          "lead_id": 8,
+          "company_name": "Messe München",
+          "website": "https://www.tradefairdates.com/IFAT-M3747/Munich.html",
+          "linkedin_company_url": "",
+          "location": "Munich, DE",
+          "contact_name": "",
+          "email": "",
+          "phone": "",
+          "status": "raw",
+          "approval_status": "not_requested",
+          "message_approval_status": "not_requested",
+          "score": 0,
+          "fit_label": "",
+          "brain2_summary": "",
+          "brain3_event_type": "",
+          "brain5_verdict": "",
+          "company_description": "tradefairdates_public listing; event_title=IFAT; event_date=04. - 07. May 2026; event_location=Munich, Germany; organizer=Messe München; summary=World's leading trade fair for water, wastewater, waste and raw materials management; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
+          "approval_brief": "tradefairdates_public listing; event_title=IFAT; event_date=04. - 07. May 2026; event_location=Munich, Germany; organizer=Messe München; summary=World's leading trade fair for water, wastewater, waste and raw materials management; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
+          "channels": [],
+          "key_people": []
+        },
         {
           "lead_id": 7,
           "company_name": "The Charles Hotel, a Rocco Forte hotel",
@@ -446,7 +468,7 @@
         "label": "Inbound / Scraping",
         "subtitle": "Eventbrite / 10times / sources",
         "color": "#4cc9ff",
-        "count": 7
+        "count": 8
       },
       {
         "key": "scoring",
@@ -479,6 +501,18 @@
     ],
     "dots": [
       {
+        "lead_id": 8,
+        "company_name": "Messe München",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "",
+        "stage": "inbound",
+        "next_stage": "scoring",
+        "status": "moving",
+        "color": "#4cc9ff"
+      },
+      {
         "lead_id": 7,
         "company_name": "The Charles Hotel, a Rocco Forte hotel",
         "contact_name": "",
@@ -501,18 +535,6 @@
         "next_stage": "scoring",
         "status": "moving",
         "color": "#4cc9ff"
-      },
-      {
-        "lead_id": 5,
-        "company_name": "ECCO Events - Event Agency Munich",
-        "contact_name": "",
-        "linkedin_url": "",
-        "score": 0.0,
-        "fit_label": "",
-        "stage": "inbound",
-        "next_stage": "scoring",
-        "status": "moving",
-        "color": "#4cc9ff"
       }
     ],
     "active_transition": "inbound_to_scoring",
@@ -527,6 +549,15 @@
     ]
   },
   "collected_leads": [
+    {
+      "lead_id": 8,
+      "company_name": "Messe München",
+      "city": "Munich",
+      "website": "https://www.tradefairdates.com/IFAT-M3747/Munich.html",
+      "phone": "",
+      "source": "tradefairdates_public",
+      "collected_at": "2026-05-01 02:28:22"
+    },
     {
       "lead_id": 7,
       "company_name": "The Charles Hotel, a Rocco Forte hotel",
