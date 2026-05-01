@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T06:09:43",
+  "generated_at": "2026-05-01T06:15:59",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
@@ -361,9 +361,9 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold",
-      "updated_at": "2026-05-01T04:09:43+00:00",
+      "updated_at": "2026-05-01T04:15:59+00:00",
       "started_at": "",
-      "finished_at": "2026-05-01T04:09:43+00:00",
+      "finished_at": "2026-05-01T04:15:59+00:00",
       "details": {
         "action": "collect_initial_leads",
         "duplicates": 5,
@@ -385,8 +385,8 @@
             "record_status": "duplicate"
           },
           {
-            "company_name": "Alte Kongresshalle",
-            "lead_id": 3,
+            "company_name": "Konferenzzentrum München",
+            "lead_id": 6,
             "record_status": "duplicate"
           },
           {
@@ -396,7 +396,7 @@
           }
         ],
         "result_status": "completed",
-        "run_id": 25
+        "run_id": 26
       }
     },
     {
