@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-01T04:08:31",
+  "generated_at": "2026-05-01T04:09:47",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
     "blocked_tasks": 0,
     "waiting_approvals": 0,
     "total_activity": 1,
-    "collected_total": 0,
+    "collected_total": 5,
     "brain2_scored_total": 0,
     "brain3_enriched_total": 0,
     "brain5_reviewed_total": 0,
@@ -48,7 +48,7 @@
       "blocked_tasks": 0,
       "paused_tasks": 0,
       "completed_tasks": 0,
-      "raw_leads": 0,
+      "raw_leads": 5,
       "shortlisted_leads": 0,
       "awaiting_approval_leads": 0,
       "approved_leads": 0,
@@ -115,7 +115,7 @@
     "blocked_tasks": 0,
     "paused_tasks": 0,
     "completed_tasks": 0,
-    "raw_leads": 0,
+    "raw_leads": 5,
     "shortlisted_leads": 0,
     "awaiting_approval_leads": 0,
     "approved_leads": 0,
@@ -129,7 +129,7 @@
   "stage_counts": {
     "project_id": 2,
     "project_name": "Sentra Conferences",
-    "initial_leads_count": 0,
+    "initial_leads_count": 5,
     "scored_leads_count": 0,
     "enriched_leads_count": 0,
     "strategized_leads_count": 0,
@@ -138,8 +138,119 @@
   "stages": {
     "initial": {
       "label": "Initial Intake",
-      "count": 0,
-      "items": []
+      "count": 5,
+      "items": [
+        {
+          "lead_id": 5,
+          "company_name": "ECCO Events - Event Agency Munich",
+          "website": "",
+          "linkedin_company_url": "",
+          "location": "München, DE",
+          "contact_name": "",
+          "email": "",
+          "phone": "089 3061060",
+          "status": "raw",
+          "approval_status": "not_requested",
+          "message_approval_status": "not_requested",
+          "score": 0,
+          "fit_label": "",
+          "brain2_summary": "",
+          "brain3_event_type": "",
+          "brain5_verdict": "",
+          "company_description": "event_directory_blend source_row; address=Friedrichstraße 33, 80801 München; phone=089 3061060; category=Event planner; place_id=ChIJ_yPZ68Z1nkcRA35CF8QCdjQ; query=conference organizer Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
+          "approval_brief": "event_directory_blend source_row; address=Friedrichstraße 33, 80801 München; phone=089 3061060; category=Event planner; place_id=ChIJ_yPZ68Z1nkcRA35CF8QCdjQ; query=conference organizer Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
+          "channels": [],
+          "key_people": []
+        },
+        {
+          "lead_id": 4,
+          "company_name": "Science Congress Center Munich",
+          "website": "",
+          "linkedin_company_url": "",
+          "location": "Garching bei München, DE",
+          "contact_name": "",
+          "email": "",
+          "phone": "089 6142583333",
+          "status": "raw",
+          "approval_status": "not_requested",
+          "message_approval_status": "not_requested",
+          "score": 0,
+          "fit_label": "",
+          "brain2_summary": "",
+          "brain3_event_type": "",
+          "brain5_verdict": "",
+          "company_description": "event_directory_blend source_row; address=Walther-Von-Dyck Str. 10, 85748 Garching bei München; phone=089 6142583333; category=Conference center; place_id=ChIJq6qqjd5qnkcRfANSfxnc5p8; query=Sentra Conferences Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
+          "approval_brief": "event_directory_blend source_row; address=Walther-Von-Dyck Str. 10, 85748 Garching bei München; phone=089 6142583333; category=Conference center; place_id=ChIJq6qqjd5qnkcRfANSfxnc5p8; query=Sentra Conferences Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
+          "channels": [],
+          "key_people": []
+        },
+        {
+          "lead_id": 3,
+          "company_name": "Alte Kongresshalle",
+          "website": "",
+          "linkedin_company_url": "",
+          "location": "München, DE",
+          "contact_name": "",
+          "email": "",
+          "phone": "089 72669940",
+          "status": "raw",
+          "approval_status": "not_requested",
+          "message_approval_status": "not_requested",
+          "score": 0,
+          "fit_label": "",
+          "brain2_summary": "",
+          "brain3_event_type": "",
+          "brain5_verdict": "",
+          "company_description": "event_directory_blend source_row; address=Am Bavariapark 14, 80339 München; phone=089 72669940; category=Event venue; place_id=ChIJ_1XTlazYnUcRmIpfmMg5THo; query=Sentra Conferences Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
+          "approval_brief": "event_directory_blend source_row; address=Am Bavariapark 14, 80339 München; phone=089 72669940; category=Event venue; place_id=ChIJ_1XTlazYnUcRmIpfmMg5THo; query=Sentra Conferences Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
+          "channels": [],
+          "key_people": []
+        },
+        {
+          "lead_id": 2,
+          "company_name": "Event Management Munich Sentra Conferences events near München, DE",
+          "website": "https://www.meetup.com/find/?keywords=Event+Management+Munich+Sentra+Conferences&location=Munich",
+          "linkedin_company_url": "",
+          "location": "DE",
+          "contact_name": "",
+          "email": "",
+          "phone": "",
+          "status": "raw",
+          "approval_status": "not_requested",
+          "message_approval_status": "not_requested",
+          "score": 0,
+          "fit_label": "",
+          "brain2_summary": "",
+          "brain3_event_type": "",
+          "brain5_verdict": "",
+          "company_description": "meetup_public listing; event_title=Event Management Munich Sentra Conferences events near München, DE; organizer=Event Management Munich Sentra Conferences events near München, DE; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
+          "approval_brief": "meetup_public listing; event_title=Event Management Munich Sentra Conferences events near München, DE; organizer=Event Management Munich Sentra Conferences events near München, DE; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
+          "channels": [],
+          "key_people": []
+        },
+        {
+          "lead_id": 1,
+          "company_name": "AI Implementation in Business | Munich",
+          "website": "https://www.eventbrite.com.au/e/ai-implementation-in-business-munich-tickets-1026630448307",
+          "linkedin_company_url": "",
+          "location": "Munich, DE",
+          "contact_name": "",
+          "email": "",
+          "phone": "",
+          "status": "raw",
+          "approval_status": "not_requested",
+          "message_approval_status": "not_requested",
+          "score": 0,
+          "fit_label": "",
+          "brain2_summary": "",
+          "brain3_event_type": "",
+          "brain5_verdict": "",
+          "company_description": "eventbrite_public listing; event_title=AI Implementation in Business | Munich; event_date=2026-05-28; event_location=Munich, Munich, DE; summary=Learn how to use AI to boost your business at our \"AI Implementation in Business\" workshop - don't miss out on this opportunity to level up!; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
+          "approval_brief": "eventbrite_public listing; event_title=AI Implementation in Business | Munich; event_date=2026-05-28; event_location=Munich, Munich, DE; summary=Learn how to use AI to boost your business at our \"AI Implementation in Business\" workshop - don't miss out on this opportunity to level up!; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
+          "channels": [],
+          "key_people": []
+        }
+      ]
     },
     "scored": {
       "label": "Scored",
@@ -174,27 +285,52 @@
       "detail": "کنفرانس‌های B2B در آلمان"
     }
   ],
-  "next_work": {
-    "action": "collect_initial_leads",
-    "project_name": "Sentra Conferences",
-    "lead_id": null,
-    "reason": "initial queue below target/refill threshold"
-  },
+  "next_work": null,
   "brain_states": [
     {
       "brain": "brain1",
       "label": "Brain 1",
-      "status": "queued",
+      "status": "idle",
       "action": "collect_initial_leads",
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold",
-      "updated_at": "2026-05-01T02:08:31+00:00",
+      "updated_at": "2026-05-01T02:09:47+00:00",
       "started_at": "",
-      "finished_at": "2026-05-01T02:08:31+00:00",
+      "finished_at": "2026-05-01T02:09:47+00:00",
       "details": {
-        "error": "ten_times_public request failed for https://10times.com/munich: <!DOCTYPE html><html lang=\"en\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" /><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" /><meta name=\"description\" content=\"10Times Online Private Limited\" /><",
-        "result_status": "error"
+        "action": "collect_initial_leads",
+        "duplicates": 0,
+        "inserted": 5,
+        "items": [
+          {
+            "company_name": "AI Implementation in Business | Munich",
+            "lead_id": 1,
+            "record_status": "inserted"
+          },
+          {
+            "company_name": "Event Management Munich Sentra Conferences events near München, DE",
+            "lead_id": 2,
+            "record_status": "inserted"
+          },
+          {
+            "company_name": "Alte Kongresshalle",
+            "lead_id": 3,
+            "record_status": "inserted"
+          },
+          {
+            "company_name": "Science Congress Center Munich",
+            "lead_id": 4,
+            "record_status": "inserted"
+          },
+          {
+            "company_name": "ECCO Events - Event Agency Munich",
+            "lead_id": 5,
+            "record_status": "inserted"
+          }
+        ],
+        "result_status": "completed",
+        "run_id": 1
       }
     },
     {
@@ -266,7 +402,7 @@
         "label": "Inbound / Scraping",
         "subtitle": "Eventbrite / 10times / sources",
         "color": "#4cc9ff",
-        "count": 0
+        "count": 5
       },
       {
         "key": "scoring",
@@ -297,7 +433,44 @@
         "count": 0
       }
     ],
-    "dots": [],
+    "dots": [
+      {
+        "lead_id": 5,
+        "company_name": "ECCO Events - Event Agency Munich",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "",
+        "stage": "inbound",
+        "next_stage": "scoring",
+        "status": "moving",
+        "color": "#4cc9ff"
+      },
+      {
+        "lead_id": 4,
+        "company_name": "Science Congress Center Munich",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "",
+        "stage": "inbound",
+        "next_stage": "scoring",
+        "status": "moving",
+        "color": "#4cc9ff"
+      },
+      {
+        "lead_id": 3,
+        "company_name": "Alte Kongresshalle",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "",
+        "stage": "inbound",
+        "next_stage": "scoring",
+        "status": "moving",
+        "color": "#4cc9ff"
+      }
+    ],
     "active_transition": "inbound_to_scoring",
     "live_feed": [
       {
@@ -309,7 +482,53 @@
       }
     ]
   },
-  "collected_leads": [],
+  "collected_leads": [
+    {
+      "lead_id": 5,
+      "company_name": "ECCO Events - Event Agency Munich",
+      "city": "München",
+      "website": "",
+      "phone": "089 3061060",
+      "source": "event_directory_blend",
+      "collected_at": "2026-05-01 02:09:47"
+    },
+    {
+      "lead_id": 4,
+      "company_name": "Science Congress Center Munich",
+      "city": "Garching bei München",
+      "website": "",
+      "phone": "089 6142583333",
+      "source": "event_directory_blend",
+      "collected_at": "2026-05-01 02:09:47"
+    },
+    {
+      "lead_id": 3,
+      "company_name": "Alte Kongresshalle",
+      "city": "München",
+      "website": "",
+      "phone": "089 72669940",
+      "source": "event_directory_blend",
+      "collected_at": "2026-05-01 02:09:47"
+    },
+    {
+      "lead_id": 2,
+      "company_name": "Event Management Munich Sentra Conferences events near München, DE",
+      "city": "",
+      "website": "https://www.meetup.com/find/?keywords=Event+Management+Munich+Sentra+Conferences&location=Munich",
+      "phone": "",
+      "source": "meetup_public",
+      "collected_at": "2026-05-01 02:09:47"
+    },
+    {
+      "lead_id": 1,
+      "company_name": "AI Implementation in Business | Munich",
+      "city": "Munich",
+      "website": "https://www.eventbrite.com.au/e/ai-implementation-in-business-munich-tickets-1026630448307",
+      "phone": "",
+      "source": "eventbrite_public",
+      "collected_at": "2026-05-01 02:09:47"
+    }
+  ],
   "top_scored_leads": [],
   "queued_for_enrich_leads": [],
   "completed_leads": []
