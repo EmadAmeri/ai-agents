@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T04:16:47",
+  "generated_at": "2026-05-01T04:23:45",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
@@ -339,13 +339,13 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold",
-      "updated_at": "2026-05-01T02:16:47+00:00",
+      "updated_at": "2026-05-01T02:23:45+00:00",
       "started_at": "",
-      "finished_at": "2026-05-01T02:16:47+00:00",
+      "finished_at": "2026-05-01T02:23:45+00:00",
       "details": {
         "action": "collect_initial_leads",
-        "duplicates": 3,
-        "inserted": 2,
+        "duplicates": 5,
+        "inserted": 0,
         "items": [
           {
             "company_name": "AI Implementation in Business | Munich",
@@ -358,14 +358,14 @@
             "record_status": "duplicate"
           },
           {
-            "company_name": "Konferenzzentrum München",
-            "lead_id": 6,
-            "record_status": "inserted"
+            "company_name": "Alte Kongresshalle",
+            "lead_id": 3,
+            "record_status": "duplicate"
           },
           {
-            "company_name": "The Charles Hotel, a Rocco Forte hotel",
-            "lead_id": 7,
-            "record_status": "inserted"
+            "company_name": "Science Congress Center Munich",
+            "lead_id": 4,
+            "record_status": "duplicate"
           },
           {
             "company_name": "ECCO Events - Event Agency Munich",
@@ -374,7 +374,7 @@
           }
         ],
         "result_status": "completed",
-        "run_id": 2
+        "run_id": 5
       }
     },
     {
