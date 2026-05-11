@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T13:43:11",
+  "generated_at": "2026-05-11T14:03:17",
   "summary": {
     "active_projects": 3,
     "active_tasks": 0,
@@ -369,9 +369,9 @@
       "project_name": "Sentra Conferences",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold",
-      "updated_at": "2026-05-11T11:43:11+00:00",
+      "updated_at": "2026-05-11T12:03:17+00:00",
       "started_at": "",
-      "finished_at": "2026-05-11T11:43:11+00:00",
+      "finished_at": "2026-05-11T12:03:17+00:00",
       "details": {
         "action": "collect_initial_leads",
         "duplicates": 1,
@@ -384,7 +384,7 @@
           }
         ],
         "result_status": "completed",
-        "run_id": 974
+        "run_id": 976
       }
     },
     {
