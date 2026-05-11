@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-11T14:23:23",
+  "generated_at": "2026-05-11T14:29:30",
   "summary": {
-    "active_projects": 3,
+    "active_projects": 0,
     "active_tasks": 0,
     "blocked_tasks": 0,
     "waiting_approvals": 0,
-    "total_activity": 2,
-    "collected_total": 12,
+    "total_activity": 0,
+    "collected_total": 0,
     "brain2_scored_total": 0,
     "brain3_enriched_total": 0,
     "brain5_reviewed_total": 0,
@@ -14,378 +14,27 @@
     "drafted_total": 0,
     "message_review_total": 0
   },
-  "projects": [
-    {
-      "id": 1,
-      "name": "Munich Event Companies and Conferences",
-      "status": "merged",
-      "target_geography": "Munich",
-      "target_niche": "Event Management",
-      "pending_tasks": 0,
-      "in_progress_tasks": 0,
-      "blocked_tasks": 0,
-      "paused_tasks": 0,
-      "completed_tasks": 0,
-      "raw_leads": 0,
-      "shortlisted_leads": 0,
-      "awaiting_approval_leads": 0,
-      "approved_leads": 0,
-      "drafted_leads": 0,
-      "pending_approval_requests": 0,
-      "ready_for_draft_leads": 0,
-      "ready_for_approval_leads": 0,
-      "awaiting_enrichment_leads": 0,
-      "awaiting_strategy_leads": 0
-    },
-    {
-      "id": 2,
-      "name": "Sentra Conferences",
-      "status": "active",
-      "target_geography": "Munich",
-      "target_niche": "Event Management",
-      "pending_tasks": 0,
-      "in_progress_tasks": 0,
-      "blocked_tasks": 0,
-      "paused_tasks": 0,
-      "completed_tasks": 0,
-      "raw_leads": 11,
-      "shortlisted_leads": 0,
-      "awaiting_approval_leads": 0,
-      "approved_leads": 1,
-      "drafted_leads": 0,
-      "pending_approval_requests": 0,
-      "ready_for_draft_leads": 0,
-      "ready_for_approval_leads": 0,
-      "awaiting_enrichment_leads": 0,
-      "awaiting_strategy_leads": 0
-    },
-    {
-      "id": 3,
-      "name": "Sentra Membership",
-      "status": "active",
-      "target_geography": "",
-      "target_niche": "",
-      "pending_tasks": 0,
-      "in_progress_tasks": 0,
-      "blocked_tasks": 0,
-      "paused_tasks": 0,
-      "completed_tasks": 0,
-      "raw_leads": 0,
-      "shortlisted_leads": 0,
-      "awaiting_approval_leads": 0,
-      "approved_leads": 0,
-      "drafted_leads": 0,
-      "pending_approval_requests": 0,
-      "ready_for_draft_leads": 0,
-      "ready_for_approval_leads": 0,
-      "awaiting_enrichment_leads": 0,
-      "awaiting_strategy_leads": 0
-    },
-    {
-      "id": 4,
-      "name": "Sentra Executive Search",
-      "status": "active",
-      "target_geography": "",
-      "target_niche": "",
-      "pending_tasks": 0,
-      "in_progress_tasks": 0,
-      "blocked_tasks": 0,
-      "paused_tasks": 0,
-      "completed_tasks": 0,
-      "raw_leads": 0,
-      "shortlisted_leads": 0,
-      "awaiting_approval_leads": 0,
-      "approved_leads": 0,
-      "drafted_leads": 0,
-      "pending_approval_requests": 0,
-      "ready_for_draft_leads": 0,
-      "ready_for_approval_leads": 0,
-      "awaiting_enrichment_leads": 0,
-      "awaiting_strategy_leads": 0
-    }
-  ],
-  "selected_project": {
-    "id": 2,
-    "name": "Sentra Conferences",
-    "status": "active",
-    "target_geography": "Munich",
-    "target_niche": "Event Management",
-    "pending_tasks": 0,
-    "in_progress_tasks": 0,
-    "blocked_tasks": 0,
-    "paused_tasks": 0,
-    "completed_tasks": 0,
-    "raw_leads": 11,
-    "shortlisted_leads": 0,
-    "awaiting_approval_leads": 0,
-    "approved_leads": 1,
-    "drafted_leads": 0,
-    "pending_approval_requests": 0,
-    "ready_for_draft_leads": 0,
-    "ready_for_approval_leads": 0,
-    "awaiting_enrichment_leads": 0,
-    "awaiting_strategy_leads": 0
-  },
-  "stage_counts": {
-    "project_id": 2,
-    "project_name": "Sentra Conferences",
-    "initial_leads_count": 12,
-    "scored_leads_count": 0,
-    "enriched_leads_count": 0,
-    "strategized_leads_count": 0,
-    "drafted_contacted_leads_count": 0
-  },
-  "stages": {
-    "initial": {
-      "label": "Initial Intake",
-      "count": 8,
-      "items": [
-        {
-          "lead_id": 12,
-          "company_name": "Politics and Business Networking | Elevating Your Potential - Munich",
-          "website": "https://www.eventbrite.com/e/politics-and-business-networking-elevating-your-potential-munich-tickets-1988636478239",
-          "linkedin_company_url": "",
-          "location": "München, DE",
-          "contact_name": "",
-          "email": "",
-          "phone": "",
-          "status": "raw",
-          "approval_status": "not_requested",
-          "message_approval_status": "not_requested",
-          "score": 0,
-          "fit_label": "",
-          "brain2_summary": "",
-          "brain3_event_type": "",
-          "brain5_verdict": "",
-          "company_description": "eventbrite_public listing; event_title=Politics and Business Networking | Elevating Your Potential - Munich; event_date=2026-06-24; event_location=The Keg Bar, München, DE; summary=Strive welcomes you to 'Politics and Business Networking', an event for tenured and newcomers at Keg Bar! Event is 18+. Limited Tickets.; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
-          "approval_brief": "eventbrite_public listing; event_title=Politics and Business Networking | Elevating Your Potential - Munich; event_date=2026-06-24; event_location=The Keg Bar, München, DE; summary=Strive welcomes you to 'Politics and Business Networking', an event for tenured and newcomers at Keg Bar! Event is 18+. Limited Tickets.; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
-          "channels": [],
-          "key_people": []
-        },
-        {
-          "lead_id": 11,
-          "company_name": "Satellite Office Munich Hopfenpost",
-          "website": "",
-          "linkedin_company_url": "",
-          "location": "München, DE",
-          "contact_name": "",
-          "email": "",
-          "phone": "089 206054100",
-          "status": "raw",
-          "approval_status": "not_requested",
-          "message_approval_status": "not_requested",
-          "score": 0,
-          "fit_label": "",
-          "brain2_summary": "",
-          "brain3_event_type": "",
-          "brain5_verdict": "",
-          "company_description": "event_directory_blend source_row; address=Hopfenstraße 8, 80335 München; phone=089 206054100; category=Business center; place_id=ChIJv5UATvx1nkcR2OHDwgKSDQs; query=Sentra Conferences Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
-          "approval_brief": "event_directory_blend source_row; address=Hopfenstraße 8, 80335 München; phone=089 206054100; category=Business center; place_id=ChIJv5UATvx1nkcR2OHDwgKSDQs; query=Sentra Conferences Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
-          "channels": [],
-          "key_people": []
-        },
-        {
-          "lead_id": 10,
-          "company_name": "Stellaris Apartment Hotel",
-          "website": "",
-          "linkedin_company_url": "",
-          "location": "Garching bei München, DE",
-          "contact_name": "",
-          "email": "",
-          "phone": "089 61425060",
-          "status": "raw",
-          "approval_status": "not_requested",
-          "message_approval_status": "not_requested",
-          "score": 0,
-          "fit_label": "",
-          "brain2_summary": "",
-          "brain3_event_type": "",
-          "brain5_verdict": "",
-          "company_description": "event_directory_blend source_row; address=Walther-Von-Dyck Str. 16, 85748 Garching bei München; phone=089 61425060; category=Hotel; place_id=ChIJSQEmgE1ynkcRjml8ZdnlWBI; query=Sentra Conferences Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
-          "approval_brief": "event_directory_blend source_row; address=Walther-Von-Dyck Str. 16, 85748 Garching bei München; phone=089 61425060; category=Hotel; place_id=ChIJSQEmgE1ynkcRjml8ZdnlWBI; query=Sentra Conferences Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
-          "channels": [],
-          "key_people": []
-        },
-        {
-          "lead_id": 9,
-          "company_name": "Meetingraum & Eventlocation - OutOfOffice München (Eisbach) GmbH",
-          "website": "",
-          "linkedin_company_url": "",
-          "location": "München, DE",
-          "contact_name": "",
-          "email": "",
-          "phone": "0173 9403533",
-          "status": "raw",
-          "approval_status": "not_requested",
-          "message_approval_status": "not_requested",
-          "score": 0,
-          "fit_label": "",
-          "brain2_summary": "",
-          "brain3_event_type": "",
-          "brain5_verdict": "",
-          "company_description": "event_directory_blend source_row; address=Prinzregentenstraße 22, 80538 München; phone=0173 9403533; category=Event venue; place_id=ChIJL4lMZJB1nkcR7VBCEt1BKGI; query=conference organizer Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
-          "approval_brief": "event_directory_blend source_row; address=Prinzregentenstraße 22, 80538 München; phone=0173 9403533; category=Event venue; place_id=ChIJL4lMZJB1nkcR7VBCEt1BKGI; query=conference organizer Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
-          "channels": [],
-          "key_people": []
-        },
-        {
-          "lead_id": 8,
-          "company_name": "Messe München",
-          "website": "https://www.tradefairdates.com/IFAT-M3747/Munich.html",
-          "linkedin_company_url": "",
-          "location": "Munich, DE",
-          "contact_name": "",
-          "email": "",
-          "phone": "",
-          "status": "raw",
-          "approval_status": "not_requested",
-          "message_approval_status": "not_requested",
-          "score": 0,
-          "fit_label": "",
-          "brain2_summary": "",
-          "brain3_event_type": "",
-          "brain5_verdict": "",
-          "company_description": "tradefairdates_public listing; event_title=IFAT; event_date=04. - 07. May 2026; event_location=Munich, Germany; organizer=Messe München; summary=World's leading trade fair for water, wastewater, waste and raw materials management; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
-          "approval_brief": "tradefairdates_public listing; event_title=IFAT; event_date=04. - 07. May 2026; event_location=Munich, Germany; organizer=Messe München; summary=World's leading trade fair for water, wastewater, waste and raw materials management; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
-          "channels": [],
-          "key_people": []
-        },
-        {
-          "lead_id": 7,
-          "company_name": "The Charles Hotel, a Rocco Forte hotel",
-          "website": "",
-          "linkedin_company_url": "",
-          "location": "München, DE",
-          "contact_name": "",
-          "email": "",
-          "phone": "089 5445550",
-          "status": "raw",
-          "approval_status": "not_requested",
-          "message_approval_status": "not_requested",
-          "score": 0,
-          "fit_label": "",
-          "brain2_summary": "",
-          "brain3_event_type": "",
-          "brain5_verdict": "",
-          "company_description": "event_directory_blend source_row; address=Sophienstraße 28, 80333 München; phone=089 5445550; category=Hotel; place_id=ChIJEfzlQ_p1nkcRGfkuLu6HdxI; query=Sentra Conferences Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
-          "approval_brief": "event_directory_blend source_row; address=Sophienstraße 28, 80333 München; phone=089 5445550; category=Hotel; place_id=ChIJEfzlQ_p1nkcRGfkuLu6HdxI; query=Sentra Conferences Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
-          "channels": [],
-          "key_people": []
-        },
-        {
-          "lead_id": 6,
-          "company_name": "Konferenzzentrum München",
-          "website": "",
-          "linkedin_company_url": "",
-          "location": "München, DE",
-          "contact_name": "",
-          "email": "",
-          "phone": "089 1258402",
-          "status": "raw",
-          "approval_status": "not_requested",
-          "message_approval_status": "not_requested",
-          "score": 0,
-          "fit_label": "",
-          "brain2_summary": "",
-          "brain3_event_type": "",
-          "brain5_verdict": "",
-          "company_description": "event_directory_blend source_row; address=Lazarettstraße 33, 80636 München; phone=089 1258402; category=Event venue; place_id=ChIJZaSgpw52nkcRbEe6YGfzIhs; query=Sentra Conferences Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
-          "approval_brief": "event_directory_blend source_row; address=Lazarettstraße 33, 80636 München; phone=089 1258402; category=Event venue; place_id=ChIJZaSgpw52nkcRbEe6YGfzIhs; query=Sentra Conferences Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
-          "channels": [],
-          "key_people": []
-        },
-        {
-          "lead_id": 5,
-          "company_name": "ECCO Events - Event Agency Munich",
-          "website": "",
-          "linkedin_company_url": "",
-          "location": "München, DE",
-          "contact_name": "",
-          "email": "",
-          "phone": "089 3061060",
-          "status": "raw",
-          "approval_status": "not_requested",
-          "message_approval_status": "not_requested",
-          "score": 0,
-          "fit_label": "",
-          "brain2_summary": "",
-          "brain3_event_type": "",
-          "brain5_verdict": "",
-          "company_description": "event_directory_blend source_row; address=Friedrichstraße 33, 80801 München; phone=089 3061060; category=Event planner; place_id=ChIJ_yPZ68Z1nkcRA35CF8QCdjQ; query=conference organizer Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
-          "approval_brief": "event_directory_blend source_row; address=Friedrichstraße 33, 80801 München; phone=089 3061060; category=Event planner; place_id=ChIJ_yPZ68Z1nkcRA35CF8QCdjQ; query=conference organizer Munich; directory_sources=10times,eventbrite,lanyrd,meetup,tradefairdates; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
-          "channels": [],
-          "key_people": []
-        }
-      ]
-    },
-    "scored": {
-      "label": "Scored",
-      "count": 0,
-      "items": []
-    },
-    "enriched": {
-      "label": "Enriched",
-      "count": 0,
-      "items": []
-    },
-    "strategized": {
-      "label": "Brain 5 Enriched",
-      "count": 0,
-      "items": []
-    },
-    "drafted": {
-      "label": "Drafted",
-      "count": 0,
-      "items": []
-    }
-  },
+  "projects": [],
+  "selected_project": null,
+  "stage_counts": {},
+  "stages": {},
   "pending_approvals": [],
   "pending_message_approvals": [],
-  "recent_activity": [
-    {
-      "created_at": "2026-05-11T11:37:02+00:00",
-      "action": "approval_decided",
-      "project_name": "Sentra Conferences",
-      "company_name": "AI Implementation in Business | Munich",
-      "task_title": "",
-      "detail": "AI Implementation in Business | Munich -> approved via telegram_human"
-    },
-    {
-      "created_at": "2026-05-01T02:06:00+00:00",
-      "action": "maps_query_generated",
-      "project_name": "Sentra Conferences",
-      "company_name": "",
-      "task_title": "",
-      "detail": "کنفرانس‌های B2B در آلمان"
-    }
-  ],
+  "recent_activity": [],
   "next_work": null,
   "brain_states": [
     {
       "brain": "brain1",
       "label": "Brain 1",
       "status": "idle",
-      "action": "collect_initial_leads",
-      "project_name": "Sentra Conferences",
+      "action": "",
+      "project_name": "",
       "lead_id": null,
-      "reason": "initial queue below target/refill threshold",
-      "updated_at": "2026-05-11T12:23:23+00:00",
+      "reason": "",
+      "updated_at": "",
       "started_at": "",
-      "finished_at": "2026-05-11T12:23:23+00:00",
-      "details": {
-        "action": "collect_initial_leads",
-        "duplicates": 1,
-        "inserted": 0,
-        "items": [
-          {
-            "company_name": "Politics and Business Networking | Elevating Your Potential - Munich",
-            "lead_id": 12,
-            "record_status": "duplicate"
-          }
-        ],
-        "result_status": "completed",
-        "run_id": 978
-      }
+      "finished_at": "",
+      "details": {}
     },
     {
       "brain": "brain2",
@@ -449,14 +98,14 @@
     "total_count": 0
   },
   "journey_map": {
-    "project_name": "Sentra Conferences",
+    "project_name": "All projects",
     "stages": [
       {
         "key": "inbound",
         "label": "Inbound / Scraping",
         "subtitle": "Eventbrite / 10times / sources",
         "color": "#4cc9ff",
-        "count": 8
+        "count": 0
       },
       {
         "key": "scoring",
@@ -487,154 +136,11 @@
         "count": 0
       }
     ],
-    "dots": [
-      {
-        "lead_id": 12,
-        "company_name": "Politics and Business Networking | Elevating Your Potential - Munich",
-        "contact_name": "",
-        "linkedin_url": "",
-        "score": 0.0,
-        "fit_label": "",
-        "stage": "inbound",
-        "next_stage": "scoring",
-        "status": "moving",
-        "color": "#4cc9ff"
-      },
-      {
-        "lead_id": 11,
-        "company_name": "Satellite Office Munich Hopfenpost",
-        "contact_name": "",
-        "linkedin_url": "",
-        "score": 0.0,
-        "fit_label": "",
-        "stage": "inbound",
-        "next_stage": "scoring",
-        "status": "moving",
-        "color": "#4cc9ff"
-      },
-      {
-        "lead_id": 10,
-        "company_name": "Stellaris Apartment Hotel",
-        "contact_name": "",
-        "linkedin_url": "",
-        "score": 0.0,
-        "fit_label": "",
-        "stage": "inbound",
-        "next_stage": "scoring",
-        "status": "moving",
-        "color": "#4cc9ff"
-      }
-    ],
+    "dots": [],
     "active_transition": "inbound_to_scoring",
-    "live_feed": [
-      {
-        "created_at": "2026-05-11T11:37:02+00:00",
-        "action": "approval_decided",
-        "project_name": "Sentra Conferences",
-        "company_name": "AI Implementation in Business | Munich",
-        "detail": "AI Implementation in Business | Munich -> approved via telegram_human"
-      },
-      {
-        "created_at": "2026-05-01T02:06:00+00:00",
-        "action": "maps_query_generated",
-        "project_name": "Sentra Conferences",
-        "company_name": "",
-        "detail": "کنفرانس‌های B2B در آلمان"
-      }
-    ]
+    "live_feed": []
   },
-  "collected_leads": [
-    {
-      "lead_id": 12,
-      "company_name": "Politics and Business Networking | Elevating Your Potential - Munich",
-      "city": "München",
-      "website": "https://www.eventbrite.com/e/politics-and-business-networking-elevating-your-potential-munich-tickets-1988636478239",
-      "phone": "",
-      "source": "eventbrite_public",
-      "collected_at": "2026-05-09 05:01:05"
-    },
-    {
-      "lead_id": 11,
-      "company_name": "Satellite Office Munich Hopfenpost",
-      "city": "München",
-      "website": "",
-      "phone": "089 206054100",
-      "source": "event_directory_blend",
-      "collected_at": "2026-05-01 03:16:21"
-    },
-    {
-      "lead_id": 10,
-      "company_name": "Stellaris Apartment Hotel",
-      "city": "Garching bei München",
-      "website": "",
-      "phone": "089 61425060",
-      "source": "event_directory_blend",
-      "collected_at": "2026-05-01 02:56:32"
-    },
-    {
-      "lead_id": 9,
-      "company_name": "Meetingraum & Eventlocation - OutOfOffice München (Eisbach) GmbH",
-      "city": "München",
-      "website": "",
-      "phone": "0173 9403533",
-      "source": "event_directory_blend",
-      "collected_at": "2026-05-01 02:30:46"
-    },
-    {
-      "lead_id": 8,
-      "company_name": "Messe München",
-      "city": "Munich",
-      "website": "https://www.tradefairdates.com/IFAT-M3747/Munich.html",
-      "phone": "",
-      "source": "tradefairdates_public",
-      "collected_at": "2026-05-01 02:28:22"
-    },
-    {
-      "lead_id": 7,
-      "company_name": "The Charles Hotel, a Rocco Forte hotel",
-      "city": "München",
-      "website": "",
-      "phone": "089 5445550",
-      "source": "event_directory_blend",
-      "collected_at": "2026-05-01 02:16:47"
-    },
-    {
-      "lead_id": 6,
-      "company_name": "Konferenzzentrum München",
-      "city": "München",
-      "website": "",
-      "phone": "089 1258402",
-      "source": "event_directory_blend",
-      "collected_at": "2026-05-01 02:16:47"
-    },
-    {
-      "lead_id": 5,
-      "company_name": "ECCO Events - Event Agency Munich",
-      "city": "München",
-      "website": "",
-      "phone": "089 3061060",
-      "source": "event_directory_blend",
-      "collected_at": "2026-05-01 02:09:47"
-    },
-    {
-      "lead_id": 4,
-      "company_name": "Science Congress Center Munich",
-      "city": "Garching bei München",
-      "website": "",
-      "phone": "089 6142583333",
-      "source": "event_directory_blend",
-      "collected_at": "2026-05-01 02:09:47"
-    },
-    {
-      "lead_id": 3,
-      "company_name": "Alte Kongresshalle",
-      "city": "München",
-      "website": "",
-      "phone": "089 72669940",
-      "source": "event_directory_blend",
-      "collected_at": "2026-05-01 02:09:47"
-    }
-  ],
+  "collected_leads": [],
   "top_scored_leads": [],
   "queued_for_enrich_leads": [],
   "completed_leads": []
