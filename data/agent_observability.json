@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-05-11T12:15:58+00:00",
+  "updated_at": "2026-05-11T12:29:18+00:00",
   "queue_sizes": {
-    "discovery_queue": 2,
+    "discovery_queue": 0,
     "enrichment_queue": 0,
     "retry_queue": 0,
     "review_queue": 0,
-    "scoring_queue": 11,
+    "scoring_queue": 0,
     "validation_queue": 0
   },
-  "duplicate_rate": 100.0,
+  "duplicate_rate": 0.0,
   "enrichment_success_rate": 0.0,
   "error_rate": 0.0
 }

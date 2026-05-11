@@ -1,33 +1,8 @@
 {
-  "updated_at": "2026-05-11T12:15:58+00:00",
-  "state": "Discovering",
-  "current_action": "collect_initial_leads",
-  "project": {
-    "id": 2,
-    "name": "Sentra Conferences"
-  },
-  "active_projects": [
-    {
-      "id": 2,
-      "name": "Sentra Conferences",
-      "status": "active",
-      "daily_raw_target_min": 100,
-      "daily_raw_target_max": 200
-    },
-    {
-      "id": 3,
-      "name": "Sentra Membership",
-      "status": "active",
-      "daily_raw_target_min": 100,
-      "daily_raw_target_max": 200
-    },
-    {
-      "id": 4,
-      "name": "Sentra Executive Search",
-      "status": "active",
-      "daily_raw_target_min": 100,
-      "daily_raw_target_max": 200
-    }
-  ],
+  "updated_at": "2026-05-11T12:29:18+00:00",
+  "state": "Paused",
+  "current_action": "paused",
+  "project": null,
+  "active_projects": [],
   "public_safe": true
 }

@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-05-11T12:15:58+00:00",
-  "best_source_today": "eventbrite_public",
+  "updated_at": "2026-05-11T12:29:18+00:00",
+  "best_source_today": "-",
   "best_keyword_today": "-",
-  "weak_source_today": "eventbrite_public",
-  "next_improvement": "Tighten dedupe before adding more raw leads."
+  "weak_source_today": "-",
+  "next_improvement": "Keep paced review active."
 }
