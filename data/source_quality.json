@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-18T14:10:06+00:00",
+  "updated_at": "2026-05-18T14:11:09+00:00",
   "sources": [
     {
       "name": "meetup_public",
@@ -11,6 +11,14 @@
     },
     {
       "name": "ten_times_public",
+      "raw": 1,
+      "accepted": 0,
+      "rejected": 0,
+      "quality": 0.0,
+      "weight": 0.2
+    },
+    {
+      "name": "lanyrd_public",
       "raw": 1,
       "accepted": 0,
       "rejected": 0,
