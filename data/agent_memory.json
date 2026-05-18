@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-05-18T14:29:17+00:00",
+  "updated_at": "2026-05-18T14:30:48+00:00",
   "best_source_today": "meetup_public",
   "best_keyword_today": "-",
   "weak_source_today": "meetup_public",
-  "next_improvement": "Reduce priority for weak source: meetup_public."
+  "next_improvement": "Tighten dedupe before adding more raw leads."
 }
