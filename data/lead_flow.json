@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-05-18T13:55:29+00:00",
+  "updated_at": "2026-05-18T13:56:35+00:00",
   "stages": [
     {
       "label": "Raw",
-      "value": 0
+      "value": 1
     },
     {
       "label": "Deduped",
-      "value": 0
+      "value": 1
     },
     {
       "label": "Scored",

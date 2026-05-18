@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-05-18T13:55:29+00:00",
-  "best_source_today": "-",
+  "updated_at": "2026-05-18T13:56:35+00:00",
+  "best_source_today": "meetup_public",
   "best_keyword_today": "-",
-  "weak_source_today": "-",
-  "next_improvement": "Keep paced review active."
+  "weak_source_today": "meetup_public",
+  "next_improvement": "Reduce priority for weak source: meetup_public."
 }
