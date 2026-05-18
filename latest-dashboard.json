@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T16:24:07",
+  "generated_at": "2026-05-18T16:30:48",
   "summary": {
     "active_projects": 1,
     "active_tasks": 0,
@@ -222,23 +222,23 @@
       "action": "collect_initial_leads",
       "project_name": "Telegram Lead Research",
       "lead_id": null,
-      "reason": "initial queue below target/refill threshold; daily raw 3/200",
-      "updated_at": "2026-05-18T14:24:07+00:00",
+      "reason": "initial queue below target/refill threshold; daily raw 4/200",
+      "updated_at": "2026-05-18T14:30:48+00:00",
       "started_at": "",
-      "finished_at": "2026-05-18T14:24:07+00:00",
+      "finished_at": "2026-05-18T14:30:48+00:00",
       "details": {
         "action": "collect_initial_leads",
-        "duplicates": 0,
-        "inserted": 1,
+        "duplicates": 1,
+        "inserted": 0,
         "items": [
           {
             "company_name": "Eventagentur ARISE GmbH",
             "lead_id": 4,
-            "record_status": "inserted"
+            "record_status": "duplicate"
           }
         ],
         "result_status": "completed",
-        "run_id": 5
+        "run_id": 6
       }
     },
     {
