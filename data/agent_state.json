@@ -1,8 +1,16 @@
 {
-  "updated_at": "2026-05-18T13:54:27+00:00",
+  "updated_at": "2026-05-18T13:55:29+00:00",
   "state": "Paused",
   "current_action": "paused",
   "project": null,
-  "active_projects": [],
+  "active_projects": [
+    {
+      "id": 1,
+      "name": "Telegram Lead Research",
+      "status": "active",
+      "daily_raw_target_min": 100,
+      "daily_raw_target_max": 200
+    }
+  ],
   "public_safe": true
 }
