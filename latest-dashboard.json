@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T21:45:31",
+  "generated_at": "2026-05-18T21:46:37",
   "summary": {
     "active_projects": 1,
     "active_tasks": 0,
@@ -235,27 +235,32 @@
       "detail": "Telegram Lead Research"
     }
   ],
-  "next_work": {
-    "action": "collect_initial_leads",
-    "project_name": "Telegram Lead Research",
-    "lead_id": null,
-    "reason": "initial queue below target/refill threshold; daily raw 5/200"
-  },
+  "next_work": null,
   "brain_states": [
     {
       "brain": "brain1",
       "label": "Brain 1",
-      "status": "queued",
+      "status": "idle",
       "action": "collect_initial_leads",
       "project_name": "Telegram Lead Research",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold; daily raw 5/200",
-      "updated_at": "2026-05-18T19:45:31+00:00",
+      "updated_at": "2026-05-18T19:46:37+00:00",
       "started_at": "",
-      "finished_at": "2026-05-18T19:45:31+00:00",
+      "finished_at": "2026-05-18T19:46:37+00:00",
       "details": {
-        "error": "[Errno 104] Connection reset by peer",
-        "result_status": "error"
+        "action": "collect_initial_leads",
+        "duplicates": 1,
+        "inserted": 0,
+        "items": [
+          {
+            "company_name": "Europe Telegram Lead Research events near München, DE",
+            "lead_id": 1,
+            "record_status": "duplicate"
+          }
+        ],
+        "result_status": "completed",
+        "run_id": 44
       }
     },
     {
