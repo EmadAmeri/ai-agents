@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-05-11T14:29:30",
+  "generated_at": "2026-05-18T15:55:29",
   "summary": {
-    "active_projects": 0,
+    "active_projects": 1,
     "active_tasks": 0,
     "blocked_tasks": 0,
     "waiting_approvals": 0,
-    "total_activity": 0,
+    "total_activity": 1,
     "collected_total": 0,
     "brain2_scored_total": 0,
     "brain3_enriched_total": 0,
@@ -14,13 +14,100 @@
     "drafted_total": 0,
     "message_review_total": 0
   },
-  "projects": [],
-  "selected_project": null,
-  "stage_counts": {},
-  "stages": {},
+  "projects": [
+    {
+      "id": 1,
+      "name": "Telegram Lead Research",
+      "status": "active",
+      "target_geography": "Europe",
+      "target_niche": "",
+      "pending_tasks": 0,
+      "in_progress_tasks": 0,
+      "blocked_tasks": 0,
+      "paused_tasks": 0,
+      "completed_tasks": 0,
+      "raw_leads": 0,
+      "shortlisted_leads": 0,
+      "awaiting_approval_leads": 0,
+      "approved_leads": 0,
+      "drafted_leads": 0,
+      "pending_approval_requests": 0,
+      "ready_for_draft_leads": 0,
+      "ready_for_approval_leads": 0,
+      "awaiting_enrichment_leads": 0,
+      "awaiting_strategy_leads": 0
+    }
+  ],
+  "selected_project": {
+    "id": 1,
+    "name": "Telegram Lead Research",
+    "status": "active",
+    "target_geography": "Europe",
+    "target_niche": "",
+    "pending_tasks": 0,
+    "in_progress_tasks": 0,
+    "blocked_tasks": 0,
+    "paused_tasks": 0,
+    "completed_tasks": 0,
+    "raw_leads": 0,
+    "shortlisted_leads": 0,
+    "awaiting_approval_leads": 0,
+    "approved_leads": 0,
+    "drafted_leads": 0,
+    "pending_approval_requests": 0,
+    "ready_for_draft_leads": 0,
+    "ready_for_approval_leads": 0,
+    "awaiting_enrichment_leads": 0,
+    "awaiting_strategy_leads": 0
+  },
+  "stage_counts": {
+    "project_id": 1,
+    "project_name": "Telegram Lead Research",
+    "initial_leads_count": 0,
+    "scored_leads_count": 0,
+    "enriched_leads_count": 0,
+    "strategized_leads_count": 0,
+    "drafted_contacted_leads_count": 0
+  },
+  "stages": {
+    "initial": {
+      "label": "Initial Intake",
+      "count": 0,
+      "items": []
+    },
+    "scored": {
+      "label": "Scored",
+      "count": 0,
+      "items": []
+    },
+    "enriched": {
+      "label": "Enriched",
+      "count": 0,
+      "items": []
+    },
+    "strategized": {
+      "label": "Brain 5 Enriched",
+      "count": 0,
+      "items": []
+    },
+    "drafted": {
+      "label": "Drafted",
+      "count": 0,
+      "items": []
+    }
+  },
   "pending_approvals": [],
   "pending_message_approvals": [],
-  "recent_activity": [],
+  "recent_activity": [
+    {
+      "created_at": "2026-05-18T13:55:27+00:00",
+      "action": "project_created",
+      "project_name": "Telegram Lead Research",
+      "company_name": "",
+      "task_title": "",
+      "detail": "Telegram Lead Research"
+    }
+  ],
   "next_work": null,
   "brain_states": [
     {
@@ -98,7 +185,7 @@
     "total_count": 0
   },
   "journey_map": {
-    "project_name": "All projects",
+    "project_name": "Telegram Lead Research",
     "stages": [
       {
         "key": "inbound",
@@ -138,7 +225,15 @@
     ],
     "dots": [],
     "active_transition": "inbound_to_scoring",
-    "live_feed": []
+    "live_feed": [
+      {
+        "created_at": "2026-05-18T13:55:27+00:00",
+        "action": "project_created",
+        "project_name": "Telegram Lead Research",
+        "company_name": "",
+        "detail": "Telegram Lead Research"
+      }
+    ]
   },
   "collected_leads": [],
   "top_scored_leads": [],
