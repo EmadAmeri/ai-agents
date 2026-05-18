@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-05-18T15:56:35",
+  "generated_at": "2026-05-18T15:59:41",
   "summary": {
     "active_projects": 1,
     "active_tasks": 0,
     "blocked_tasks": 0,
     "waiting_approvals": 0,
-    "total_activity": 2,
+    "total_activity": 3,
     "collected_total": 1,
     "brain2_scored_total": 0,
     "brain3_enriched_total": 0,
@@ -122,6 +122,14 @@
   "pending_approvals": [],
   "pending_message_approvals": [],
   "recent_activity": [
+    {
+      "created_at": "2026-05-18T13:59:36+00:00",
+      "action": "maps_query_generated",
+      "project_name": "Telegram Lead Research",
+      "company_name": "",
+      "task_title": "",
+      "detail": "I'm looking for B2B conference and event companies — teams of 5 to 30 people who run at least one recurring annual event, rely heavily on sponsorship revenue, and currently manage their data across multiple disconnected tools (CRM, ticketing, spreadsheets, email). The pain point I'm solving is that all their valuable data — sponsors, attendees, leads — lives in silos, so they can't act on it intelligently. Ideal pilot candidates are organizers who feel that pain and are open to trying something"
+    },
     {
       "created_at": "2026-05-18T13:55:32+00:00",
       "action": "brief_created_from_plain_text",
@@ -283,6 +291,13 @@
     ],
     "active_transition": "inbound_to_scoring",
     "live_feed": [
+      {
+        "created_at": "2026-05-18T13:59:36+00:00",
+        "action": "maps_query_generated",
+        "project_name": "Telegram Lead Research",
+        "company_name": "",
+        "detail": "I'm looking for B2B conference and event companies — teams of 5 to 30 people who run at least one recurring annual event, rely heavily on sponsorship revenue, and currently manage their data across multiple disconnected tools (CRM, ticketing, spreadsheets, email). The pain point I'm solving is that all their valuable data — sponsors, attendees, leads — lives in silos, so they can't act on it intelligently. Ideal pilot candidates are organizers who feel that pain and are open to trying something"
+      },
       {
         "created_at": "2026-05-18T13:55:32+00:00",
         "action": "brief_created_from_plain_text",
