@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T17:20:10",
+  "generated_at": "2026-05-18T17:21:17",
   "summary": {
     "active_projects": 1,
     "active_tasks": 0,
@@ -235,27 +235,26 @@
       "detail": "Telegram Lead Research"
     }
   ],
-  "next_work": {
-    "action": "collect_initial_leads",
-    "project_name": "Telegram Lead Research",
-    "lead_id": null,
-    "reason": "initial queue below target/refill threshold; daily raw 5/200"
-  },
+  "next_work": null,
   "brain_states": [
     {
       "brain": "brain1",
       "label": "Brain 1",
-      "status": "queued",
+      "status": "idle",
       "action": "collect_initial_leads",
       "project_name": "Telegram Lead Research",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold; daily raw 5/200",
-      "updated_at": "2026-05-18T15:20:10+00:00",
+      "updated_at": "2026-05-18T15:21:17+00:00",
       "started_at": "",
-      "finished_at": "2026-05-18T15:20:10+00:00",
+      "finished_at": "2026-05-18T15:21:17+00:00",
       "details": {
-        "error": "tradefairdates_public request failed for https://www.tradefairdates.com/Europe-Fairs.html: <!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found on this server.</p>\n<hr>\n<address>Apache Server at www.tradefairdates.com Port 443</address>\n</body></html>\n",
-        "result_status": "error"
+        "action": "collect_initial_leads",
+        "duplicates": 0,
+        "inserted": 0,
+        "items": [],
+        "result_status": "completed",
+        "run_id": 13
       }
     },
     {
