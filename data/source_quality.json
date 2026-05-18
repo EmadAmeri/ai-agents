@@ -1,8 +1,16 @@
 {
-  "updated_at": "2026-05-18T14:02:49+00:00",
+  "updated_at": "2026-05-18T14:03:54+00:00",
   "sources": [
     {
       "name": "meetup_public",
+      "raw": 1,
+      "accepted": 0,
+      "rejected": 0,
+      "quality": 0.0,
+      "weight": 0.2
+    },
+    {
+      "name": "ten_times_public",
       "raw": 1,
       "accepted": 0,
       "rejected": 0,
