@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-18T14:22:33+00:00",
+  "updated_at": "2026-05-18T14:24:07+00:00",
   "sources": [
     {
       "name": "meetup_public",
@@ -19,6 +19,14 @@
     },
     {
       "name": "lanyrd_public",
+      "raw": 1,
+      "accepted": 0,
+      "rejected": 0,
+      "quality": 0.0,
+      "weight": 0.2
+    },
+    {
+      "name": "google_maps_scraper",
       "raw": 1,
       "accepted": 0,
       "rejected": 0,
