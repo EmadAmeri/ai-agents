@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T16:03:54",
+  "generated_at": "2026-05-18T16:10:06",
   "summary": {
     "active_projects": 1,
     "active_tasks": 0,
@@ -169,32 +169,27 @@
       "detail": "Telegram Lead Research"
     }
   ],
-  "next_work": null,
+  "next_work": {
+    "action": "collect_initial_leads",
+    "project_name": "Telegram Lead Research",
+    "lead_id": null,
+    "reason": "initial queue below target/refill threshold; daily raw 2/200"
+  },
   "brain_states": [
     {
       "brain": "brain1",
       "label": "Brain 1",
-      "status": "idle",
+      "status": "queued",
       "action": "collect_initial_leads",
       "project_name": "Telegram Lead Research",
       "lead_id": null,
-      "reason": "initial queue below target/refill threshold; daily raw 1/200",
-      "updated_at": "2026-05-18T14:03:54+00:00",
+      "reason": "initial queue below target/refill threshold; daily raw 2/200",
+      "updated_at": "2026-05-18T14:10:06+00:00",
       "started_at": "",
-      "finished_at": "2026-05-18T14:03:54+00:00",
+      "finished_at": "2026-05-18T14:10:06+00:00",
       "details": {
-        "action": "collect_initial_leads",
-        "duplicates": 0,
-        "inserted": 1,
-        "items": [
-          {
-            "company_name": "Professional Network for Humans",
-            "lead_id": 2,
-            "record_status": "inserted"
-          }
-        ],
-        "result_status": "completed",
-        "run_id": 2
+        "error": "tradefairdates_public request failed for https://www.tradefairdates.com/Europe-Fairs.html: <!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found on this server.</p>\n<hr>\n<address>Apache Server at www.tradefairdates.com Port 443</address>\n</body></html>\n",
+        "result_status": "error"
       }
     },
     {
