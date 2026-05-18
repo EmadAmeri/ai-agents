@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-18T16:10:06",
+  "generated_at": "2026-05-18T16:11:09",
   "summary": {
     "active_projects": 1,
     "active_tasks": 0,
     "blocked_tasks": 0,
     "waiting_approvals": 0,
     "total_activity": 3,
-    "collected_total": 2,
+    "collected_total": 3,
     "brain2_scored_total": 0,
     "brain3_enriched_total": 0,
     "brain5_reviewed_total": 0,
@@ -26,7 +26,7 @@
       "blocked_tasks": 0,
       "paused_tasks": 0,
       "completed_tasks": 0,
-      "raw_leads": 2,
+      "raw_leads": 3,
       "shortlisted_leads": 0,
       "awaiting_approval_leads": 0,
       "approved_leads": 0,
@@ -49,7 +49,7 @@
     "blocked_tasks": 0,
     "paused_tasks": 0,
     "completed_tasks": 0,
-    "raw_leads": 2,
+    "raw_leads": 3,
     "shortlisted_leads": 0,
     "awaiting_approval_leads": 0,
     "approved_leads": 0,
@@ -63,7 +63,7 @@
   "stage_counts": {
     "project_id": 1,
     "project_name": "Telegram Lead Research",
-    "initial_leads_count": 2,
+    "initial_leads_count": 3,
     "scored_leads_count": 0,
     "enriched_leads_count": 0,
     "strategized_leads_count": 0,
@@ -72,8 +72,30 @@
   "stages": {
     "initial": {
       "label": "Initial Intake",
-      "count": 2,
+      "count": 3,
       "items": [
+        {
+          "lead_id": 3,
+          "company_name": "Browsing events in",
+          "website": "https://lanyrd.com/",
+          "linkedin_company_url": "",
+          "location": "DE",
+          "contact_name": "",
+          "email": "",
+          "phone": "",
+          "status": "raw",
+          "approval_status": "not_requested",
+          "message_approval_status": "not_requested",
+          "score": 0,
+          "fit_label": "",
+          "brain2_summary": "",
+          "brain3_event_type": "",
+          "brain5_verdict": "",
+          "company_description": "lanyrd_public listing; event_title=Browsing events in; organizer=Browsing events in; summary=Eventbrite - Discover the Best Local Events & Things to Do Eventbrite Eventbrite Search events autocomplete Find my tickets Sign in Find Events Create Events Solutions Solutions Event Ticketing Event Marketing Platform Eventbrite Ads Payments Industry Industry; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
+          "approval_brief": "lanyrd_public listing; event_title=Browsing events in; organizer=Browsing events in; summary=Eventbrite - Discover the Best Local Events & Things to Do Eventbrite Eventbrite Search events autocomplete Find my tickets Sign in Find Events Create Events Solutions Solutions Event Ticketing Event Marketing Platform Eventbrite Ads Payments Industry Industry; research_sources=10times,Eventbrite,Lanyrd,Meetup,Tradefairdates,Apollo,LinkedIn Boolean Search,RocketReach,Lusha,Hunter,Clearbit Connect",
+          "channels": [],
+          "key_people": []
+        },
         {
           "lead_id": 2,
           "company_name": "Professional Network for Humans",
@@ -169,27 +191,32 @@
       "detail": "Telegram Lead Research"
     }
   ],
-  "next_work": {
-    "action": "collect_initial_leads",
-    "project_name": "Telegram Lead Research",
-    "lead_id": null,
-    "reason": "initial queue below target/refill threshold; daily raw 2/200"
-  },
+  "next_work": null,
   "brain_states": [
     {
       "brain": "brain1",
       "label": "Brain 1",
-      "status": "queued",
+      "status": "idle",
       "action": "collect_initial_leads",
       "project_name": "Telegram Lead Research",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold; daily raw 2/200",
-      "updated_at": "2026-05-18T14:10:06+00:00",
+      "updated_at": "2026-05-18T14:11:09+00:00",
       "started_at": "",
-      "finished_at": "2026-05-18T14:10:06+00:00",
+      "finished_at": "2026-05-18T14:11:09+00:00",
       "details": {
-        "error": "tradefairdates_public request failed for https://www.tradefairdates.com/Europe-Fairs.html: <!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found on this server.</p>\n<hr>\n<address>Apache Server at www.tradefairdates.com Port 443</address>\n</body></html>\n",
-        "result_status": "error"
+        "action": "collect_initial_leads",
+        "duplicates": 0,
+        "inserted": 1,
+        "items": [
+          {
+            "company_name": "Browsing events in",
+            "lead_id": 3,
+            "record_status": "inserted"
+          }
+        ],
+        "result_status": "completed",
+        "run_id": 3
       }
     },
     {
@@ -261,7 +288,7 @@
         "label": "Inbound / Scraping",
         "subtitle": "Eventbrite / 10times / sources",
         "color": "#4cc9ff",
-        "count": 2
+        "count": 3
       },
       {
         "key": "scoring",
@@ -293,6 +320,18 @@
       }
     ],
     "dots": [
+      {
+        "lead_id": 3,
+        "company_name": "Browsing events in",
+        "contact_name": "",
+        "linkedin_url": "",
+        "score": 0.0,
+        "fit_label": "",
+        "stage": "inbound",
+        "next_stage": "scoring",
+        "status": "moving",
+        "color": "#4cc9ff"
+      },
       {
         "lead_id": 2,
         "company_name": "Professional Network for Humans",
@@ -344,6 +383,15 @@
     ]
   },
   "collected_leads": [
+    {
+      "lead_id": 3,
+      "company_name": "Browsing events in",
+      "city": "",
+      "website": "https://lanyrd.com/",
+      "phone": "",
+      "source": "lanyrd_public",
+      "collected_at": "2026-05-18 14:11:09"
+    },
     {
       "lead_id": 2,
       "company_name": "Professional Network for Humans",
