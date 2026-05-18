@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T19:55:22",
+  "generated_at": "2026-05-18T19:56:25",
   "summary": {
     "active_projects": 1,
     "active_tasks": 0,
@@ -250,11 +250,11 @@
       "project_name": "Telegram Lead Research",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold; daily raw 5/200",
-      "updated_at": "2026-05-18T17:55:22+00:00",
+      "updated_at": "2026-05-18T17:56:25+00:00",
       "started_at": "",
-      "finished_at": "2026-05-18T17:55:22+00:00",
+      "finished_at": "2026-05-18T17:56:25+00:00",
       "details": {
-        "error": "eventbrite_public request failed for https://www.eventbrite.com/d/europe/business-events/?q=Europe+Telegram+Lead+Research: \n\n\n\n\n<!DOCTYPE html>\n<html xmlns=\"https://www.w3.org/1999/xhtml\">\n<head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<meta http-equiv=\"Content-Language\" content=\"en\" />\n<META name=\"y_key\" content=\"d92e23811007b438\">\n<meta name=\"msvalidate.01\" content=\"A9AB07B7E430E4608E",
+        "error": "tradefairdates_public request failed for https://www.tradefairdates.com/Europe-Fairs.html: <!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found on this server.</p>\n<hr>\n<address>Apache Server at www.tradefairdates.com Port 443</address>\n</body></html>\n",
         "result_status": "error"
       }
     },
