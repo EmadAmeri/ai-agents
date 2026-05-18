@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T21:01:49",
+  "generated_at": "2026-05-18T21:08:03",
   "summary": {
     "active_projects": 1,
     "active_tasks": 0,
@@ -245,16 +245,22 @@
       "project_name": "Telegram Lead Research",
       "lead_id": null,
       "reason": "initial queue below target/refill threshold; daily raw 5/200",
-      "updated_at": "2026-05-18T19:01:49+00:00",
+      "updated_at": "2026-05-18T19:08:03+00:00",
       "started_at": "",
-      "finished_at": "2026-05-18T19:01:49+00:00",
+      "finished_at": "2026-05-18T19:08:03+00:00",
       "details": {
         "action": "collect_initial_leads",
-        "duplicates": 0,
+        "duplicates": 1,
         "inserted": 0,
-        "items": [],
+        "items": [
+          {
+            "company_name": "Europe Telegram Lead Research events near München, DE",
+            "lead_id": 1,
+            "record_status": "duplicate"
+          }
+        ],
         "result_status": "completed",
-        "run_id": 38
+        "run_id": 39
       }
     },
     {
